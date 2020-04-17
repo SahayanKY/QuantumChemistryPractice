@@ -1,0 +1,114 @@
+%
+%
+%-------------------------------パッケージ--------------------------------------
+%
+%
+%--------------------------------数学関係---------------------------------------
+	\usepackage{amssymb}
+	\usepackage{amsmath}
+	\usepackage{bm}
+	\usepackage{braket}
+
+
+
+%--------------------------------graphicx---------------------------------------
+	\usepackage[dvipdfmx]{graphicx}
+
+
+%--------------------------------multirow---------------------------------------
+	%表組みで縦セルを結合
+	\usepackage{multirow}
+
+
+%---------------------------------color-----------------------------------------
+	\usepackage[dvipdfmx]{color}
+
+
+%--------------------------------caption----------------------------------------
+	%キャプションの体裁を調整
+	\usepackage{caption}
+
+	%表4.1「.」と最後にピリオドをつけて区切る
+	\captionsetup{labelsep=period}
+
+	%キャプション文を太字にし、一回り文字を小さくする
+	\captionsetup{font = {bf,small}}
+
+	%キャプション文を改行する際は、図X.Y.の分だけ文字を下げる
+	\captionsetup{format = hang}
+
+	%キャプション文全体の横幅を調整。大きくするほど横幅は小さくなる
+	\captionsetup{margin = 60pt}
+
+
+%----------------------------------tikz-----------------------------------------
+	%tikz
+	\usepackage{tikz}
+	%矢印関連のライブラリ、ドキュメント16章
+	\usetikzlibrary{arrows.meta}
+	%座標の計算
+	\usetikzlibrary{calc}
+	%\usetikzlibrary{calc,patterns,intersections}
+
+
+%---------------------------------mhchem----------------------------------------
+	%化学式記述用のパッケージ
+	\usepackage[version=3]{mhchem}
+
+
+%---------------------------------siunitx---------------------------------------
+	%単位、数値フォーマット
+	\usepackage{siunitx}
+
+	%物理量のフォーマット
+	%数値と単位の間を半角スペースに設定
+	\sisetup{number-unit-product=\ }
+
+	%誤差表示のフォーマット
+	%有効にすると誤差を±で表示
+	%\sisetup{separate-uncertainty}
+
+	%表組において、S指定のカラムで文字列を中央に寄せる
+	\sisetup{table-number-alignment = center}
+
+	%プラスを明示的に書いた場合はプラスも出力される
+	%書かなかった場合は出力されない
+	\sisetup{retain-explicit-plus}
+
+%-----------------------------------url-----------------------------------------
+	%参考文献でurlを正しく表示するのに使う
+	\usepackage{url}
+
+%-----------------------------------listing-----------------------------------------
+	%ソースコードを埋め込むためのもの
+	%lstlisting環境を用いる
+	\usepackage{listings,jlisting}
+
+	\lstset{
+	    basicstyle={\ttfamily\small}, %書体の指定
+	    frame=tRBl, %フレームの指定
+	    framesep=10pt, %フレームと中身（コード）の間隔
+	    breaklines=true, %行が長くなった場合の改行
+	    lineskip=-0.5ex, %行間の調整
+	    tabsize=2, %Tabを何文字幅にするかの指定
+	 	captionpos = t, %キャプションの場所("tb"ならば上下両方に記載)
+	 	keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}}, %キーワード(int, ifなど)の書体
+	 	stringstyle = {\ttfamily \color[rgb]{0,0,1}}, %""で囲まれたなどの"文字"の書体
+	 	commentstyle = {\itshape \color[cmyk]{1,0.5,0,0}}, %コメントの書体
+	}
+
+%-----------------------------------longtable-----------------------------------------
+	%複数ページにまたがる表組に利用する
+	\usepackage{longtable}
+
+
+%-----------------------------------fancy-----------------------------------------
+	%ページスタイルの設定
+	\usepackage{fancyhdr}
+
+
+%----------------------------------ascmac----------------------------------------
+	%複数行の囲む枠
+	%要約で使う
+	\usepackage{ascmac}
+

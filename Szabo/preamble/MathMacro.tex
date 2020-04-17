@@ -1,0 +1,157 @@
+%
+%
+%-----------------------------数学関係のマクロ----------------------------------
+%
+%
+%微小量
+%下にドットを打つマクロと重複
+\renewcommand{\d}{{\ensuremath{\rm d}}}
+
+
+%偏微分
+\newcommand{\pard}[3][1]{{%
+	\ifnum #1<1%
+		\text{エラー}%
+	\else{%
+		\ifnum #1=1%
+			\ensuremath{%
+				\frac{\partial #3}{\partial #2}%
+				%\partial_{#2} #3%
+			}%
+		\else{%
+			\ensuremath{%
+				\frac{\partial^{#1} #3}{\partial #2^{#1}}%
+				%\partial_{#2}^{#1} #3
+			}%
+		}\fi%
+	}\fi%
+}}
+
+\newcommand{\operator}[3]{%
+	%#1:演算子をかける対象を括弧で囲むかどうか
+	%	0->囲まない
+	%	1->()で囲む
+	%	2->{}で囲む
+	%#2:演算子
+	%#3:演算子をかける対象
+	{\ensuremath{#2%
+		\ifnum #1=0%
+			#3%
+		\else{%
+			\ifnum #1=1%
+				\left(#3\right)%
+			\else{%
+				\ifnum #1=2%
+					\left\{#3\right\}%
+				\else{%
+					\text{エラー}%
+				}\fi%
+			}\fi%
+		}\fi%
+	}}%
+}
+
+%転置行列
+%transposed
+\newcommand{\tp}[2][0]{\operator{#1}{{}^t}{#2}}
+
+%回転
+\newcommand{\rot}[2][0]{\operator{#1}{\nabla\times}{#2}}
+
+
+%発散
+%割り算の記号÷と重複
+\renewcommand{\div}[2][0]{\operator{#1}{\nabla\cdot}{#2}}
+
+
+%勾配
+\newcommand{\grad}[2][0]{\operator{#1}{\nabla}{#2}}
+
+
+%ラプラシアン
+\newcommand{\laplacian}[2][0]{\operator{#1}{\nabla^2}{#2}}
+
+
+%基底ベクトル
+\newcommand{\e}[2][]{{\ensuremath{\bm{e}#1_{#2}}}}
+
+
+%法線ベクトル
+\newcommand{\n}{{\ensuremath{\bm{n}}}}
+
+
+%接線ベクトル
+%ハットみたいなもの(ただしカーブ)と重複
+%\hat,\widehatとは被らない
+\renewcommand{\t}{{\ensuremath{\bm{t}}}}
+
+%面ベクトル、Poyntingベクトル
+%セクションの記号§と重複
+\renewcommand{\S}{{\ensuremath{\bm{S}}}}
+
+
+%位置ベクトル
+%\angstromが内部で\rを呼び出しているので若干汚い
+%
+%位置ベクトルのrを定義
+\def\r@PositionVector{{\ensuremath{\bm{r}}}}
+%元の\rの定義を\r@Originにコピーしておく
+\let\r@Origin = \r
+%siunitxの\angstromが展開されて出てくるコマンドをコピー
+%(\angstromそのものはコピーすることはできなかった)
+\let\angstrom@Origin = \SIUnitSymbolAngstrom
+%位置ベクトル\rを定義
+\def\r{\r@PositionVector}
+%現在の定義
+\let\r@current = \r
+%\SIUnitSymbolAngstromの展開の前後に\rの定義のすり替えを行う
+\def\SIUnitSymbolAngstrom{%
+	%現在の定義を取得しておく
+	\let\r@current = \r%
+	%元の定義に直しておく
+	\let\r = \r@Origin%
+	%オングストロームを出力
+	\angstrom@Origin%
+	%自分が定義していたものに戻しておく
+	\let\r = \r@current%
+}
+
+
+
+
+%位置ベクトル2
+\newcommand{\x}{{\ensuremath{\bm{x}}}}
+
+
+%平均
+\newcommand{\average}[1]{{\ensuremath{\left<#1\right>}}}
+
+%符号関数
+\newcommand{\sgn}{{\rm sgn}}
+
+%無次元量
+\newcommand{\dimless}[1]{{\ensuremath{{#1}^{\ast}}}}
+
+%真の値
+\newcommand{\truevalue}[1]{{\ensuremath{\tilde{#1}}}}
+
+%
+%
+%------------------------------数字の体裁関係のマクロ--------------------------------
+%
+%
+%
+%ローマ数字の出力に使う
+\newcommand{\ONE}{{\rm I}}
+\newcommand{\TWO}{{\rm I\hspace{-.1em}I}}
+\newcommand{\THREE}{{\rm I\hspace{-.1em}I\hspace{-.1em}I}}
+\newcommand{\FOUR}{{\rm I\hspace{-.1em}V}}
+\newcommand{\FIVE}{{\rm V}}
+
+
+
+%〇数字などに使う
+\newcommand{\circled}[1]{{\textcircled{\scriptsize #1}}}
+
+
+
