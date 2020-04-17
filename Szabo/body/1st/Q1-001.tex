@@ -1,0 +1,102 @@
+%ファイルID
+%2020/04/17 10:55
+%->2004171055(10進数)->X58CA7(ファイル作成者)
+%->X58CA7SahayanKY
+\begin{align}
+	\mathscr{O}\e{i}
+&=
+	\e{j} O_{ji}
+\end{align}
+とする。また、$\e{i}$は正規直交基底である。
+
+\subsection{(a)問}
+\begin{align}
+	O_{ij}
+&=
+	\e{i}\cdot \mathscr{O} \e{j}
+\end{align}
+を示せ。
+
+\subsection{(a)解}
+\begin{align}
+	\mathscr{O}\e{j}
+&=
+	\e{k} O_{kj} \\
+%
+%
+	\e{i}\cdot \left(\mathscr{O}\e{j}\right)
+&=
+	\e{i}\cdot \left(\e{k} O_{kj}\right) \\
+%
+%
+	\e{i}\cdot \mathscr{O}\e{j}
+&=
+	\delta_{ik} O_{kj} \\
+%
+%
+&=
+	O_{ij} \\
+%
+%
+	\therefore
+	O_{ij}
+&=
+	\e{i}\cdot \mathscr{O}\e{j}
+\end{align}
+
+
+\subsection{(b)問}
+\begin{align}
+	\bm{b}
+&=
+	\mathscr{O}\bm{a}
+\end{align}
+とするとき、
+\begin{align}
+	b_i
+&=
+	O_{ij} a_{j}
+\end{align}
+であることを示せ。
+
+\subsection{(b)解}
+\begin{align}
+	\bm{b}
+&=
+	\mathscr{O}\bm{a} \\
+%
+%
+	b_i \e{i}
+&=
+	\mathscr{O}(a_k \e{k}) \\
+%
+%
+&=
+	a_k \mathscr{O} \e{k} \\
+%
+%
+&=
+	a_k \e{j} O_{jk} \\
+%
+%
+	b_i \e{i}\cdot \e{l}
+&=
+	a_k O_{jk} \e{j}\cdot \e{l} \\
+%
+%
+	b_i \delta_{il}
+&=
+	a_k O_{jk} \delta_{jl} \\
+%
+%
+	b_l
+&=
+	a_k O_{lk} \\
+%
+%
+	\therefore
+	b_i
+&=
+	O_{ij} a_j
+\end{align}
+
