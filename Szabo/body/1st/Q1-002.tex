@@ -1,0 +1,177 @@
+%ファイルID
+%2020/04/17 12:11
+%->2004171211(10進数)->X58CEJ(ファイル作成者)
+%->X58CEJSahayanKY
+\subsection{問}
+行列$A,B$を次の通りとする。
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{ccc}
+		 1 &  1 &  0 \\
+		 1 &  2 &  2 \\
+		 0 &  2 & -1
+	\end{array}
+	\right] &
+%
+%
+	B
+&=
+	\left[
+	\begin{array}{ccc}
+		 1 & -1 &  1 \\
+		-1 &  0 &  0 \\
+		 1 &  0 &  1
+	\end{array}
+	\right]
+\end{align}
+このとき、$[A,B]=AB-BA$と$\{A,B\}=AB+BA$を求めよ。
+
+\subsection{解}
+\begin{align}
+	AB
+&=
+	\left[
+	\begin{array}{ccc}
+		 1 &  1 &  0 \\
+		 1 &  2 &  2 \\
+		 0 &  2 & -1
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{ccc}
+			 1 & -1 &  1 \\
+			-1 &  0 &  0 \\
+			 1 &  0 &  1
+		\end{array}
+		\right]
+%
+%
+=
+	\left[
+	\begin{array}{ccc}
+		1-1+0 & -1+0+0 & 1+0+0 \\
+		1-2+2 & -1+0+0 & 1+0+2 \\
+		0-2-1 & 0+0+0 & 0+0-1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		0 & -1 & 1 \\
+		1 & -1 & 3 \\
+		-3 & 0 & -1
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	BA
+&=
+	\left[
+	\begin{array}{ccc}
+		 1 & -1 &  1 \\
+		-1 &  0 &  0 \\
+		 1 &  0 &  1
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{ccc}
+			 1 &  1 &  0 \\
+			 1 &  2 &  2 \\
+			 0 &  2 & -1
+		\end{array}
+		\right]
+%
+%
+=
+	\left[
+	\begin{array}{ccc}
+		1-1+0 & 1-2+2 & 0-2-1 \\
+		-1+0+0 & -1+0+0 & 0+0+0 \\
+		1+0+0 & 1+0+2 & 0+0-1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		0 & 1 & -3 \\
+		-1 & -1 & 0 \\
+		1 & 3 & -1
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	[A,B]
+&=
+	AB
+	-
+	BA \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		 0 & -1 &  1 \\
+		 1 & -1 &  3 \\
+		-3 &  0 & -1
+	\end{array}
+	\right]
+	-
+	\left[
+	\begin{array}{ccc}
+		 0 &  1 & -3 \\
+		-1 & -1 &  0 \\
+		 1 &  3 & -1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		 0 & -2 &  4 \\
+		 2 &  0 &  3 \\
+		-4 & -3 &  0
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	\{A,B\}
+&=
+	AB
+	+
+	BA \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		 0 & -1 &  1 \\
+		 1 & -1 &  3 \\
+		-3 &  0 & -1
+	\end{array}
+	\right]
+	+
+	\left[
+	\begin{array}{ccc}
+		 0 &  1 & -3 \\
+		-1 & -1 &  0 \\
+		 1 &  3 & -1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{ccc}
+		 0 &  0 & -2 \\
+		 0 & -2 &  3 \\
+		-2 &  3 & -2
+	\end{array}
+	\right]
+\end{align}
