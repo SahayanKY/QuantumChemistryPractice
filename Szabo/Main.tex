@@ -1,0 +1,47 @@
+%dvipdfmx指定でないとtikzではpngを表示できない
+\documentclass[10pt,dvipdfmx]{jsbook}
+%jbookだと「平成30年4月29日」
+%bookだと「April 29, 2018」
+%オプションにdraft指定で画像の代わりに四角い枠を挿入する
+
+
+%パッケージのインポート及び設定
+\input{preamble/Package.tex}
+
+
+\makeatletter
+%-------------------------------------------------------------------------------
+%数学関係のマクロ
+\input{preamble/MathMacro.tex}
+
+
+%-------------------------------------------------------------------------------
+%今回追加のマクロ及び設定
+
+%-------------------------------------------------------------------------------
+
+
+\makeatother
+
+\begin{document}
+%ページ番号、ヘッダ、フッタ共に何も出力しない
+\pagestyle{empty}
+
+%ファイルID
+%2020/03/04 19:12
+%->2003041912(10進数)->X4K514
+%->X4K514(ファイル作成者)
+%
+%各ファイルで\labelを使うときは、
+%(eq|fig|tab|src)(ファイルID)_(label対象の名前)とする。
+%ex)	eqVMEBNWSahayanKY_Dimless1DDiffEq
+%ex)	srcVMEBNWSahayanKY_FTSampleJava
+
+
+% %基礎的な事項
+% %この文書を読み進める上で、基礎となる数学や物理
+% \part{基礎}
+% \input{body/basis/MainBasis.tex}
+
+
+\end{document}

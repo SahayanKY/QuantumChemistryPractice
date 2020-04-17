@@ -1,14 +1,14 @@
 #TeXlipse project settings
-#Thu Apr 16 23:02:44 JST 2020
-outputDir=
+#Fri Apr 17 10:30:44 JST 2020
+outputDir=Szabo/
 markDer=true
-mainTexFile=document.tex
+mainTexFile=Main.tex
 bibrefDir=
 builderNum=4
-outputFile=document.pdf
+outputFile=Main.pdf
 makeIndSty=
-srcDir=
+srcDir=Szabo/
 markTmpDer=true
-tempDir=tmp
+tempDir=Szabo/temp
 outputFormat=pdf
 langSpell=en
