@@ -51,9 +51,43 @@
 	}}%
 }
 
+\newcommand{\rightoperator}[3]{%
+	%#1:演算子をかける対象を括弧で囲むかどうか
+	%	0->囲まない
+	%	1->()で囲む
+	%	2->{}で囲む
+	%#2:演算子
+	%#3:演算子をかける対象
+	{\ensuremath{%
+		\ifnum #1=0%
+			#3%
+		\else{%
+			\ifnum #1=1%
+				\left(#3\right)%
+			\else{%
+				\ifnum #1=2%
+					\left\{#3\right\}%
+				\else{%
+					\text{エラー}%
+				}\fi%
+			}\fi%
+		}\fi%
+		#2%
+	}}%
+}
+
+
 %転置行列
 %transposed
-\newcommand{\tp}[2][0]{\operator{#1}{{}^t}{#2}}
+\newcommand{\tp}[2][0]{\rightoperator{#1}{{}^t}{#2}}
+
+%共役行列、随伴行列
+%adjoint
+\newcommand{\adj}[2][0]{\rightoperator{#1}{{}^{\dagger}}{#2}}
+
+%複素共役行列
+%conjugate
+\newcommand{\conju}[2][0]{\rightoperator{#1}{{}^{\ast}}{#2}}
 
 %回転
 \newcommand{\rot}[2][0]{\operator{#1}{\nabla\times}{#2}}
