@@ -1,0 +1,36 @@
+%ファイルID
+%2020/04/19 00:14
+%->2004190014(10進数)->X58QWU(ファイル作成者)
+%->X58QWUSahayanKY
+
+\subsection{問}
+行列のトレースはユニタリー変換に対して不変であることを示せ。
+つまり、$\Omega=\adj{U}OU$ならば
+$\tr{\Omega}=\tr{O}$であることを示せ。
+
+\subsection{解}
+問題1.4(a)より
+\begin{align}
+	\tr[1]{AB}
+&=
+	\tr[1]{BA}
+\end{align}
+が成立する。従って、
+\begin{align}
+	\tr{\Omega}
+&=
+	\tr[1]{\adj{U}OU} \\
+%
+%
+&=
+	\tr[1]{OU\adj{U}} \\
+%
+%
+&=
+	\tr[1]{OUU^{-1}} \\
+%
+%
+&=
+	\tr{O}
+\end{align}
+である。
