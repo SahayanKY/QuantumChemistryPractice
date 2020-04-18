@@ -1,0 +1,364 @@
+%ファイルID
+%2020/04/18 15:32
+%->2004181532(10進数)->X58KD8(ファイル作成者)
+%->X58KD8SahayanKY
+次の性質を$2\times 2$行列に対して確かめよ。
+\subsection{(1)問}
+ある行、あるいはある列の要素がすべてゼロならば、
+行列式はゼロである。
+
+\subsection{(1)解}
+次の4つの行列の行列式を考える。
+\begin{align}
+	\left[
+	\begin{array}{cc}
+		0 & 0 \\
+		a & b
+	\end{array}
+	\right] \qquad
+%
+%
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		0 & 0
+	\end{array}
+	\right] \qquad
+%
+%
+	\left[
+	\begin{array}{cc}
+		0 & a \\
+		0 & b
+	\end{array}
+	\right] \qquad
+%
+%
+	\left[
+	\begin{array}{cc}
+		a & 0 \\
+		b & 0
+	\end{array}
+	\right]
+\end{align}
+1つ目の行列は
+\begin{align}
+	\left|
+	\begin{array}{cc}
+		0 & 0 \\
+		a & b
+	\end{array}
+	\right|
+=
+	0 \cdot b - b \cdot a
+=
+	0
+\end{align}
+である。2つ目の行列は
+\begin{align}
+	\left|
+	\begin{array}{cc}
+		a & b \\
+		0 & 0
+	\end{array}
+	\right|
+=
+	a \cdot 0 - b \cdot 0
+=
+	0
+\end{align}
+である。3つ目の行列は
+\begin{align}
+	\left|
+	\begin{array}{cc}
+		0 & a \\
+		0 & b
+	\end{array}
+	\right|
+=
+	0 \cdot b - a \cdot 0
+=
+	0
+\end{align}
+である。4つ目の行列は
+\begin{align}
+	\left|
+	\begin{array}{cc}
+		a & 0 \\
+		b & 0
+	\end{array}
+	\right|
+=
+	a \cdot 0 - 0 \cdot b
+=
+	0
+\end{align}
+である。よって、確かに行列式がゼロになることが分かる。
+
+
+\subsection{(2)問}
+$A_{ij}=A_{ii}\delta_{ij}$ならば、
+$|A|=\Pi_{i}A_{ii}=A_{11}A_{22}\cdots A_{NN}$である。
+
+\subsection{(2)解}
+次の行列の行列式で確かめる。
+\begin{align}
+	\left|
+	\begin{array}{cc}
+		a & 0 \\
+		0 & b
+	\end{array}
+	\right|
+=
+	a \cdot b - 0 \cdot 0
+=
+	ab
+\end{align}
+よって、確かに対角要素の総積になっていることが分かる。
+
+
+\subsection{(3)問}
+2つの行、あるいは2つの列を入れ替えると
+行列式の符号が変わる。
+
+\subsection{(3)解}
+次の3つの行列の行列式で考える。
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		c & d
+	\end{array}
+	\right] &
+%
+%
+	B
+&=
+	\left[
+	\begin{array}{cc}
+		c & d \\
+		a & b
+	\end{array}
+	\right] &
+%
+%
+	C
+&=
+	\left[
+	\begin{array}{cc}
+		b & a \\
+		d & c
+	\end{array}
+	\right]
+\end{align}
+それぞれの行列式は
+\begin{align}
+	|A|
+&=
+	ad-bc &
+%
+%
+	|B|
+&=
+	cb-da
+=
+	-|A| &
+%
+%
+	|C|
+&=
+	bc-ad
+=
+	-|A|
+\end{align}
+よって、確かに行、列を入れ替えると符号は変わる。
+
+
+\subsection{(4)問}
+\begin{align}
+	|A|
+&=
+	\conju[1]{|\adj{A}|}
+\end{align}
+
+
+\subsection{(4)解}
+行列$A$を次のように置く。
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		c & d
+	\end{array}
+	\right]
+\end{align}
+このとき、行列式$|A|$と$|\adj{A}|$は
+\begin{align}
+	|A|
+&=
+	ad-bc
+\end{align}
+\begin{align}
+	\adj{A}
+&=
+	\left[
+	\begin{array}{cc}
+		\conju{a} & \conju{c} \\
+		\conju{b} & \conju{d}
+	\end{array}
+	\right] \\
+%
+%
+	|\adj{A}|
+&=
+	\conju{a}\conju{d}-\conju{c}\conju{b} \\
+%
+%
+&=
+	\conju[1]{
+		ad-bc
+	} \\
+%
+%
+&=
+	\conju[1]{|A|} \\
+%
+%
+	\conju[1]{|\adj{A}|}
+&=
+	\conju{\conju[1]{|A|}}
+=
+	|A| \\
+%
+%
+	\therefore
+	|A|
+&=
+	\conju[1]{|\adj{A}|}
+\end{align}
+
+
+\subsection{(5)問}
+\begin{align}
+	|AB|
+&=
+	|A| |B|
+\end{align}
+
+
+\subsection{(5)解}
+行列$A,B$を次の通りに置く。
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		c & d
+	\end{array}
+	\right] &
+%
+%
+	B
+&=
+	\left[
+	\begin{array}{cc}
+		e & f \\
+		g & h
+	\end{array}
+	\right]
+\end{align}
+このとき、行列式$|A|,|B|,|AB|$は、
+\begin{align}
+	|A|
+&=
+	ad-bc &
+%
+%
+	|B|
+&=
+	eh-fg
+\end{align}
+\begin{align}
+	AB
+&=
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		c & d
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{cc}
+			e & f \\
+			g & h
+		\end{array}
+		\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		ae+bg & af+bh \\
+		ce+dg & cf+dh
+	\end{array}
+	\right] \\
+%
+%
+	|AB|
+&=
+	(ae+bg)(cf+dh)
+	-
+	(af+bh)(ce+dg) \\
+%
+%
+&=
+	(
+		acef
+		+
+		adeh
+		+
+		bcgf
+		+
+		bdgh
+	)
+	-
+	(
+		acfe
+		+
+		adfg
+		+
+		bche
+		+
+		bdhg
+	) \\
+%
+%
+&=
+	adeh
+	-
+	adfg
+	+
+	bcgf
+	-
+	bche \\
+%
+%
+&=
+	ad(eh-fg)
+	-
+	bc(eh-fg) \\
+%
+%
+&=
+	(ad-bc)(eh-fg) \\
+%
+%
+&=
+	|A||B|
+\end{align}
+となる。
