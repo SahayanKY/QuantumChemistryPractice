@@ -1,0 +1,143 @@
+%ファイルID
+%2020/04/18 17:07
+%->2004181707(10進数)->X58KI3(ファイル作成者)
+%->X58KI3SahayanKY
+問題1.5で示した性質を利用して以下の性質を証明せよ。
+\subsection{(6)問}
+ある2つの行(または列)が同じであるならば、
+行列式の値はゼロである。
+
+\subsection{(6)解}
+そのような行列を$A$とおく。
+該当する行(または列)同士を入れ替えた行列$B$は
+同一の行列$A$である。($A=B$)
+一方で、行列式の性質により、
+行(または列)を入れ替えると
+行列式の符号が反転することから、
+\begin{align}
+	|A|
+&=
+	-|B|
+=
+	-|A| \\
+%
+%
+	2|A|
+&=
+	0 \\
+%
+%
+	|A|
+&=
+	0
+\end{align}
+従って、同一の行または列をもつ行列では
+行列式はゼロになる。
+
+
+\subsection{(7)問}
+\begin{align}
+	|A^{-1}|
+&=
+	(|A|)^{-1}
+\end{align}
+
+\subsection{(7)解}
+単位行列$\identity$の行列式は、
+対角行列であることから
+\begin{align}
+	|\identity|
+=
+	1
+\end{align}
+である。従って、
+\begin{align}
+	AA^{-1}
+&=
+	\identity \\
+%
+%
+	|AA^{-1}|
+&=
+	|\identity| \\
+%
+%
+	|A||A^{-1}|
+&=
+	1 \\
+%
+%
+	|A^{-1}|
+&=
+	(|A|)^{-1}
+\end{align}
+である。
+
+
+\subsection{(8)問}
+$A\adj{A}=\identity$ならば
+$|A|\conju[1]{|A|}=1$
+である。
+
+\subsection{(8)解}
+\begin{align}
+	A \adj{A}
+&=
+	\identity \\
+%
+%
+	|A \adj{A}|
+&=
+	|\identity| \\
+%
+%
+	|A| |\adj{A}|
+&=
+	1 \\
+%
+%
+	|A| \conju[1]{|A|}
+&=
+	1
+	%
+	\qquad
+	(\because |A|=\conju[1]{|\adj{A}|})
+\end{align}
+
+
+\subsection{(9)問}
+$\adj{U}OU=\Omega$かつ$U^{-1}=\adj{U}$ならば
+$|O|=|\Omega|$である。
+
+\subsection{(9)解}
+\begin{align}
+	|\adj{U} O U|
+&=
+	|\adj{U}| |O| |U| \\
+%
+%
+&=
+	|\adj{U}| |U| |O| \\
+%
+%
+&=
+	|\adj{U}U| |O| \\
+%
+%
+&=
+	|\identity| |O| \\
+%
+%
+&=
+	|O|
+\end{align}
+\begin{align}
+	\therefore
+	|\adj{U}OU|
+=
+	|O|
+=
+	|\Omega|
+\end{align}
+である。
+
