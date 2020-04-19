@@ -1,0 +1,169 @@
+%ファイルID
+%2020/04/20 08:04
+%->2004200804(10進数)->X58Z8K(ファイル作成者)
+%->X58Z8KSahayanKY
+
+\subsection{問}
+固有値問題
+\begin{align}
+	\left[
+	\begin{array}{cc}
+		O_{11} & O_{12} \\
+		O_{21} & O_{22}
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{c}
+			c_1 \\ c_2
+		\end{array}
+		\right]
+&=
+	\omega
+		\left[
+		\begin{array}{c}
+			c_1 \\ c_2
+		\end{array}
+		\right]
+\end{align}
+では、固有ベクトルの成分の比例関係のみが求まり、
+個々の成分の値(ベクトルのノルム)には任意性がある。
+$c_1=1,c_2=c$と置くことで、
+\begin{align}
+	\left\{
+	\begin{array}{rl}
+			O_{11} +O_{12}c
+		&=
+			\omega \\
+		%
+		%
+			O_{21} +O_{22}c
+		&=
+			\omega c
+	\end{array}
+	\right.
+\end{align}
+となる。この方程式から$c$を消して
+得られる2次方程式の解$\omega$が、
+永年方程式を解いて得られる固有値に一致することを示せ。
+その固有値は次の通りである。
+\begin{align}
+	\omega_1
+&=
+	\frac{1}{2}
+		\left(
+			O_{11}
+			+
+			O_{22}
+			-
+			\sqrt{
+				(O_{22}-O_{11})^2
+				+
+				4 O_{12} O_{21}
+			}
+		\right) \\
+%
+%
+	\omega_2
+&=
+	\frac{1}{2}
+		\left(
+			O_{11}
+			+
+			O_{22}
+			+
+			\sqrt{
+				(O_{22}-O_{11})^2
+				+
+				4 O_{12} O_{21}
+			}
+		\right)
+\end{align}
+
+
+\subsection{解}
+\begin{align}
+	O_{11}
+	+
+	O_{12} c
+&=
+	\omega \\
+%
+%
+	c
+&=
+	\frac{\omega-O_{11}}{O_{12}}
+\end{align}
+\begin{align}
+	O_{21}
+	+
+	O_{22} c
+&=
+	\omega c \\
+%
+%
+	O_{21}
+	+
+	O_{22} \cdot \frac{\omega-O_{11}}{O_{12}}
+&=
+	\omega \cdot \frac{\omega-O_{11}}{O_{12}} \\
+%
+%
+	O_{21} O_{12}
+	+
+	O_{22} \omega
+	-
+	O_{22} O_{11}
+&=
+	\omega^2
+	-
+	\omega O_{11} \\
+%
+%
+	\omega^2
+	-
+	(O_{11}+O_{22}) \omega
+	+
+	O_{11} O_{22}
+	-
+	O_{12} O_{21}
+&=
+	0
+\end{align}
+\begin{align}
+	\omega
+&=
+	\frac{1}{2}
+		\left(
+			O_{11}
+			+
+			O_{22}
+			\pm
+			\sqrt{
+				(O_{11}+O_{22})^2
+				-
+				4 (O_{11}O_{22}-O_{12}O_{21})
+			}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			O_{11}
+			+
+			O_{22}
+			\pm
+			\sqrt{
+				(O_{22}-O_{11})^2
+				+
+				4 O_{12} O_{21}
+			}
+		\right)
+\end{align}
+従って、確かに永年方程式で得られた固有値と
+等しい固有値が得られることが言える。
+
+
+
+
+
