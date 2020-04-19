@@ -1,0 +1,82 @@
+%ファイルID
+%2020/04/19 11:17
+%->2004191117(10進数)->X58RRH(ファイル作成者)
+%->X58RRHSahayanKY
+
+\subsection{問}
+次の式を考える。
+\begin{align}
+	OU
+&=
+	U
+		\left[
+		\begin{array}{cc}
+				\begin{array}{cc}
+					\omega_1 &  \\
+					 & \omega_2
+				\end{array}
+				&
+				\bm{0} \\
+			%
+				\bm{0}
+				&
+				\begin{array}{cc}
+					\ddots &    \\
+					 & \omega_N
+				\end{array}
+		\end{array}
+		\right] &
+%
+%
+	U
+&=
+	\left[
+	\begin{array}{cccc}
+		\bm{c}^1 & \bm{c}^2 & \cdots & \bm{c}^N
+	\end{array}
+	\right]
+\end{align}
+この式が$\alpha=1,2,\cdots,N$についての
+下の式を含むことを示せ。
+\begin{align}
+	O \bm{c}^{\alpha}
+&=
+	\omega_{\alpha} \bm{c}^{\alpha}
+\end{align}
+
+
+\subsection{解}
+\begin{align}
+	OU
+&=
+	O
+		\left[
+		\begin{array}{cccc}
+			\bm{c}^1 & \bm{c}^2 & \cdots & \bm{c}^N
+		\end{array}
+		\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cccc}
+		O\bm{c}^1 & O\bm{c}^2 & \cdots & O\bm{c}^N
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	U {\rm diag}(\omega_1,\omega_2,\cdots,\omega_N)
+&=
+	\left[
+	\begin{array}{cccc}
+		\omega_1\bm{c}^1 & \omega_2\bm{c}^2 & \cdots & \omega_N\bm{c}^N
+	\end{array}
+	\right]
+\end{align}
+である。従って、それぞれの行列の列を比較することで、
+\begin{align}
+	O\bm{c}^{\alpha}
+&=
+	\omega_{\alpha}\bm{c}^{\alpha}
+\end{align}
+となる。
