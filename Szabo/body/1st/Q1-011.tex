@@ -1,0 +1,553 @@
+%ファイルID
+%2020/04/20 08:27
+%->2004200827(10進数)->X58Z97(ファイル作成者)
+%->X58Z97SahayanKY
+次の2つの行列について、
+固有値、固有ベクトルを指定の方法で求めよ。
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{cc}
+		3 & 1 \\
+		1 & 3
+	\end{array}
+	\right] &
+%
+%
+	B
+&=
+	\left[
+	\begin{array}{cc}
+		3 & 1 \\
+		1 & 2
+	\end{array}
+	\right]
+\end{align}
+
+\subsection{(a)問}
+永年行列式を利用して求めよ。
+
+\subsection{(a)解}
+まず行列$A$について考える。
+固有値を$\omega$として、
+永年方程式及び固有値は
+\begin{align}
+	|A-\omega\identity|
+&=
+	0 \\
+%
+%
+	\left|
+	\begin{array}{cc}
+		3-\omega & 1 \\
+		1 & 3-\omega
+	\end{array}
+	\right|
+&=
+	0 \\
+%
+%
+	\omega^2
+	-
+	6\omega
+	+
+	8
+&=
+	0 \\
+%
+%
+	\omega
+&=
+	3
+	\pm
+	1
+=
+	4,\ 2
+\end{align}
+である。
+
+固有値$\omega$が4のときは、
+\begin{align}
+	A\bm{c}
+&=
+	4\bm{c} \\
+%
+%
+	\left[
+	\begin{array}{cc}
+		-1 & 1 \\
+		1 & -1
+	\end{array}
+	\right] \bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\bm{c}
+&=
+	C
+		\left[
+		\begin{array}{c}
+			1 \\ 1
+		\end{array}
+		\right]
+	%
+	\qquad
+	(C\in\mathbb{R})
+\end{align}
+一方で$\omega$が2のときには、
+\begin{align}
+	A\bm{c}
+&=
+	2\bm{c} \\
+%
+%
+	\left[
+	\begin{array}{cc}
+		1 & 1 \\
+		1 & 1
+	\end{array}
+	\right] \bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\bm{c}
+&=
+	C
+		\left[
+		\begin{array}{c}
+			1 \\ -1
+		\end{array}
+		\right]
+	%
+	\qquad
+	(C\in\mathbb{R})
+\end{align}
+である。
+
+次に行列$B$について考える。
+同様に永年方程式とその固有値$\omega$は
+\begin{align}
+	|B-\omega\identity|
+&=
+	0 \\
+%
+%
+	\left|
+	\begin{array}{cc}
+		3-\omega & 1 \\
+		1 & 2-\omega
+	\end{array}
+	\right|
+&=
+	0 \\
+%
+%
+	\omega^2
+	-
+	5\omega
+	+
+	5
+&=
+	0 \\
+%
+%
+	\omega
+&=
+	\frac{1}{2}
+		\left(
+			5
+			\pm
+			\sqrt{5}
+		\right)
+\end{align}
+である。$\omega=\frac{5}{2}+\frac{\sqrt{5}}{2}$のとき
+固有ベクトルは
+\begin{align}
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2}-\frac{\sqrt{5}}{2} & 1 \\
+		1 & -\frac{1}{2}-\frac{\sqrt{5}}{2}
+	\end{array}
+	\right]
+		\bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2}-\frac{\sqrt{5}}{2} & 1 \\
+		\frac{1}{2}-\frac{\sqrt{5}}{2} & 1
+	\end{array}
+	\right]
+		\bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\bm{c}
+&=
+	C
+		\left[
+		\begin{array}{c}
+			1 \\ -\frac{1}{2}+\frac{\sqrt{5}}{2}
+		\end{array}
+		\right]
+	%
+	\qquad
+	(C\in\mathbb{R})
+\end{align}
+$\omega=\frac{5}{2}-\frac{\sqrt{5}}{2}$のとき
+固有ベクトルは
+\begin{align}
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2}+\frac{\sqrt{5}}{2} & 1 \\
+		1 & -\frac{1}{2}+\frac{\sqrt{5}}{2}
+	\end{array}
+	\right]
+		\bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2}+\frac{\sqrt{5}}{2} & 1 \\
+		\frac{1}{2}+\frac{\sqrt{5}}{2} & 1
+	\end{array}
+	\right]
+		\bm{c}
+&=
+	\bm{0} \\
+%
+%
+	\bm{c}
+&=
+	C
+		\left[
+		\begin{array}{c}
+			1 \\ -\frac{1}{2}-\frac{\sqrt{5}}{2}
+		\end{array}
+		\right]
+	%
+	\qquad
+	(C\in\mathbb{R})
+\end{align}
+
+\subsection{(b)問}
+ユニタリー変換を使う方法で求めよ。
+
+\subsection{(b)解}
+まず、行列$A$について考える。
+行列$U$を次の通りに置く。
+\begin{align}
+	U
+&=
+	\left[
+	\begin{array}{cc}
+		\cos\theta & \sin\theta \\
+		\sin\theta & -\cos\theta
+	\end{array}
+	\right]
+\end{align}
+このとき、$\adj{U}AU$が対角行列となる$\theta$は
+\begin{align}
+	\frac{1}{2}
+		(A_{11}-A_{22})
+		\sin 2\theta
+	-
+	A_{12}
+		\cos 2\theta
+&=
+	0 \\
+%
+%
+	\cos 2\theta
+&=
+	0 \\
+%
+%
+	\theta
+&=
+	\frac{\pi}{4}
+\end{align}
+である。更に、固有値は
+\begin{align}
+	\omega_1
+&=
+	A_{11} \cos^2\theta
+	+
+	A_{22} \sin^2\theta
+	+
+	A_{12} \sin 2\theta \\
+%
+%
+&=
+	3 \cdot \left(\frac{1}{\sqrt{2}}\right)^2
+	+
+	3 \cdot \left(\frac{1}{\sqrt{2}}\right)^2
+	+
+	1 \cdot 1 \\
+%
+%
+&=
+	4
+\end{align}
+\begin{align}
+	\omega_2
+&=
+	A_{11} \sin^2\theta
+	+
+	A_{22} \cos^2\theta
+	-
+	A_{12} \sin 2\theta \\
+%
+%
+&=
+	3 \cdot \left(\frac{1}{\sqrt{2}}\right)^2
+	+
+	3 \cdot \left(\frac{1}{\sqrt{2}}\right)^2
+	-
+	1 \cdot 1 \\
+%
+%
+&=
+	2
+\end{align}
+である。また、それぞれの固有ベクトルは
+\begin{align}
+	\left[
+	\begin{array}{c}
+		\cos\theta \\ \sin\theta
+	\end{array}
+	\right]
+&=
+	\frac{1}{\sqrt{2}}
+		\left[
+		\begin{array}{c}
+			1 \\ 1
+		\end{array}
+		\right] &
+%
+%
+	\left[
+	\begin{array}{c}
+		\sin\theta \\ -\cos\theta
+	\end{array}
+	\right]
+&=
+	\frac{1}{\sqrt{2}}
+		\left[
+		\begin{array}{c}
+			1 \\ -1
+		\end{array}
+		\right]
+\end{align}
+である。
+
+次に行列$B$について考える。
+同様に行列$U$を置くと、
+行列$\adj{U}BU$が対角行列となる$\theta$は
+\begin{align}
+	\frac{1}{2}
+		(B_{11}-B_{22})
+		\sin 2\theta
+	-
+	B_{12}
+		\cos 2\theta
+&=
+	0 \\
+%
+%
+	\frac{1}{2}
+		\sin 2\theta
+	-
+	\cos 2\theta
+&=
+	0 \\
+%
+%
+	\tan 2\theta
+&=
+	2 \\
+%
+%
+	\frac{
+		\sin^2 2\theta
+	}{
+		1
+		-
+		\sin^2 2\theta
+	}
+&=
+	4 \\
+%
+%
+	\sin^2 2\theta
+&=
+	\frac{4}{5} \\
+%
+%
+	\cos^2 2\theta
+&=
+	\frac{1}{5}
+\end{align}
+\begin{align}
+	\cos 2\theta
+&=
+	\frac{1}{\sqrt{5}} \\
+%
+%
+	2\cos^2 \theta
+	-
+	1
+&=
+	\frac{\sqrt{5}}{5} \\
+%
+%
+	\cos^2 \theta
+&=
+	\frac{5+\sqrt{5}}{10} \\
+%
+%
+	\sin^2 \theta
+&=
+	\frac{5-\sqrt{5}}{10}
+\end{align}
+\begin{align}
+	\sin 2\theta
+&=
+	\sqrt{\frac{4}{5}}
+=
+	\frac{2\sqrt{5}}{5}
+\end{align}
+である。よって、固有値は
+\begin{align}
+	\omega_1
+&=
+	B_{11} \cos^2 \theta
+	+
+	B_{22} \sin^2 \theta
+	+
+	B_{12} \sin 2\theta \\
+%
+%
+&=
+	3 \cdot \frac{5+\sqrt{5}}{10}
+	+
+	2 \cdot \frac{5-\sqrt{5}}{10}
+	+
+	1 \cdot \frac{2\sqrt{5}}{5} \\
+%
+%
+&=
+	\frac{
+		25
+		+
+		5\sqrt{5}
+	}{
+		10
+	} \\
+%
+%
+&=
+	\frac{5+\sqrt{5}}{2} \\
+%
+%
+	\omega_2
+&=
+	B_{11} \sin^2 \theta
+	+
+	B_{22} \cos^2 \theta
+	-
+	B_{12} \sin 2\theta \\
+%
+%
+&=
+	3 \cdot \frac{5-\sqrt{5}}{10}
+	+
+	2 \cdot \frac{5+\sqrt{5}}{10}
+	-
+	1 \cdot \frac{2\sqrt{5}}{5} \\
+%
+%
+&=
+	\frac{
+		25
+		-
+		5\sqrt{5}
+	}{
+		10
+	} \\
+%
+%
+&=
+	\frac{5-\sqrt{5}}{2}
+\end{align}
+である。また、
+\begin{align}
+	\tan^2 \theta
+&=
+	\frac{
+		\frac{5-\sqrt{5}}{10}
+	}{
+		\frac{5+\sqrt{5}}{10}
+	} \\
+%
+%
+&=
+	\frac{
+		(5-\sqrt{5})^2
+	}{
+		20
+	} \\
+%
+%
+	\tan \theta
+&=
+	\frac{
+		5-\sqrt{5}
+	}{
+		2\sqrt{5}
+	} \\
+%
+%
+&=
+	\frac{
+		-1+\sqrt{5}
+	}{
+		2
+	}
+\end{align}
+であることから、それぞれの固有ベクトルは
+\begin{align}
+	\left[
+	\begin{array}{c}
+		1 \\ \tan\theta
+	\end{array}
+	\right]
+&=
+	\left[
+	\begin{array}{c}
+		1 \\ \frac{-1+\sqrt{5}}{2}
+	\end{array}
+	\right] &
+%
+%
+	\left[
+	\begin{array}{c}
+		\tan\theta \\ -1
+	\end{array}
+	\right]
+&=
+	\left[
+	\begin{array}{c}
+		\frac{-1+\sqrt{5}}{2} \\ -1
+	\end{array}
+	\right]
+\end{align}
+である。
