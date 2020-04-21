@@ -1,0 +1,151 @@
+%ファイルID
+%2020/04/22 06:28
+%->2004220628(10進数)->X59EJ8(ファイル作成者)
+%->X59EJ8SahayanKY
+\subsection{問}
+行列$A$が
+\begin{align}
+	A
+&=
+	\left[
+	\begin{array}{cc}
+		a & b \\
+		b & a
+	\end{array}
+	\right]
+\end{align}
+であるとき、
+\begin{align}
+	f(A)
+&=
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2}(f(a+b)+f(a-b)) &
+		%
+		\frac{1}{2}(f(a+b)-f(a-b)) \\
+	%
+		\frac{1}{2}(f(a+b)-f(a-b)) &
+		%
+		\frac{1}{2}(f(a+b)+f(a-b))
+	\end{array}
+	\right]
+\end{align}
+であることを示せ。
+
+\subsection{解}
+まず$A$を対角化する。固有ベクトルと対応する固有値は
+\begin{align}
+	\bm{c}^{1}
+&=
+	\frac{1}{\sqrt{2}}
+		\left[
+		\begin{array}{c}
+			1 \\ 1
+		\end{array}
+		\right] &
+%
+%
+	\omega_1
+&=
+	a+b \\
+%
+%
+	\bm{c}^2
+&=
+	\frac{1}{\sqrt{2}}
+		\left[
+		\begin{array}{c}
+			1 \\ -1
+		\end{array}
+		\right] &
+%
+%
+	\omega_2
+&=
+	a-b
+\end{align}
+である。従って、ユニタリー行列$U,\adj{U}$と対角行列$\bm{a}$は
+\begin{align}
+	U
+&=
+	\frac{1}{\sqrt{2}}
+	\left[
+	\begin{array}{cc}
+		1 & 1 \\
+		1 & -1
+	\end{array}
+	\right]
+=
+	\adj{U} &
+%
+%
+	\bm{a}
+&=
+	\left[
+	\begin{array}{cc}
+		a+b & 0 \\
+		0 & a-b
+	\end{array}
+	\right]
+\end{align}
+である。
+従って、
+\begin{align}
+	f(A)
+&=
+	U f(\bm{a}) \adj{U} \\
+%
+%
+&=
+	\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			1 & 1 \\
+			1 & -1
+		\end{array}
+		\right]
+		\left[
+		\begin{array}{cc}
+			f(a+b) & 0 \\
+			0 & f(a-b)
+		\end{array}
+		\right]
+		\left[
+		\begin{array}{cc}
+			1 & 1 \\
+			1 & -1
+		\end{array}
+		\right] \\
+%
+%
+&=
+	\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			f(a+b) & f(a-b) \\
+			f(a+b) & -f(a-b)
+		\end{array}
+		\right]
+		\left[
+		\begin{array}{cc}
+			1 & 1 \\
+			1 & -1
+		\end{array}
+		\right] \\
+%
+%
+&=
+	\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			f(a+b)+f(a-b) &
+			%
+			f(a+b)-f(a-b) \\
+		%
+			f(a+b)-f(a-b) &
+			%
+			f(a+b)+f(a-b)
+		\end{array}
+		\right]
+\end{align}
+となる。
