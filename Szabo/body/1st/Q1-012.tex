@@ -1,0 +1,308 @@
+%ファイルID
+%2020/04/21 22:07
+%->2004212207(10進数)->X5981B(ファイル作成者)
+%->X5981BSahayanKY
+次の関係を与える。
+\begin{align}
+	\adj{U} AU
+=
+	\bm{a}
+=
+	\left[
+	\begin{array}{cc}
+		\begin{array}{cc}
+			a_1 &  \\
+			 & a_2
+		\end{array} &
+		%
+		\bm{0} \\
+	%
+		\bm{0} &
+		%
+		\begin{array}{cc}
+			\ddots &  \\
+			 & a_N
+		\end{array}
+	\end{array}
+	\right]
+\end{align}
+もしくは
+\begin{align}
+	A\bm{c}^{\alpha}
+&=
+	a_{\alpha}\bm{c}^{\alpha}
+	%
+	\qquad
+	(\alpha=1,2,\cdots,N)
+\end{align}
+
+\subsection{(a)問}
+次の等式を証明せよ。
+\begin{align}
+	|A^n|
+&=
+	a_1^n a_2^n \cdots a_N^n
+\end{align}
+
+\subsection{(a)解}
+\begin{align}
+	\left(\adj{U}AU\right)^n
+&=
+	\bm{a}^n \\
+%
+%
+	\adj{U} A^n U
+&=
+	\bm{a}^n
+=
+	\left[
+	\begin{array}{cc}
+		\begin{array}{cc}
+			a_1^n & \\
+			& a_2^n
+		\end{array} &
+		%
+		\bm{0} \\
+	%
+		\bm{0} &
+		%
+		\begin{array}{cc}
+			\ddots &  \\
+			 & a_N^n
+		\end{array}
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	|\adj{U} A^n U|
+&=
+	|\bm{a}^n| \\
+%
+%
+	|\adj{U}| |A^n| |U|
+&=
+	a_1^n a_2^n \cdots a_N^n \\
+%
+%
+	|\identity| |A^n|
+&= \\
+%
+%
+	|A^n|
+&=
+	a_1^n a_2^n \cdots a_N^n
+\end{align}
+
+
+\subsection{(b)問}
+次の等式を証明せよ。
+\begin{align}
+	\tr[1]{A^n}
+&=
+	\sum_{\alpha=1}^N
+		a_{\alpha}^n
+\end{align}
+
+
+\subsection{(b)解}
+\begin{align}
+	\adj{U} A^n U
+&=
+	\bm{a}^n \\
+%
+%
+	\tr[1]{\adj{U} A^n U}
+&=
+	\tr[1]{\bm{a}^n} \\
+%
+%
+	\tr[1]{A^n U \adj{U}}
+&=
+	\tr[1]{{\rm diag}(a_1^n,a_2^n,\cdots,a_N^n)}
+	%
+	\qquad
+	(\because \tr[1]{AB}=\tr[1]{BA}) \\
+%
+%
+	\tr[1]{A^n}
+&=
+	\sum_{\alpha=1}^N
+		a_{\alpha}^n
+\end{align}
+
+
+\subsection{(c)問}
+$G(\omega)=(\omega\identity-A)^{-1}$のとき、
+\begin{align}
+	(G(\omega))_{ij}
+=
+	\sum_{\alpha=1}^N
+		\frac{
+			U_{i\alpha} \conju{U_{j\alpha}}
+		}{
+			\omega-a_{\alpha}
+		}
+=
+	\sum_{\alpha=1}^N
+		\frac{
+			c_{i}^{\alpha} \conju{c_{j}^{\alpha}}
+		}{
+			\omega-a_{\alpha}
+		}
+\end{align}
+であることを示せ。加えて、
+\begin{align}
+	(G(\omega))_{ij}
+=
+	\Braket{i|\mathscr{G}(\omega)|j}
+=
+	\sum_{\alpha=1}^N
+		\frac{
+			\Braket{i|\alpha}
+				\Braket{\alpha|j}
+		}{
+			\omega-a_{\alpha}
+		}
+\end{align}
+であることも示せ。
+
+\subsection{(c)解}
+$\adj{U}AU=\bm{a}$より、$A=U\bm{a}\adj{U}$である。
+従って、$B=\omega\identity-A$の逆行列$B^{-1}=G$は
+\begin{align}
+	BB^{-1}
+&=
+	\identity \\
+%
+%
+	(\omega\identity-U\bm{a}\adj{U})
+		G
+&=
+	\identity \\
+%
+%
+	U(\omega\identity-\bm{a})\adj{U}
+		G
+&=
+	\identity
+\end{align}
+$\omega\identity-\bm{a}$の逆行列が存在する場合、
+\begin{align}
+	U(\omega\identity-\bm{a})\adj{U}
+		G
+&=
+	\identity \\
+%
+%
+	(\omega\identity-\bm{a})\adj{U}
+		G
+&=
+	\adj{U} \identity
+=
+	\adj{U} \\
+%
+%
+	\adj{U}
+		G
+&=
+	(\omega\identity-\bm{a})^{-1} \adj{U} \\
+%
+%
+	G
+&=
+	U (\omega\identity-\bm{a})^{-1} \adj{U}
+\end{align}
+である。$\omega\identity-\bm{a}$は対角行列であるので、
+その逆行列は
+\begin{align}
+	(\omega\identity-\bm{a})^{-1}
+&=
+	\left[
+	\begin{array}{cc}
+		\begin{array}{cc}
+			(\omega-a_1)^{-1} & \\
+			 & (\omega-a_2)^{-1}
+		\end{array} &
+		%
+		\bm{0} \\
+	%
+		\bm{0} &
+		%
+		\begin{array}{cc}
+			\ddots & \\
+			 & (\omega-a_N)^{-1}
+		\end{array}
+	\end{array}
+	\right]
+\end{align}
+従って、
+\begin{align}
+	(G(\omega))_{ij}
+&=
+	\sum_{\alpha}
+		U_{i\alpha} (\omega-a_\alpha)^{-1} \adj{U}_{\alpha j} \\
+%
+%
+&=
+	\sum_{\alpha}
+		\frac{
+			U_{i\alpha} \conju{U_{j\alpha}}
+		}{
+			\omega-a_{\alpha}
+		}
+\end{align}
+である。更に、
+$U=[\bm{c}^1\ \bm{c}^2\ \cdots\ \bm{c}^N]$より、
+$U_{ij}=c_{i}^{j}$であるから、
+\begin{align}
+	(G(\omega))_{ij}
+&=
+	\sum_{\alpha}
+		\frac{
+			c_{i}^{\alpha} \conju{c_{j}^{\alpha}}
+		}{
+			\omega-a_{\alpha}
+		}
+\end{align}
+となる。
+
+次に2つ目の式の証明に移る。
+$\mathscr{G}$の固有ケットを$\ket{\alpha}$とするとき、
+行列$G$を対角化して得られる対角行列が
+$(\omega\identity-\bm{a})^{-1}$であることから、
+\begin{align}
+	\mathscr{G}(\omega) \ket{\alpha}
+&=
+	(\omega-a_{\alpha})^{-1} \ket{\alpha}
+\end{align}
+となる。(もしくは$\ket{\alpha}$をこのように定義する)
+従って、
+\begin{align}
+	(G(\omega))_{ij}
+&=
+	\Braket{i|\mathscr{G}|j} \\
+%
+%
+&=
+	\sum_{\alpha}
+		\Braket{i|\mathscr{G}|\alpha}
+			\Braket{\alpha|j} \\
+%
+%
+&=
+	\sum_{\alpha}
+		\Braket{i|(\omega-a_{\alpha})^{-1}|\alpha}
+			\Braket{\alpha|j} \\
+%
+%
+&=
+	\sum_{\alpha}
+		\frac{
+			\Braket{i|\alpha} \Braket{\alpha|j}
+		}{
+			\omega-a_{\alpha}
+		}
+\end{align}
+
+
+
