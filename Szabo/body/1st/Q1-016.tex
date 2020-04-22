@@ -1,0 +1,136 @@
+%ファイルID
+%2020/04/22 22:44
+%->2004222244(10進数)->X59FS4(ファイル作成者)
+%->X59FS4SahayanKY
+\subsection{問}
+固有値問題
+\begin{align}
+	\mathscr{O} \phi
+&=
+	\omega \phi
+\end{align}
+を考える。完全系$\psi_i$で$\phi$を
+\begin{align}
+	\phi
+&=
+	\sum_i c_i \psi_i
+\end{align}
+と展開すると、この問題は行列の固有値問題
+\begin{align}
+	O\bm{c}
+&=
+	\omega\bm{c}
+\end{align}
+と等価になることを示せ。
+その証明の方法として、
+ブラケット記法を使う方法と
+使わない方法の2通りを示せ。
+
+
+\subsection{解}
+まず、ブラケット記法を使わずに示す。
+\begin{align}
+	\mathscr{O}\phi
+&=
+	\omega\phi \\
+%
+%
+	\mathscr{O}\left(
+		\sum_j c_j \psi_j
+	\right)
+&=
+	\omega\left(
+		\sum_i c_i \psi_i
+	\right) \\
+%
+%
+	\int \d x\
+		\conju{\psi_k}
+			\mathscr{O}\left(
+				\sum_j c_j \psi_j
+			\right)
+&=
+	\int \d x\
+		\conju{\psi_k}
+			\omega\left(
+				\sum_i c_i \psi_i
+			\right) \\
+%
+%
+	\sum_j
+		c_j\left(
+			\int \d x\
+				\conju{\psi_k}\mathscr{O}\psi_j
+		\right)
+&=
+	\omega
+		\sum_i
+			c_i\left(
+				\int \d x\
+					\conju{\psi_k}\psi_i
+			\right) \\
+%
+%
+	\sum_j
+		c_j O_{kj}
+&=
+	\omega
+		\sum_i
+			c_i \delta_{ki} \\
+%
+%
+	\sum_j
+		O_{ij} c_j
+&=
+	\omega c_i
+\end{align}
+である。これは即ち行列の固有値問題に他ならない。
+従って、確かに関数の固有値問題は行列の固有値問題に
+書き換えることが可能である。
+
+次にブラケット記法を用いて示す。
+\begin{align}
+	\mathscr{O}\ket{\phi}
+&=
+	\omega\ket{\phi} \\
+%
+%
+	\mathscr{O}\left(
+		\sum_j c_j \ket{j}
+	\right)
+&=
+	\omega\left(
+		\sum_i c_i \ket{i}
+	\right) \\
+%
+%
+	\sum_j
+		c_j \mathscr{O}\ket{j}
+&=
+	\sum_i
+		\omega c_i \ket{i} \\
+%
+%
+	\sum_j
+		c_j \Braket{k|\mathscr{O}|j}
+&=
+	\sum_i
+		\omega c_i \Braket{k|i} \\
+%
+%
+	\sum_j
+		c_j O_{kj}
+&=
+	\sum_i
+		\omega c_i \delta_{ki} \\
+%
+%
+	\sum_j
+		O_{ij} c_j
+&=
+	\omega c_i
+\end{align}
+従って、ブラケット記法でも同様である。
+
+
+
