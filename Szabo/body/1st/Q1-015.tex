@@ -1,0 +1,90 @@
+%ファイルID
+%2020/04/22 22:07
+%->2004222207(10進数)->X59FR3(ファイル作成者)
+%->X59FR3SahayanKY
+\subsection{問}
+基底関数$\{\psi_i(x)\}$における
+演算子$\mathscr{O}$の表現行列$O_{ij}$を考える。
+つまり、
+\begin{align}
+	\mathscr{O} \psi_i(x)
+&=
+	\sum_j \psi_j(x) O_{ji}
+	%
+	\label{eqX59FR3SahayanKY_expressionMatrix}
+\end{align}
+とするときに、
+\begin{align}
+	O_{ji}
+&=
+	\int \d x\
+		\conju{\psi_j}(x) \mathscr{O} \psi_i(x)
+\end{align}
+であることを示せ。
+
+また、式\ref{eqX59FR3SahayanKY_expressionMatrix}を
+ブラケット記法に書き換えると
+\begin{align}
+	\mathscr{O}\ket{i}
+&=
+	\sum_j
+		\ket{j}\braket{j|\mathscr{O}|i}
+\end{align}
+となることも示せ。
+
+
+\subsection{解}
+$\psi_i(x)$が正規直交基底であることから、
+\begin{align}
+	\int \d x\
+		\conju{\psi_k} \mathscr{O} \psi_i
+&=
+	\int \d x\
+		\conju{\psi_k}
+			\left(
+				\sum_j
+					\psi_j O_{ji}
+			\right) \\
+%
+%
+&=
+	\sum_j
+		\int \d x\
+			\conju{\psi_k} \psi_j O_{ji} \\
+%
+%
+&=
+	\sum_j
+		\delta_{kj} O_{ji} \\
+%
+%
+&=
+	O_{ki}
+\end{align}
+従って、
+\begin{align}
+	O_{ji}
+&=
+	\int \d x\
+		\conju{\psi_j} \mathscr{O} \psi_i
+\end{align}
+となる。
+
+
+また、この右辺はブラケット記法により、
+\begin{align}
+	O_{ji}
+&=
+	\braket{j|\mathscr{O}|i}
+\end{align}
+となるため、
+\begin{align}
+	\mathscr{O} \ket{i}
+&=
+	\sum_j \ket{j} O_{ji} \\
+%
+%
+&=
+	\sum_j \ket{j} \braket{j|\mathscr{O}|i}
+\end{align}
+である。
