@@ -1,0 +1,118 @@
+%ファイルID
+%2020/04/22 16:33
+%->2004221633(10進数)->X59FB5(ファイル作成者)
+%->X59FB5SahayanKY
+\subsection{問}
+デルタ関数$\delta(x)$は次のように書くことができる。
+\begin{align}
+	\delta(x)
+&=
+	\lim_{\epsilon \rightarrow +0}
+		\delta_{\epsilon}(x) &
+%
+%
+	\delta_{\epsilon}(x)
+&=
+	\left\{
+	\begin{array}{ll}
+		\frac{1}{2\epsilon} &
+		%
+		(-\epsilon\leq x\leq \epsilon) \\
+	%
+		0 &
+		%
+		(\text{otherwise})
+	\end{array}
+	\right.
+\end{align}
+このとき、次の式を示せ。
+\begin{align}
+	a(0)
+&=
+	\int_{-\infty}^{\infty} \d x\
+		a(x) \delta(x)
+\end{align}
+
+
+\subsection{解}
+極限と積分が可換であることを仮定すれば、
+\begin{align}
+	\int_{-\infty}^{\infty} \d x\
+		a(x) \delta(x)
+%
+%
+&=
+	\int_{-\infty}^{\infty} \d x\
+		a(x)
+			\lim_{\epsilon\rightarrow +0}
+				\delta_{\epsilon}(x) \\
+%
+%
+&=
+	\lim_{\epsilon\rightarrow +0}
+		\int_{-\infty}^{\infty} \d x\
+			a(x) \delta_{\epsilon}(x) \\
+%
+%
+&=
+	\lim_{\epsilon\rightarrow +0}
+		\int_{-\epsilon}^{\epsilon} \d x\
+			a(x) \frac{1}{2\epsilon} \\
+%
+%
+&=
+	\lim_{\epsilon\rightarrow +0}
+		\frac{1}{2\epsilon}
+			\int_{-\epsilon}^{\epsilon} \d x\
+				a(x)
+\end{align}
+ここで、$A(x)$を$a(x)$の原始関数とすると、
+\begin{align}
+&=
+	\lim_{\epsilon\rightarrow +0}
+		\frac{1}{2\epsilon}
+			\left[A(x)\right]_{-\epsilon}^{\epsilon} \\
+%
+%
+&=
+	\lim_{\epsilon\rightarrow +0}
+		\frac{
+			A(\epsilon)
+			-
+			A(-\epsilon)
+		}{
+			2\epsilon
+		} \\
+%
+%
+&=
+	\frac{1}{2}
+		\lim_{\epsilon\rightarrow +0}\left(
+			\frac{A(\epsilon)-A(0)}{\epsilon}
+			+
+			\frac{A(0)-A(-\epsilon)}{\epsilon}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			\frac{\d A}{\d x}(0)
+			+
+			\frac{\d A}{\d x}(0)
+		\right) \\
+%
+%
+&=
+	a(0)
+\end{align}
+従って、
+\begin{align}
+	a(0)
+&=
+	\int_{-\infty}^{\infty} \d x\
+		a(x) \delta(x)
+\end{align}
+である。
+
+
