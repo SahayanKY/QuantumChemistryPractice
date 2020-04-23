@@ -1,0 +1,307 @@
+%ファイルID
+%2020/04/23 23:04
+%->2004232304(10進数)->X59NJK(ファイル作成者)
+%->X59NJKSahayanKY
+\subsection{問}
+ポテンシャル$-\delta(x)$のもとに1次元運動する
+1つの電子の\Schrodinger 方程式は
+\begin{align}
+	\left(
+		-
+		\frac{1}{2}\frac{\d^2}{\d x^2}
+		-
+		\delta(x)
+	\right)\ket{\Phi}
+&=
+	\mathscr{E}\ket{\Phi}
+\end{align}
+である。
+
+試行関数
+\begin{align}
+	\ket{\tilde{\Phi}}
+&=
+	N \exp(-\alpha x^2)
+\end{align}
+で変分法による計算を行い、
+得られるエネルギーが$-\pi^{-1}$であることを示せ。
+また、それが正確な基底状態のエネルギーの
+$-0.5$より大きいことを示せ。
+
+なお、積分公式として
+\begin{align}
+	\int_{-\infty}^{\infty} \d x\
+		x^{2m} \exp(-\alpha x^2)
+&=
+	\frac{
+		(2m)! \pi^{\frac{1}{2}}
+	}{
+		2^{2m} m! \alpha^{m+\frac{1}{2}}
+	}
+\end{align}
+を用いてもよい。
+
+\subsection{解}
+エネルギーの期待値は
+\begin{align}
+	\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+&=
+	\int_{-\infty}^{\infty} \d x\
+		\conju{\tilde{\Phi}}(x) \mathscr{H} \tilde{\Phi}(x) \\
+%
+%
+&=
+	\int_{-\infty}^{\infty} \d x\
+		\left(
+			\conju{N} \exp(-\alpha x^2)
+		\right)
+			\mathscr{H}
+			\left(
+				N \exp(-\alpha x^2)
+			\right) \\
+%
+%
+&=
+	|N|^2
+		\int_{-\infty}^{\infty} \d x\
+			\exp(-\alpha x^2)
+				\left(
+					-
+					\frac{1}{2}\frac{\d^2}{\d x^2}
+					-
+					\delta(x)
+				\right)
+				\exp(-\alpha x^2) \\
+%
+%
+&=
+	|N|^2
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			-
+			\frac{1}{2}
+				\int_{-\infty}^{\infty} \d x\
+					\exp(-\alpha x^2)
+						\frac{\d}{\d x}\left(
+							\exp(-\alpha x^2)(-2\alpha x)
+						\right) \\\quad
+			-
+			\int_{-\infty}^{\infty} \d x\
+				\delta(x) \exp(-2\alpha x^2)
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			-
+			\frac{1}{2}
+				\int_{-\infty}^{\infty} \d x\
+					\exp(-2\alpha x^2) (-2\alpha x)^2 \\\quad
+			-
+			\frac{1}{2}
+				\int_{-\infty}^{\infty} \d x\
+					\exp(-2\alpha x^2) (-2\alpha) \\\quad
+			-
+			1
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left\{
+			-
+			2\alpha^2 \cdot
+				\frac{
+					2!\ \pi^{\frac{1}{2}}
+				}{
+					2^2\ 1!\ (2\alpha)^{\frac{3}{2}}
+				}
+			+
+			\alpha \cdot
+				\frac{
+					0!\ \pi^{\frac{1}{2}}
+				}{
+					2^0\ 0!\ (2\alpha)^{\frac{1}{2}}
+				}
+			-
+			1
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left\{
+			-
+			2\alpha^2 \cdot
+				\frac{
+					2 \pi^{\frac{1}{2}}
+				}{
+					4 \cdot 2^{\frac{3}{2}} \cdot \alpha^{\frac{3}{2}}
+				}
+			+
+			\alpha \cdot
+				\frac{
+					\pi^{\frac{1}{2}}
+				}{
+					2^{\frac{1}{2}} \cdot \alpha^{\frac{1}{2}}
+				}
+			-
+			1
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left\{
+			-
+			2^{-\frac{3}{2}} \alpha^{\frac{1}{2}} \pi^{\frac{1}{2}}
+			+
+			2^{-\frac{1}{2}} \alpha^{\frac{1}{2}} \pi^{\frac{1}{2}}
+			-
+			1
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left\{
+			2^{-\frac{3}{2}} \alpha^{\frac{1}{2}} \pi^{\frac{1}{2}}
+				\left(
+					-1
+					+2
+				\right)
+			-
+			1
+		\right\} \\
+%
+%
+&=
+	|N|^2
+		\left(
+			2^{-\frac{3}{2}} \alpha^{\frac{1}{2}} \pi^{\frac{1}{2}}
+			-
+			1
+		\right)
+\end{align}
+である。また、規格化条件により、
+\begin{align}
+	\braket{\tilde{\Phi}|\tilde{\Phi}}
+&=
+	1 \\
+%
+%
+	|N|^2
+		\int_{-\infty}^{\infty} \d x\
+			\exp(-2\alpha x^2)
+&=
+	1 \\
+%
+%
+	|N|^2 \cdot
+		\frac{
+			\pi^{\frac{1}{2}}
+		}{
+			2^{\frac{1}{2}} \alpha^{\frac{1}{2}}
+		}
+&=
+	1 \\
+%
+%
+	|N|^2
+&=
+	\frac{
+		2^{\frac{1}{2}} \alpha^{\frac{1}{2}}
+	}{
+		\pi^{\frac{1}{2}}
+	}
+\end{align}
+である。従って、期待値の極小値は、
+$\alpha$で微分してゼロになるときにとるため
+\begin{align}
+	\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+&=
+	\frac{
+		2^{\frac{1}{2}} \alpha^{\frac{1}{2}}
+	}{
+		\pi^{\frac{1}{2}}
+	}
+		\left(
+			2^{-\frac{3}{2}} \alpha^{\frac{1}{2}} \pi^{\frac{1}{2}}
+			-
+			1
+		\right) \\
+%
+%
+&=
+	2^{-1} \alpha
+	-
+	2^{\frac{1}{2}} \pi^{-\frac{1}{2}} \alpha^{\frac{1}{2}} \\
+%
+%
+	\frac{\d}{\d \alpha}\left(
+		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\right)
+&=
+	0 \\
+%
+%
+	2^{-1}
+	-
+	2^{-\frac{1}{2}} \pi^{-\frac{1}{2}} \alpha^{-\frac{1}{2}}
+&=
+	0 \\
+%
+%
+	\alpha^{-\frac{1}{2}}
+&=
+	2^{-\frac{1}{2}} \pi^{\frac{1}{2}} \\
+%
+%
+	\alpha
+&=
+	2 \pi^{-1}
+\end{align}
+\begin{align}
+	\min\left(
+		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\right)
+&=
+	2^{-1} \cdot 2\pi^{-1}
+	-
+	2^{\frac{1}{2}} \pi^{-\frac{1}{2}} \cdot 2^{\frac{1}{2}} \pi^{-\frac{1}{2}} \\
+%
+%
+&=
+	\pi^{-1}
+	-
+	2 \pi^{-1} \\
+%
+%
+&=
+	-\pi^{-1}
+\end{align}
+である。更にこの値は
+\begin{align}
+	2
+&<
+	\pi \\
+%
+%
+	\frac{1}{\pi}
+&<
+	\frac{1}{2}
+=
+	0.5 \\
+%
+%
+	-0.5
+&<
+	-\pi^{-1}
+\end{align}
+であるから、確かに基底状態の厳密なエネルギーよりも大きくなることが分かる。
+
+
