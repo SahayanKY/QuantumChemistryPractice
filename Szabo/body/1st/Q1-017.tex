@@ -1,0 +1,266 @@
+%ファイルID
+%2020/04/23 09:06
+%->2004230906(10進数)->X59MGQ(ファイル作成者)
+%->X59MGQSahayanKY
+番号付けが可能な(離散的な)無限個の完全規格直交基底は
+\begin{align}
+	\sum_i \ket{i}\bra{i}
+&=
+	1
+	%
+	\label{eqX59MGQSahayanKY_CompletenessRelationOfDiscreteBasis} \\
+%
+%
+	\braket{i|j}
+&=
+	\delta_{ij}
+\end{align}
+となる。
+
+一方で、連続無限の完全基底$\ket{x}$は、対応するように
+\begin{align}
+	\int \d x
+		\ket{x}\bra{x}
+&=
+	1
+	%
+	\label{eqX59MGQSahayanKY_CompletenessRelationOfContinuousBasis}
+\end{align}
+となる。これに左から$\bra{a}$、
+右から$\ket{b}$をかけると、
+\begin{align}
+	\int \d x
+		\braket{a|x} \braket{x|b}
+=
+	\braket{a|b}
+=
+	\int \d x\
+		\conju{a}(x) b(x)
+\end{align}
+となることから、
+\begin{align}
+	\conju{a}(x)
+&=
+	\braket{a|x} &
+%
+%
+	b(x)
+&=
+	\braket{x|b}
+\end{align}
+である。
+
+
+\subsection{(a)問}
+式\ref{eqX59MGQSahayanKY_CompletenessRelationOfContinuousBasis}に、
+左から$\bra{i}$、右から$\ket{j}$をかける。
+すると、
+\begin{align}
+	\int \d x\
+		\conju{\psi_i}(x) \psi_j(x)
+&=
+	\delta_{ij}
+\end{align}
+に等しいことを示せ。
+
+\subsection{(a)解}
+\begin{align}
+	\int \d x
+		\ket{x}\bra{x}
+&=
+	1 \\
+%
+%
+	\int \d x
+		\braket{i|x} \braket{x|j}
+&=
+	\braket{i|j} \\
+%
+%
+	\int \d x\
+		\conju{\psi_i}(x) \psi_{j}(x)
+&=
+	\delta_{ij}
+\end{align}
+である。
+
+\subsection{(b)問}
+式\ref{eqX59MGQSahayanKY_CompletenessRelationOfDiscreteBasis}に、
+左から$\bra{x}$、右から$\ket{x'}$をかける。すると、
+$\braket{x|x'}=\delta(x-x')$であれば
+\begin{align}
+	\sum_i
+		\psi_i(x)\conju{\psi_i}(x')
+&=
+	\delta(x-x')
+\end{align}
+となることを示せ。
+
+
+\subsection{(b)解}
+\begin{align}
+	\sum_i
+		\ket{i}\bra{i}
+&=
+	1 \\
+%
+%
+	\sum_i
+		\braket{x|i}\braket{i|x'}
+&=
+	\braket{x|x'} \\
+%
+%
+	\sum_i
+		\psi_i(x) \conju{\psi_i}(x')
+&=
+	\delta(x-x')
+\end{align}
+である。
+
+
+\subsection{(c)問}
+式\ref{eqX59MGQSahayanKY_CompletenessRelationOfContinuousBasis}に、
+左から$\bra{x'}$、右から$\ket{a}$をかけると
+\begin{align}
+	a(x)
+&=
+	\int \d x'
+		\delta(x-x') a(x')
+\end{align}
+が得られることを示せ。
+
+\subsection{(c)解}
+\begin{align}
+	\int \d x
+		\ket{x}\bra{x}
+&=
+	1 \\
+%
+%
+	\int \d x
+		\braket{x'|x}\bra{x|a}
+&=
+	\braket{x'|a} \\
+%
+%
+	\int \d x
+		\delta(x-x')a(x)
+&=
+	a(x') \\
+%
+%
+	\int \d x'
+		\delta(x'-x)a(x')
+&=
+	a(x)
+\end{align}
+である。
+
+
+\subsection{(d)問}
+ある演算子$\mathscr{O}$の
+連続基底$\ket{x}$における行列要素は
+\begin{align}
+	\braket{x|\mathscr{O}|x'}
+&=
+	O(x,x')
+\end{align}
+である。また、$\mathscr{O}\ket{a}=\ket{b}$とする。これを変形すると、
+\begin{align}
+	\mathscr{O}\ket{a}
+&=
+	\ket{b} \\
+%
+%
+	\mathscr{O}1\ket{a}
+&=
+	\\
+%
+%
+	\int \d x\
+		\mathscr{O}\ket{x} \braket{x|a}
+&=
+	\ket{b}
+\end{align}
+となる。この式に$\bra{x'}$をかけると
+\begin{align}
+	b(x)
+=
+	\mathscr{O} a(x)
+=
+	\int \d x'\
+		O(x,x') a(x')
+\end{align}
+が得られることを示せ。
+
+\subsection{(d)解}
+\begin{align}
+	\int \d x\
+		\braket{x'|\mathscr{O}|x} \braket{x|a}
+&=
+	\braket{x'|b} \\
+%
+%
+	\int \d x\
+		O(x',x) a(x)
+&=
+	b(x') \\
+%
+%
+	b(x)
+&=
+	\int \d x'\
+		O(x,x') a(x')
+\end{align}
+である。
+
+
+\subsection{(e)問}
+\begin{align}
+	O_{ij}
+=
+	\braket{i|\mathscr{O}|j}
+%
+\Rightarrow
+%
+	O(x,x')
+=
+	\sum_{i,j}
+		\psi_i(x)O_{ij}\conju{\psi_j}(x')
+\end{align}
+であることを示せ。
+
+\subsection{(e)解}
+\begin{align}
+	O(x,x')
+&=
+	\braket{x|\mathscr{O}|x'} \\
+%
+%
+&=
+	\bra{x}
+		\left(
+			\sum_i \ket{i}\bra{i}
+		\right)
+		\mathscr{O}
+		\left(
+			\sum_j \ket{j}\bra{j}
+		\right)
+		\ket{x'} \\
+%
+%
+&=
+	\sum_{i,j}
+		\braket{x|i}
+			\braket{i|\mathscr{O}|j}
+			\braket{j|x'} \\
+%
+%
+&=
+	\sum_{i,j}
+		\psi_i(x)
+			O_{ij}
+			\conju{\psi_j}(x')
+\end{align}
+である。
