@@ -1,0 +1,131 @@
+%ファイルID
+%2020/04/24 11:06
+%->2004241106(10進数)->X59UC2(ファイル作成者)
+%->X59UC2SahayanKY
+\subsection{問}
+変分原理を行列の固有値問題に適用する。
+2次対称行列
+\begin{align}
+	O
+&=
+	\left[
+	\begin{array}{cc}
+		O_{11} & O_{12} \\
+		O_{12} & O_{22}
+	\end{array}
+	\right]
+\end{align}
+に対して試行ベクトル
+\begin{align}
+	\bm{c}
+&=
+	\left[
+	\begin{array}{c}
+		\cos\theta \\ \sin \theta
+	\end{array}
+	\right]
+\end{align}
+を考える。$\omega(\theta)=\adj{\bm{c}}O\bm{c}$を
+極小にする$\theta$の値$\theta_0$を求め、
+そのときに丁度$O$の最小固有値になることを示せ。
+
+\subsection{解}
+\begin{align}
+	\omega(\theta)
+&=
+	\adj{\bm{c}}O\bm{c} \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\cos\theta & \sin\theta
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{cc}
+			O_{11} & O_{12} \\
+			O_{12} & O_{22}
+		\end{array}
+		\right]
+		\left[
+		\begin{array}{c}
+			\cos\theta \\ \sin\theta
+		\end{array}
+		\right] \\
+%
+%
+&=
+	\cos\theta
+		\left(
+			O_{11}\cos\theta
+			+
+			O_{12}\sin\theta
+		\right)
+	+
+	\sin\theta
+		\left(
+			O_{12}\cos\theta
+			+
+			O_{22}\sin\theta
+		\right) \\
+%
+%
+&=
+	O_{11}\cos^2\theta
+	+
+	2O_{12}\cos\theta\sin\theta
+	+
+	O_{22}\sin^2\theta
+\end{align}
+従って、$\omega(\theta)$を極小にする$\theta$は
+\begin{align}
+	\frac{\d\omega(\theta)}{\d\theta}
+&=
+	0 \\
+%
+%
+	-
+	2O_{11}\cos\theta_0 \sin\theta_0
+	+
+	2O_{12}\cos 2\theta_0
+	+
+	2O_{22}\sin\theta_0 \cos\theta_0
+&=
+	0 \\
+%
+%
+	(O_{22}-O_{11})\sin 2\theta_0
+	+
+	2O_{12} \cos 2\theta_0
+&=
+	0 \\
+%
+%
+	\tan 2\theta_0
+&=
+	\frac{2O_{12}}{O_{11}-O_{22}} \\
+%
+%
+	\theta_0
+&=
+	\frac{1}{2}
+		\tan^{-1}\left(
+			\frac{2O_{12}}{O_{11}-O_{22}}
+		\right)
+\end{align}
+であり、そのとき$\omega(\theta)$は
+\begin{align}
+	\omega(\theta_0)
+&=
+	O_{11}\cos^2 \theta_0
+	+
+	O_{22}\sin^2 \theta_0
+	+
+	O_{12}\sin 2\theta_0
+\end{align}
+となる。これは既にみた通りに行列$O$の固有値の1つである。
+
+
+
+
