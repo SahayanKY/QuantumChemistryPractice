@@ -1,0 +1,149 @@
+%ファイルID
+%2020/04/24 16:57
+%->2004241657(10進数)->X59URD(ファイル作成者)
+%->X59URDSahayanKY
+固有方程式の厳密解を$\ket{\Phi_{\alpha}}(\alpha=0,1,\cdots)$とする。
+基底状態の厳密解の波動関数$\ket{\Phi_0}$と
+直交する規格化された試行関数$\ket{\tilde{\Phi}'}$を考える。
+つまり、$\braket{\tilde{\Phi}'|\Phi_0}=0$とする。
+
+\subsection{(a)問}
+基底状態に関する変分原理の証明と同様にして
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+&\geq
+	\mathscr{E}_1
+\end{align}
+であることを示せ。
+
+\subsection{(a)解}
+$\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開すると、
+\begin{align}
+	\ket{\tilde{\Phi}'}
+&=
+	\sum_{\alpha} \ket{\Phi_{\alpha}} \braket{\Phi_{\alpha}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\sum_{\alpha>0} \ket{\Phi_{\alpha}} \braket{\Phi_{\alpha}|\tilde{\Phi}'}
+\end{align}
+である。従って、この試行関数でのエネルギーの期待値は
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+&=
+	\left(
+		\sum_{\alpha>0}
+			\braket{\tilde{\Phi}'|\Phi_{\alpha}} \bra{\Phi_{\alpha}}
+	\right)
+		\mathscr{H}
+		\left(
+			\sum_{\beta>0}
+				\ket{\Phi_{\beta}} \braket{\Phi_{\beta}|\tilde{\Phi}'}
+		\right) \\
+%
+%
+&=
+	\sum_{\alpha>0,\beta>0}
+		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
+			\braket{\Phi_{\alpha}|\mathscr{H}|\Phi_{\beta}}
+			\braket{\Phi_{\beta}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\sum_{\alpha>0,\beta>0}
+		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
+			\mathscr{E}_{\beta} \braket{\Phi_{\alpha}|\Phi_{\beta}}
+			\braket{\Phi_{\beta}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\sum_{\alpha>0,\beta>0}
+		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
+			\mathscr{E}_{\beta} \delta_{\alpha\beta}
+			\braket{\Phi_{\beta}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\sum_{\alpha>0}
+		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
+			\mathscr{E}_{\alpha}
+			\braket{\Phi_{\alpha}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\sum_{\alpha>0}
+		\mathscr{E}_{\alpha}
+			\left|\braket{\Phi_{\alpha}|\tilde{\Phi}'}\right|^2
+\end{align}
+各項について、$\mathscr{E}_{\alpha}\geq\mathscr{E}_{1}(\alpha>0)$より
+\begin{align}
+	\mathscr{E}_{\alpha}
+		\left|\braket{\Phi_{\alpha}|\tilde{\Phi}'}\right|^2
+\geq
+	\mathscr{E}_{1}
+		\left|\braket{\Phi_{\alpha}|\tilde{\Phi}'}\right|^2
+	%
+	\qquad
+	(\alpha>0)
+\end{align}
+であるので、
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+\geq
+	\sum_{\alpha>0}
+		\mathscr{E}_{1}
+			\left|
+				\braket{\Phi_{\alpha}|\tilde{\Phi}'}
+			\right|^2
+=
+	\mathscr{E}_{1}
+		\sum_{\alpha>0}
+			\left|
+				\braket{\Phi_{\alpha}|\tilde{\Phi}'}
+			\right|^2
+\end{align}
+更に、
+\begin{align}
+	\sum_{\alpha>0}
+		\left|
+			\braket{\Phi_{\alpha}|\tilde{\Phi}'}
+		\right|^2
+&=
+	\sum_{\alpha\geq 0}
+		\left|
+			\braket{\Phi_{\alpha}|\tilde{\Phi}'}
+		\right|^2
+	%
+	\qquad
+	(\because\braket{\Phi_{0}|\tilde{\Phi}'}=0) \\
+%
+%
+&=
+	\sum_{\alpha}
+		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
+			\braket{\Phi_{\alpha}|\tilde{\Phi}'} \\
+%
+%
+&=
+	\bra{\tilde{\Phi}'} 1 \ket{\tilde{\Phi}'}
+=
+	\braket{\tilde{\Phi}'|\tilde{\Phi}'} \\
+%
+%
+&=
+	1
+\end{align}
+であることから、
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+&\geq
+	\mathscr{E}_1
+		\sum_{\alpha>0}
+			\left|
+				\braket{\Phi_{\alpha}|\tilde{\Phi}'}
+			\right|^2 \\
+%
+%
+&\geq
+	\mathscr{E}_1
+\end{align}
