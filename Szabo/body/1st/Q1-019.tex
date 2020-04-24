@@ -1,0 +1,296 @@
+%ファイルID
+%2020/04/24 07:30
+%->2004240730(10進数)->X59U1M(ファイル作成者)
+%->X59U1MSahayanKY
+\subsection{問}
+水素原子の\Schrodinger 方程式は
+\begin{align}
+	\left(
+		-
+		\frac{1}{2} \laplacian{}
+		-
+		\frac{1}{r}
+	\right) \ket{\Phi}
+&=
+	\mathscr{E} \ket{\Phi}
+\end{align}
+である。
+
+試行関数として
+\begin{align}
+	\ket{\tilde{\Phi}}
+&=
+	N \exp(-\alpha r^2)
+\end{align}
+を用いて変分計算を行い、
+得られるエネルギーが$-\frac{4}{3\pi}$であることを示せ。
+また、それが厳密なエネルギー$-0.5$よりも大きいことを示せ。
+
+なお、公式として
+\begin{align}
+	\laplacian{f(r)}
+&=
+	r^{-2}
+		\frac{\d}{\d r}\left(
+			r^2 \frac{\d f}{\d r}
+		\right) \\
+%
+%
+	\int_0^{\infty} \d r\
+		r^{2m} \exp(-\alpha r^2)
+&=
+	\frac{
+		(2m)! \pi^{\frac{1}{2}}
+	}{
+		2^{2m+1} m! \alpha^{m+\frac{1}{2}}
+	} \\
+%
+%
+	\int_0^{\infty} \d r\
+		r^{2m+1} \exp(-\alpha r^2)
+&=
+	\frac{m!}{2\alpha^{m+1}}
+\end{align}
+を用いてもよい。
+
+
+\subsection{解}
+まず規格化条件から、
+\begin{align}
+	\braket{\tilde{\Phi}|\tilde{\Phi}}
+&=
+	1 \\
+%
+%
+	\int_0^{\infty} \d r\
+		\int_0^\pi \d\theta\
+		\int_0^{2\pi} \d\phi\
+		r^2\sin\theta \conju[1]{N\exp(-\alpha r^2)} N\exp(-\alpha r^2)
+&=
+	1 \\
+%
+%
+	4\pi |N|^2
+		\int_0^{\infty} \d r\
+			r^2 \exp(-2\alpha r^2)
+&=
+	1 \\
+%
+%
+	4\pi |N|^2 \cdot
+		\frac{
+			2!\ \pi^{\frac{1}{2}}
+		}{
+			2^3\ 1!\ (2\alpha)^{\frac{3}{2}}
+		}
+&=
+	1 \\
+%
+%
+	|N|^2
+&=
+	2^{\frac{3}{2}} \pi^{-\frac{3}{2}} \alpha^{\frac{3}{2}}
+\end{align}
+である。この下で、エネルギーの期待値を求めると、
+\begin{align}
+	\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+&=
+	\int_0^{\infty} \d r\
+		\int_0^\pi \d\theta\
+		\int_0^{2\pi} \d\phi\
+		r^2\sin\theta
+			\conju[1]{N\exp(-\alpha r^2)}
+			\left(
+				-
+				\frac{1}{2}\laplacian{}
+				-
+				\frac{1}{r}
+			\right)
+			N\exp(-\alpha r^2) \\
+%
+%
+&=
+	4\pi |N|^2
+		\int_0^{\infty} \d r\
+			r^2
+				\exp(-\alpha r^2)
+				\left(
+					-
+					\frac{1}{2}r^{-2}
+						\frac{\d}{\d r}\left(
+							r^2\frac{\d}{\d r}
+						\right)
+					-
+					\frac{1}{r}
+				\right) \exp(-\alpha r^2) \\
+%
+%
+&=
+	4\pi |N|^2
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			-
+			\frac{1}{2}
+				\int_0^{\infty} \d r\
+					\exp(-\alpha r^2)
+						\frac{\d}{\d r}\left(
+							r^2 \cdot \exp(-\alpha r^2) \cdot (-2\alpha r)
+						\right) \\
+			-
+			\int_0^{\infty} \d r\
+				r \exp(-2\alpha r^2)
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	4\pi |N|^2
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			\alpha
+				\int_0^{\infty} \d r\Bigl(
+					3r^2 \exp(-2\alpha r^2)
+					+
+					r^3 \exp(-2\alpha r^2) (-2\alpha r)
+				\Bigr) \\
+			-
+			\frac{0!}{2(2\alpha)^{1}}
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	4\pi |N|^2
+		\left\{
+			3\alpha
+				\frac{%m=1,alpha=2alpha
+					2!\ \pi^{\frac{1}{2}}
+				}{
+					2^3\ 1!\ (2\alpha)^{\frac{3}{2}}
+				}
+			-
+			2\alpha^2
+				\frac{%m=2,alpha=2alpha
+					4!\ \pi^{\frac{1}{2}}
+				}{
+					2^5\ 2!\ (2\alpha)^{\frac{5}{2}}
+				}
+			-
+			2^{-2} \alpha^{-1}
+		\right\} \\
+%
+%
+&=
+	4\pi \cdot
+		2^{\frac{3}{2}} \pi^{-\frac{3}{2}} \alpha^{\frac{3}{2}}
+		\left\{
+			2^{-\frac{7}{2}} 3 \pi^{\frac{1}{2}} \alpha^{-\frac{1}{2}}
+			-
+			2^{-\frac{9}{2}} 3 \pi^{\frac{1}{2}} \alpha^{-\frac{1}{2}}
+			-
+			2^{-2} \alpha^{-1}
+		\right\} \\
+%
+%
+&=
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}}
+		\left\{
+			2^{-\frac{9}{2}} 3 \pi^{\frac{1}{2}} \alpha^{1}
+			-
+			2^{-2} \alpha^{\frac{1}{2}}
+		\right\}
+\end{align}
+となる。これを極小化する$\alpha$は
+\begin{align}
+	\frac{\d}{\d\alpha}\left(
+		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\right)
+&=
+	0 \\
+%
+%
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}}
+		\left\{
+			2^{-\frac{9}{2}} 3 \pi^{\frac{1}{2}}
+			-
+			2^{-3} \alpha^{-\frac{1}{2}}
+		\right\}
+&=
+	0 \\
+%
+%
+	\alpha^{-\frac{1}{2}}
+&=
+	2^{-\frac{3}{2}} 3 \pi^{\frac{1}{2}} \\
+%
+%
+	\alpha
+&=
+	2^{3} 3^{-2} \pi^{-1}
+=
+	\alpha_0
+\end{align}
+であるから、期待値の極小値は
+\begin{align}
+	\min\left(
+		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\right)
+&=
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}}
+		\left(
+			2^{-\frac{9}{2}} 3 \pi^{\frac{1}{2}} \alpha_0
+			-
+			2^{-2} \alpha_0^{\frac{1}{2}}
+		\right) \\
+%
+%
+&=
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}}
+		\left(
+			2^{-\frac{9}{2}} 3 \pi^{\frac{1}{2}} \cdot
+				2^{3} 3^{-2} \pi^{-1}
+			-
+			2^{-2} 2^{\frac{3}{2}} 3^{-1} \pi^{-\frac{1}{2}}
+		\right) \\
+%
+%
+&=
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}}
+		\left(
+			2^{-\frac{3}{2}} 3^{-1} \pi^{-\frac{1}{2}}
+			-
+			2^{-\frac{1}{2}} 3^{-1} \pi^{-\frac{1}{2}}
+		\right) \\
+%
+%
+&=
+	-
+	2^{\frac{7}{2}} \pi^{-\frac{1}{2}} \cdot
+		2^{-\frac{3}{2}} 3^{-1} \pi^{-\frac{1}{2}} \\
+%
+%
+&=
+	-
+	\frac{4}{3\pi}
+\end{align}
+である。
+\begin{align}
+	3
+&<
+	\pi \\
+%
+%
+	\frac{4}{3\pi}
+&<
+	\frac{4}{9} \\
+%
+%
+	-0.5
+<
+	-0.\dot{4}
+=
+	-\frac{4}{9}
+&<
+	-\frac{4}{3\pi}
+\end{align}
+であることから、得られた値は厳密解よりも大きいことが分かる。
