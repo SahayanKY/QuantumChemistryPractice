@@ -147,3 +147,232 @@ $\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開�
 &\geq
 	\mathscr{E}_1
 \end{align}
+となる。
+
+
+\subsection{(b)問}
+関数$\ket{\tilde{\Phi}'}$を
+基底状態と第1励起状態の試行関数
+$\ket{\tilde{\Phi}_0}$と$\ket{\tilde{\Phi}_1}$によって、
+\begin{align}
+	\ket{\tilde{\Phi}'}
+&=
+	x \ket{\tilde{\Phi}_0}
+	+
+	y \ket{\tilde{\Phi}_1}
+\end{align}
+と置く。$\ket{\tilde{\Phi}'}$の規格化条件が
+\begin{align}
+	|x|^2
+	+
+	|y|^2
+&=
+	1
+\end{align}
+であることを示せ。
+
+\subsection{(b)解}
+\begin{align}
+	\braket{\tilde{\Phi}'|\tilde{\Phi}'}
+&=
+	1 \\
+%
+%
+	\left(
+		\conju{x}\bra{\tilde{\Phi}_0}
+		+
+		\conju{y}\bra{\tilde{\Phi}_1}
+	\right)
+		\left(
+			x\ket{\tilde{\Phi}_0}
+			+
+			y\ket{\tilde{\Phi}_1}
+		\right)
+&=
+	1 \\
+%
+%
+	|x|^2 \braket{\tilde{\Phi}_0|\tilde{\Phi}_0}
+	+
+	\conju{x}y \braket{\tilde{\Phi}_0|\tilde{\Phi}_1}
+	+
+	\conju{y}x \braket{\tilde{\Phi}_1|\tilde{\Phi}_0}
+	+
+	|y|^2 \braket{\tilde{\Phi}_1|\tilde{\Phi}_1}
+&=
+	1
+\end{align}
+ここで、$\braket{\tilde{\Phi}_0|\tilde{\Phi}_1}$は、
+$\ket{\Psi_i}$を試行関数の基底関数とすると
+\begin{align}
+	\braket{\tilde{\Phi}_0|\tilde{\Phi}_1}
+&=
+	\left(
+		\sum_i \conju{c_i^0} \bra{\Psi_i}
+	\right)
+		\left(
+			\sum_j c_j^1 \ket{\Psi_j}
+		\right) \\
+%
+%
+&=
+	\sum_{i,j}
+		\conju{c_i^0} c_j^1 \braket{\Psi_i|\Psi_j} \\
+%
+%
+&=
+	\sum_{i,j}
+		\conju{c_i^0} c_j^1 \delta_{ij} \\
+%
+%
+&=
+	\sum_{i}
+		\conju{c_i^0} c_i^1 \\
+%
+%
+&=
+	\adj{\bm{c}^0}\bm{c}^1 \\
+%
+%
+&=
+	0
+\end{align}
+より直交するためにゼロである。従って、規格化条件に戻すと、
+\begin{align}
+	|x|^2 \cdot 1
+	+
+	\conju{x}y \cdot 0
+	+
+	\conju{y}x \cdot 0
+	+
+	|y|^2 \cdot 1
+&=
+	1 \\
+%
+%
+	|x|^2
+	+
+	|y|^2
+&=
+	1
+\end{align}
+である。
+
+\subsection{(c)問}
+$x$と$y$が、
+$\ket{\tilde{\Phi}'}$が規格化され、
+かつ、$\braket{\tilde{\Phi}'|\Phi_0}=0$とする。
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+&=
+	E_1
+	-
+	|x|^2 (E_1-E_0)
+\end{align}
+となることを示せ。
+
+(補足)
+$E_1\geq E_0$より、
+\begin{align}
+	E_1
+\geq
+	E_1-|x|^2(E_1-E_0)
+=
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+\end{align}
+である。
+さらに、(a)より
+$\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}\geq\mathscr{E}_1$
+であるので、
+\begin{align}
+	E_1
+\geq
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+\geq
+	\mathscr{E}_1
+\end{align}
+となる。よって、試行関数$\tilde{\Phi}_1$に関する
+ハミルトニアンの期待値$E_1$は
+第1励起状態のエネルギーの真の値$\mathscr{E}_1$の上限となることが言える。
+
+
+\subsection{(c)解}
+\begin{align}
+	\braket{\tilde{\Phi}_{\beta}|\mathscr{H}|\tilde{\Phi}_{\alpha}}
+&=
+	\sum_{i,j}
+		\conju{c_i^\beta} \braket{\Psi_i|\mathscr{H}|\Psi_j} c_j^\alpha \\
+%
+%
+&=
+	\sum_{i,j}
+		\conju{c_i^\beta} H_{ij} c_j^\alpha \\
+%
+%
+&=
+	\sum_{i}
+		\conju{c_i^\beta} E_{\alpha} c_i^\alpha \\
+%
+%
+&=
+	E_{\alpha} \adj{\bm{c}^\beta}\bm{c}^{\alpha} \\
+%
+%
+&=
+	E_{\alpha} \delta_{\alpha\beta}
+\end{align}
+である。したがって、
+\begin{align}
+	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+&=
+	\left(
+		\conju{x}\bra{\tilde{\Phi}_0}
+		+
+		\conju{y}\bra{\tilde{\Phi}_1}
+	\right)
+		\mathscr{H}
+		\left(
+			x\ket{\tilde{\Phi}_0}
+			+
+			y\ket{\tilde{\Phi}_1}
+		\right) \\
+%
+%
+&=
+	|x|^2 \braket{\tilde{\Phi}_0|\mathscr{H}|\tilde{\Phi}_0}
+	+
+	\conju{x}y \braket{\tilde{\Phi}_0|\mathscr{H}|\tilde{\Phi}_1}
+	+
+	\conju{y}x \braket{\tilde{\Phi}_1|\mathscr{H}|\tilde{\Phi}_0}
+	+
+	|y|^2 \braket{\tilde{\Phi}_1|\mathscr{H}|\tilde{\Phi}_1} \\
+%
+%
+&=
+	|x|^2 E_0
+	+
+	\conju{x}y \cdot 0
+	+
+	\conju{y}x \cdot 0
+	+
+	|y|^2 E_1 \\
+%
+%
+&=
+	|x|^2 E_0
+	+
+	(1-|x|^2) E_1
+	%
+	\qquad
+	(\because\text{$\ket{\tilde{\Phi}'}$の規格化条件}) \\
+%
+%
+&=
+	E_1
+	-
+	|x|^2 (E_1-E_0)
+\end{align}
+となる。
+
+
+
