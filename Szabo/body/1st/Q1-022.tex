@@ -1,0 +1,479 @@
+%ファイルID
+%2020/04/28 06:35
+%->2004280635(10進数)->X5AOU3(ファイル作成者)
+%->X5AOU3SahayanKY
+\subsection{問}
+$z$軸方向に均一な電場$F$がかかった状態での
+水素原子の\Schrodinger 方程式は
+\begin{align}
+	\left(
+		-
+		\frac{1}{2}\laplacian{}
+		-
+		\frac{1}{r}
+		+
+		Fr\cos\theta
+	\right)\ket{\Phi}
+=
+	\left(
+		\mathscr{H}_0
+		+
+		Fr\cos\theta
+	\right)\ket{\Phi}
+=
+	\mathscr{E}(F)\ket{\Phi}
+\end{align}
+である。
+
+試行関数$\ket{\tilde{\Phi}}$として、
+\begin{align}
+	\ket{\tilde{\Phi}}
+&=
+	c_1 \ket{1s}
+	+
+	c_2 \ket{2p_z}
+\end{align}
+を用いる。ここで$\ket{1s}$と$\ket{2p_z}$は
+$\mathscr{H}_0$の規格化固有関数であり、
+\begin{align}
+	\ket{1s}
+&=
+	\pi^{-\frac{1}{2}} \exp(-r) &
+%
+%
+	\mathscr{H}_0 \ket{1s}
+&=
+	-
+	\frac{1}{2} \ket{1s} \\
+%
+%
+	\ket{2p_z}
+&=
+	(32\pi)^{-\frac{1}{2}} r \exp\left(-\frac{r}{2}\right) \cos\theta &
+%
+%
+	\mathscr{H}_0 \ket{2p_z}
+&=
+	-\frac{1}{8} \ket{2p_z}
+\end{align}
+である。$\mathscr{E}(F)$の上限$E(F)$を求めよ。
+
+また、$E(F)$をテイラー展開$(1+x)^{\frac{1}{2}}\simeq 1+\frac{1}{2}x$を用いて
+$F$の多項式に書き換え、
+\begin{align}
+	E(F)
+&=
+	E(0)
+	-
+	\frac{1}{2} \alpha F^2
+	+
+	\cdots
+\end{align}
+と比較することにより、近似的な双極子分極率$\alpha$を求めよ。
+
+\subsection{解}
+試行関数$\ket{\tilde{\Phi}}$での最良近似は、
+\begin{align}
+	\left[
+	\begin{array}{cc}
+		\braket{1s|\mathscr{H}|1s} &
+		%
+		\braket{1s|\mathscr{H}|2p_z} \\
+	%
+		\braket{2p_z|\mathscr{H}|1s} &
+		%
+		\braket{2p_z|\mathscr{H}|2p_z}
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{c}
+			c_1 \\ c_2
+		\end{array}
+		\right]
+&=
+	E(F)
+		\left[
+		\begin{array}{c}
+			c_1 \\ c_2
+		\end{array}
+		\right]
+\end{align}
+を満たす$(c_1,c_2)$である。
+左辺の係数行列の各要素の値を求めていく。
+\begin{align}
+	\braket{1s|\mathscr{H}|1s}
+&=
+	\braket{1s|(\mathscr{H}_0+Fr\cos\theta)|1s} \\
+%
+%
+&=
+	\bra{1s}\left(
+		\mathscr{H}_0\ket{1s}
+		+
+		Fr\cos\theta\ket{1s}
+	\right) \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+		\braket{1s|1s}
+	+
+	F \braket{1s|r\cos\theta|1s} \\
+%
+%
+&=
+	-
+	\frac{1}{2} \cdot 1
+	+
+	F
+		\int_0^{\infty} \d r \int_0^\pi \d\theta \int_0^{2\pi} \d\phi\
+			r^2\sin\theta \cdot
+				\conju[1]{\pi^{-\frac{1}{2}}\exp(-r)} \cdot
+				r \cos\theta \cdot
+				\pi^{-\frac{1}{2}}\exp(-r) \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	+
+	F \cdot 2\pi \cdot \pi^{-1}
+		\int_0^\infty \d r\
+			r^3 \exp(-2r)
+		\int_0^\pi \d\theta\
+			\sin\theta\cos\theta \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	+
+	F
+		\int_0^\infty 2t\d t\cdot %r=t^2, t:0->infty, dr=2t dt
+			t^6 \exp(-2t^2)
+		\int_0^\pi \d\theta\
+			\sin 2\theta
+	%
+	\qquad (r=t^2) \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	+
+	2F
+		\int_0^\infty \d t\
+			t^7 \exp(-2t^2)
+		\left[
+			-\frac{1}{2}\cos 2\theta
+		\right]_0^\pi \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+\end{align}
+\begin{align}
+	\braket{1s|\mathscr{H}|2p_z}
+&=
+	\braket{1s|\mathscr{H}_0|2p_z}
+	+
+	F
+		\braket{1s|r\cos\theta|2p_z} \\
+%
+%
+&=
+	-
+	\frac{1}{8} \braket{1s|2p_z} \nonumber\\&\qquad
+	+
+	F
+		\int_0^\infty \d r  \int_0^\pi \d\theta  \int_0^{2\pi} \d\phi\
+			r^2\sin\theta \cdot
+			\conju[1]{\pi^{-\frac{1}{2}}\exp(-r)} \cdot
+			r\cos\theta \cdot
+			(32\pi)^{-\frac{1}{2}} r\exp\left(-\frac{r}{2}\right)\cos\theta \\
+%
+%
+&=
+	-
+	\frac{1}{8} \cdot 0
+	+
+	F \cdot 2\pi \cdot 32^{-\frac{1}{2}}\pi^{-1}
+		\int_0^\infty \d r\
+			r^4 \exp\left(-\frac{3}{2}r\right)
+		\int_0^\pi \d\theta\
+			\sin\theta\cos^2\theta \\
+%
+%
+&=
+	F\cdot 2^{1-\frac{5}{2}}
+		\int_0^\infty 2t\d t\
+			t^8 \exp\left(-\frac{3}{2}t^2\right)
+		(-1)
+		\int_0^\pi \d(\cos\theta)\
+			\cos^2\theta \\
+%
+%
+&=
+	F \cdot 2^{-\frac{1}{2}}
+		\int_0^\infty \d t\
+			t^9 \exp\left(-\frac{3}{2}t^2\right)
+		(-1)
+		\left[
+			\frac{1}{3}\cos^3\theta
+		\right]_0^\pi \\
+%
+%
+&=
+	F \cdot 2^{-\frac{1}{2}}
+		%m=4, alpha=3/2
+		\frac{
+			4!
+		}{
+			2\left(\frac{3}{2}\right)^{5}
+		}
+		\left(
+			-\frac{1}{3}
+		\right)
+		\left(
+			(-1)^3
+			-
+			1^3
+		\right) \\
+%
+%
+&=
+	-
+	F \cdot
+		2^{-\frac{1}{2}} \cdot
+		\frac{
+			2^3 \cdot 3
+		}{
+			2^{-4} \cdot 3^5
+		} \cdot
+		3^{-1} \cdot
+		(-2) \\
+%
+%
+&=
+	F \cdot
+		2^{-\frac{1}{2}+3+4+1} \cdot
+		3^{1-5-1}
+%
+%
+=
+	F \cdot
+		2^{\frac{15}{2}} \cdot 3^{-5}
+\end{align}
+\begin{align}
+	\braket{2p_z|\mathscr{H}|1s}
+&=
+	\conju{\braket{1s|\mathscr{H}|2p_z}} \\
+%
+%
+&=
+	F \cdot 2^{\frac{15}{2}} \cdot 3^{-5}
+\end{align}
+\begin{align}
+	&\quad
+	\braket{2p_z|\mathscr{H}|2p_z} \\
+&=
+	\braket{2p_z|\mathscr{H}_0|2p_z}
+	+
+	F
+		\braket{2p_z|r\cos\theta|2p_z} \\
+%
+%
+&=
+	-
+	\frac{1}{8} \braket{2p_z|2p_z} \nonumber\\&\quad
+	+
+	F
+		\int_0^\infty \d r  \int_0^\pi \d\theta  \int_0^{2\pi} \d\phi\
+			r^2\sin\theta \cdot
+				\conju[1]{
+					(32\pi)^{-\frac{1}{2}} r\exp\left(-\frac{r}{2}\right) \cos\theta
+				} \cdot
+				r\cos\theta \cdot
+				(32\pi)^{-\frac{1}{2}} r\exp\left(-\frac{r}{2}\right) \cos\theta \\
+%
+%
+&=
+	-
+	\frac{1}{8}
+	+
+	F \cdot 2\pi \cdot (32\pi)^{-1}
+		\int_0^\infty \d r\
+			r^5 \exp(-r)
+		\int_0^\pi \d\theta\
+			\sin\theta \cos^3\theta \\
+%
+%
+&=
+	-
+	\frac{1}{8}
+	+
+	F \cdot 2^{1-5}
+		\int_0^\infty \d r\
+			r^5 \exp(-r)
+		(-1)
+		\int_0^\pi \d(\cos\theta)
+			\cos^3\theta \\
+%
+%
+&=
+	-
+	\frac{1}{8}
+	-
+	F \cdot 2^{-4}
+		\int_0^\infty \d r\
+			r^5 \exp(-r)
+		\left[
+			\frac{1}{4} \cos^4\theta
+		\right]_0^\pi \\
+%
+%
+&=
+	-
+	\frac{1}{8}
+\end{align}
+である。従って、固有値方程式は
+\begin{align}
+	\left[
+	\begin{array}{*2{>{\displaystyle}c}}
+		-\frac{1}{2} &
+		%
+		2^{\frac{15}{2}} 3^{-5} F \\[3mm]
+	%
+		2^{\frac{15}{2}} 3^{-5} F &
+		%
+		-\frac{1}{8}
+	\end{array}
+	\right]
+		\left[
+		\begin{array}{c}
+			c_1 \\[4mm] c_2
+		\end{array}
+		\right]
+&=
+	E(F)
+		\left[
+		\begin{array}{c}
+			c_1 \\[4mm] c_2
+		\end{array}
+		\right]
+\end{align}
+となる。よって、固有値($\mathscr{E}(F)$の上限)は
+\begin{align}
+	E_1(F)
+&=
+	\frac{1}{2}
+		\left(
+			-
+			\frac{1}{2}
+			-
+			\frac{1}{8}
+			-
+			\sqrt{
+				\left(
+					-
+					\frac{1}{8}
+					+
+					\frac{1}{2}
+				\right)^2
+				+
+				4 \cdot \left(2^{\frac{15}{2}}3^{-5}F\right)^2
+			}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			-
+			\frac{5}{8}
+			-
+			\sqrt{
+				2^{-6} 3^2
+				+
+				2^{2+15} 3^{-10} F^2
+			}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			-
+			\frac{5}{8}
+			-
+			2^{-3} 3^1
+				\sqrt{
+					1
+					+
+					2^{23} 3^{-12} F^2
+				}
+		\right)
+\end{align}
+である。$|2^{23} 3^{-12} F^2|<<1$であるならば、
+テイラー展開により
+\begin{align}
+	E_1(F)
+&\simeq
+	\frac{1}{2}
+		\left(
+			-
+			\frac{5}{8}
+			-
+			2^{-3} 3^1
+				\left(
+					1
+					+
+					\frac{1}{2} 2^{23} 3^{-12} F^2
+				\right)
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			-
+			1
+			-
+			2^{19} 3^{-11} F^2
+		\right)
+%
+%
+=
+	E_1(0)
+	-
+	\frac{1}{2}
+		2^{19} 3^{-11} F^2
+\end{align}
+従って、
+\begin{align}
+	E(F)
+&=
+	E(0)
+	-
+	\frac{1}{2} \alpha F^2
+	+
+	\cdots
+\end{align}
+と比較することにより、$\alpha$は
+\begin{align}
+	\alpha
+&=
+	2^{19} 3^{-11} \\
+%
+%
+&=
+	2.959\cdots
+=
+	2.96
+\end{align}
+と求まる。
+
+
+
