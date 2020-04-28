@@ -1,0 +1,135 @@
+%ファイルID
+%2020/04/29 08:30
+%->2004290830(10進数)->X5AWPA(ファイル作成者)
+%->X5AWPASahayanKY
+\subsection{問}
+$K$個の規格直交空間関数$\{\psi_i^\alpha(\r)\}$と、
+もう一つの$K$個の規格直交空間関数$\{\psi_i^\beta(\r)\}$を考える。
+これらは互いに直交しておらず、
+\begin{align}
+	\int \d\r\
+		\psi_i^\alpha(\r) \psi_j^\beta(\r)
+=
+	S_{ij}
+\neq
+	0
+\end{align}
+であるとする。
+
+$\{\psi_i^\alpha(\r)\}$に$\alpha$スピン関数を、
+$\{\psi_i^\beta(\r)\}$に$\beta$スピン関数をかけて得られる
+$2K$個のスピン軌道$\chi_i(\x)$
+\begin{align}
+	\begin{array}{rl}
+			\chi_{2i-1}(\x)
+		&=
+			\psi_i^\alpha(\r) \alpha(\omega) \\
+		%
+			\chi_{2i}(\x)
+		&=
+			\psi_i^\beta(\r) \beta(\omega)
+	\end{array}
+	\qquad
+	(i=1,2,\cdots,K)
+\end{align}
+が規格直交系であることを示せ。
+
+
+\subsection{解}
+$\chi_i(\x)$が規格直交系であることを示すためには
+次の内積を示せばよい。
+\begin{align}
+	\braket{\chi_{2i-1}|\chi_{2j-1}}
+&=
+	\delta_{ij} &
+%
+	\braket{\chi_{2i}|\chi_{2j}}
+&=
+	\delta_{ij} &
+%
+	\braket{\chi_{2i-1}|\chi_{2j}}
+&=
+	0
+\end{align}
+
+1つ目の関係については
+\begin{align}
+	\braket{\chi_{2i-1}|\chi_{2j-1}}
+&=
+	\int \d\r \int \d\omega\
+		\conju{\psi_i^\alpha}(\r) \conju{\alpha}(\omega)
+		\psi_j^\alpha(\r) \alpha(\omega) \\
+%
+%
+&=
+	\int \d\r\
+		\conju{\psi_i^\alpha}(\r) \psi_j^\alpha(\r)
+	\int \d\omega\
+		\conju{\alpha}(\omega) \alpha(\omega) \\
+%
+%
+&=
+	\braket{\psi_i^\alpha|\psi_j^\alpha}
+		\braket{\alpha|\alpha} \\
+%
+%
+&=
+	\delta_{ij}
+\end{align}
+である。
+
+2つ目の関係については、
+\begin{align}
+	\braket{\chi_{2i}|\chi_{2j}}
+&=
+	\int \d\r \int \d\omega\
+		\conju{\psi_i^\beta}(\r) \conju{\beta}(\omega)
+		\psi_j^\beta(\r) \beta(\omega) \\
+%
+%
+&=
+	\int \d\r\
+		\conju{\psi_i^\beta}(\r) \psi_j^\beta(\r)
+	\int \d\omega\
+		\conju{\beta}(\omega) \beta(\omega) \\
+%
+%
+&=
+	\braket{\psi_i^\beta|\psi_j^\beta}
+		\braket{\beta|\beta} \\
+%
+%
+&=
+	\delta_{ij}
+\end{align}
+である。
+
+3つ目の関係については
+\begin{align}
+	\braket{\chi_{2i-1}|\chi_{2j-1}}
+&=
+	\int \d\r \int \d\omega\
+		\conju{\psi_i^\alpha}(\r) \conju{\alpha}(\omega)
+		\psi_j^\beta(\r) \beta(\omega) \\
+%
+%
+&=
+	\int \d\r\
+		\conju{\psi_i^\alpha}(\r) \psi_j^\beta(\r)
+	\int \d\omega\
+		\conju{\alpha}(\omega) \beta(\omega) \\
+%
+%
+&=
+	\braket{\psi_i^\alpha|\psi_j^\beta}
+		\braket{\alpha|\beta} \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+よって、確かに$\chi_i$は規格直交系である。
+
+
