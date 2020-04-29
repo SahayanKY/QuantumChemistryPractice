@@ -1,0 +1,84 @@
+%ファイルID
+%2020/04/30 00:11
+%->2004300011(10進数)->X5B3SB(ファイル作成者)
+%->X5B3SBSahayanKY
+\subsection{問}
+規格直交するスピン軌道$\chi_i(\x)$を用いて得られる
+次の波動関数$\Psi(\x_1,\x_2)$を考える。
+\begin{align}
+	\Psi(\x_1,\x_2)
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			\chi_i(\x_1) \chi_j(\x_2)
+			-
+			\chi_j(\x_1) \chi_i(\x_2)
+		\right)
+\end{align}
+これが規格化されていることを示せ。
+
+\subsection{解}
+\begin{align}
+	\int \d\x_1 \int \d\x_2
+		\conju{\Psi}\Psi
+&=
+	\frac{1}{2}
+		\int \d\x_1 \int \d\x_2
+			\left(
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2)
+				-
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2)
+			\right)
+				\left(
+					\chi_i(\x_1) \chi_j(\x_2)
+					-
+					\chi_j(\x_1) \chi_i(\x_2)
+				\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			\int \d\x_1 \int \d\x_2
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2) \chi_i(\x_1) \chi_j(\x_2) \\[3mm]
+			-
+			\int \d\x_1 \int \d\x_2
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2) \chi_j(\x_1) \chi_i(\x_2) \\[3mm]
+			-
+			\int \d\x_1 \int \d\x_2
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2) \chi_i(\x_1) \chi_j(\x_2) \\[3mm]
+			+
+			\int \d\x_1 \int \d\x_2
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2) \chi_j(\x_1) \chi_i(\x_2)
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+		\left\{
+			\delta_{ii} \delta_{jj}
+			-
+			\delta_{ij} \delta_{ji}
+			-
+			\delta_{ji} \delta_{ij}
+			+
+			\delta_{jj} \delta_{ii}
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+		\left\{
+			1
+			-0
+			-0
+			+1
+		\right\} \\
+%
+%
+&=
+	1
+\end{align}
+従って、規格化されているといえる。
