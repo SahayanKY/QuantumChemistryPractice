@@ -1,0 +1,157 @@
+%ファイルID
+%2020/04/30 02:07
+%->2004300207(10進数)->X5B3XR(ファイル作成者)
+%->X5B3XRSahayanKY
+\subsection{問}
+問題2.2同様に
+ハミルトニアン$\mathscr{H}$を1電子演算子$h(i')$で
+\begin{align}
+	\mathscr{H}
+=
+	\sum_{i'=1}^{2} h(i')
+=
+	h(1)
+	+
+	h(2)
+\end{align}
+とする。また、スピン軌道$\chi_i,\chi_j$がそれらの固有関数であり、
+\begin{align}
+	h(1) \chi_i(\x_1)
+&=
+	\epsilon_i \chi_i(\x_1) &
+%
+%
+	h(1) \chi_j(\x_1)
+&=
+	\epsilon_j \chi_j(\x_1) \\
+%
+%
+	h(2) \chi_i(\x_2)
+&=
+	\epsilon_i \chi_i(\x_2) &
+%
+%
+	h(2) \chi_j(\x_2)
+&=
+	\epsilon_j \chi_j(\x_2)
+\end{align}
+とする。
+
+以下のHartree積とその反対称化された波動関数
+\begin{align}
+	\Psi^{\rm HP}_{12}(\x_1,\x_2)
+&=
+	\chi_i(\x_1) \chi_j(\x_2) \\
+%
+%
+	\Psi^{\rm HP}_{21}(\x_1,\x_2)
+&=
+	\chi_i(\x_2) \chi_j(\x_1) \\
+%
+%
+	\Psi(\x_1,\x_2)
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			\Psi^{\rm HP}_{12}(\x_1,\x_2)
+			-
+			\Psi^{\rm HP}_{21}(\x_1,\x_2)
+		\right)
+\end{align}
+がハミルトニアン$\mathscr{H}$の固有関数であり、
+同じ固有値$\epsilon_i+\epsilon_j$を持つことを示せ。
+
+
+\subsection{解}
+$\Psi^{\rm HP}_{12}(\x_1,\x_2)$については
+既に問題2.2にて示した通りであるが、
+\begin{align}
+	\mathscr{H} \Psi^{\rm HP}_{12}(\x_1,\x_2)
+&=
+	h(1) \chi_i(\x_1) \chi_j(\x_2)
+	+
+	h(2) \chi_i(\x_1) \chi_j(\x_2) \\
+%
+%
+&=
+	(h(1) \chi_i(\x_1)) \chi_j(\x_2)
+	+
+	\chi_i(\x_1) (h(2) \chi_j(\x_2)) \\
+%
+%
+&=
+	(\epsilon_i \chi_i(\x_1)) \chi_j(\x_2)
+	+
+	\chi_i(\x_1) (\epsilon_j \chi_j(\x_2)) \\
+%
+%
+&=
+	(\epsilon_i+\epsilon_j) \Psi^{\rm HP}_{12}(\x_1,\x_2)
+\end{align}
+であるので、固有関数であり、
+固有値は$\epsilon_i+\epsilon_j$である。
+
+次に$\Psi^{\rm HP}_{21}(\x_1,\x_2)$について見る。
+\begin{align}
+	\mathscr{H}\Psi^{\rm HP}_{21}(\x_1,\x_2)
+&=
+	h(1) \chi_i(\x_2) \chi_j(\x_1)
+	+
+	h(2) \chi_i(\x_2) \chi_j(\x_1) \\
+%
+%
+&=
+	\chi_i(\x_2) (h(1) \chi_j(\x_1))
+	+
+	(h(2) \chi_i(\x_2)) \chi_j(\x_1) \\
+%
+%
+&=
+	\chi_i(\x_2) (\epsilon_j \chi_j(\x_1))
+	+
+	(\epsilon_i \chi_i(\x_2)) \chi_j(\x_1) \\
+%
+%
+&=
+	(\epsilon_i+\epsilon_j) \Psi^{\rm HP}_{21}(\x_1,\x_2)
+\end{align}
+であるので、同様である。
+
+最後に$\Psi(\x_1,\x_2)$について見る。
+\begin{align}
+	\mathscr{H} \Psi(\x_1,\x_2)
+&=
+	\mathscr{H}\left\{
+		\frac{1}{\sqrt{2}}
+			\left(
+				\Psi^{\rm HP}_{12}(\x_1,\x_2)
+				-
+				\Psi^{\rm HP}_{21}(\x_1,\x_2)
+			\right)
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			\mathscr{H} \Psi^{\rm HP}_{12}(\x_1,\x_2)
+			-
+			\mathscr{H} \Psi^{\rm HP}_{21}(\x_1,\x_2)
+		\right) \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			(\epsilon_i+\epsilon_j) \Psi^{\rm HP}_{12}(\x_1,\x_2)
+			-
+			(\epsilon_i+\epsilon_j) \Psi^{\rm HP}_{21}(\x_1,\x_2)
+		\right) \\
+%
+%
+&=
+	(\epsilon_i+\epsilon_j) \Psi(\x_1,\x_2)
+\end{align}
+であるので、同様である。
+
+
