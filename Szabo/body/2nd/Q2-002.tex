@@ -1,0 +1,83 @@
+%ファイルID
+%2020/04/29 11:22
+%->2004291122(10進数)->X5AWXE(ファイル作成者)
+%->X5AWXESahayanKY
+\subsection{問}
+多電子系において
+電子間の相互作用を無視(もしくは平均化)するとき、
+ハミルトニアン$\mathscr{H}$は
+\begin{align}
+	\mathscr{H}
+&=
+	\sum_{i=1}^N h(i)
+\end{align}
+と置ける。ここで$h(i)$は電子$i$の運動エネルギーとポテンシャルを
+表す演算子である。$h(i)$の固有関数をスピン軌道$\chi_j(\x_i)$とすると、
+\begin{align}
+	h(i) \chi_j(\x_i)
+&=
+	\epsilon_j \chi_j(\x_i)
+\end{align}
+となる。
+
+多電子の波動関数$\Psi^{\rm HP}(\x_1,\x_2,\cdots,\x_N)$を
+次の通りに置く。
+\begin{align}
+	\Psi^{\rm HP}(\x_1,\x_2,\cdots,\x_N)
+&=
+	\chi_i(\x_1)\chi_j(\x_2)\cdots\chi_k(\x_N)
+\end{align}
+これはHartree積と呼ばれる。
+これが$\mathscr{H}$の固有関数であり、
+その固有値は$E=\epsilon_i+\epsilon_j+\cdots+\epsilon_k$であることを示せ。
+
+\subsection{解}
+\begin{align}
+	\mathscr{H}\Psi^{\rm HP}
+&=
+	\sum_{i'=1}^N
+		h(i') \chi_i(\x_1) \chi_j(\x_2) \cdots \chi_k(\x_N) \\
+%
+%
+&=
+	h(1) \chi_i(\x_1) \chi_j(\x_2) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	h(2) \chi_i(\x_1) \chi_j(\x_2) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	\cdots
+	+
+	h(N) \chi_i(\x_1) \chi_j(\x_2) \cdots \chi_k(\x_N) \\[2mm]
+%
+%
+&=
+	(h(1) \chi_i(\x_1)) \chi_j(\x_2) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	\chi_i(\x_1) (h(2)\chi_j(\x_2)) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	\cdots
+	+
+	\chi_i(\x_1) \chi_j(\x_2) \cdots (h(N)\chi_k(\x_N)) \\[2mm]
+%
+%
+&=
+	(\epsilon_1 \chi_i(\x_1)) \chi_j(\x_2) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	\chi_i(\x_1) (\epsilon_2\chi_j(\x_2)) \cdots \chi_k(\x_N) \nonumber\\&\quad
+	+
+	\cdots
+	+
+	\chi_i(\x_1) \chi_j(\x_2) \cdots (\epsilon_N\chi_k(\x_N)) \\[2mm]
+%
+%
+&=
+	(\epsilon_1+\epsilon_2+\cdots+\epsilon_N)
+		\chi_i(\x_1)\chi_j(\x_2)\cdots\chi_k(\x_N) \\
+%
+%
+&=
+	E \Psi^{\rm HP}
+\end{align}
+である。したがって、
+$\Psi^{\rm HP}$は$\mathscr{H}$の固有関数であり、
+固有値は$E=\epsilon_1+\epsilon_2+\cdots+\epsilon_N$である。
+
