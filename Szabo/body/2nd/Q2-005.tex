@@ -1,0 +1,109 @@
+%ファイルID
+%2020/04/30 12:12
+%->2004301212(10進数)->X5B4PO(ファイル作成者)
+%->X5B4POSahayanKY
+\subsection{問}
+次のSlater行列式を考える。
+\begin{align}
+	\ket{K}
+&=
+	\ket{\chi_i \chi_j} &
+%
+%
+	\ket{L}
+&=
+	\ket{\chi_k \chi_l}
+\end{align}
+このとき、
+\begin{align}
+	\braket{K|L}
+&=
+	\delta_{ik} \delta_{jl}
+	-
+	\delta_{il} \delta_{jk}
+\end{align}
+であることを示せ。
+
+
+\subsection{解}
+$\ket{K}$と$\ket{L}$は次の通りである。
+\begin{align}
+	\ket{K}
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			\chi_i(\x_1) \chi_j(\x_2)
+			-
+			\chi_j(\x_1) \chi_i(\x_2)
+		\right) &
+%
+%
+	\ket{L}
+&=
+	\frac{1}{\sqrt{2}}
+		\left(
+			\chi_k(\x_1) \chi_l(\x_2)
+			-
+			\chi_l(\x_1) \chi_k(\x_2)
+		\right)
+\end{align}
+従って、
+\begin{align}
+	\braket{K|L}
+&=
+	\int \d\x_1 \int \d\x_2\
+		\frac{1}{2}
+			\left(
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2)
+				-
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2)
+			\right)
+			\left(
+				\chi_k(\x_1) \chi_l(\x_2)
+				-
+				\chi_l(\x_1) \chi_k(\x_2)
+			\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left\{
+		\begin{array}{>{\displaystyle}l}
+			\int \d\x_1 \int \d\x_2\
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2) \chi_k(\x_1) \chi_l(\x_2) \\[3mm]
+			-
+			\int \d\x_1 \int \d\x_2\
+				\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2) \chi_l(\x_1) \chi_k(\x_2) \\[3mm]
+			-
+			\int \d\x_1 \int \d\x_2\
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2) \chi_k(\x_1) \chi_l(\x_2) \\[3mm]
+			+
+			\int \d\x_1 \int \d\x_2\
+				\conju{\chi_j}(\x_1) \conju{\chi_i}(\x_2) \chi_l(\x_1) \chi_k(\x_2)
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+			\delta_{ik} \delta_{jl}
+			-
+			\delta_{il} \delta_{jk}
+			-
+			\delta_{jk} \delta_{il}
+			+
+			\delta_{jl} \delta_{ik}
+		\right) \\
+%
+%
+&=
+	\delta_{ik} \delta_{jl}
+	-
+	\delta_{il} \delta_{jk}
+\end{align}
+である。
+
+
+
+
