@@ -1,0 +1,107 @@
+%ファイルID
+%2020/04/30 19:18
+%->2004301918(10進数)->X5B59A(ファイル作成者)
+%->X5B59ASahayanKY
+\subsection{問}
+規格化された原子軌道$\phi_1,\phi_2$から
+線形結合によって分子軌道$\psi_1,\psi_2$をつくる。
+\begin{align}
+	\psi_1
+&=
+	\frac{1}{\sqrt{2(1+S_{12})}}
+		(\phi_1+\phi_2) &
+%
+%
+	\psi_2
+&=
+	\frac{1}{\sqrt{2(1-S_{12})}}
+		(\phi_1-\phi_2)
+\end{align}
+ここで、$S_{12}$は
+\begin{align}
+	S_{12}
+&=
+	\int \d\r\
+		\conju{\phi_1}(\r) \phi_2(\r)
+\end{align}
+である。また、$\phi_1,\phi_2$は互いに直交しておらず、等しくもない。
+このとき、$\psi_1,\psi_2$が規格直交系であることを示せ。
+
+
+\subsection{解}
+$\phi_1,\phi_2$は実関数であるとする。
+即ち、$S_{12}$は実数であるとする。
+\begin{align}
+	\braket{\psi_1|\psi_1}
+&=
+	\int \d\r\
+		\conju{\psi_1} \psi_1 \\
+%
+%
+&=
+	\frac{1}{2(1+S_{12})}
+		\int \d\r\
+			(\conju{\phi_1}+\conju{\phi_2}) (\phi_1+\phi_2) \\
+%
+%
+&=
+	\frac{1}{2(1+S_{12})}
+		\left(
+			1 +2S_{12} +1
+		\right) \\
+%
+%
+&=
+	1
+\end{align}
+より、$\psi_1$は規格化されている。
+
+\begin{align}
+	\braket{\psi_2|\psi_2}
+&=
+	\int \d\r\
+		\conju{\psi_2} \psi_2 \\
+%
+%
+&=
+	\frac{1}{2(1-S_{12})}
+		\int \d\r\
+			(\conju{\phi_1}-\conju{\phi}_2)(\phi_1-\phi_2) \\
+%
+%
+&=
+	\frac{1}{2(1-S_{12})}
+		\left(
+			1 -2S_{12} +1
+		\right) \\
+%
+%
+&=
+	1
+\end{align}
+より、$\psi_2$は規格化されている。
+
+\begin{align}
+	\braket{\psi_1|\psi_2}
+&=
+	\int \d\r\
+		\conju{\psi_1} \psi_2 \\
+%
+%
+&=
+	\frac{1}{\sqrt{4(1-S_{12}^2)}}
+		\int \d\r\
+			(\conju{\phi}_1+\conju{\phi}_2) (\phi_1-\phi_2) \\
+%
+%
+&=
+	\frac{1}{2\sqrt{1-S_{12}^2}}
+		\left(
+			1 -S_{12} +S_{12} -1
+		\right) \\
+%
+%
+&=
+	0
+\end{align}
+より、$\psi_1$と$\psi_2$は直交している。
