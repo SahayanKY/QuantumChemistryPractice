@@ -1,0 +1,238 @@
+%ファイルID
+%2020/05/05 08:18
+%->2005050818(10進数)->X5R742(ファイル作成者)
+%->X5R742SahayanKY
+\subsection{問}
+以下の2式を導出せよ。
+\begin{align}
+	\braket{\Psi_{12}^{34}|\mathscr{O}_1|\Psi_{12}^{34}}
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4} \\
+%
+%
+	\braket{\Psi_0|\mathscr{O}_1|\Psi_{12}^{34}}
+&=
+	\braket{\Psi_{12}^{34}|\mathscr{O}_1|\Psi_0}
+=
+	0
+\end{align}
+ここで、$\mathscr{O}_1$は
+\begin{align}
+	\mathscr{O}_1
+&=
+	h(1)
+	+
+	h(2)
+=
+	\sum_{i=1}^{2}\left(
+		-
+		\frac{1}{2} \laplacian{}_{i}
+		-
+		\sum_A \frac{Z_A}{r_{iA}}
+	\right)
+\end{align}
+である。
+
+
+\subsection{解}
+まず1式目を導出する。
+\begin{align}
+&\quad
+	\braket{\Psi_{12}^{34}|\mathscr{O}_1|\Psi_{12}^{34}} \nonumber \\
+&=
+	\braket{\chi_3\chi_4|\mathscr{O}_1|\chi_3\chi_4} \\
+%
+%
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right)
+		}
+			(h(\r_1)+h(\r_2)) %\nonumber \\ &\qquad\qquad\qquad\qquad \cdot
+			\frac{1}{\sqrt{2}}\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+		\begin{array}{>{\displaystyle}l}
+			\int \d\x_1
+				\conju{\chi_3}(\x_1) h(\r_1) \chi_3(\x_1)
+			\int \d\x_2
+				\conju{\chi_4}(\x_2) \chi_4(\x_2)
+			-
+			\int \d\x_1
+				\conju{\chi_3}(\x_1) h(\r_1) \chi_4(\x_1)
+			\int \d\x_2
+				\conju{\chi_4}(\x_2) \chi_3(\x_2) \\
+			+
+			\int \d\x_1
+				\conju{\chi_3}(\x_1) \chi_3(\x_1)
+			\int \d\x_2
+				\conju{\chi_4}(\x_2) h(\r_2) \chi_4(\x_2)
+			-
+			\int \d\x_1
+				\conju{\chi_3}(\x_1) \chi_4(\x_1)
+			\int \d\x_2
+				\conju{\chi_4}(\x_2) h(\r_2) \chi_3(\x_2) \\
+			-
+			\int \d\x_1
+				\conju{\chi_4}(\x_1) h(\r_1) \chi_3(\x_1)
+			\int \d\x_2
+				\conju{\chi_3}(\x_2) \chi_4(\x_2)
+			+
+			\int \d\x_1
+				\conju{\chi_4}(\x_1) h(\r_1) \chi_4(\x_1)
+			\int \d\x_2
+				\conju{\chi_3}(\x_2) \chi_3(\x_2) \\
+			-
+			\int \d\x_1
+				\conju{\chi_4}(\x_1) \chi_3(\x_1)
+			\int \d\x_2
+				\conju{\chi_3}(\x_2) h(\r_2) \chi_4(\x_2)
+			+
+			\int \d\x_1
+				\conju{\chi_4}(\x_1) \chi_4(\x_1)
+			\int \d\x_2
+				\conju{\chi_3}(\x_2) h(\r_2) \chi_3(\x_2)
+		\end{array}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+		\begin{array}{>{\displaystyle}l}
+			\braket{\chi_3|h|\chi_3} \cdot 1
+			-
+			\braket{\chi_3|h|\chi_4} \cdot 0 \\
+			+
+			1 \cdot \braket{\chi_4|h|\chi_4}
+			-
+			0 \cdot \braket{\chi_4|h|\chi_3} \\
+			-
+			\braket{\chi_4|h|\chi_3} \cdot 0
+			+
+			\braket{\chi_4|h|\chi_4} \cdot 1 \\
+			-
+			0 \cdot \braket{\chi_3|h|\chi_4}
+			+
+			1 \cdot \braket{\chi_3|h|\chi_3}
+		\end{array}
+		\right) \\
+%
+%
+&=
+	\braket{\chi_3|h|\chi_3}
+	+
+	\braket{\chi_4|h|\chi_4} \\
+%
+%
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+\end{align}
+である。
+
+2式目について導出する。
+\begin{align}
+&\quad
+	\braket{\Psi_0|\mathscr{O}_1|\Psi_{12}^{34}} \nonumber \\
+%
+%
+&=
+	\braket{12|\mathscr{O}_1|34} \\
+%
+%
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_1(\x_1) \chi_2(\x_2)
+				-
+				\chi_2(\x_1) \chi_1(\x_2)
+			\right)
+		}
+			(h(\r_1)+h(\r_2))
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+		\begin{array}{>{\displaystyle}l}
+			\braket{1|h|3} \braket{2|4}
+			-
+			\braket{1|h|4} \braket{2|3}
+			+
+			\braket{1|3} \braket{2|h|4}
+			-
+			\braket{1|4} \braket{2|h|3} \\
+			-
+			\braket{2|h|3} \braket{1|4}
+			+
+			\braket{2|h|4} \braket{1|3}
+			-
+			\braket{2|3} \braket{1|h|4}
+			+
+			\braket{2|4} \braket{1|h|3}
+		\end{array}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+		\left(
+		\begin{array}{>{\displaystyle}l}
+			\braket{1|h|3} \cdot 0
+			-
+			\braket{1|h|4} \cdot 0
+			+
+			0 \cdot \braket{2|h|4}
+			-
+			0 \cdot \braket{2|h|3} \\
+			-
+			\braket{2|h|3} \cdot 0
+			+
+			\braket{2|h|4} \cdot 0
+			-
+			0 \cdot \braket{1|h|4}
+			+
+			0 \cdot \braket{1|h|3}
+		\end{array}
+		\right) \\
+%
+%
+&=
+	0
+\end{align}
+また、$\mathscr{O}_1$はエルミート演算子であるので、
+\begin{align}
+	\braket{\Psi_{12}^{34}|\mathscr{O}_1|\Psi_0}
+&=
+	\conju{
+		\braket{\Psi_0|\mathscr{O}_1|\Psi_{12}^{34}}
+	} \\
+%
+%
+&=
+	0
+\end{align}
+である。
