@@ -1,0 +1,496 @@
+%ファイルID
+%2020/05/05 10:36
+%->2005051036(10進数)->X5R7A4(ファイル作成者)
+%->X5R7A4SahayanKY
+\subsection{問}
+最小基底での\ce{H2}モデルの完全CI行列
+($\ket{\Psi_0}$と$\ket{\Psi_{12}^{34}}$のハミルトニアン行列)が
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{1|h|1}
+		+
+		\braket{2|h|2}
+		+
+		\braket{12|12}
+		-
+		\braket{12|21} &
+		%
+		\braket{12|34}
+		-
+		\braket{12|43} \\
+	%
+		\braket{34|12}
+		-
+		\braket{34|21} &
+		%
+		\braket{3|h|3}
+		+
+		\braket{4|h|4}
+		+
+		\braket{34|34}
+		-
+		\braket{34|43}
+	\end{array}
+	\right]
+\end{align}
+であることを示せ。また、これがエルミート行列であることも示せ。
+
+ここで、$\braket{i|h|j}$と$\braket{ij|kl}$は
+\begin{align}
+	\braket{i|h|j}
+&=
+	\int \d\x_1
+		\conju{\chi_i}(\x_1) h(\r_1) \chi_j(\x_1) \\
+%
+%
+	\braket{ij|kl}
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju{\chi_i}(\x_1) \conju{\chi_j}(\x_2)
+		r_{12}^{-1}
+		\chi_k(\x_1) \chi_l(\x_2)
+\end{align}
+である。
+
+
+\subsection{解}
+ハミルトニアン行列$H$は
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{12|\mathscr{H}|12} &
+		%
+		\braket{12|\mathscr{H}|34} \\
+	%
+		\braket{34|\mathscr{H}|12} &
+		%
+		\braket{34|\mathscr{H}|34}
+	\end{array}
+	\right]
+\end{align}
+である。$\braket{12|\mathscr{H}|12}$については、
+既に本文中に解説があった通りに、
+\begin{align}
+	\braket{12|\mathscr{H}|12}
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{12|12}
+	-
+	\braket{12|21}
+\end{align}
+である。
+
+$\braket{12|\mathscr{H}|34}$は
+\begin{align}
+	\braket{12|\mathscr{H}|34}
+&=
+	\braket{12|\mathscr{O}_1|34}
+	+
+	\braket{12|\mathscr{O}_2|34} \\
+%
+%
+&=
+	\braket{12|\mathscr{O}_2|34}
+	%
+	\qquad
+	(\because \braket{12|\mathscr{O}_1|34}=0)
+\end{align}
+であり、
+\begin{align}
+	\braket{12|\mathscr{O}_2|34}
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_1(\x_1) \chi_2(\x_2)
+				-
+				\chi_2(\x_1) \chi_1(\x_2)
+			\right)
+		}
+		r_{12}^{-1}
+		\frac{1}{\sqrt{2}}
+		\left(
+			\chi_3(\x_1) \chi_4(\x_2)
+			-
+			\chi_4(\x_1) \chi_3(\x_2)
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{12|34}
+		-
+		\braket{12|43}
+		-
+		\braket{21|34}
+		+
+		\braket{21|43}
+	\biggr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{12|34}
+		-
+		\braket{12|43}
+		-
+		\braket{12|43}
+		+
+		\braket{12|34}
+	\biggr)
+	%
+	\qquad
+	(\braket{ij|kl}=\braket{ji|lk} ) \\
+%
+%
+&=
+	\braket{12|34}
+	-
+	\braket{12|43}
+\end{align}
+従って、
+\begin{align}
+	\braket{12|\mathscr{H}|34}
+&=
+	\braket{12|34}
+	-
+	\braket{12|43}
+\end{align}
+である。
+
+次に$\braket{34|\mathscr{H}|12}$について見る。同様に、
+\begin{align}
+	\braket{34|\mathscr{H}|12}
+&=
+	\braket{34|\mathscr{O}_1|12}
+	+
+	\braket{34|\mathscr{O}_2|12} \\
+%
+%
+&=
+	\braket{34|\mathscr{O}_2|12} \\
+%
+%
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right)
+		}
+		r_{12}^{-1}
+		\frac{1}{\sqrt{2}}
+		\left(
+			\chi_1(\x_1) \chi_2(\x_2)
+			-
+			\chi_2(\x_1) \chi_1(\x_2)
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{34|12}
+		-
+		\braket{34|21}
+		-
+		\braket{43|12}
+		+
+		\braket{43|21}
+	\biggr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{34|12}
+		-
+		\braket{34|21}
+		-
+		\braket{34|21}
+		+
+		\braket{34|12}
+	\biggr) \\
+%
+%
+&=
+	\braket{34|12}
+	-
+	\braket{34|21}
+\end{align}
+である。
+
+最後に$\braket{34|\mathscr{H}|34}$について見る。
+\begin{align}
+	\braket{34|\mathscr{H}|34}
+&=
+	\braket{34|\mathscr{O}_1|34}
+	+
+	\braket{34|\mathscr{O}_2|34}
+\end{align}
+\begin{align}
+&\quad
+	\braket{34|\mathscr{O}_1|34} \nonumber\\
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right)
+		}
+		(h(\r_1) +h(\r_2))
+		\frac{1}{\sqrt{2}}
+		\left(
+			\chi_3(\x_1) \chi_4(\x_2)
+			-
+			\chi_4(\x_1) \chi_3(\x_2)
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+	\begin{array}{l}
+		\braket{3|h|3} \braket{4|4}
+		-
+		\braket{3|h|4} \braket{4|3}
+		+
+		\braket{3|3} \braket{4|h|4}
+		-
+		\braket{3|4} \braket{4|h|3} \\
+		-
+		\braket{4|h|3} \braket{3|4}
+		+
+		\braket{4|h|4} \braket{3|3}
+		-
+		\braket{4|3} \braket{3|h|4}
+		+
+		\braket{4|4} \braket{3|h|3}
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+\end{align}
+\begin{align}
+	\braket{34|\mathscr{O}_2|34}
+&=
+	\int \d\x_1 \int \d\x_2
+		\conju[1]{
+			\frac{1}{\sqrt{2}}
+			\left(
+				\chi_3(\x_1) \chi_4(\x_2)
+				-
+				\chi_4(\x_1) \chi_3(\x_2)
+			\right)
+		}
+		r_{12}^{-1}
+		\frac{1}{\sqrt{2}}
+		\left(
+			\chi_3(\x_1) \chi_4(\x_2)
+			-
+			\chi_4(\x_1) \chi_3(\x_2)
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{34|34}
+		-
+		\braket{34|43}
+		-
+		\braket{43|34}
+		+
+		\braket{43|43}
+	\biggr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{34|34}
+		-
+		\braket{34|43}
+		-
+		\braket{34|43}
+		+
+		\braket{34|34}
+	\biggr) \\
+%
+%
+&=
+	\braket{34|34}
+	-
+	\braket{34|43}
+\end{align}
+従って、
+\begin{align}
+	\braket{34|\mathscr{H}|34}
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+	+
+	\braket{34|34}
+	-
+	\braket{34|43}
+\end{align}
+である。
+
+よってこれらから、ハミルトニアン行列は
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{1|h|1}
+		+
+		\braket{2|h|2}
+		+
+		\braket{12|12}
+		-
+		\braket{12|21} &
+		%
+		\braket{12|34}
+		-
+		\braket{12|43} \\
+	%
+		\braket{34|12}
+		-
+		\braket{34|21} &
+		%
+		\braket{3|h|3}
+		+
+		\braket{4|h|4}
+		+
+		\braket{34|34}
+		-
+		\braket{34|43}
+	\end{array}
+	\right]
+\end{align}
+である。
+
+また、$H$がエルミート行列であること、すなわち$H=\adj{H}$であることは
+\begin{align}
+	\conju{H_{11}}
+&=
+	\conju{\braket{1|h|1}}
+	+
+	\conju{\braket{2|h|2}}
+	+
+	\conju{\braket{12|12}}
+	-
+	\conju{\braket{12|21}} \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{12|12}
+	-
+	\braket{21|12}
+	%
+	\qquad
+	(
+		\conju{\braket{i|h|i}}=\braket{i|h|i},
+		\conju{\braket{ij|kl}}=\braket{kl|ij}
+	) \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{12|12}
+	-
+	\braket{12|21} \\
+%
+%
+&=
+	H_{11}
+\end{align}
+\begin{align}
+	\conju{H_{12}}
+&=
+	\conju{\braket{12|34}}
+	-
+	\conju{\braket{12|43}} \\
+%
+%
+&=
+	\braket{34|12}
+	-
+	\braket{43|12} \\
+%
+%
+&=
+	\braket{34|12}
+	-
+	\braket{34|21} \\
+%
+%
+&=
+	H_{21}
+\end{align}
+\begin{align}
+	\conju{H_{22}}
+&=
+	\conju{\braket{3|h|3}}
+	+
+	\conju{\braket{4|h|4}}
+	+
+	\conju{\braket{34|34}}
+	-
+	\conju{\braket{34|43}} \\
+%
+%
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+	+
+	\braket{34|34}
+	-
+	\braket{43|34} \\
+%
+%
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+	+
+	\braket{34|34}
+	-
+	\braket{34|43} \\
+%
+%
+&=
+	H_{22}
+\end{align}
+であることから、$\conju{H_{ij}}=H_{ji}$となり、
+明らかである。
