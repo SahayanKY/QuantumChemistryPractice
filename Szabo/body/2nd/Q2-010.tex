@@ -1,0 +1,173 @@
+%ファイルID
+%2020/05/05 17:32
+%->2005051732(10進数)->X5R7TG(ファイル作成者)
+%->X5R7TGSahayanKY
+\subsection{問}
+1つの$N$電子行列式$\ket{K}$に対して$\braket{K|\mathscr{H}|K}$は
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\sum_{m}^{N} \braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m}^{N} \sum_{n}^{N} \antitwo{mn}{mn}
+\end{align}
+である。ここから、
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\sum_{m}^{N} \chemone{m}{h}{m}
+	+
+	\sum_{m}^{N} \sum_{n>m}^{N}\left(
+		\chemtwo{mm}{nn}
+		-
+		\chemtwo{mn}{nm}
+	\right)
+\end{align}
+であることを示せ。
+
+ここで
+\begin{align}
+	\antitwo{ij}{kl}
+&=
+	\phystwo{ij}{kl}
+	-
+	\phystwo{ij}{lk} &
+%
+%
+	\chemtwo{ij}{kl}
+&=
+	\phystwo{ik}{jl} &
+%
+%
+	\chemone{i}{h}{j}
+&=
+	\braket{i|h|j}
+\end{align}
+である。
+
+
+\subsection{解}
+\begin{align}
+	\frac{1}{2}
+	\sum_m \sum_n \antitwo{mn}{mn}
+&=
+	\frac{1}{2}
+	\sum_m
+	\left(
+		\sum_{n<m}
+		+
+		\sum_{n=m}
+		+
+		\sum_{n>m}
+	\right) \antitwo{mn}{mn} \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_m
+	\left(
+		\sum_{n<m} \antitwo{mn}{mn}
+		+
+		\antitwo{mm}{mm}
+		+
+		\sum_{n>m} \antitwo{mn}{mn}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+		\sum_m \sum_{n<m} \antitwo{mn}{mn}
+		+
+		\sum_m
+		\left[
+			\phystwo{mm}{mm}
+			-
+			\phystwo{mm}{mm}
+		\right]
+		+
+		\sum_m \sum_{n>m} \antitwo{mn}{mn}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+		\sum_n \sum_{m>n} \antitwo{mn}{mn}
+		+
+		0
+		+
+		\sum_m \sum_{n>m} \antitwo{mn}{mn}
+	\right)
+	%
+	\qquad
+	\left(
+		\because
+		\sum_m \sum_{n<m} = \sum_n \sum_{m>n}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+		\sum_m \sum_{n>m} \antitwo{nm}{nm}
+		+
+		\sum_m \sum_{n>m} \antitwo{mn}{mn}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+		\sum_m \sum_{n>m} \antitwo{mn}{mn}
+		+
+		\sum_m \sum_{n>m} \antitwo{mn}{mn}
+	\right) \nonumber \\ &
+	%
+	\qquad
+	\left(
+		\because
+		\antitwo{nm}{nm}
+		=
+		\phystwo{nm}{nm} -\phystwo{nm}{mn}
+		=
+		\phystwo{mn}{mn} -\phystwo{mn}{nm}
+		=
+		\antitwo{mn}{mn}
+	\right) \\
+%
+%
+&=
+	\sum_m \sum_{n>m} \antitwo{mn}{mn} \\
+%
+%
+&=
+	\sum_m \sum_{n>m}
+	\left(
+		\chemtwo{mm}{nn}
+		-
+		\chemtwo{mn}{nm}
+	\right)
+\end{align}
+従って、
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\sum_{m} \braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m} \sum_{n} \antitwo{mn}{mn} \\
+%
+%
+&=
+	\sum_m \chemone{m}{h}{m}
+	+
+	\sum_m \sum_{n>m}
+	\left(
+		\chemtwo{mm}{nn}
+		-
+		\chemtwo{mn}{nm}
+	\right)
+\end{align}
+である。
