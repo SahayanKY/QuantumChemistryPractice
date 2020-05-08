@@ -1,0 +1,126 @@
+%ファイルID
+%2020/05/08 10:28
+%->2005081028(10進数)->X5RUF8(ファイル作成者)
+%->X5RUF8SahayanKY
+\subsection{問}
+$\ket{K}=\ket{\chi_1\chi_2\chi_3}$として、
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{3|h|3}
+	+
+	\antitwo{12}{12}
+	+
+	\antitwo{12}{13}
+	+
+	\antitwo{23}{23}
+\end{align}
+であることを示せ。
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\braket{K|\mathscr{O}_1|K}
+	+
+	\braket{K|\mathscr{O}_2|K}
+\end{align}
+である。第1項については、
+\begin{align}
+	\braket{K|\mathscr{O}_1|K}
+&=
+	\sum_{m=1,2,3} \braket{m|h|m} \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{3|h|3}
+\end{align}
+である。第2項については
+\begin{align}
+	\braket{K|\mathscr{O}_2|K}
+&=
+	\frac{1}{2}
+	\sum_{m=1,2,3}\ \sum_{n=1,2,3}
+		\antitwo{mn}{mn} \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+	\begin{array}{l}
+		\antitwo{11}{11}
+		+
+		\antitwo{12}{12}
+		+
+		\antitwo{13}{13}
+		+
+		\antitwo{21}{21}
+		+
+		\antitwo{22}{22}
+		+
+		\antitwo{23}{23} \\ \quad
+		+
+		\antitwo{31}{31}
+		+
+		\antitwo{32}{32}
+		+
+		\antitwo{33}{33}
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\left(
+		0
+		+
+		\antitwo{12}{12}
+		+
+		\antitwo{13}{13}
+		+
+		\antitwo{12}{12}
+		+
+		0
+		+
+		\antitwo{23}{23}
+		+
+		\antitwo{13}{13}
+		+
+		\antitwo{23}{23}
+		+
+		0
+	\right) \\
+%
+%
+&=
+	\antitwo{12}{12}
+	+
+	\antitwo{13}{13}
+	+
+	\antitwo{23}{23}
+\end{align}
+従って、
+\begin{align}
+	\braket{K|\mathscr{H}|K}
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\braket{3|h|3}
+	+
+	\antitwo{12}{12}
+	+
+	\antitwo{13}{13}
+	+
+	\antitwo{23}{23}
+\end{align}
+となる。
+
+
