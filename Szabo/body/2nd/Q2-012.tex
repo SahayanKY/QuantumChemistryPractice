@@ -1,0 +1,147 @@
+%ファイルID
+%2020/05/11 09:14
+%->2005110914(10進数)->X5SHHE(ファイル作成者)
+%->X5SHHESahayanKY
+\subsection{問}
+$\braket{K|\mathscr{O}_1|L}$と$\braket{K|\mathscr{O}_2|L}$に関する規則は
+次の通りである。
+\begin{align}
+	\braket{K|\mathscr{O}_1|L}
+&=
+	\left\{
+	\begin{array}{>{\displaystyle}ll}
+		\sum_m \braket{m|h|m} &
+		%
+		(\ket{K}=\ket{L}=\ket{\cdots m\cdots}) \\
+	%
+		\braket{m|h|p} &
+		%
+		(\ket{K}=\ket{\cdots m\cdots}, \ket{L}=\ket{\cdots p\cdots}) \\
+	%
+		0 &
+		%
+		(\ket{K}=\ket{\cdots mn\cdots}, \ket{L}=\ket{\cdots pq\cdots})
+	\end{array}
+	\right. \\
+%
+%
+	\braket{K|\mathscr{O}_2|L}
+&=
+	\left\{
+	\begin{array}{>{\displaystyle}ll}
+		\frac{1}{2} \sum_m \sum_n \antitwo{mn}{mn} &
+		%
+		(\ket{K}=\ket{L}=\ket{\cdots m\cdots}) \\
+	%
+		\sum_n \antitwo{mn}{pn} &
+		%
+		(\ket{K}=\ket{\cdots m\cdots}, \ket{L}=\ket{\cdots p\cdots}) \\
+	%
+		\antitwo{mn}{pq} &
+		%
+		(\ket{K}=\ket{\cdots mn\cdots}, \ket{L}=\ket{\cdots pq\cdots})
+	\end{array}
+	\right.
+\end{align}
+
+これを利用して\ce{H2}の完全CI行列の行列要素を計算し、
+問題2.9で得た結果に等しくなることを示せ。
+
+
+\subsection{解}
+\ce{H2}の完全CI行列は次の通りである。
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\Psi_0|\mathscr{H}|\Psi_0} &
+		%
+		\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}} \\
+	%
+		\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0} &
+		%
+		\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}
+	\end{array}
+	\right]
+\end{align}
+ここで、$\ket{\Psi_0}=\ket{12}, \ket{\Psi_{12}^{34}}=\ket{34}$である。
+よって、$\braket{\Psi_0|\mathscr{H}|\Psi_0}$は
+\begin{align}
+	\braket{\Psi_0|\mathscr{H}|\Psi_0}
+&=
+	\sum_{m=1,2} \braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m=1,2} \sum_{n=1,2} \antitwo{mn}{mn} \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\frac{1}{2}
+	\biggl(
+		\antitwo{11}{11}
+		+
+		\antitwo{12}{12}
+		+
+		\antitwo{21}{21}
+		+
+		\antitwo{22}{22}
+	\biggr) \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\frac{1}{2}
+	\biggl(
+		\antitwo{12}{12}
+		+
+		\antitwo{21}{21}
+	\biggr)
+	%
+	\quad
+	(\because \antitwo{ij}{kk}=0) \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+	+
+	\antitwo{12}{12}
+	%
+	\quad
+	(\because \phystwo{ij}{kl}=\phystwo{ji}{lk})
+\end{align}
+である。また、$\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}}$と
+$\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0}$は
+\begin{align}
+	\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}}
+&=
+	\antitwo{12}{34} \\
+%
+%
+	\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0}
+&=
+	\antitwo{34}{12}
+\end{align}
+である。最後に$\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}$は、
+$\braket{\Psi_0|\mathscr{H}|\Psi_0}$と同様で
+\begin{align}
+	\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}
+&=
+	\braket{3|h|3}
+	+
+	\braket{4|h|4}
+	+
+	\antitwo{34}{34}
+\end{align}
+となる。
+
+従って、確かに問題2.9で得た結果に一致することが言える。
