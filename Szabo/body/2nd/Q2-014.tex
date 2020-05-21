@@ -1,0 +1,50 @@
+%ファイルID
+%2020/05/21 16:24
+%->2005211624(10進数)->X5UN6W(ファイル作成者)
+%->X5UN6WSahayanKY
+\subsection{問}
+$N$電子系のHartree-Fock基底状態$\ket{\Psi_0}$を
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\chi_1 \cdots \chi_{a-1} \chi_a \chi_{a+1} \cdots \chi_N}
+\end{align}
+とする。また、$\chi_a$から1つ電子が除かれたイオン化状態$\ket{^{N-1}\Psi_a}$を
+\begin{align}
+	\ket{^{N-1}\Psi_a}
+&=
+	\ket{\chi_1 \cdots \chi_{a-1} \chi_{a+1} \cdots \chi_N}
+\end{align}
+とする。それぞれの状態のエネルギーを
+\begin{align}
+	^{N}E_0
+&=
+	\braket{^{N}\Psi_0|\mathscr{H}|^{N}\Psi_0} &
+%
+%
+	^{N-1}E_a
+&=
+	\braket{^{N-1}\Psi_a|\mathscr{H}|^{N-1}\Psi_a}
+\end{align}
+とする。
+	%
+	\footnote{
+		厳密には後者のハミルトニアン$\mathscr{H}$は
+		$^{N-1}\mathscr{H}$などと区別されるべきだと思う。
+	}
+	%
+
+このとき、イオン化過程に必要なエネルギーが
+\begin{align}
+	^{N}E_0
+	-
+	^{N-1}E_a
+&=
+	\braket{a|h|a}
+	+
+	\sum_b^N \antitwo{ab}{ab}
+\end{align}
+であることを示せ。
+
+
+
