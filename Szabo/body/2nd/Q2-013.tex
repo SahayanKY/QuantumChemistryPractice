@@ -1,0 +1,190 @@
+%ファイルID
+%2020/05/21 15:15
+%->2005211515(10進数)->X5UN3V(ファイル作成者)
+%->X5UN3VSahayanKY
+\subsection{問}
+次式を示せ。
+\begin{align}
+	\braket{\Psi_{a}^{r}|\mathscr{O}_1|\Psi_{b}^{s}}
+&=
+	\left\{
+	\begin{array}{>{\displaystyle}ll}
+		0 					& (a\neq b, r\neq s) \\[1mm]
+		%
+		\braket{r|h|s}		& (a=b, r\neq s) \\[1mm]
+		%
+		-\braket{b|h|a}		& (a\neq b, r=s) \\[1mm]
+		%
+		\sum_c^N \braket{c|h|c}
+		-
+		\braket{a|h|a}
+		+
+		\braket{r|h|r}		& (a=b, r=s)
+	\end{array}
+	\right.
+\end{align}
+
+
+\subsection{解}
+まず、$a\neq b,r\neq s$について考える。
+この時、$\ket{\Psi_{a}^{r}}, \ket{\Psi_{b}^{s}}$は、
+Hartree-Fock基底状態$\ket{\Psi_0}$に対して
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\cdots a\cdots b\cdots} \\
+%
+%
+	\ket{\Psi_{a}^{r}}
+&=
+	\ket{\cdots r\cdots b\cdots}
+=
+	(-1)^n \ket{\cdots rb\cdots} \\
+%
+%
+	\ket{\Psi_{b}^{s}}
+&=
+	\ket{\cdots a\cdots s\cdots}
+=
+	(-1)^n \ket{\cdots as\cdots}
+\end{align}
+となる。ここで$n$は$b$を$a$の隣まで移動させるために行った置換の回数である。
+これは表2.3におけるケース3に相当する。
+$\ket{\cdots a\cdots b\cdots}$に対応するブラベクトルを
+$\bra{\cdots a\cdots b\cdots}$とすると、
+\begin{align}
+	\braket{\Psi_{a}^{r}|\mathscr{O}_1|\Psi_{b}^{s}}
+&=
+	\braket{\cdots r\cdots b\cdots|\mathscr{O}_1|\cdots a\cdots s\cdots} \\
+%
+%
+&=
+	(-1)^{2n}
+	\braket{\cdots rb\cdots|\mathscr{O}_1|\cdots as\cdots} \\
+%
+%
+&=
+	0
+\end{align}
+となる。
+
+次に、$a=b, r\neq s$の場合について考える。
+$\ket{\Psi_0},\ket{\Psi_{a}^{r}},\ket{\Psi_{b}^{s}}$は
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\cdots a\cdots}
+=
+	\ket{\cdots b\cdots} \\
+%
+%
+	\ket{\Psi_{a}^{r}}
+&=
+	\ket{\cdots r\cdots} \\
+%
+%
+	\ket{\Psi_{b}^{s}}
+&=
+	\ket{\cdots s\cdots}
+\end{align}
+となる。これは表2.3のケース2に相当する。
+従って、
+\begin{align}
+	\braket{\Psi_{a}^{r}|\mathscr{O}_1|\Psi_{b}^{s}}
+&=
+	\braket{\cdots r\cdots|\mathscr{O}_1|\cdots s\cdots} \\
+%
+%
+&=
+	\braket{r|h|s}
+\end{align}
+となる。
+
+次に、$a\neq b, r=s$の場合について考える。
+$\ket{\Psi_0},\ket{\Psi_{a}^{r}},\ket{\Psi_{b}^{s}}$は
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\cdots a\cdots b\cdots} \\
+%
+%
+	\ket{\Psi_{a}^{r}}
+&=
+	\ket{\cdots r\cdots b\cdots} \\
+%
+&=
+	(-1)^n \ket{\cdots rb\cdots}
+%
+%
+	\ket{\Psi_{b}^{s}}
+&=
+	\ket{\cdots a\cdots s\cdots}
+=
+	\ket{\cdots a\cdots r\cdots} \\
+%
+&=
+	(-1)^n \ket{\cdots ar\cdots} \\
+%
+&=
+	(-1)^{n+1} \ket{\cdots ra\cdots}
+\end{align}
+となる。これは表2.3のケース2に相当する。
+従って、
+\begin{align}
+	\braket{\Psi_{a}^{r}|\mathscr{O}_1|\Psi_{b}^{s}}
+&=
+	\braket{\cdots r\cdots b\cdots|\mathscr{O}_1|\cdots a\cdots s\cdots} \\
+%
+%
+&=
+	(-1)^{2n+1}
+	\braket{\cdots rb\cdots|\mathscr{O}_1|\cdots ra\cdots} \\
+%
+%
+&=
+	-\braket{b|h|a}
+\end{align}
+となる。
+
+最後に$a=b, r=s$の場合について考える。
+$\ket{\Psi_0},\ket{\Psi_{a}^{r}},\ket{\Psi_{b}^{s}}$は
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\cdots a\cdots} \\
+%
+%
+	\ket{\Psi_{a}^{r}}
+&=
+	\ket{\cdots r\cdots} \\
+%
+%
+	\ket{\Psi_{b}^{s}}
+&=
+	\ket{\Psi_{a}^{r}}
+=
+	\ket{\cdots r\cdots}
+\end{align}
+となる。これは表2.3のケース1に相当する。
+従って、
+\begin{align}
+	\braket{\Psi_{a}^{r}|\mathscr{O}_1|\Psi_{b}^{s}}
+&=
+	\braket{\cdots r\cdots|\mathscr{O}_1|\cdots r\cdots} \\
+%
+%
+&=
+	\sum_{c=\cdots,r,\cdots}
+		\braket{c|h|c} \\
+%
+%
+&=
+	\sum_{c=\cdots,a,\cdots}
+		\braket{c|h|c}
+	+
+	\braket{r|h|r}
+	-
+	\braket{a|h|a}
+\end{align}
+となる。
+
