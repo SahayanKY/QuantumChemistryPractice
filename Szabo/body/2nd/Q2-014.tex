@@ -45,6 +45,202 @@ $N$電子系のHartree-Fock基底状態$\ket{\Psi_0}$を
 	\sum_b^N \antitwo{ab}{ab}
 \end{align}
 であることを示せ。
+	%
+	\footnote{
+		これだとイオン化後の電子の運動エネルギーを無視しているので、厳密ではないと思う。
+		が、最低限必要なエネルギーではあるか。
+	}
+	%
+	\footnote{
+		恐らく、$^{N}E_0$と$^{N-1}E_a$の符号逆だと思う。
+		電子間相互作用のみに注目すると、
+		イオン化によってそれによる不安定化が解消されるので、
+		$^{N}E_0-^{N-1}E_a$は正に寄るはず。
+		この解消はイオン化にとって有利に働くはずなので正に寄るのはおかしい。
+	}
+	%
+	\footnote{
+		それから、イオン化後も同じスピン軌道(空間軌道)になるとは思えない。
+	}
+	%
+
+
+\subsection{解}
+$^{N}E_0,^{N-1}E_a$の具体的な値を求める。
+その前に次の添え字の集合を定義する。
+\begin{align}
+	A_0
+&=
+	\left\{
+		1,\dots,a-1,a,a+1,\dots,N
+	\right\} \\
+%
+%
+	A_a
+&=
+	\left\{
+		1,\dots,a-1,a+1,\dots,N
+	\right\}
+\end{align}
+
+まず、$^{N}E_0$は
+\begin{align}
+	^{N}E_0
+&=
+	\braket{^{N}\Psi_0|\mathscr{H}|^{N}\Psi_0} \\
+%
+%
+&=
+	\braket{^{N}\Psi_0|\mathscr{O}_1|^{N}\Psi_0}
+	+
+	\braket{^{N}\Psi_0|\mathscr{O}_2|^{N}\Psi_0} \\
+%
+%
+&=
+	\sum_{m\in A_0}
+		\braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m\in A_0}
+	\sum_{n\in A_0}
+		\antitwo{mn}{mn}
+\end{align}
+である。一方で、$^{N-1}E_a$は
+\begin{align}
+	^{N-1}E_a
+&=
+	\braket{^{N-1}\Psi_a|\mathscr{H}|^{N-1}\Psi_a} \\
+%
+%
+&=
+	\braket{^{N-1}\Psi_a|\mathscr{O}_1|^{N-1}\Psi_a}
+	+
+	\braket{^{N-1}\Psi_a|\mathscr{O}_2|^{N-1}\Psi_a} \\
+%
+%
+&=
+	\sum_{m\in A_a}
+		\braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m\in A_a}
+	\sum_{n\in A_a}
+		\antitwo{mn}{mn}
+\end{align}
+である。
+
+従って、二つの差は
+\begin{align}
+	^{N}E_0
+	-
+	^{N-1}E_a
+&=
+	\sum_{m\in A_0}
+		\braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{m\in A_0}
+	\sum_{n\in A_0}
+		\antitwo{mn}{mn}
+	-
+	\sum_{m\in A_a}
+		\braket{m|h|m}
+	-
+	\frac{1}{2}
+	\sum_{m\in A_a}
+	\sum_{n\in A_a}
+		\antitwo{mn}{mn} \\
+%
+%
+&=
+	\sum_{m\in A_0/A_a}
+		\braket{m|h|m}
+	+
+	\frac{1}{2}
+	\sum_{(m,n)\in (A_0\times A_0) / (A_a\times A_a)}
+		\antitwo{mn}{mn}
+\end{align}
+ここで$A_0/A_a=\{a\}$であり、
+$(A_0\times A_0) / (A_a\times A_a) =\{(1,a),(2,a),\dots,(N,a),(a,1),\dots,(a,a-1),(a,a+1),\dots,(a,N)\}$である。
+また、$\antitwo{mn}{mn}=\antitwo{nm}{nm},\antitwo{mm}{mm}=0$であるので、
+\begin{align}
+		^{N}E_0
+	-
+	^{N-1}E_a
+&=
+	\braket{a|h|a}
+	+
+	\frac{1}{2}
+	\left(
+	\begin{array}{l}
+		\antitwo{1a}{1a}
+		+
+		\antitwo{2a}{2a}
+		+
+		\dots
+		+
+		\antitwo{Na}{Na} \\
+		+
+		\antitwo{a1}{a1}
+		+
+		\dots
+		+
+		\antitwo{a,a-1}{a,a-1}
+		+
+		\antitwo{a,a+1}{a,a+1}
+		+
+		\dots
+		+
+		\antitwo{aN}{aN}
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\braket{a|h|a}
+	+
+	\frac{1}{2}
+	\left(
+	\begin{array}{l}
+		\antitwo{1a}{1a}
+		+
+		\antitwo{2a}{2a}
+		+
+		\dots
+		+
+		\antitwo{Na}{Na} \\
+		+
+		\antitwo{a1}{a1}
+		+
+		\antitwo{a2}{a2}
+		+
+		\dots
+		+
+		\antitwo{aN}{aN}
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\braket{a|h|a}
+	+
+	\Bigl(
+		\antitwo{a1}{a1}
+		+
+		\antitwo{a2}{a2}
+		+
+		\dots
+		+
+		\antitwo{aN}{aN}
+	\Bigr) \\
+%
+%
+&=
+	\braket{a|h|a}
+	+
+	\sum_{b}^{N}
+		\antitwo{ab}{ab}
+\end{align}
 
 
 
