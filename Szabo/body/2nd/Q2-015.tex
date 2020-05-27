@@ -1,0 +1,151 @@
+%ファイルID
+%2020/05/27 16:00
+%->2005271600(10進数)->X5VXGW(ファイル作成者)
+%->X5VXGWSahayanKY
+\subsection{問}
+問題2.4を一般化させる。
+スピン軌道$\chi_i,\chi_j,\dots,\chi_k$を1電子演算子$h$の固有関数とし、
+それぞれの固有値を$\epsilon_i,\epsilon_j,\dots,\epsilon_k$とする。
+これから得られる$N$電子Slater行列式$\ket{\chi_i\chi_j \dots\chi_k}$が
+独立電子のハミルトニアン$\mathscr{H}=\sum_i^N h(i)$の固有関数であること、
+その固有値が$\epsilon_i+\epsilon_j+\dots+\epsilon_k$であることを示せ。
+
+
+\subsection{解}
+$N$電子Slater行列式は次の通りである。
+\begin{align}
+	\ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\chi_i(\x_{\mathscr{P}_n(1)})
+		\chi_j(\x_{\mathscr{P}_n(2)})
+		\dots
+		\chi_k(\x_{\mathscr{P}_n(N)})
+\end{align}
+ここで、$\mathscr{P}_n$は電子の添え字$1,2,\dots,N$の置換演算子であり、
+$n$は置換の仕方を区別するためのラベルである。
+また、$p_n$は置換$\mathscr{P}_n$における置換の回数である。
+また、$\mathscr{P}_n(i)$は添え字$i$を置換$\mathscr{P}_n$に従って置き換えた添え字である。
+
+ハミルトニアン$\mathscr{H}$に置換演算を作用させると、
+\begin{align}
+	\mathscr{P}_n\left\{
+		\mathscr{H}
+	\right\}
+&=
+	\mathscr{P}_n\left\{
+		\sum_{i=1}^{N} h(\x_i)
+	\right\} \\
+%
+%
+&=
+	\sum_{i=1}^{N} h(\x_{\mathscr{P}_n(i)}) \\
+%
+%
+&=
+	\sum_{j=\mathscr{P}_n(1),\dots,\mathscr{P}_n(N)} h(\x_j) \\
+%
+%
+&=
+	\sum_{j=1,\dots,N} h(\x_j)
+%
+%
+=
+	\sum_{i=1}^{N} h(\x_i) \\
+%
+%
+&=
+	\mathscr{H}
+\end{align}
+となる。従って、Slater行列式にハミルトニアン$\mathscr{H}$を作用させると、
+\begin{align}
+	\mathscr{H}\ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{H}
+		\mathscr{P}_n\left\{
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\mathscr{H}
+		\right\}
+		\mathscr{P}_n\left\{
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\mathscr{H}
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\}
+\end{align}
+となる。置換演算の中身について注目すると、
+これはHartree積にハミルトニアンを作用させており、
+\begin{align}
+	\mathscr{H}
+	\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+&=
+	(\epsilon_i+\epsilon_j+\dots+\epsilon_k)
+	\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+\end{align}
+であるため、
+\begin{align}
+	\mathscr{H}\ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			(\epsilon_i+\epsilon_j+\dots+\epsilon_k)
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\} \\
+%
+%
+&=
+	(\epsilon_i+\epsilon_j+\dots+\epsilon_k)
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\chi_i(\x_1) \chi_j(\x_2) \dots \chi_k(\x_N)
+		\right\} \\
+%
+%
+&=
+	(\epsilon_i+\epsilon_j+\dots+\epsilon_k)
+	\ket{\chi_i\chi_j\dots\chi_k}
+\end{align}
+となる。従って、Slater行列式は$\mathscr{H}$の固有関数で、
+固有値は$\epsilon_i+\epsilon_j+\dots+\epsilon_k$であることが言える。
+
+
+
+
+
+
+
+
+
