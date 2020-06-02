@@ -16,7 +16,7 @@ $z$軸方向に均一な電場$F$がかかった状態での
 	\right)\ket{\Phi}
 =
 	\left(
-		\mathscr{H}_0
+		\H_0
 		+
 		Fr\cos\theta
 	\right)\ket{\Phi}
@@ -34,14 +34,14 @@ $z$軸方向に均一な電場$F$がかかった状態での
 	c_2 \ket{2p_z}
 \end{align}
 を用いる。ここで$\ket{1s}$と$\ket{2p_z}$は
-$\mathscr{H}_0$の規格化固有関数であり、
+$\H_0$の規格化固有関数であり、
 \begin{align}
 	\ket{1s}
 &=
 	\pi^{-\frac{1}{2}} \exp(-r) &
 %
 %
-	\mathscr{H}_0 \ket{1s}
+	\H_0 \ket{1s}
 &=
 	-
 	\frac{1}{2} \ket{1s} \\
@@ -52,7 +52,7 @@ $\mathscr{H}_0$の規格化固有関数であり、
 	(32\pi)^{-\frac{1}{2}} r \exp\left(-\frac{r}{2}\right) \cos\theta &
 %
 %
-	\mathscr{H}_0 \ket{2p_z}
+	\H_0 \ket{2p_z}
 &=
 	-\frac{1}{8} \ket{2p_z}
 \end{align}
@@ -76,13 +76,13 @@ $F$の多項式に書き換え、
 \begin{align}
 	\left[
 	\begin{array}{cc}
-		\braket{1s|\mathscr{H}|1s} &
+		\braket{1s|\H|1s} &
 		%
-		\braket{1s|\mathscr{H}|2p_z} \\
+		\braket{1s|\H|2p_z} \\
 	%
-		\braket{2p_z|\mathscr{H}|1s} &
+		\braket{2p_z|\H|1s} &
 		%
-		\braket{2p_z|\mathscr{H}|2p_z}
+		\braket{2p_z|\H|2p_z}
 	\end{array}
 	\right]
 		\left[
@@ -101,14 +101,14 @@ $F$の多項式に書き換え、
 を満たす$(c_1,c_2)$である。
 左辺の係数行列の各要素の値を求めていく。
 \begin{align}
-	\braket{1s|\mathscr{H}|1s}
+	\braket{1s|\H|1s}
 &=
-	\braket{1s|(\mathscr{H}_0+Fr\cos\theta)|1s} \\
+	\braket{1s|(\H_0+Fr\cos\theta)|1s} \\
 %
 %
 &=
 	\bra{1s}\left(
-		\mathscr{H}_0\ket{1s}
+		\H_0\ket{1s}
 		+
 		Fr\cos\theta\ket{1s}
 	\right) \\
@@ -175,9 +175,9 @@ $F$の多項式に書き換え、
 	\frac{1}{2}
 \end{align}
 \begin{align}
-	\braket{1s|\mathscr{H}|2p_z}
+	\braket{1s|\H|2p_z}
 &=
-	\braket{1s|\mathscr{H}_0|2p_z}
+	\braket{1s|\H_0|2p_z}
 	+
 	F
 		\braket{1s|r\cos\theta|2p_z} \\
@@ -267,9 +267,9 @@ $F$の多項式に書き換え、
 		2^{\frac{15}{2}} \cdot 3^{-5}
 \end{align}
 \begin{align}
-	\braket{2p_z|\mathscr{H}|1s}
+	\braket{2p_z|\H|1s}
 &=
-	\conju{\braket{1s|\mathscr{H}|2p_z}} \\
+	\conju{\braket{1s|\H|2p_z}} \\
 %
 %
 &=
@@ -277,9 +277,9 @@ $F$の多項式に書き換え、
 \end{align}
 \begin{align}
 	&\quad
-	\braket{2p_z|\mathscr{H}|2p_z} \\
+	\braket{2p_z|\H|2p_z} \\
 &=
-	\braket{2p_z|\mathscr{H}_0|2p_z}
+	\braket{2p_z|\H_0|2p_z}
 	+
 	F
 		\braket{2p_z|r\cos\theta|2p_z} \\

@@ -63,20 +63,20 @@
 &=
 	\left[
 	\begin{array}{cc}
-		\braket{12|\mathscr{H}|12} &
+		\braket{12|\H|12} &
 		%
-		\braket{12|\mathscr{H}|34} \\
+		\braket{12|\H|34} \\
 	%
-		\braket{34|\mathscr{H}|12} &
+		\braket{34|\H|12} &
 		%
-		\braket{34|\mathscr{H}|34}
+		\braket{34|\H|34}
 	\end{array}
 	\right]
 \end{align}
-である。$\braket{12|\mathscr{H}|12}$については、
+である。$\braket{12|\H|12}$については、
 既に本文中に解説があった通りに、
 \begin{align}
-	\braket{12|\mathscr{H}|12}
+	\braket{12|\H|12}
 &=
 	\braket{1|h|1}
 	+
@@ -88,24 +88,24 @@
 \end{align}
 である。
 
-$\braket{12|\mathscr{H}|34}$は
+$\braket{12|\H|34}$は
 \begin{align}
-	\braket{12|\mathscr{H}|34}
+	\braket{12|\H|34}
 &=
-	\braket{12|\mathscr{O}_1|34}
+	\braket{12|\Oone_1|34}
 	+
-	\braket{12|\mathscr{O}_2|34} \\
+	\braket{12|\Otwo|34} \\
 %
 %
 &=
-	\braket{12|\mathscr{O}_2|34}
+	\braket{12|\Otwo|34}
 	%
 	\qquad
-	(\because \braket{12|\mathscr{O}_1|34}=0)
+	(\because \braket{12|\Oone|34}=0)
 \end{align}
 であり、
 \begin{align}
-	\braket{12|\mathscr{O}_2|34}
+	\braket{12|\Otwo|34}
 &=
 	\int \d\x_1 \int \d\x_2
 		\conju[1]{
@@ -161,7 +161,7 @@ $\braket{12|\mathscr{H}|34}$は
 \end{align}
 従って、
 \begin{align}
-	\braket{12|\mathscr{H}|34}
+	\braket{12|\H|34}
 &=
 	\braket{12|34}
 	-
@@ -169,17 +169,17 @@ $\braket{12|\mathscr{H}|34}$は
 \end{align}
 である。
 
-次に$\braket{34|\mathscr{H}|12}$について見る。同様に、
+次に$\braket{34|\H|12}$について見る。同様に、
 \begin{align}
-	\braket{34|\mathscr{H}|12}
+	\braket{34|\H|12}
 &=
-	\braket{34|\mathscr{O}_1|12}
+	\braket{34|\Oone|12}
 	+
-	\braket{34|\mathscr{O}_2|12} \\
+	\braket{34|\Otwo|12} \\
 %
 %
 &=
-	\braket{34|\mathscr{O}_2|12} \\
+	\braket{34|\Otwo|12} \\
 %
 %
 &=
@@ -234,17 +234,17 @@ $\braket{12|\mathscr{H}|34}$は
 \end{align}
 である。
 
-最後に$\braket{34|\mathscr{H}|34}$について見る。
+最後に$\braket{34|\H|34}$について見る。
 \begin{align}
-	\braket{34|\mathscr{H}|34}
+	\braket{34|\H|34}
 &=
-	\braket{34|\mathscr{O}_1|34}
+	\braket{34|\Oone|34}
 	+
-	\braket{34|\mathscr{O}_2|34}
+	\braket{34|\Otwo|34}
 \end{align}
 \begin{align}
 &\quad
-	\braket{34|\mathscr{O}_1|34} \nonumber\\
+	\braket{34|\Oone|34} \nonumber\\
 &=
 	\int \d\x_1 \int \d\x_2
 		\conju[1]{
@@ -293,7 +293,7 @@ $\braket{12|\mathscr{H}|34}$は
 	\braket{4|h|4}
 \end{align}
 \begin{align}
-	\braket{34|\mathscr{O}_2|34}
+	\braket{34|\Otwo|34}
 &=
 	\int \d\x_1 \int \d\x_2
 		\conju[1]{
@@ -346,7 +346,7 @@ $\braket{12|\mathscr{H}|34}$は
 \end{align}
 従って、
 \begin{align}
-	\braket{34|\mathscr{H}|34}
+	\braket{34|\H|34}
 &=
 	\braket{3|h|3}
 	+

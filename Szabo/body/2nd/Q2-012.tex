@@ -3,10 +3,10 @@
 %->2005110914(10進数)->X5SHHE(ファイル作成者)
 %->X5SHHESahayanKY
 \subsection{問}
-$\braket{K|\mathscr{O}_1|L}$と$\braket{K|\mathscr{O}_2|L}$に関する規則は
+$\braket{K|\Oone|L}$と$\braket{K|\Otwo|L}$に関する規則は
 次の通りである。
 \begin{align}
-	\braket{K|\mathscr{O}_1|L}
+	\braket{K|\Oone|L}
 &=
 	\left\{
 	\begin{array}{>{\displaystyle}ll}
@@ -25,7 +25,7 @@ $\braket{K|\mathscr{O}_1|L}$と$\braket{K|\mathscr{O}_2|L}$に関する規則は
 	\right. \\
 %
 %
-	\braket{K|\mathscr{O}_2|L}
+	\braket{K|\Otwo|L}
 &=
 	\left\{
 	\begin{array}{>{\displaystyle}ll}
@@ -55,20 +55,20 @@ $\braket{K|\mathscr{O}_1|L}$と$\braket{K|\mathscr{O}_2|L}$に関する規則は
 &=
 	\left[
 	\begin{array}{cc}
-		\braket{\Psi_0|\mathscr{H}|\Psi_0} &
+		\braket{\Psi_0|\H|\Psi_0} &
 		%
-		\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}} \\
+		\braket{\Psi_0|\H|\Psi_{12}^{34}} \\
 	%
-		\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0} &
+		\braket{\Psi_{12}^{34}|\H|\Psi_0} &
 		%
-		\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}
+		\braket{\Psi_{12}^{34}|\H|\Psi_{12}^{34}}
 	\end{array}
 	\right]
 \end{align}
 ここで、$\ket{\Psi_0}=\ket{12}, \ket{\Psi_{12}^{34}}=\ket{34}$である。
-よって、$\braket{\Psi_0|\mathscr{H}|\Psi_0}$は
+よって、$\braket{\Psi_0|\H|\Psi_0}$は
 \begin{align}
-	\braket{\Psi_0|\mathscr{H}|\Psi_0}
+	\braket{\Psi_0|\H|\Psi_0}
 &=
 	\sum_{m=1,2} \braket{m|h|m}
 	+
@@ -119,22 +119,22 @@ $\braket{K|\mathscr{O}_1|L}$と$\braket{K|\mathscr{O}_2|L}$に関する規則は
 	\quad
 	(\because \phystwo{ij}{kl}=\phystwo{ji}{lk})
 \end{align}
-である。また、$\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}}$と
-$\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0}$は
+である。また、$\braket{\Psi_0|\H|\Psi_{12}^{34}}$と
+$\braket{\Psi_{12}^{34}|\H|\Psi_0}$は
 \begin{align}
-	\braket{\Psi_0|\mathscr{H}|\Psi_{12}^{34}}
+	\braket{\Psi_0|\H|\Psi_{12}^{34}}
 &=
 	\antitwo{12}{34} \\
 %
 %
-	\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_0}
+	\braket{\Psi_{12}^{34}|\H|\Psi_0}
 &=
 	\antitwo{34}{12}
 \end{align}
-である。最後に$\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}$は、
-$\braket{\Psi_0|\mathscr{H}|\Psi_0}$と同様で
+である。最後に$\braket{\Psi_{12}^{34}|\H|\Psi_{12}^{34}}$は、
+$\braket{\Psi_0|\H|\Psi_0}$と同様で
 \begin{align}
-	\braket{\Psi_{12}^{34}|\mathscr{H}|\Psi_{12}^{34}}
+	\braket{\Psi_{12}^{34}|\H|\Psi_{12}^{34}}
 &=
 	\braket{3|h|3}
 	+

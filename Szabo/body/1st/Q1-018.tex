@@ -44,10 +44,10 @@ $-0.5$より大きいことを示せ。
 \subsection{解}
 エネルギーの期待値は
 \begin{align}
-	\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\braket{\tilde{\Phi}|\H|\tilde{\Phi}}
 &=
 	\int_{-\infty}^{\infty} \d x\
-		\conju{\tilde{\Phi}}(x) \mathscr{H} \tilde{\Phi}(x) \\
+		\conju{\tilde{\Phi}}(x) \H \tilde{\Phi}(x) \\
 %
 %
 &=
@@ -55,7 +55,7 @@ $-0.5$より大きいことを示せ。
 		\left(
 			\conju{N} \exp(-\alpha x^2)
 		\right)
-			\mathscr{H}
+			\H
 			\left(
 				N \exp(-\alpha x^2)
 			\right) \\
@@ -222,7 +222,7 @@ $-0.5$より大きいことを示せ。
 である。従って、期待値の極小値は、
 $\alpha$で微分してゼロになるときにとるため
 \begin{align}
-	\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+	\braket{\tilde{\Phi}|\H|\tilde{\Phi}}
 &=
 	\frac{
 		2^{\frac{1}{2}} \alpha^{\frac{1}{2}}
@@ -243,7 +243,7 @@ $\alpha$で微分してゼロになるときにとるため
 %
 %
 	\frac{\d}{\d \alpha}\left(
-		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+		\braket{\tilde{\Phi}|\H|\tilde{\Phi}}
 	\right)
 &=
 	0 \\
@@ -267,7 +267,7 @@ $\alpha$で微分してゼロになるときにとるため
 \end{align}
 \begin{align}
 	\min\left(
-		\braket{\tilde{\Phi}|\mathscr{H}|\tilde{\Phi}}
+		\braket{\tilde{\Phi}|\H|\tilde{\Phi}}
 	\right)
 &=
 	2^{-1} \cdot 2\pi^{-1}

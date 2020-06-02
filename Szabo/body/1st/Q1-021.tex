@@ -10,7 +10,7 @@
 \subsection{(a)問}
 基底状態に関する変分原理の証明と同様にして
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 &\geq
 	\mathscr{E}_1
 \end{align}
@@ -29,13 +29,13 @@ $\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開�
 \end{align}
 である。従って、この試行関数でのエネルギーの期待値は
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 &=
 	\left(
 		\sum_{\alpha>0}
 			\braket{\tilde{\Phi}'|\Phi_{\alpha}} \bra{\Phi_{\alpha}}
 	\right)
-		\mathscr{H}
+		\H
 		\left(
 			\sum_{\beta>0}
 				\ket{\Phi_{\beta}} \braket{\Phi_{\beta}|\tilde{\Phi}'}
@@ -45,7 +45,7 @@ $\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開�
 &=
 	\sum_{\alpha>0,\beta>0}
 		\braket{\tilde{\Phi}'|\Phi_{\alpha}}
-			\braket{\Phi_{\alpha}|\mathscr{H}|\Phi_{\beta}}
+			\braket{\Phi_{\alpha}|\H|\Phi_{\beta}}
 			\braket{\Phi_{\beta}|\tilde{\Phi}'} \\
 %
 %
@@ -88,7 +88,7 @@ $\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開�
 \end{align}
 であるので、
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 \geq
 	\sum_{\alpha>0}
 		\mathscr{E}_{1}
@@ -135,7 +135,7 @@ $\ket{\tilde{\Phi}'}$を、基底関数を$\ket{\Phi_{\alpha}}$として展開�
 \end{align}
 であることから、
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 &\geq
 	\mathscr{E}_1
 		\sum_{\alpha>0}
@@ -263,7 +263,7 @@ $x$と$y$が、
 $\ket{\tilde{\Phi}'}$が規格化され、
 かつ、$\braket{\tilde{\Phi}'|\Phi_0}=0$とする。
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 &=
 	E_1
 	-
@@ -278,16 +278,16 @@ $E_1\geq E_0$より、
 \geq
 	E_1-|x|^2(E_1-E_0)
 =
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 \end{align}
 である。
 さらに、(a)より
-$\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}\geq\mathscr{E}_1$
+$\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}\geq\mathscr{E}_1$
 であるので、
 \begin{align}
 	E_1
 \geq
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 \geq
 	\mathscr{E}_1
 \end{align}
@@ -298,10 +298,10 @@ $\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}\geq\mathscr{E}_1$
 
 \subsection{(c)解}
 \begin{align}
-	\braket{\tilde{\Phi}_{\beta}|\mathscr{H}|\tilde{\Phi}_{\alpha}}
+	\braket{\tilde{\Phi}_{\beta}|\H|\tilde{\Phi}_{\alpha}}
 &=
 	\sum_{i,j}
-		\conju{c_i^\beta} \braket{\Psi_i|\mathscr{H}|\Psi_j} c_j^\alpha \\
+		\conju{c_i^\beta} \braket{\Psi_i|\H|\Psi_j} c_j^\alpha \\
 %
 %
 &=
@@ -323,14 +323,14 @@ $\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}\geq\mathscr{E}_1$
 \end{align}
 である。したがって、
 \begin{align}
-	\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}
+	\braket{\tilde{\Phi}'|\H|\tilde{\Phi}'}
 &=
 	\left(
 		\conju{x}\bra{\tilde{\Phi}_0}
 		+
 		\conju{y}\bra{\tilde{\Phi}_1}
 	\right)
-		\mathscr{H}
+		\H
 		\left(
 			x\ket{\tilde{\Phi}_0}
 			+
@@ -339,13 +339,13 @@ $\braket{\tilde{\Phi}'|\mathscr{H}|\tilde{\Phi}'}\geq\mathscr{E}_1$
 %
 %
 &=
-	|x|^2 \braket{\tilde{\Phi}_0|\mathscr{H}|\tilde{\Phi}_0}
+	|x|^2 \braket{\tilde{\Phi}_0|\H|\tilde{\Phi}_0}
 	+
-	\conju{x}y \braket{\tilde{\Phi}_0|\mathscr{H}|\tilde{\Phi}_1}
+	\conju{x}y \braket{\tilde{\Phi}_0|\H|\tilde{\Phi}_1}
 	+
-	\conju{y}x \braket{\tilde{\Phi}_1|\mathscr{H}|\tilde{\Phi}_0}
+	\conju{y}x \braket{\tilde{\Phi}_1|\H|\tilde{\Phi}_0}
 	+
-	|y|^2 \braket{\tilde{\Phi}_1|\mathscr{H}|\tilde{\Phi}_1} \\
+	|y|^2 \braket{\tilde{\Phi}_1|\H|\tilde{\Phi}_1} \\
 %
 %
 &=

@@ -17,10 +17,10 @@ $\ket{K^{HP}}$は$\ket{K}$に対するHartree積である。
 \end{align}
 である。このとき、
 \begin{align}
-	\braket{K|\mathscr{H}|L}
+	\braket{K|\H|L}
 &=
 	\sqrt{N!}
-	\braket{K^{HP}|\mathscr{H}|L}
+	\braket{K^{HP}|\H|L}
 \end{align}
 が成立することを証明せよ。
 
@@ -39,10 +39,10 @@ $\ket{L}$を次の通りに置く。
 \end{align}
 ここで$\sgn(P_i)$は$P_i$の符号であり、$(-1)^{p_i}$のことである。
 
-従って、$\braket{K|\mathscr{H}|L}$は
+従って、$\braket{K|\H|L}$は
 \begin{align}
 &\quad
-	\braket{K|\mathscr{H}|L} \nonumber \\
+	\braket{K|\H|L} \nonumber \\
 &=
 	\left(
 		\frac{1}{\sqrt{N!}}
@@ -55,7 +55,7 @@ $\ket{L}$を次の通りに置く。
 			P_i\Bigl\{
 				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
 			\Bigr\}
-			\mathscr{H}
+			\H
 			P_j\Bigl\{
 				\chi_m'(\x_1) \chi_n'(\x_2) \dots
 			\Bigr\} \\
@@ -74,14 +74,14 @@ $\ket{L}$を次の通りに置く。
 				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
 			\Bigr\}
 			P_i\Bigl\{
-				\mathscr{H}
+				\H
 			\Bigr\}
 			(P_iP_i^{-1}P_j)\Bigl\{
 				\chi_m'(\x_1) \chi_n'(\x_2) \dots
 			\Bigr\} \\
 	&\qquad
 	\left(
-		\because P_i\{\mathscr{H}\} = \mathscr{H}
+		\because P_i\{\H\} = \H
 	\right) \nonumber \\
 %
 %
@@ -96,7 +96,7 @@ $\ket{L}$を次の通りに置く。
 		\int \d\x_1 \d\x_2 \dots \d\x_N
 			P_i\Bigl\{
 				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
-				\mathscr{H}
+				\H
 				(P_i^{-1}P_j)\Bigl\{
 					\chi_m'(\x_1) \chi_n'(\x_2) \dots
 				\Bigr\}
@@ -113,7 +113,7 @@ $\ket{L}$を次の通りに置く。
 		\sgn(P_j) \nonumber \\ &\qquad\qquad\qquad\qquad \times
 		\int \d\x_1 \d\x_2 \dots \d\x_N
 			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
-			\mathscr{H}
+			\H
 			(P_i^{-1}P_j)\Bigl\{
 				\chi_m'(\x_1) \chi_n'(\x_2) \dots
 			\Bigr\} \\
@@ -126,7 +126,7 @@ $\ket{L}$を次の通りに置く。
 また、$\sgn(P_i)=\sgn(P_i^{-1})$であること、
 $\sgn(P_k)=\sgn(P_i^{-1})\sgn(P_j)$であることから、
 \begin{align}
-	\braket{K|\mathscr{H}|L}
+	\braket{K|\H|L}
 &=
 	\left(
 		\frac{1}{\sqrt{N!}}
@@ -136,7 +136,7 @@ $\sgn(P_k)=\sgn(P_i^{-1})\sgn(P_j)$であることから、
 		\sgn(P_k)
 		\int \d\x_1 \d\x_2 \dots \d\x_N
 			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
-			\mathscr{H}
+			\H
 			P_k\Bigl\{
 				\chi_m'(\x_1) \chi_n'(\x_2) \dots
 			\Bigr\}
@@ -146,7 +146,7 @@ $(i,j)$の組は$N!^2$通りあるが、$P_k$は全部で$N!$個までである�
 このため、$N!^2/N!=N!$組が等しい$P_k$を与えることになる。
 従って、
 \begin{align}
-	\braket{K|\mathscr{H}|L}
+	\braket{K|\H|L}
 &=
 	\left(
 		\frac{1}{\sqrt{N!}}
@@ -156,7 +156,7 @@ $(i,j)$の組は$N!^2$通りあるが、$P_k$は全部で$N!$個までである�
 		\sgn(P_k)
 		\int \d\x_1\d\x_2\dots\d\x_N
 			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
-			\mathscr{H}
+			\H
 			P_k\Bigl\{
 				\chi_m'(\x_1) \chi_n'(\x_2) \dots
 			\Bigr\} \\
@@ -165,12 +165,12 @@ $(i,j)$の組は$N!^2$通りあるが、$P_k$は全部で$N!$個までである�
 &=
 	\frac{1}{\sqrt{N!}}
 	N!
-	\braket{K^{HP}|\mathscr{H}|L} \\
+	\braket{K^{HP}|\H|L} \\
 %
 %
 &=
 	\sqrt{N!}
-	\braket{K^{HP}|\mathscr{H}|L}
+	\braket{K^{HP}|\H|L}
 \end{align}
 となる。
 

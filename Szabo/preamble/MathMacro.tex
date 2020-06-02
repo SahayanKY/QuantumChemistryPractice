@@ -187,6 +187,14 @@
 	{}_{#1}C_{#2}
 }}}
 
+%ハミルトニアン
+%アクセント記号と重複
+\renewcommand{\H}{{\ensuremath{\mathscr{H}}}}
+%1電子演算子
+\newcommand{\Oone}{{\ensuremath{\mathscr{O}_1}}}
+%2電子演算子
+\newcommand{\Otwo}{{\ensuremath{\mathscr{O}_2}}}
+
 %物理学者の記法
 \newcommand{\phystwo}[2]{{\ensuremath{\braket{#1|#2}}}}
 
@@ -198,6 +206,9 @@
 
 %化学者の記法(1電子積分)
 \newcommand{\chemone}[3]{{\ensuremath{[#1|#2|#3]}}}
+
+%2電子空間積分
+\newcommand{\spacetwo}[2]{{\ensuremath{(#1|#2)}}}
 
 %
 %
