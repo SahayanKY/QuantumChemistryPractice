@@ -1,0 +1,178 @@
+%ファイルID
+%2020/06/02 17:11
+%->2006021711(10進数)->X6C09B(ファイル作成者)
+%->X6C09BSahayanKY
+\subsection{問}
+$\ket{K}$は$N$電子Slater行列式であり、
+$\ket{K^{HP}}$は$\ket{K}$に対するHartree積である。
+即ち、
+\begin{align}
+	\ket{K}
+&=
+	\ket{\chi_m(\x_1)\chi_n(\x_2)\dots} &
+%
+	\ket{K^{HP}}
+&=
+	\chi_m(\x_1)\chi_n(\x_2)\dots
+\end{align}
+である。このとき、
+\begin{align}
+	\braket{K|\mathscr{H}|L}
+&=
+	\sqrt{N!}
+	\braket{K^{HP}|\mathscr{H}|L}
+\end{align}
+が成立することを証明せよ。
+
+
+\subsection{解}
+$\ket{L}$を次の通りに置く。
+\begin{align}
+	\ket{L}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{i}^{N!}
+		\sgn(P_i)\
+		P_i\Bigl\{
+			\chi_m'(\x_1) \chi_n'(\x_2) \dots
+		\Bigr\}
+\end{align}
+ここで$\sgn(P_i)$は$P_i$の符号であり、$(-1)^{p_i}$のことである。
+
+従って、$\braket{K|\mathscr{H}|L}$は
+\begin{align}
+&\quad
+	\braket{K|\mathscr{H}|L} \nonumber \\
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	\sum_i^{N!}
+	\sum_j^{N!}
+		\sgn(P_i)
+		\sgn(P_j) \nonumber \\ &\qquad\qquad\qquad\qquad \times
+		\int \d\x_1 \d\x_2 \dots \d\x_N
+			P_i\Bigl\{
+				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+			\Bigr\}
+			\mathscr{H}
+			P_j\Bigl\{
+				\chi_m'(\x_1) \chi_n'(\x_2) \dots
+			\Bigr\} \\
+%
+%
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	\sum_i^{N!}
+	\sum_j^{N!}
+		\sgn(P_i)
+		\sgn(P_j) \nonumber \\ &\qquad\qquad\qquad\qquad \times
+		\int \d\x_1 \d\x_2 \dots \d\x_N
+			P_i\Bigl\{
+				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+			\Bigr\}
+			P_i\Bigl\{
+				\mathscr{H}
+			\Bigr\}
+			(P_iP_i^{-1}P_j)\Bigl\{
+				\chi_m'(\x_1) \chi_n'(\x_2) \dots
+			\Bigr\} \\
+	&\qquad
+	\left(
+		\because P_i\{\mathscr{H}\} = \mathscr{H}
+	\right) \nonumber \\
+%
+%
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	\sum_i^{N!}
+	\sum_j^{N!}
+		\sgn(P_i)
+		\sgn(P_j) \nonumber \\ &\qquad\qquad\qquad\qquad \times
+		\int \d\x_1 \d\x_2 \dots \d\x_N
+			P_i\Bigl\{
+				\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+				\mathscr{H}
+				(P_i^{-1}P_j)\Bigl\{
+					\chi_m'(\x_1) \chi_n'(\x_2) \dots
+				\Bigr\}
+			\Bigr\} \\
+%
+%
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	\sum_i^{N!}
+	\sum_j^{N!}
+		\sgn(P_i)
+		\sgn(P_j) \nonumber \\ &\qquad\qquad\qquad\qquad \times
+		\int \d\x_1 \d\x_2 \dots \d\x_N
+			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+			\mathscr{H}
+			(P_i^{-1}P_j)\Bigl\{
+				\chi_m'(\x_1) \chi_n'(\x_2) \dots
+			\Bigr\} \\
+	&\qquad
+	\left(
+		\because \int\d\x_1\d\x_2\ f(\x_2,\x_1) = \int\d\x_2\d\x_1\ f(\x_1,\x_2) = \int\d\x_1\d\x_2\ f(\x_1,\x_2)
+	\right) \nonumber
+\end{align}
+ここで、$P_i^{-1}P_j$はまた別の置換を表しており、これを$P_k$とおく。
+また、$\sgn(P_i)=\sgn(P_i^{-1})$であること、
+$\sgn(P_k)=\sgn(P_i^{-1})\sgn(P_j)$であることから、
+\begin{align}
+	\braket{K|\mathscr{H}|L}
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	\sum_i^{N!}
+	\sum_j^{N!}
+		\sgn(P_k)
+		\int \d\x_1 \d\x_2 \dots \d\x_N
+			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+			\mathscr{H}
+			P_k\Bigl\{
+				\chi_m'(\x_1) \chi_n'(\x_2) \dots
+			\Bigr\}
+\end{align}
+ここで、異なる$(i,j)$の組合せであっても$P_k=P_i^{-1}P_j$が等しくなる場合がある。
+$(i,j)$の組は$N!^2$通りあるが、$P_k$は全部で$N!$個までである。
+このため、$N!^2/N!=N!$組が等しい$P_k$を与えることになる。
+従って、
+\begin{align}
+	\braket{K|\mathscr{H}|L}
+&=
+	\left(
+		\frac{1}{\sqrt{N!}}
+	\right)^2
+	N!
+	\sum_k^{N!}
+		\sgn(P_k)
+		\int \d\x_1\d\x_2\dots\d\x_N
+			\chi_m^\ast(\x_1) \chi_n^\ast(\x_2) \dots
+			\mathscr{H}
+			P_k\Bigl\{
+				\chi_m'(\x_1) \chi_n'(\x_2) \dots
+			\Bigr\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	N!
+	\braket{K^{HP}|\mathscr{H}|L} \\
+%
+%
+&=
+	\sqrt{N!}
+	\braket{K^{HP}|\mathscr{H}|L}
+\end{align}
+となる。
+
+
+
