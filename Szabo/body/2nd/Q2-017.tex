@@ -1,0 +1,440 @@
+%ファイルID
+%2020/06/03 13:17
+%->2006031317(10進数)->(36進数)(ファイル作成者)
+%->X6C7O5SahayanKY
+\subsection{問}
+最小基底関数系を用いた\ce{H2}の完全CI行列$H$は
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{1|h|1}
+		+
+		\braket{2|h|2}
+		+
+		\antitwo{12}{12} &
+		%
+		\antitwo{12}{34} \\
+	%
+		\antitwo{34}{12} &
+		%
+		\braket{3|h|3}
+		+
+		\braket{4|h|4}
+		+
+		\antitwo{34}{34}
+	\end{array}
+	\right]
+\end{align}
+である。これの各要素について、
+スピンについて積分すると
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		2\spaceone{1}{h}{1}
+		+
+		\spacetwo{11}{11} &
+		%
+		\spacetwo{12}{12} \\
+	%
+		\spacetwo{21}{21} &
+		%
+		2\spaceone{2}{h}{2}
+		+
+		\spacetwo{22}{22}
+	\end{array}
+	\right]
+\end{align}
+となることを示せ。
+
+ここで、$\spaceone{i}{h}{j},\spacetwo{ij}{kl}$は
+\begin{align}
+	\spaceone{i}{h}{j}
+&=
+	\int\d\r_1
+		\conju{\psi_i}(\r_1) h(\r_1) \psi_j(\r_1) \\
+%
+%
+	\spacetwo{ij}{kl}
+&=
+	\int\d\r_1\d\r_2
+		\conju{\psi_i}(\r_1) \psi_j(\r_1) r_{12}^{-1} \conju{\psi_k}(\r_2) \psi_l(\r_2)
+\end{align}
+である。
+
+
+\subsection{解}
+まず、スピン軌道のラベリングから、
+空間軌道のラベリングに変換すると次の通りになる。
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\aorb{1}|h|\aorb{1}}
+		+
+		\braket{\borb{1}|h|\borb{1}}
+		+
+		\antitwo{\aorb{1}\borb{1}}{\aorb{1}\borb{1}} &
+		%
+		\antitwo{\aorb{1}\borb{1}}{\aorb{2}\borb{2}} \\
+	%
+		\antitwo{\aorb{2}\borb{2}}{\aorb{1}\borb{1}} &
+		%
+		\braket{\aorb{2}|h|\aorb{2}}
+		+
+		\braket{\borb{2}|h|\borb{2}}
+		+
+		\antitwo{\aorb{2}\borb{2}}{\aorb{2}\borb{2}}
+	\end{array}
+	\right]
+\end{align}
+
+1電子積分から見ていく。
+\begin{align}
+	\braket{\aorb{1}|h|\aorb{1}}
+&=
+	\int\d\r_1\d\omega_1\
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		h(\r_1)
+		\psi_1(\r_1) \alpha(\omega_1) \\
+%
+%
+&=
+	\int\d\r_1\
+		\conju{\psi_1}(\r_1)
+		h(\r_1)
+		\psi_1(\r_1) \\
+%
+%
+&=
+	\spaceone{1}{h}{1}
+\end{align}
+\begin{align}
+	\braket{\borb{1}|h|\borb{1}}
+&=
+	\int\d\r_1\d\omega_1\
+		\conju{\psi_1}(\r_1) \conju{\beta}(\omega_1)
+		h(\r_1)
+		\psi_1(\r_1) \beta(\omega_1) \\
+%
+%
+&=
+	\int\d\r_1\
+		\conju{\psi_1}(\r_1)
+		h(\r_1)
+		\psi_1(\r_1) \\
+%
+%
+&=
+	\spaceone{1}{h}{1}
+\end{align}
+\begin{align}
+	\braket{\aorb{2}|h|\aorb{2}}
+&=
+	\int\d\r_1\d\omega_1\
+		\conju{\psi_2}(\r_1) \conju{\alpha}(\omega_1)
+		h(\r_1)
+		\psi_2(\r_1) \alpha(\omega_1) \\
+%
+%
+&=
+	\int\d\r_1\
+		\conju{\psi_2}(\r_1)
+		h(\r_1)
+		\psi_2(\r_1) \\
+%
+%
+&=
+	\spaceone{2}{h}{2}
+\end{align}
+\begin{align}
+	\braket{\borb{2}|h|\borb{2}}
+&=
+	\int\d\r_1\d\omega_1\
+		\conju{\psi_2}(\r_1) \conju{\beta}(\omega_1)
+		h(\r_1)
+		\psi_2(\r_1) \beta(\omega_1) \\
+%
+%
+&=
+	\int\d\r_1\
+		\conju{\psi_2}(\r_1)
+		h(\r_1)
+		\psi_2(\r_2) \\
+%
+%
+&=
+	\spaceone{2}{h}{2}
+\end{align}
+である。
+
+次に、2電子積分を見ていく。
+\begin{align}
+	\phystwo{\aorb{1}\borb{1}}{\aorb{1}\borb{1}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_1}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_1(\r_1) \alpha(\omega_1)
+		\psi_1(\r_2) \beta(\omega_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_1}(\r_1)
+		\conju{\psi_1}(\r_2)
+		r_{12}^{-1}
+		\psi_1(\r_1)
+		\psi_1(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_1}(\r_1)
+		\psi_1(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_1}(\r_2)
+		\psi_1(\r_2) \\
+%
+%
+&=
+	\spacetwo{11}{11}
+\end{align}
+\begin{align}
+	\phystwo{\aorb{1}\borb{1}}{\borb{1}\aorb{1}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_1}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_1(\r_1) \beta(\omega_1)
+		\psi_1(\r_2) \alpha(\omega_2) \\
+%
+%
+&=
+	0
+\end{align}
+\begin{align}
+	\therefore
+	\antitwo{\aorb{1}\borb{1}}{\aorb{1}\borb{1}}
+&=
+	\phystwo{\aorb{1}\borb{1}}{\aorb{1}\borb{1}}
+	-
+	\phystwo{\aorb{1}\borb{1}}{\borb{1}\aorb{1}} \\
+%
+%
+&=
+	\spacetwo{11}{11}
+\end{align}
+%------------------------------------------------------------------------------
+\begin{align}
+	\phystwo{\aorb{1}\borb{1}}{\aorb{2}\borb{2}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_1}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_2(\r_1) \alpha(\omega_1)
+		\psi_2(\r_2) \beta(\omega_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_1}(\r_1)
+		\conju{\psi_1}(\r_2)
+		r_{12}^{-1}
+		\psi_2(\r_1)
+		\psi_2(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_1}(\r_1)
+		\psi_2(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_1}(\r_2)
+		\psi_2(\r_2) \\
+%
+%
+&=
+	\spacetwo{12}{12}
+\end{align}
+\begin{align}
+	\phystwo{\aorb{1}\borb{1}}{\borb{2}\aorb{2}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_1}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_2(\r_1) \beta(\omega_1)
+		\psi_2(\r_2) \alpha(\omega_2) \\
+%
+%
+&=
+	0
+\end{align}
+\begin{align}
+	\therefore
+	\antitwo{\aorb{1}\borb{1}}{\aorb{2}\borb{2}}
+&=
+	\phystwo{\aorb{1}\borb{1}}{\aorb{2}\borb{2}}
+	-
+	\phystwo{\aorb{1}\borb{1}}{\borb{2}\aorb{2}} \\
+%
+%
+&=
+	\spacetwo{12}{12}
+\end{align}
+%------------------------------------------------------------------
+\begin{align}
+	\antitwo{\aorb{2}\borb{2}}{\aorb{1}\borb{1}}
+&=
+	\phystwo{\aorb{2}\borb{2}}{\aorb{1}\borb{1}}
+	-
+	\phystwo{\aorb{2}\borb{2}}{\borb{1}\aorb{1}} \\
+%
+%
+&=
+	\conju{
+		\phystwo{\aorb{1}\borb{1}}{\aorb{2}\borb{2}}
+	}
+	-
+	\conju{
+		\phystwo{\aorb{1}\borb{1}}{\borb{2}\aorb{2}}
+	} \\
+%
+%
+&=
+	\conju{
+		\spacetwo{12}{12}
+	}
+	-
+	\conju{
+		0
+	} \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_2}(\r_1)
+		\psi_1(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2)
+		\psi_1(\r_2) \\
+%
+%
+	\therefore
+	\antitwo{\aorb{2}\borb{2}}{\aorb{1}\borb{1}}
+&=
+	\spacetwo{21}{21}
+\end{align}
+%------------------------------------------------------------------
+\begin{align}
+	\phystwo{\aorb{2}\borb{2}}{\aorb{2}\borb{2}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_2}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_2}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_2(\r_1) \alpha(\omega_1)
+		\psi_2(\r_2) \beta(\omega_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_2}(\r_1)
+		\conju{\psi_2}(\r_2)
+		r_{12}^{-1}
+		\psi_2(\r_1)
+		\psi_2(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2\
+		\conju{\psi_2}(\r_1)
+		\psi_2(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2)
+		\psi_2(\r_2) \\
+%
+%
+&=
+	\spacetwo{22}{22}
+\end{align}
+\begin{align}
+	\phystwo{\aorb{2}\borb{2}}{\borb{2}\aorb{2}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2\
+		\conju{\psi_2}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_2}(\r_2) \conju{\beta}(\omega_2)
+		r_{12}^{-1}
+		\psi_2(\r_1) \beta(\omega_1)
+		\psi_2(\r_2) \alpha(\omega_2) \\
+%
+%
+&=
+	0
+\end{align}
+\begin{align}
+	\therefore
+	\antitwo{\aorb{2}\borb{2}}{\aorb{2}\borb{2}}
+&=
+	\phystwo{\aorb{2}\borb{2}}{\aorb{2}\borb{2}}
+	-
+	\phystwo{\aorb{2}\borb{2}}{\borb{2}\aorb{2}} \\
+%
+%
+&=
+	\spacetwo{22}{22}
+\end{align}
+である。
+
+従って、完全CI行列は
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		\spaceone{1}{h}{1}
+		+
+		\spaceone{1}{h}{1}
+		+
+		\spacetwo{11}{11} &
+		%
+		\spacetwo{12}{12} \\
+	%
+		\spacetwo{21}{21} &
+		%
+		\spaceone{2}{h}{2}
+		+
+		\spaceone{2}{h}{2}
+		+
+		\spacetwo{22}{22}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		2\spaceone{1}{h}{1}
+		+
+		\spacetwo{11}{11} &
+		%
+		\spacetwo{12}{12} \\
+	%
+		\spacetwo{21}{21} &
+		%
+		2\spaceone{2}{h}{2}
+		+
+		\spacetwo{22}{22}
+	\end{array}
+	\right]
+\end{align}
+
+
