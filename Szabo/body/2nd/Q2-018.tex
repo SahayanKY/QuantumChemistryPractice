@@ -1,0 +1,588 @@
+%ファイルID
+%2020/06/04 18:13
+%->2006041813(10進数)->(36進数)(ファイル作成者)
+%->X6CFRPSahayanKY
+\subsection{問}
+摂動論によって、
+Hartree-Fock基底状態エネルギーに対する主要な補正が
+\begin{align}
+	E_0^{(2)}
+&=
+	\frac{1}{4}
+	\sum_{a,b,r,s}^{N}
+		\frac{
+			\left|
+				\antitwo{ab}{rs}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+\end{align}
+であることが示される。
+
+閉殻系、つまりは$\epsilon_{\aorb{i}}=\epsilon_{\borb{i}}$となる系においては、
+\begin{align}
+	E_0^{(2)}
+&=
+	\sum_{a,b,r,s}^{N/2}
+		\frac{
+			\phystwo{ab}{rs}
+			\left(
+				2\phystwo{rs}{ab}
+				-
+				\phystwo{rs}{ba}
+			\right)
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+\end{align}
+と書き換えられることを示せ。
+
+
+\subsection{解}
+まず、反対称化された2電子積分の項$\antitwo{ij}{kl}$について考える。
+\begin{align}
+	\antitwo{ij}{kl}
+&=
+	\phystwo{ij}{kl}
+	-
+	\phystwo{ij}{lk} \\
+%
+%
+&=
+	\chemtwo{ik}{jl}
+	-
+	\chemtwo{il}{jk}
+\end{align}
+である。化学者の2電子積分の記法$\chemtwo{ij}{kl}$は、
+$i$と$j$、または$k$と$l$のスピン状態が等しくない場合はゼロになる。
+従って、以下の式が成立する。
+\begin{align}
+	\antitwo{\aorb{a}\aorb{b}}{\aorb{r}\aorb{s}}
+&=
+	\chemtwo{\aorb{a}\aorb{r}}{\aorb{b}\aorb{s}}
+	-
+	\chemtwo{\aorb{a}\aorb{s}}{\aorb{b}\aorb{r}}
+=
+	\spacetwo{ar}{bs}
+	-
+	\spacetwo{as}{br} \\
+%
+%
+	\antitwo{\aorb{a}\aorb{b}}{\aorb{r}\borb{s}}
+&=
+	\chemtwo{\aorb{a}\aorb{r}}{\aorb{b}\borb{s}}
+	-
+	\chemtwo{\aorb{a}\borb{s}}{\aorb{b}\aorb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\aorb{a}\aorb{b}}{\borb{r}\aorb{s}}
+&=
+	\chemtwo{\aorb{a}\borb{r}}{\aorb{b}\aorb{s}}
+	-
+	\chemtwo{\aorb{a}\aorb{s}}{\aorb{b}\borb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\aorb{a}\aorb{b}}{\borb{r}\borb{s}}
+&=
+	\chemtwo{\aorb{a}\borb{r}}{\aorb{b}\borb{s}}
+	-
+	\chemtwo{\aorb{a}\borb{s}}{\aorb{b}\borb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\aorb{a}\borb{b}}{\aorb{r}\aorb{s}}
+&=
+	\chemtwo{\aorb{a}\aorb{r}}{\borb{b}\aorb{s}}
+	-
+	\chemtwo{\aorb{a}\aorb{s}}{\borb{b}\aorb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\aorb{a}\borb{b}}{\aorb{r}\borb{s}}
+&=
+	\chemtwo{\aorb{a}\aorb{r}}{\borb{b}\borb{s}}
+	-
+	\chemtwo{\aorb{a}\borb{s}}{\borb{b}\aorb{r}}
+=
+	\spacetwo{ar}{bs} \\
+%
+%
+	\antitwo{\aorb{a}\borb{b}}{\borb{r}\aorb{s}}
+&=
+	\chemtwo{\aorb{a}\borb{r}}{\borb{b}\aorb{s}}
+	-
+	\chemtwo{\aorb{a}\aorb{s}}{\borb{b}\borb{r}}
+=
+	-\spacetwo{as}{br} \\
+%
+%
+	\antitwo{\aorb{a}\borb{b}}{\borb{r}\borb{s}}
+&=
+	\chemtwo{\aorb{a}\borb{r}}{\borb{b}\borb{s}}
+	-
+	\chemtwo{\aorb{a}\borb{s}}{\borb{b}\borb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\aorb{b}}{\aorb{r}\aorb{s}}
+&=
+	\chemtwo{\borb{a}\aorb{r}}{\aorb{b}\aorb{s}}
+	-
+	\chemtwo{\borb{a}\aorb{s}}{\aorb{b}\aorb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\aorb{b}}{\aorb{r}\borb{s}}
+&=
+	\chemtwo{\borb{a}\aorb{r}}{\aorb{b}\borb{s}}
+	-
+	\chemtwo{\borb{a}\borb{s}}{\aorb{b}\aorb{r}}
+=
+	-\spacetwo{as}{br} \\
+%
+%
+	\antitwo{\borb{a}\aorb{b}}{\borb{r}\aorb{s}}
+&=
+	\chemtwo{\borb{a}\borb{r}}{\aorb{b}\aorb{s}}
+	-
+	\chemtwo{\borb{a}\aorb{s}}{\aorb{b}\borb{r}}
+=
+	\spacetwo{ar}{bs} \\
+%
+%
+	\antitwo{\borb{a}\aorb{b}}{\borb{r}\borb{s}}
+&=
+	\chemtwo{\borb{a}\borb{r}}{\aorb{b}\borb{s}}
+	-
+	\chemtwo{\borb{a}\borb{s}}{\aorb{b}\borb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\borb{b}}{\aorb{r}\aorb{s}}
+&=
+	\chemtwo{\borb{a}\aorb{r}}{\borb{b}\aorb{s}}
+	-
+	\chemtwo{\borb{a}\aorb{s}}{\borb{b}\aorb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\borb{b}}{\aorb{r}\borb{s}}
+&=
+	\chemtwo{\borb{a}\aorb{r}}{\borb{b}\borb{s}}
+	-
+	\chemtwo{\borb{a}\borb{s}}{\borb{b}\aorb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\borb{b}}{\borb{r}\aorb{s}}
+&=
+	\chemtwo{\borb{a}\borb{r}}{\borb{b}\aorb{s}}
+	-
+	\chemtwo{\borb{a}\aorb{s}}{\borb{b}\borb{r}}
+=
+	0 \\
+%
+%
+	\antitwo{\borb{a}\borb{b}}{\borb{r}\borb{s}}
+&=
+	\chemtwo{\borb{a}\borb{r}}{\borb{b}\borb{s}}
+	-
+	\chemtwo{\borb{a}\borb{s}}{\borb{b}\borb{r}}
+=
+	\spacetwo{ar}{bs}
+	-
+	\spacetwo{as}{br}
+\end{align}
+
+従って、
+\begin{align}
+	E_0^{(2)}
+&=
+	\frac{1}{4}
+	\sum_{a,b,r,s}^{N/2}\left(
+	\begin{array}{>{\displaystyle}l}
+		\frac{
+			\left|\antitwo{\aorb{a}\aorb{b}}{\aorb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\aorb{b}}{\aorb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\borb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\aorb{b}}{\borb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\aorb{b}}{\borb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\borb{s}}
+		} \\[3mm]
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\borb{b}}{\aorb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\borb{b}}{\aorb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\borb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\borb{b}}{\borb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\aorb{a}\borb{b}}{\borb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\aorb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\borb{s}}
+		} \\[3mm]
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\aorb{b}}{\aorb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\aorb{b}}{\aorb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\borb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\aorb{b}}{\borb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\aorb{b}}{\borb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\aorb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\borb{s}}
+		} \\[3mm]
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\borb{b}}{\aorb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\borb{b}}{\aorb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\aorb{r}}
+			-
+			\epsilon_{\borb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\borb{b}}{\borb{r}\aorb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\aorb{s}}
+		}
+		+
+		\frac{
+			\left|\antitwo{\borb{a}\borb{b}}{\borb{r}\borb{s}}\right|^2
+		}{
+			\epsilon_{\borb{a}}
+			+
+			\epsilon_{\borb{b}}
+			-
+			\epsilon_{\borb{r}}
+			-
+			\epsilon_{\borb{s}}
+		}
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\frac{1}{4}
+	\sum_{a,b,r,s}^{N/2}\left(
+	\begin{array}{>{\displaystyle}l}
+		\frac{
+			\left|
+				\spacetwo{ar}{bs}
+				-
+				\spacetwo{as}{br}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+		+
+		\frac{
+			\left|
+				\spacetwo{ar}{bs}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+		+
+		\frac{
+			\left|
+				-\spacetwo{as}{br}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		} \\[3mm]
+		+
+		\frac{
+			\left|
+				-\spacetwo{as}{br}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+		+
+		\frac{
+			\left|
+				\spacetwo{ar}{bs}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+		+
+		\frac{
+			\left|
+				\spacetwo{ar}{bs}
+				-
+				\spacetwo{as}{br}
+			\right|^2
+		}{
+			\epsilon_a
+			+
+			\epsilon_b
+			-
+			\epsilon_r
+			-
+			\epsilon_s
+		}
+	\end{array}
+	\right)
+\end{align}
+\begin{align}
+	E_0^{(2)}
+%
+%
+&=
+	\frac{1}{4}
+	\sum_{a,b,r,s}^{N/2}
+		\frac{1}{\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s}
+		\Bigl(
+			4|\spacetwo{ar}{bs}|^2
+			+
+			4|\spacetwo{as}{br}|^2
+			-
+			2\conju{\spacetwo{ar}{bs}} \spacetwo{as}{br}
+			-
+			2\conju{\spacetwo{as}{br}} \spacetwo{ar}{bs}
+		\Bigr) \\
+%
+%
+&=
+	\frac{1}{4}
+	\sum_{a,b,r,s}^{N/2}
+		\frac{1}{\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s}
+		\Bigl(
+			4|\spacetwo{ar}{bs}|^2
+			-
+			2\conju{\spacetwo{ar}{bs}} \spacetwo{as}{br}
+		\Bigr) \nonumber \\ &\quad
+	+
+	\frac{1}{4}
+	\sum_{a,b,s,r}^{N/2}
+		\frac{1}{\epsilon_a+\epsilon_b-\epsilon_s-\epsilon_r}
+		\Bigl(
+			4|\spacetwo{ar}{bs}|^2
+			-
+			2\conju{\spacetwo{ar}{bs}} \spacetwo{as}{br}
+		\Bigr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_{a,b,r,s}^{N/2}
+		\frac{1}{\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s}
+		\Bigl(
+			4|\spacetwo{ar}{bs}|^2
+			-
+			2 \conju{\spacetwo{ar}{bs}} \spacetwo{as}{br}
+		\Bigr) \\
+%
+%
+&=
+	\sum_{a,b,r,s}^{N/2}
+		\frac{
+			\conju{\spacetwo{ar}{bs}}
+			\left(
+				2\spacetwo{ar}{bs}
+				-
+				\spacetwo{as}{br}
+			\right)
+		}{
+			\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s
+		} \\
+%
+%
+&=
+\end{align}
+
+
+
+
+
+
