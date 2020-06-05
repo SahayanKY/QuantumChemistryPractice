@@ -579,6 +579,79 @@ $i$と$j$、または$k$と$l$のスピン状態が等しくない場合はゼ�
 %
 %
 &=
+	\sum_{a,b,r,s}^{N/2}
+		\frac{
+			\conju{\spacetwo{ar}{bs}}
+			\conju[1]{
+				2\conju{\spacetwo{ar}{bs}}
+				-
+				\conju{\spacetwo{as}{br}}
+			}
+		}{
+			\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s
+		} \\
+%
+%
+&=
+	\conju[1]{
+		\sum_{a,b,r,s}^{N/2}
+			\frac{
+				\spacetwo{ar}{bs}
+				\left(
+					2\spacetwo{ra}{sb}
+					-
+					\spacetwo{sa}{rb}
+				\right)
+			}{
+				\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s
+			}
+	}
+	%
+	\qquad
+	\Bigl(
+		\because \conju{\spacetwo{ij}{kl}} = \spacetwo{ji}{lk}
+	\Bigr)
+\end{align}
+\begin{align}
+	\conju{E_0^{(2)}}
+&=
+	\sum_{a,b,r,s}^{N/2}
+		\frac{
+			\phystwo{ab}{rs}
+			\left(
+				2\phystwo{rs}{ab}
+				-
+				\phystwo{sr}{ab}
+			\right)
+		}{
+			\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s
+		}
+	%
+	\qquad
+	\Bigl(
+		\because \spacetwo{ij}{kl} = \phystwo{ik}{jl}
+	\Bigr) \\
+%
+%
+	\therefore
+	E_0^{(2)}
+&=
+	\sum_{a,b,r,s}^{N/2}
+		\frac{
+			\phystwo{ab}{rs}
+			\left(
+				2\phystwo{rs}{ab}
+				-
+				\phystwo{rs}{ba}
+			\right)
+		}{
+			\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s
+		}
+	%
+	\qquad
+	\Bigl(
+		\because \phystwo{ij}{kl} = \phystwo{ji}{lk}
+	\Bigr)
 \end{align}
 
 
