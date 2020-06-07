@@ -1,0 +1,129 @@
+%ファイルID
+%2020/06/08 06:01
+%->2006080601(10進数)->(36進数)(ファイル作成者)
+%->X6D9P5SahayanKY
+\subsection{問}
+最小基底関数系における\ce{H2}の完全CI行列は、
+問題2.17より
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		2\spaceone{1}{h}{1}
+		+
+		\spacetwo{11}{11} &
+		%
+		\spacetwo{12}{12} \\
+	%
+		\spacetwo{21}{21} &
+		%
+		2\spaceone{2}{h}{2}
+		+
+		\spacetwo{22}{22}
+	\end{array}
+	\right]
+\end{align}
+である。空間分子軌道として実関数を用いた場合、
+クーロン積分$J_{ij}$と交換積分$K_{ij}$を使って、
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		2h_{11}
+		+
+		J_{11} &
+		%
+		K_{12} \\
+	%
+		K_{12} &
+		%
+		2h_{22}
+		+
+		J_{22}
+	\end{array}
+	\right]
+\end{align}
+となることを示せ。
+
+
+\subsection{解}
+まず、1電子積分については
+\begin{align}
+	\spaceone{i}{h}{j}
+&=
+	h_{ij}
+\end{align}
+より
+\begin{align}
+	\spaceone{1}{h}{1}
+&=
+	h_{11} &
+%
+	\spaceone{2}{h}{2}
+&=
+	h_{22}
+\end{align}
+である。
+
+次に、2電子積分について考える。
+\begin{align}
+	\spacetwo{ii}{jj}
+&=
+	J_{ij} &
+%
+	\spacetwo{ij}{ji}
+&=
+	\spacetwo{ij}{ij}
+=
+	\spacetwo{ji}{ji}
+=
+	K_{ij}
+\end{align}
+である。ここで後者の関係については問題2.20で導いたことを利用した。
+従って、
+\begin{align}
+	\spacetwo{11}{11}
+&=
+	J_{11} &
+%
+	\spacetwo{22}{22}
+&=
+	J_{22}
+\end{align}
+であり、
+\begin{align}
+	\spacetwo{12}{12}
+&=
+	K_{12} &
+%
+	\spacetwo{21}{21}
+&=
+	K_{21}
+=
+	K_{12}
+\end{align}
+である。
+
+従って、完全CI行列は
+\begin{align}
+	H
+&=
+	\left[
+	\begin{array}{cc}
+		2h_{11}
+		+
+		J_{11} &
+		%
+		K_{12} \\
+	%
+		K_{12} &
+		%
+		2h_{22}
+		+
+		J_{22}
+	\end{array}
+	\right]
+\end{align}
+となる。
