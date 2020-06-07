@@ -1,0 +1,221 @@
+%ファイルID
+%2020/06/07 14:19
+%->2006071419(10進数)->(36進数)(ファイル作成者)
+%->X6D2M3SahayanKY
+\subsection{問}
+クーロン積分$J_{ij}$と交換積分$K_{ij}$の間に成立する以下の性質を示せ。
+\begin{align}
+	J_{ii}
+&=
+	K_{ii}
+	%
+	\label{eqX6D2M3SahayanKY_1} \\
+%
+%
+	\conju{J_{ij}}
+&=
+	J_{ij}
+	%
+	\label{eqX6D2M3SahayanKY_2} \\
+%
+%
+	\conju{K_{ij}}
+&=
+	K_{ij}
+	%
+	\label{eqX6D2M3SahayanKY_3} \\
+%
+%
+	J_{ij}
+&=
+	J_{ji}
+	%
+	\label{eqX6D2M3SahayanKY_4} \\
+%
+%
+	K_{ij}
+&=
+	K_{ji}
+	%
+	\label{eqX6D2M3SahayanKY_5}
+\end{align}
+
+ただし、クーロン積分と交換積分はそれぞれ次の通りである。
+\begin{align}
+	J_{ij}
+&=
+	\spacetwo{ii}{jj}
+=
+	\phystwo{ij}{ij} \\
+%
+%
+	K_{ij}
+&=
+	\spacetwo{ij}{ji}
+=
+	\phystwo{ij}{ji}
+\end{align}
+
+\subsection{解}
+まず式\ref{eqX6D2M3SahayanKY_1}から見ていく。
+\begin{align}
+	J_{ii}
+&=
+	\spacetwo{ii}{ii} &
+%
+	K_{ii}
+&=
+	\spacetwo{ii}{ii}
+\end{align}
+であるので、
+\begin{align}
+	J_{ii}
+&=
+	K_{ii}
+\end{align}
+である。
+
+次に式\ref{eqX6D2M3SahayanKY_2}について見ていく。
+\begin{align}
+	\conju{J_{ij}}
+&=
+	\conju{\spacetwo{ii}{jj}} \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\psi_i(\r_1) \conju{\psi_i}(\r_1)
+		r_{12}^{-1}
+		\psi_j(\r_2) \conju{\psi_j}(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_i}(\r_1) \psi_i(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_j}(\r_2) \psi_j(\r_2) \\
+%
+%
+&=
+	\spacetwo{ii}{jj} \\
+%
+%
+&=
+	J_{ij}
+\end{align}
+である。
+
+次に式\ref{eqX6D2M3SahayanKY_3}について見ていく。
+\begin{align}
+	\conju{K_{ij}}
+&=
+	\conju{\spacetwo{ij}{ji}} \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\psi_i(\r_1) \conju{\psi_j}(\r_1)
+		r_{12}^{-1}
+		\psi_j(\r_2) \conju{\psi_i}(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_i}(\r_2) \psi_j(\r_2)
+		r_{12}^{-1}
+		\conju{\psi_j}(\r_1) \psi_i(\r_1) \\
+%
+%
+&=
+	\int\d\r_2 \d\r_1
+		\conju{\psi_i}(\r_1) \psi_j(\r_1)
+		r_{21}^{-1}
+		\conju{\psi_j}(\r_2) \psi_i(\r_2) \\
+%
+%
+&=
+	\spacetwo{ij}{ji} \\
+%
+%
+&=
+	K_{ij}
+\end{align}
+である。
+
+次に、式\ref{eqX6D2M3SahayanKY_4}について見ていく。
+\begin{align}
+	J_{ij}
+&=
+	\spacetwo{ii}{jj} \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_i}(\r_1) \psi_i(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_j}(\r_2) \psi_j(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_j}(\r_2) \psi_j(\r_2)
+		r_{12}^{-1}
+		\conju{\psi_i}(\r_1) \psi_i(\r_1) \\
+%
+%
+&=
+	\int\d\r_2 \d\r_1
+		\conju{\psi_j}(\r_1) \psi_j(\r_1)
+		r_{21}^{-1}
+		\conju{\psi_i}(\r_2) \psi_i(\r_2) \\
+%
+%
+&=
+	\spacetwo{jj}{ii} \\
+%
+%
+&=
+	J_{ji}
+\end{align}
+である。
+
+最後に、式\ref{eqX6D2M3SahayanKY_5}について見ていく。
+\begin{align}
+	K_{ij}
+&=
+	\spacetwo{ij}{ji} \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_i}(\r_1) \psi_j(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_j}(\r_2) \psi_i(\r_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_j}(\r_2) \psi_i(\r_2)
+		r_{12}^{-1}
+		\conju{\psi_i}(\r_1) \psi_j(\r_1) \\
+%
+%
+&=
+	\int\d\r_2 \d\r_1
+		\conju{\psi_j}(\r_1) \psi_i(\r_1)
+		r_{21}^{-1}
+		\conju{\psi_i}(\r_2) \psi_j(\r_2) \\
+%
+%
+&=
+	\spacetwo{ji}{ij} \\
+%
+%
+&=
+	K_{ji}
+\end{align}
+である。
+
+
+
+
