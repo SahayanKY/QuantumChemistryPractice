@@ -1,0 +1,143 @@
+%ファイルID
+%2020/06/09 17:25
+%->2006091725SahayanKY(ファイル作成者)
+\subsection{問}
+生成演算子$\adj{a_i}$は次の通りに定義される。
+\begin{align}
+	\adj{a_i}\ket{\chi_k\dots\chi_l}
+&=
+	\ket{\chi_i\chi_k\dots\chi_l}
+\end{align}
+
+このとき、
+\begin{align}
+	(\adj{a_1}\adj{a_2} +\adj{a_2}\adj{a_1}) \ket{K}
+&=
+	0
+\end{align}
+を、$\ket{K}=\ket{\chi_1\chi_2}, \ket{\chi_1\chi_3}, \ket{\chi_1\chi_4},
+\ket{\chi_2\chi_3}, \ket{\chi_2\chi_4}, \ket{\chi_3\chi_4}$について示せ。
+
+
+\subsection{解}
+$\ket{\chi_1\chi_2}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_1\chi_2}
+&=
+	\adj{a_1} \ket{\chi_2\chi_1\chi_2}
+	+
+	\adj{a_2} \ket{\chi_1\chi_1\chi_2} \\
+%
+%
+&=
+	\adj{a_1} 0
+	+
+	\adj{a_2} 0 \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+次に、$\ket{\chi_1\chi_3}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_1\chi_3}
+&=
+	\ket{\chi_1\chi_2\chi_1\chi_3}
+	+
+	\ket{\chi_2\chi_1\chi_1\chi_3} \\
+%
+%
+&=
+	0
+	+
+	0 \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+次に、$\ket{\chi_1\chi_4}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_1\chi_4}
+&=
+	\ket{\chi_1\chi_2\chi_1\chi_4}
+	+
+	\ket{\chi_2\chi_1\chi_1\chi_4} \\
+%
+%
+&=
+	0
+	+
+	0 \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+次に、$\ket{\chi_2\chi_3}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_2\chi_3}
+&=
+	\ket{\chi_1\chi_2\chi_2\chi_3}
+	+
+	\ket{\chi_2\chi_1\chi_2\chi_3} \\
+%
+%
+&=
+	0
+	+
+	0 \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+次に、$\ket{\chi_2\chi_4}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_2\chi_4}
+&=
+	\ket{\chi_1\chi_2\chi_2\chi_4}
+	+
+	\ket{\chi_2\chi_1\chi_2\chi_4} \\
+%
+%
+&=
+	0
+	+
+	0 \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+最後に、$\ket{\chi_3\chi_4}$について考える。
+\begin{align}
+	(\adj{a_1}\adj{a_2}+\adj{a_2}\adj{a_1}) \ket{\chi_3\chi_4}
+&=
+	\ket{\chi_1\chi_2\chi_3\chi_4}
+	+
+	\ket{\chi_2\chi_1\chi_3\chi_4} \\
+%
+%
+&=
+	\ket{\chi_1\chi_2\chi_3\chi_4}
+	-
+	\ket{\chi_1\chi_2\chi_3\chi_4} \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+
