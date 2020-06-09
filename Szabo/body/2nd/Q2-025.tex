@@ -1,0 +1,214 @@
+%ファイルID
+%2020/06/09 23:57
+%->2006092357SahayanKY(ファイル作成者)
+\subsection{問}
+生成演算子$\adj{a_i}$と消滅演算子$a_i$がもつ次の性質
+\begin{align}
+	\left\{
+	\begin{array}{l}
+		(a_1\adj{a_2} +\adj{a_2}a_1) \ket{K}
+		=
+		0 \\
+	%
+		(a_1\adj{a_1} +\adj{a_1}a_1) \ket{K}
+		=
+		\ket{K}
+	\end{array}
+	\right.
+\end{align}
+を、
+$\ket{K}=\ket{\chi_1\chi_2}, \ket{\chi_1\chi_3}, \ket{\chi_1\chi_4},
+\ket{\chi_2\chi_3}, \ket{\chi_2\chi_4}, \ket{\chi_3\chi_4}$
+について示せ。
+
+\subsection{解}
+1つ目の性質から見ていく。まず、$\ket{\chi_1\chi_2}$は
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_1\chi_2}
+&=
+	a_1 \ket{\chi_2\chi_1\chi_2}
+	+
+	\adj{a_2} \ket{\chi_2} \\
+%
+%
+&=
+	0
+	+
+	\ket{\chi_2\chi_2} \\
+%
+%
+&=
+	0
+\end{align}
+である。次に、$\ket{\chi_1\chi_3}$では
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_1\chi_3}
+&=
+	a_1 \ket{\chi_2\chi_1\chi_3}
+	+
+	\adj{a_2} \ket{\chi_3} \\
+%
+%
+&=
+	-
+	\ket{\chi_2\chi_3}
+	+
+	\ket{\chi_2\chi_3} \\
+%
+%
+&=
+	0
+\end{align}
+となる。次に、$\ket{\chi_1\chi_4}$では
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_1\chi_4}
+&=
+	a_1 \ket{\chi_2\chi_1\chi_4}
+	+
+	\adj{a_2} \ket{\chi_4} \\
+%
+%
+&=
+	-
+	\ket{\chi_2\chi_4}
+	+
+	\ket{\chi_2\chi_4} \\
+%
+%
+&=
+	0
+\end{align}
+となる。次に、$\ket{\chi_2\chi_3}$では
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_2\chi_3}
+&=
+	a_1 \ket{\chi_2\chi_2\chi_3}
+	+
+	\adj{a_2} 0 \\
+%
+%
+&=
+	0
+\end{align}
+となる。次に、$\ket{\chi_2\chi_4}$では
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_2\chi_4}
+&=
+	a_1 \ket{\chi_2\chi_2\chi_4}
+	+
+	\adj{a_2} 0 \\
+%
+%
+&=
+	0
+\end{align}
+となる。最後に、$\ket{\chi_3\chi_4}$では
+\begin{align}
+	(a_1\adj{a_2} +\adj{a_2}a_1) \ket{\chi_3\chi_4}
+&=
+	a_1 \ket{\chi_2\chi_3\chi_4}
+	+
+	\adj{a_2} 0 \\
+%
+%
+&=
+	0
+\end{align}
+となる。
+
+次に、2つ目の性質を見ていく。まず、$\ket{\chi_1\chi_2}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_1\chi_2}
+&=
+	a_1 \ket{\chi_1\chi_1\chi_2}
+	+
+	\adj{a_1} \ket{\chi_2} \\
+%
+%
+&=
+	0
+	+
+	\ket{\chi_1\chi_2} \\
+%
+%
+&=
+	\ket{\chi_1\chi_2}
+\end{align}
+となる。次に、$\ket{\chi_1\chi_3}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_1\chi_3}
+&=
+	a_1 \ket{\chi_1\chi_1\chi_3}
+	+
+	\adj{a_1} \ket{\chi_3} \\
+%
+%
+&=
+	0
+	+
+	\ket{\chi_1\chi_3} \\
+%
+%
+&=
+	\ket{\chi_1\chi_3}
+\end{align}
+となる。次に、$\ket{\chi_1\chi_4}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_1\chi_4}
+&=
+	a_1 \ket{\chi_1\chi_1\chi_4}
+	+
+	\adj{a_1} \ket{\chi_4} \\
+%
+%
+&=
+	0
+	+
+	\ket{\chi_1\chi_4} \\
+%
+%
+&=
+	\ket{\chi_1\chi_4}
+\end{align}
+となる。次に、$\ket{\chi_2\chi_3}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_2\chi_3}
+&=
+	a_1 \ket{\chi_1\chi_2\chi_3}
+	+
+	\adj{a_1} 0 \\
+%
+%
+&=
+	\ket{\chi_2\chi_3}
+\end{align}
+となる。次に、$\ket{\chi_2\chi_4}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_2\chi_4}
+&=
+	a_1 \ket{\chi_1\chi_2\chi_4}
+	+
+	\adj{a_1} 0 \\
+%
+%
+&=
+	\ket{\chi_2\chi_4}
+\end{align}
+となる。最後に、$\ket{\chi_3\chi_4}$では
+\begin{align}
+	(a_1\adj{a_1} +\adj{a_1}a_1) \ket{\chi_3\chi_4}
+&=
+	a_1 \ket{\chi_1\chi_3\chi_4}
+	+
+	\adj{a_1} 0 \\
+%
+%
+&=
+	\ket{\chi_3\chi_4}
+\end{align}
+となる。
+
+従って、確かに上記の性質をもっている。
+
+
+
