@@ -1,0 +1,132 @@
+%ファイルID
+%2020/06/08 18:00
+%->2006081800SahayanKY(ファイル作成者)
+\subsection{問}
+2つのHartree積
+\begin{align}
+	\Psi^{\rm HP}_{\aspin\bspin}
+&=
+	\psi_1(\r_1) \alpha(\omega_1)
+	\psi_2(\r_2) \beta(\omega_2) \\
+%
+%
+	\Psi^{\rm HP}_{\bspin\bspin}
+&=
+	\psi_1(\r_1) \beta(\omega_1)
+	\psi_2(\r_2) \beta(\omega_2)
+\end{align}
+を考える。これらのエネルギーが等しいことを示せ。
+
+また、Hartree積は平行スピンをもった電子の相関がないことから予想される通り、
+そのエネルギーがSlater行列式$\ket{\aorb{\psi_1}\borb{\psi_2}}$のエネルギー
+$E(\aspin\bspin)$に等しくなることを示せ。
+
+
+\subsection{解}
+まず、前者のHartree積$\Psi^{\rm HP}_{\aspin\bspin}$について考える。
+その波動関数のエネルギーは
+\begin{align}
+	\braket{\Psi^{\rm HP}_{\aspin\bspin}|\H|\Psi^{\rm HP}_{\aspin\bspin}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2
+		\conju{\psi_1}(\r_1) \conju{\alpha}(\omega_1)
+		\conju{\psi_2}(\r_2) \conju{\beta}(\omega_2)
+		\H
+		\psi_1(\r_1) \alpha(\omega_1)
+		\psi_2(\r_2) \beta(\omega_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_1}(\r_1) \conju{\psi_2}(\r_2)
+		\Bigl(
+			h(\r_1) +h(\r_2) +r_{12}^{-1}
+		\Bigr)
+		\psi_1(\r_1) \psi_2(\r_2) \\
+%
+%
+&=
+	\int\d\r_1
+		\conju{\psi_1}(\r_1)
+		h(\r_1)
+		\psi_1(\r_1) \nonumber\\&\quad
+	+
+	\int\d\r_2
+		\conju{\psi_2}(\r_2)
+		h(\r_2)
+		\psi_2(\r_2) \nonumber\\&\quad
+	+
+	\int\d\r_1\d\r_2
+		\conju{\psi_1}(\r_1) \psi_1(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2) \psi_2(\r_2) \\
+%
+%
+&=
+	\spaceone{1}{h}{1}
+	+
+	\spaceone{2}{h}{2}
+	+
+	\spacetwo{11}{22} \\
+%
+%
+&=
+	E(\aspin\bspin)
+\end{align}
+である。
+
+次に、後者のHartree積$\Psi^{\rm HP}_{\bspin\bspin}$について考える。
+その波動関数のエネルギーは
+\begin{align}
+	\braket{\Psi^{\rm HP}_{\bspin\bspin}|\H|\Psi^{\rm HP}_{\bspin\bspin}}
+&=
+	\int\d\r_1\d\omega_1 \d\r_2\d\omega_2
+		\conju{\psi_1}(\r_1) \conju{\beta}(\omega_1)
+		\conju{\psi_2}(\r_2) \conju{\beta}(\omega_2)
+		\H
+		\psi_1(\r_1) \beta(\omega_1)
+		\psi_2(\r_2) \beta(\omega_2) \\
+%
+%
+&=
+	\int\d\r_1 \d\r_2
+		\conju{\psi_1}(\r_1) \conju{\psi_2}(\r_2)
+		\Bigl(
+			h(\r_1) +h(\r_2) +r_{12}^{-1}
+		\Bigr)
+		\psi_1(\r_1) \psi_2(\r_2) \\
+%
+%
+&=
+	\int\d\r_1
+		\conju{\psi_1}(\r_1)
+		h(\r_1)
+		\psi_1(\r_1) \nonumber\\&\quad
+	+
+	\int\d\r_2
+		\conju{\psi_2}(\r_2)
+		h(\r_2)
+		\psi_2(\r_2) \nonumber\\&\quad
+	+
+	\int\d\r_1 \d\r_2
+		\conju{\psi_1}(\r_1) \psi_1(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2) \psi_2(\r_2) \\
+%
+%
+&=
+	\spaceone{1}{h}{1}
+	+
+	\spaceone{2}{h}{2}
+	+
+	\spacetwo{11}{22} \\
+%
+%
+&=
+	E(\aspin\bspin)
+\end{align}
+である。
+
+従って、$\ket{\Psi^{\rm HP}_{\aspin\bspin}},\ket{\Psi^{\rm HP}_{\bspin\bspin}},\ket{\aorb{\psi_1}\borb{\psi_2}}$の
+エネルギーは等しいことが言える。
+
