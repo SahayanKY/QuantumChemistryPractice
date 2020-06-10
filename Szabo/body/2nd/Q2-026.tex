@@ -1,0 +1,54 @@
+%ファイルID
+%2020/06/10 11:13
+%->2006101113SahayanKY(ファイル作成者)
+\subsection{問}
+第2量子化を使って、以下の式を示せ。
+\begin{align}
+	\braket{\chi_i|\chi_j}
+&=
+	\delta_{ij}
+\end{align}
+
+\subsection{解}
+生成演算子$\adj{a_i}$と消滅演算子$a_i$を用いて、
+\begin{align}
+	\ket{\chi_j}
+&=
+	\adj{a_j} \ket{} &
+%
+	\bra{\chi_i}
+&=
+	\bra{} a_i
+\end{align}
+と表せる。従って、
+\begin{align}
+	\braket{\chi_i|\chi_j}
+&=
+	\braket{|a_i \adj{a_j}|} \\
+%
+%
+&=
+	\braket{|(\delta_{ij}-\adj{a_j}a_i)|}
+	%
+	\qquad
+	(\because a_i\adj{a_j}+\adj{a_j}a_i=\delta_{ij}) \\
+%
+%
+&=
+	\delta_{ij} \braket{|}
+	-
+	\braket{|\adj{a_j}a_i|} \\
+%
+%
+&=
+	\delta_{ij} \cdot 1
+	-
+	\bra{}\adj{a_j} 0 \\
+%
+%
+&=
+	\delta_{ij}
+\end{align}
+となる。
+
+
