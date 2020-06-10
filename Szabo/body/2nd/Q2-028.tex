@@ -1,0 +1,149 @@
+%ファイルID
+%2020/06/10 21:42
+%->2006102142SahayanKY(ファイル作成者)
+\subsection{問}
+$\ket{\Psi_0}=\ket{\chi_1\dots\chi_a\chi_b\dots\chi_N}$を
+Hartree-Fock基底状態波動関数とする。
+このとき、以下の等式を示せ。
+\begin{align}
+	\begin{array}{>{\rm}ll}
+		(a) &
+		a_r\ket{\Psi_0} = 0, \quad
+		\bra{\Psi_0}\adj{a_r} = 0 \\
+	%
+		(b) &
+		\adj{a_a}\ket{\Psi_0} = 0, \quad
+		\bra{\Psi_0}a_a = 0 \\
+	%
+		(c) &
+		\ket{\Psi_a^r} = \adj{a_r} a_a \ket{\Psi_0} \\
+	%
+		(d) &
+		\bra{\Psi_a^r} = \bra{\Psi_0} \adj{a_a} a_r \\
+	%
+		(e) &
+		\ket{\Psi_{ab}^{rs}} = \adj{a_s} a_b \adj{a_r} a_a \ket{\Psi_0} = \adj{a_r} \adj{a_s} a_b a_a \ket{\Psi_0} \\
+	%
+		(f) &
+		\bra{\Psi_{ab}^{rs}} = \bra{\Psi_0} \adj{a_a} a_r \adj{a_b} a_s = \bra{\Psi_0} \adj{a_a} \adj{a_b} a_s a_r
+	\end{array}
+\end{align}
+
+
+\subsection{解}
+(a)について考える。$\ket{\Psi_0}$では、$\chi_r$を電子は占有していない。
+従って、消滅演算子$a_r$を作用さるとゼロになる。従って、
+$a_r\ket{\Psi_0}=0$である。
+また、この共役形を考えると、$\bra{\Psi_0}\adj{a_r}=0$となる。
+
+(b)について考える。$\ket{\Psi_0}$では、既に$\chi_a$を電子は占有している。
+従って、生成演算子$\adj{a_a}$を作用させるとゼロになる。
+従って、$\adj{a_a}\ket{\Psi_0}=0$である。
+また、この共役形を考えると、$\bra{\Psi_0}a_a=0$となる。
+
+(c)について考える。
+\begin{align}
+	\adj{a_r} a_a \ket{\Psi_0}
+&=
+	\adj{a_r} a_a \ket{\chi_1\dots\chi_a\chi_b\dots\chi_N} \\
+%
+%
+&=
+	-
+	\adj{a_r} a_a \ket{\chi_a\dots\chi_1\chi_b\dots\chi_N} \\
+%
+%
+&=
+	-
+	\adj{a_r} \ket{\dots\chi_1\chi_b\dots\chi_N} \\
+%
+%
+&=
+	-
+	\ket{\chi_r\dots\chi_1\chi_b\dots\chi_N} \\
+%
+%
+&=
+	\ket{\chi_1\dots\chi_r\chi_b\dots\chi_N} \\
+%
+%
+&=
+	\ket{\Psi_a^r}
+\end{align}
+である。
+
+(d)について考える。
+これは、(c)の共役形を考えればよく、
+\begin{align}
+	\bra{\Psi_a^r}
+&=
+	\bra{\Psi_0} \adj[1]{\adj{a_r} a_a} \\
+%
+%
+&=
+	\bra{\Psi_0} \adj{a_a} \adj{\adj{a_r}} \\
+%
+%
+&=
+	\bra{\Psi_0} \adj{a_a} a_r
+\end{align}
+となる。
+
+(e)について考える。
+\begin{align}
+	\adj{a_s} a_b \adj{a_r} a_a \ket{\Psi_0}
+&=
+	\adj{a_s} a_b \ket{\Psi_a^r} \\
+%
+%
+&=
+	\adj{a_s} a_b \ket{\chi_1\dots\chi_r\chi_b\dots\chi_N} \\
+%
+%
+&=
+	-
+	\adj{a_s} a_b \ket{\chi_b\dots\chi_r\chi_1\dots\chi_N} \\
+%
+%
+&=
+	-
+	\adj{a_s} \ket{\dots\chi_r\chi_1\dots\chi_N} \\
+%
+%
+&=
+	-
+	\ket{\chi_s\dots\chi_r\chi_1\dots\chi_N} \\
+%
+%
+&=
+	\ket{\chi_1\dots\chi_r\chi_s\dots\chi_N} \\
+%
+%
+&=
+	\ket{\Psi_{ab}^{rs}}
+\end{align}
+となる。2つ目の等号関係は$a_i\adj{a_j}+\adj{a_j}a_i=\delta_{ij}$と
+$\adj{a_i}\adj{a_j}+\adj{a_j}\adj{a_i}=0$から導かれる。
+
+(f)について考える。
+これは(e)の共役形を考えればよく、
+\begin{align}
+	\bra{\Psi_{ab}^{rs}}
+&=
+	\bra{\Psi_0} \adj[1]{\adj{a_s}a_b\adj{a_r}a_a} \\
+%
+%
+&=
+	\bra{\Psi_0} \adj{a_a} \adj[1]{\adj{a_s}a_b\adj{a_r}} \\
+%
+%
+&=
+	\bra{\Psi_0} \adj{a_a} \adj{\adj{a_r}} \adj[1]{\adj{a_s}a_b} \\
+%
+%
+&=
+	\bra{\Psi_0} \adj{a_a} a_r \adj{a_b} a_s
+\end{align}
+となる。2つ目の等号関係についても同様である。
+
+
