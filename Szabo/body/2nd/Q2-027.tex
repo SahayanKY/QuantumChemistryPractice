@@ -1,0 +1,62 @@
+%ファイルID
+%2020/06/10 12:55
+%->2006101255SahayanKY(ファイル作成者)
+\subsection{問}
+$\ket{K}=\ket{\chi_1\chi_2\dots\chi_N}=\adj{a_1}\adj{a_2}\dots\adj{a_N}\ket{}$とする。
+以下の等式を示せ。
+\begin{align}
+	\braket{K|\adj{a_i}a_j|K}
+&=
+	\left\{
+	\begin{array}{ll}
+		1 &
+		%
+		(i=j,\ i\in\{1,2,\dots,N\}) \\
+	%
+		0 &
+		%
+		(\text{otherwise})
+	\end{array}
+	\right.
+\end{align}
+
+
+\subsection{解}
+$j\notin\{1,2,\dots,N\}$のとき、
+$a_j\ket{K}=0$である。
+また、$i\notin\{1,2,\dots,N\}$のとき、
+$\bra{K}\adj{a_i}=0$である。
+さらに、$i\in\{1,2,\dots,N\}\setminus\{j\}$のとき、
+$\adj{a_i}a_j\ket{K}=0$である。
+従って、$\braket{K|\adj{a_i}a_j|K}$が非ゼロであるためには
+$i\in\{1,2,\dots,N\}$かつ$j\in\{1,2,\dots,N\}$かつ、
+$i\notin\{1,2,\dots,N\}\setminus\{j\}$である必要がある。
+1つ目と3つ目の条件を組合わせると$i=j$と同値であるので、
+この必要条件は$i=j$かつ$i\in\{1,2,\dots,N\}$に読み替えることができる。
+
+逆に、この必要条件を満たすとき、
+\begin{align}
+	\braket{K|\adj{a_i}a_i|K}
+&=
+	\braket{K|(1-a_i\adj{a_i})|K} \\
+%
+%
+&=
+	\braket{K|K}
+	-
+	\braket{K|a_i\adj{a_i}|K} \\
+%
+%
+&=
+	1
+	-
+	\bra{K}a_i 0 \\
+%
+%
+&=
+	1
+\end{align}
+となることから、これは必要十分条件である。
+従って、上記の通りとなる。
+
+
