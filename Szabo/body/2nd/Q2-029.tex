@@ -1,0 +1,117 @@
+%ファイルID
+%2020/06/11 17:53
+%->2006111753SahayanKY(ファイル作成者)
+\subsection{問}
+最小基底関数系を使った\ce{H2}のHartree-Fock基底状態
+$\ket{\Psi_0}=\ket{\chi_1\chi_2}=\adj{a_1}\adj{a_2}\ket{}$とする。
+この時、
+\begin{align}
+	\braket{\Psi_0|\Oone|\Psi_0}
+&=
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\braket{|a_2a_1\adj{a_i}a_j\adj{a_1}\adj{a_2}|} \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+\end{align}
+であることを示せ。
+ただし、
+\begin{align}
+	\Oone
+&=
+	\sum_i \sum_j
+		\braket{i|h|j} \adj{a_i} a_j
+\end{align}
+である。また、$i,j$に関する総和はスピン軌道の組
+($\chi_1,\chi_2,\chi_3,\chi_4$)についてとる。
+
+\subsection{解}
+$\Oone$の両側から$\bra{\Psi_0}$と$\ket{\Psi_0}$を作用させると、
+($\bra{\Psi_0}=\bra{\chi_1\chi_2}$とする)
+\begin{align}
+	\Oone
+&=
+	\sum_i \sum_j
+		\braket{i|h|j} \adj{a_i} a_j \\
+%
+%
+	\braket{\Psi_0|\Oone|\Psi_0}
+&=
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\braket{\Psi_0|\adj{a_i}a_j|\Psi_0} \\
+%
+%
+&=
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\braket{\chi_1\chi_2|\adj{a_i}a_j|\chi_1\chi_2} \\
+%
+%
+&=
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\braket{\chi_1\chi_2|(\delta_{ij}-a_j\adj{a_i})|\chi_1\chi_2} \\
+%
+%
+&=
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\delta_{ij}
+		\braket{\chi_1\chi_2|\chi_1\chi_2}
+	-
+	\sum_i \sum_j
+		\braket{i|h|j}
+		\braket{\chi_j\chi_1\chi_2|\chi_i\chi_1\chi_2} \\
+%
+%
+&=
+	\sum_{i=1,2,3,4}
+		\braket{i|h|i}
+	-
+	\sum_{i=3,4} \sum_{j=3,4}
+		\braket{i|h|j}
+		\braket{\chi_j\chi_1\chi_2|\chi_i\chi_1\chi_2} \nonumber \\&
+	%
+	\qquad
+	(\because
+		\braket{\chi_1\chi_2|\chi_1\chi_2}=1,\
+		\ket{\chi_1\chi_1\chi_2} = \ket{\chi_2\chi_1\chi_2} = 0
+	) \\
+%
+%
+&=
+	\sum_{i=1,2,3,4}
+		\braket{i|h|i}
+	-
+	\sum_{i=3,4} \sum_{j=3,4}
+		\braket{i|h|j}
+		\delta_{ij}
+	%
+	\qquad
+	(\because \braket{\chi_3\chi_1\chi_2|\chi_4\chi_1\chi_2}=0) \\
+%
+%
+&=
+	\sum_{i=1,2}
+		\braket{i|h|i} \\
+%
+%
+&=
+	\braket{1|h|1}
+	+
+	\braket{2|h|2}
+\end{align}
+となる。
+
+
+
+
+
+
+
+
