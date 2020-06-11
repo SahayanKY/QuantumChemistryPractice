@@ -1,0 +1,221 @@
+%ファイルID
+%2020/06/11 21:43
+%->2006112143SahayanKY(ファイル作成者)
+\subsection{問}
+次の等式を示せ。
+\begin{align}
+	\braket{\Psi_a^r|\Otwo|\Psi_0}
+&=
+	\sum_b^N \antitwo{rb}{ab}
+\end{align}
+
+ただし、次の式を用いること。
+\begin{align}
+	\Otwo
+&=
+	\frac{1}{2}
+	\sum_i^{2K} \sum_j^{2K} \sum_k^{2K} \sum_l^{2K}
+		\phystwo{ij}{kl}
+		\adj{a_i} \adj{a_j} a_l a_k
+\end{align}
+
+\subsection{解}
+\begin{align}
+	\braket{\Psi_a^r|\Otwo|\Psi_0}
+&=
+	\frac{1}{2}
+	\sum_i^{2K} \sum_j^{2K} \sum_k^{2K} \sum_l^{2K}
+		\phystwo{ij}{kl}
+		\braket{\Psi_a^r|\adj{a_i} \adj{a_j} a_l a_k|\Psi_0} \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_i^{2K} \sum_j^{2K} \sum_k^{2K} \sum_l^{2K}
+		\phystwo{ij}{kl}
+		\braket{\Psi_0|\adj{a_a} a_r \adj{a_i} \adj{a_j} a_l a_k|\Psi_0} \\
+\end{align}
+である。ここで、
+\begin{align}
+&\quad
+	\adj{a_a} a_r \adj{a_i} \adj{a_j} a_l a_k \\
+&=
+	\adj{a_a} (\delta_{ri} -\adj{a_i} a_r) \adj{a_j} a_l a_k \\
+%
+%
+&=
+	\delta_{ri} \adj{a_a} \adj{a_j} a_l a_k
+	-
+	\adj{a_a} \adj{a_i} a_r \adj{a_j} a_l a_k \\
+%
+%
+&=
+	\delta_{ri} (-\adj{a_j} \adj{a_a}) a_l a_k
+	-
+	(-\adj{a_i} \adj{a_a}) (\delta_{rj} -\adj{a_j} a_r) a_l a_k \\
+%
+%
+&=
+	-
+	\delta_{ri} \adj{a_j} \adj{a_a} a_l a_k
+	+
+	\delta_{rj} \adj{a_i} \adj{a_a} a_l a_k
+	-
+	\adj{a_i} \adj{a_a} \adj{a_j} a_r a_l a_k \\
+%
+%
+&=
+	-
+	\delta_{ri} \adj{a_j} (\delta_{al} -a_l \adj{a_a}) a_k
+	+
+	\delta_{rj} \adj{a_i} (\delta_{al} -a_l \adj{a_a}) a_k
+	-
+	\adj{a_i} \adj{a_a} \adj{a_j} (-a_l a_r) a_k \\
+%
+%
+&=
+	-
+	\delta_{ri} \delta_{al} \adj{a_j} a_k
+	+
+	\delta_{ri} \adj{a_j} a_l \adj{a_a} a_k
+	+
+	\delta_{rj} \delta_{al} \adj{a_i} a_k
+	-
+	\delta_{rj} \adj{a_i} a_l \adj{a_a} a_k
+	+
+	\adj{a_i} \adj{a_a} \adj{a_j} a_l a_r a_k \\
+%
+%
+&=
+	-
+	\delta_{ri} \delta_{al} \adj{a_j} a_k
+	+
+	\delta_{ri} \adj{a_j} a_l (\delta_{ak} -a_k \adj{a_a})
+	+
+	\delta_{rj} \delta_{al} \adj{a_i} a_k \nonumber \\ &\qquad
+	-
+	\delta_{rj} \adj{a_i} a_l (\delta_{ak} -a_k \adj{a_a})
+	+
+	\adj{a_i} \adj{a_a} \adj{a_j} a_l (-a_k a_r) \\
+%
+%
+&=
+	-
+	\delta_{ri} \delta_{al} \adj{a_j} a_k
+	+
+	\delta_{ri} \delta_{ak} \adj{a_j} a_l
+	-
+	\delta_{ri} \adj{a_j} a_l a_k \adj{a_a}
+	+
+	\delta_{rj} \delta_{al} \adj{a_i} a_k \nonumber \\ &\qquad
+	-
+	\delta_{rj} \delta_{ak} \adj{a_i} a_l
+	+
+	\delta_{rj} \adj{a_i} a_l a_k \adj{a_a}
+	-
+	\adj{a_i} \adj{a_a} \adj{a_j} a_l a_k a_r
+\end{align}
+である。$\adj{a_a}\ket{\Psi_0}=a_r\ket{\Psi_0}=0$であるので、
+\begin{align}
+	\braket{\Psi_a^r|\Otwo|\Psi_0}
+&=
+	\frac{1}{2}
+	\sum_i^{2K} \sum_j^{2K} \sum_k^{2K} \sum_l^{2K}
+		\phystwo{ij}{kl}
+		\left(
+		\begin{array}{l}
+			-
+			\delta_{ri} \delta_{al} \braket{\Psi_0|\adj{a_j} a_k|\Psi_0}
+			+
+			\delta_{ri} \delta_{ak} \braket{\Psi_0|\adj{a_j} a_l|\Psi_0} \\\quad
+			+
+			\delta_{rj} \delta_{al} \braket{\Psi_0|\adj{a_i} a_k|\Psi_0}
+			-
+			\delta_{rj} \delta_{ak} \braket{\Psi_0|\adj{a_i} a_l|\Psi_0}
+		\end{array}
+		\right) \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	\sum_j^{2K} \sum_k^{2K}
+		\phystwo{rj}{ka}
+		\braket{\Psi_0|\adj{a_j}a_k|\Psi_0}
+	+
+	\frac{1}{2}
+	\sum_j^{2K} \sum_l^{2K}
+		\phystwo{rj}{al}
+		\braket{\Psi_0|\adj{a_j}a_l|\Psi_0} \nonumber\\ &\qquad
+	+
+	\frac{1}{2}
+	\sum_i^{2K} \sum_k^{2K}
+		\phystwo{ir}{ka}
+		\braket{\Psi_0|\adj{a_i}a_k|\Psi_0}
+	-
+	\frac{1}{2}
+	\sum_i^{2K} \sum_l^{2K}
+		\phystwo{ir}{al}
+		\braket{\Psi_0|\adj{a_i}a_l|\Psi_0}
+\end{align}
+問題2.27より、$\braket{\Psi_0|\adj{a_i}a_j|\Psi_0}$は
+$i=j=1,2,\dots,N$のとき1であり、それ以外の時はゼロである。
+従って、
+\begin{align}
+	\braket{\Psi_a^r|\Otwo|\Psi_0}
+&=
+	-
+	\frac{1}{2}
+	\sum_j^N
+		\phystwo{rj}{ja}
+	+
+	\frac{1}{2}
+	\sum_j^N
+		\phystwo{rj}{aj}
+	+
+	\frac{1}{2}
+	\sum_i^N
+		\phystwo{ir}{ia}
+	-
+	\frac{1}{2}
+	\sum_i^N
+		\phystwo{ir}{ai} \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	\sum_j^N
+		\phystwo{rj}{ja}
+	+
+	\frac{1}{2}
+	\sum_j^N
+		\phystwo{rj}{aj}
+	+
+	\frac{1}{2}
+	\sum_i^N
+		\phystwo{ri}{ai}
+	-
+	\frac{1}{2}
+	\sum_i^N
+		\phystwo{ri}{ia}
+	%
+	\qquad
+	(\because \phystwo{ij}{kl} = \phystwo{ji}{lk}) \\
+%
+%
+&=
+	\sum_i^N
+		\phystwo{ri}{ai}
+	-
+	\sum_i^N
+		\phystwo{ri}{ia} \\
+%
+%
+&=
+	\sum_i^N
+		\antitwo{ri}{ai}
+\end{align}
+となる。
+
+
