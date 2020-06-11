@@ -1,0 +1,90 @@
+%ファイルID
+%2020/06/11 19:54
+%->2006111954SahayanKY(ファイル作成者)
+\subsection{問}
+\begin{align}
+	\braket{\Psi_a^r|\Oone|\Psi_0}
+&=
+	\sum_i^{2K} \sum_j^{2K}
+		\braket{i|h|j}
+		\braket{\Psi_0|\adj{a_a} a_r \adj{a_i} a_j|\Psi_0} \\
+%
+%
+&=
+	\braket{r|h|a}
+\end{align}
+となることを示せ。
+
+
+\subsection{解}
+\begin{align}
+	\braket{\Psi_a^r|\Oone|\Psi_0}
+&=
+	\sum_i^{2K} \sum_j^{2K}
+		\braket{i|h|j}
+		\braket{\Psi_a^r|\adj{a_i} a_j|\Psi_0} \\
+%
+%
+&=
+	\sum_i^{2K} \sum_j^{2K}
+		\braket{i|h|j}
+		\braket{\Psi_0|\adj{a_a} a_r \adj{a_i} a_j|\Psi_0}
+	%
+	\qquad
+	(\because \ket{\Psi_a^r}=\adj{a_r} a_a\ket{\Psi_0})
+\end{align}
+である。
+ここで、
+\begin{align}
+	\adj{a_a} a_r \adj{a_i} a_j
+&=
+	\adj{a_a} (\delta_{ri} -\adj{a_i} a_r) a_j \\
+%
+%
+&=
+	\delta_{ri} \adj{a_a} a_j
+	-
+	\adj{a_a} \adj{a_i} a_r a_j \\
+%
+%
+&=
+	\delta_{ri} (\delta_{aj} -a_j \adj{a_a})
+	-
+	\adj{a_a} \adj{a_i}(-a_j a_r) \\
+%
+%
+&=
+	\delta_{ri} \delta_{aj}
+	-
+	\delta_{ri} a_j \adj{a_a}
+	+
+	\adj{a_a} \adj{a_i} a_j a_r \\
+%
+%
+	\adj{a_a} a_r \adj{a_i} a_j \ket{\Psi_0}
+&=
+	\delta_{ri} \delta_{aj} \ket{\Psi_0}
+\end{align}
+であることから、
+\begin{align}
+	\braket{\Psi_a^r|\Oone|\Psi_0}
+&=
+	\sum_i^{2K} \sum_j^{2K}
+		\braket{i|h|j}
+		\delta_{ri}
+		\delta_{aj}
+		\braket{\Psi_0|\Psi_0} \\
+%
+%
+&=
+	\sum_i^{2K} \sum_j^{2K}
+		\braket{i|h|j}
+		\delta_{ri}
+		\delta_{aj} \\
+%
+%
+&=
+	\braket{r|h|a}
+\end{align}
+となる。
+
