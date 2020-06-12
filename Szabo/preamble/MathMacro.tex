@@ -83,28 +83,11 @@
 
 %共役行列、随伴行列
 %adjoint
-\newcommand{\adj}[2][0]{%\rightoperator{#1}{{}^{\dagger}}{#2}
-	{\ensuremath{%
-		\ifnum #1=0%
-			%そのままrightoperatorに渡すと、a_i{}^{\dagger}になり、微妙な空白が入るので、ここで定義する
-			#2^{\dagger}%
-		\else{%
-			\rightoperator{#1}{{}^{\dagger}}{#2}
-		}\fi%
-	}}%
-}
+\newcommand{\adj}[2][0]{\rightoperator{#1}{{}^{\dagger}}{#2}}
 
 %複素共役行列
 %conjugate
-\newcommand{\conju}[2][0]{%\rightoperator{#1}{{}^{\ast}}{#2}
-	{\ensuremath{%
-		\ifnum #1=0%
-			#2^{\ast}%
-		\else{%
-			\rightoperator{#1}{{}^{\ast}}{#2}
-		}\fi%
-	}}%
-}
+\newcommand{\conju}[2][0]{\rightoperator{#1}{{}^{\ast}}{#2}}
 
 %トレース
 %trace
