@@ -1,0 +1,300 @@
+%ファイルID
+%2020/06/12 18:51
+%->2006121851SahayanKY(ファイル作成者)
+\subsection{(a)問}
+スピン角運動量演算子を$\bm{s}$、
+その各成分を$s_x,s_y,s_z$、
+また、大きさの2乗を$s^2=s_x^2+s_y^2+s_z^2$とする。
+このとき
+\begin{align}
+	s^2 \ket{\alpha}
+&=
+	\frac{3}{4} \ket{\alpha} &
+%
+	s^2 \ket{\beta}
+&=
+	\frac{3}{4} \ket{\beta} \\
+%
+%
+	s_z \ket{\alpha}
+&=
+	\frac{1}{2} \ket{\alpha} &
+%
+	s_z \ket{\beta}
+&=
+	-\frac{1}{2} \ket{\beta} \\
+%
+%
+	s_x \ket{\alpha}
+&=
+	\frac{1}{2} \ket{\beta} &
+%
+	s_x \ket{\beta}
+&=
+	\frac{1}{2} \ket{\alpha} \\
+%
+%
+	s_y \ket{\alpha}
+&=
+	\frac{i}{2} \ket{\beta} &
+%
+	s_y \ket{\beta}
+&=
+	-\frac{i}{2} \ket{\alpha}
+\end{align}
+を利用して、
+\begin{align}
+	s_+ \ket{\alpha}
+&=
+	0 &
+%
+	s_+ \ket{\beta}
+&=
+	\ket{\alpha} \\
+%
+%
+	s_- \ket{\alpha}
+&=
+	\ket{\beta} &
+%
+	s_- \ket{\beta}
+&=
+	0
+\end{align}
+であることを示せ。
+
+ここで、$s_+=s_x+is_y, s_-=s_x-is_y$であり、
+$\ket{\alpha}=\ket{\frac{1}{2},\frac{1}{2}},\
+\ket{\beta}=\ket{\frac{1}{2},-\frac{1}{2}}$である。
+
+
+\subsection{(a)解}
+まず1つ目は
+\begin{align}
+	s_+ \ket{\alpha}
+&=
+	(s_x +is_y) \ket{\alpha} \\
+%
+%
+&=
+	s_x \ket{\alpha}
+	+
+	i s_y \ket{\alpha} \\
+%
+%
+&=
+	\frac{1}{2} \ket{\beta}
+	+
+	i \cdot\frac{i}{2} \ket{\beta} \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+次に2つ目は
+\begin{align}
+	s_+ \ket{\beta}
+&=
+	(s_x +is_y) \ket{\beta} \\
+%
+%
+&=
+	s_x \ket{\beta}
+	+
+	i s_y \ket{\beta} \\
+%
+%
+&=
+	\frac{1}{2} \ket{\alpha}
+	+
+	i \cdot\left(-\frac{i}{2}\ket{\alpha}\right) \\
+%
+%
+&=
+	\ket{\alpha}
+\end{align}
+である。
+
+次に3つ目については
+\begin{align}
+	s_- \ket{\alpha}
+&=
+	(s_x -i s_y) \ket{\alpha} \\
+%
+%
+&=
+	s_x \ket{\alpha}
+	-
+	i s_y \ket{\alpha} \\
+%
+%
+&=
+	\frac{1}{2} \ket{\beta}
+	-
+	i \cdot \frac{i}{2} \ket{\beta} \\
+%
+%
+&=
+	\ket{\beta}
+\end{align}
+である。
+
+最後に4つ目については
+\begin{align}
+	s_- \ket{\beta}
+&=
+	(s_x -i s_y) \ket{\beta} \\
+%
+%
+&=
+	s_x \ket{\beta}
+	-
+	i s_y \ket{\beta} \\
+%
+%
+&=
+	\frac{1}{2} \ket{\alpha}
+	-
+	i \cdot\left(-\frac{i}{2}\ket{\alpha}\right) \\
+%
+%
+&=
+	0
+\end{align}
+である。
+
+
+\subsection{(b)問}
+次の式を導出せよ。
+\begin{align}
+	s^2
+&=
+	s_+ s_-
+	-
+	s_z
+	+
+	s_z^2 \\
+%
+%
+	s^2
+&=
+	s_- s_+
+	+
+	s_z
+	+
+	s_z^2
+\end{align}
+
+
+\subsection{(b)解}
+まず、1式目については
+\begin{align}
+	s_+ s_-
+	-
+	s_z
+	+
+	s_z^2
+&=
+	(s_x +is_y)
+	(s_x -is_y)
+	-
+	s_z
+	+
+	s_z^2 \\
+%
+%
+&=
+	s_x^2
+	-
+	i s_x s_y
+	+
+	i s_y s_x
+	+
+	s_y^2
+	-
+	s_z
+	+
+	s_z^2 \\
+%
+%
+&=
+	s^2
+	-
+	i [s_x,s_y]
+	-
+	s_z \\
+%
+%
+&=
+	s^2
+	-
+	i \cdot is_z
+	-
+	s_z
+	%
+	\qquad
+	(\because [s_x,s_y]=is_z) \\
+%
+%
+&=
+	s^2
+\end{align}
+である。
+
+同様に、2式目についても
+\begin{align}
+	s_- s_+
+	+
+	s_z
+	+
+	s_z^2
+%
+%
+&=
+	(s_x -is_y)
+	(s_x +is_y)
+	+
+	s_z
+	+
+	s_z^2 \\
+%
+%
+&=
+	s_x^2
+	+
+	i s_x s_y
+	-
+	i s_y s_x
+	+
+	s_y^2
+	+
+	s_z
+	+
+	s_z^2 \\
+%
+%
+&=
+	s^2
+	+
+	i [s_x,s_y]
+	+
+	s_z \\
+%
+%
+&=
+	s^2
+	+
+	i \cdot i s_z
+	+
+	s_z \\
+%
+%
+&=
+	s^2
+\end{align}
+である。
+
+
+
