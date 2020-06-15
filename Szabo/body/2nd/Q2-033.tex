@@ -1,0 +1,384 @@
+%ファイルID
+%2020/06/15 13:07
+%->2006151307SahayanKY(ファイル作成者)
+\subsection{問}
+基底$\ket{\alpha},\ket{\beta}$における
+$s^2,s_z,s_+,s_-$の表現行列を求めよ。
+また、それら行列に対して、
+問2.32(b)で求めた関係式が成立することを示せ。
+
+\subsection{解}
+$s^2,s_z,s_+,s_-$の表現行列をそれぞれ
+$A_{s^2}, A_{s_z}, A_{s_-}, A_{s_+}$とする。
+
+まず$s^2$の表現行列$A_{s^2}$は
+\begin{align}
+	A_{s^2}
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|s^2|\alpha} &
+		%
+		\braket{\alpha|s^2|\beta} \\
+	%
+		\braket{\beta|s^2|\alpha} &
+		%
+		\braket{\beta|s^2|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\frac{3}{4}\braket{\alpha|\alpha} &
+		%
+		\frac{3}{4}\braket{\alpha|\beta} \\[2mm]
+	%
+		\frac{3}{4}\braket{\beta|\alpha} &
+		%
+		\frac{3}{4}\braket{\beta|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{3}{4}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 1
+	\end{array}
+	\right]
+\end{align}
+である。
+
+
+次に、$s_z$の表現行列$A_{s_z}$は
+\begin{align}
+	A_{s_z}
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|s_z|\alpha} &
+		%
+		\braket{\alpha|s_z|\beta} \\
+	%
+		\braket{\beta|s_z|\alpha} &
+		%
+		\braket{\beta|s_z|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\frac{1}{2} \braket{\alpha|\alpha} &
+		%
+		-\frac{1}{2} \braket{\alpha|\beta} \\[2mm]
+	%
+		\frac{1}{2} \braket{\beta|\alpha} &
+		%
+		-\frac{1}{2} \braket{\beta|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & -1
+	\end{array}
+	\right]
+\end{align}
+である。
+
+
+次に$s_+$の表現行列$A_{s_+}$は
+\begin{align}
+	A_{s_+}
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|s_+|\alpha} &
+		%
+		\braket{\alpha|s_+|\beta} \\
+	%
+		\braket{\beta|s_+|\alpha} &
+		%
+		\braket{\beta|s_+|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|0} &
+		%
+		\braket{\alpha|\alpha} \\
+	%
+		\braket{\beta|0} &
+		%
+		\braket{\beta|\alpha}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		0 & 1 \\
+		0 & 0
+	\end{array}
+	\right]
+\end{align}
+である。
+
+最後に$s_-$の表現行列$A_{s_-}$は
+\begin{align}
+	A_{s_-}
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|s_-|\alpha} &
+		%
+		\braket{\alpha|s_-|\beta} \\
+	%
+		\braket{\beta|s_-|\alpha} &
+		%
+		\braket{\beta|s_-|\beta}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\braket{\alpha|\beta} &
+		%
+		\braket{\alpha|0} \\
+	%
+		\braket{\beta|\beta} &
+		%
+		\braket{\beta|0}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		0 & 0 \\
+		1 & 0
+	\end{array}
+	\right]
+\end{align}
+である。
+
+これら表現行列の間に、$s^2,s_z,s_+,s_-$の関係が成立するか調べる。
+まず、1つ目の
+\begin{align}
+	s^2
+&=
+	s_+ s_-
+	-
+	s_z
+	+
+	s_z^2
+\end{align}
+について見る。
+\begin{align}
+&\quad
+	A_{s_+} A_{s_-}
+	-
+	A_{s_z}
+	+
+	A_{s_z}^2 \\
+&=
+	\left[
+	\begin{array}{cc}
+		0 & 1 \\
+		0 & 0
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		0 & 0 \\
+		1 & 0
+	\end{array}
+	\right]
+	-
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & -1
+	\end{array}
+	\right]
+	+
+	\left(
+		\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & -1
+		\end{array}
+		\right]
+	\right)
+	\left(
+		\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & -1
+		\end{array}
+		\right]
+	\right) \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 0
+	\end{array}
+	\right]
+	-
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & -1
+	\end{array}
+	\right]
+	+
+	\frac{1}{4}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\frac{3}{4} & 0 \\[2mm]
+		0 & \frac{3}{4}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	A_{s^2}
+\end{align}
+である。従って、確かに同様の式が成立する。
+
+次に2つ目の
+\begin{align}
+	s^2
+&=
+	s_- s_+
+	+
+	s_z
+	+
+	s_z^2
+\end{align}
+について見る。
+\begin{align}
+&\quad
+	A_{s_-} A_{s_+}
+	+
+	A_{s_z}
+	+
+	A_{s_z}^2 \\
+&=
+	\left[
+	\begin{array}{cc}
+		0 & 0 \\
+		1 & 0
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		0 & 1 \\
+		0 & 0
+	\end{array}
+	\right]
+	+
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & -1
+	\end{array}
+	\right]
+	+
+	\left(
+		\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & -1
+		\end{array}
+		\right]
+	\right)
+	\left(
+		\frac{1}{2}
+		\left[
+		\begin{array}{cc}
+			1 & 0 \\
+			0 & -1
+		\end{array}
+		\right]
+	\right) \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		0 & 0 \\
+		0 & 1
+	\end{array}
+	\right]
+	+
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & -1
+	\end{array}
+	\right]
+	+
+	\frac{1}{4}
+	\left[
+	\begin{array}{cc}
+		1 & 0 \\
+		0 & 1
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		\frac{3}{4} & 0 \\[2mm]
+		0 & \frac{3}{4}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	A_{s^2}
+\end{align}
+である。従って、確かに同様の式が成立する。
+
+
+
+
+
