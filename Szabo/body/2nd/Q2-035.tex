@@ -1,0 +1,45 @@
+%ファイルID
+%2020/06/16 16:45
+%->2006161645SahayanKY(ファイル作成者)
+\subsection{問}
+演算子$\mathscr{A}$はハミルトニアン$\H$と可換である。
+また、$\ket{\Phi}$はハミルトニアン$\H$の固有関数であり、
+その固有値を$E$とする。
+
+このとき、$\mathscr{A}\ket{\Phi}$は
+ハミルトニアン$\H$の固有関数であり、
+その固有値は$E$であることを示せ。
+
+\subsection{解}
+$\mathscr{A}$と$\H$が可換であることから、
+\begin{align}
+	\mathscr{A}\H
+	-
+	\H\mathscr{A}
+&=
+	0
+\end{align}
+が成立する。これに$\ket{\Phi}$を作用させると、
+\begin{align}
+	\mathscr{A}\H \ket{\Phi}
+	-
+	\H\mathscr{A} \ket{\Phi}
+&=
+	0 \\
+%
+%
+	\mathscr{A}(E \ket{\Phi})
+	-
+	\H\mathscr{A} \ket{\Phi}
+&=
+	0 \\
+%
+%
+	\H(\mathscr{A} \ket{\Phi})
+&=
+	E (\mathscr{A} \ket{\Phi})
+\end{align}
+となる。ここで、$\mathscr{A}\ket{\Phi}$というケットベクトルに注目すると、
+これは$\H$の固有関数であり、
+その固有値は$E$であることが言える。
+
