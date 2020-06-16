@@ -1,0 +1,79 @@
+%ファイルID
+%2020/06/16 17:17
+%->2006161717SahayanKY(ファイル作成者)
+\subsection{問}
+演算子$\mathscr{A}$をハミルトニアン$\H$と可換な演算子とする。
+また、演算子$\mathscr{A}$の非縮退な固有関数$\ket{\Psi_1}, \ket{\Psi_2}$を考える。
+つまり、
+\begin{align}
+	\mathscr{A}\ket{\Psi_1}
+&=
+	a_1\ket{\Psi_1} &
+%
+%
+	\mathscr{A}\ket{\Psi_2}
+&=
+	a_2\ket{\Psi_2} &
+%
+%
+	(a_1 \neq a_2)
+\end{align}
+である。
+
+このとき、$\braket{\Psi_1|\H|\Psi_2}=0$であることを示せ。
+
+\subsection{解}
+まず、$\mathscr{A}$がエルミート演算子であることを仮定する。
+
+$\mathscr{A}$と$\H$は可換であるので、
+\begin{align}
+	\mathscr{A} \H
+	-
+	\H \mathscr{A}
+&=
+	0 \\
+%
+%
+	\braket{\Psi_1|\mathscr{A}\H|\Psi_2}
+	-
+	\braket{\Psi_1|\H\mathscr{A}|\Psi_2}
+&=
+	0
+\end{align}
+となる。左辺第1項について、$\mathscr{A}\ket{\Psi_1}=a_1\ket{\Psi_1}$であり、
+$\mathscr{A}=\adj{\mathscr{A}}, \conju{a_1}=a_1$であるので、
+$\bra{\Psi_1}\mathscr{A}=\bra{\Psi_1}\adj{\mathscr{A}}=\conju{a_1}\bra{\Psi_1}=a_1\bra{\Psi_1}$である。
+従って、
+\begin{align}
+	a_1
+	\braket{\Psi_1|\H|\Psi_2}
+	-
+	a_2
+	\braket{\Psi_1|\H|\Psi_2}
+&=
+	0 \\
+%
+%
+	(
+		a_1 -a_2
+	)
+	\braket{\Psi_1|\H|\Psi_2}
+&=
+	0
+\end{align}
+となる。ここで、$\Psi_1$と$\Psi_2$が共に非縮退な固有関数であることから、
+$a_1\neq a_2$であるので、
+\begin{align}
+	\braket{\Psi_1|\H|\Psi_2}
+&=
+	0
+\end{align}
+となる。
+
+
+
+
+
+
+
+
