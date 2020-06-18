@@ -1,0 +1,217 @@
+%ファイルID
+%2020/06/18 08:53
+%->2006180853SahayanKY(ファイル作成者)
+\subsection{問}
+多電子系におけるスピン角運動量の$z$成分の演算子は
+\begin{align}
+	\mathscr{S}_z
+&=
+	\sum_i^N
+		s_z(i)
+\end{align}
+である。
+任意の$N$電子Slater行列式$\ket{\chi_i\chi_j\dots\chi_k}$に対して
+\begin{align}
+	\mathscr{S}_z \ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{2}
+	(N^{\alpha} -N^{\beta})
+	\ket{\chi_i\chi_j\dots\chi_k}
+\end{align}
+となることを示せ。
+ここで$N^{\alpha}$は$\alpha$スピンをもつスピン軌道の数であり、
+$N^{\beta}$は$\beta$スピンをもつスピン軌道の数である。
+
+\subsection{解}
+$N$電子Slater行列式は
+\begin{align}
+	\ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\{
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\}
+\end{align}
+である。
+これに$\mathscr{S}_z$を作用させる前に、
+$\mathscr{S}_z$と$\mathscr{P}_n$の関係について考える。
+\begin{align}
+	\mathscr{P}_n\{\mathscr{S}_z\}
+&=
+	\mathscr{P}_n\left\{
+		\sum_i^N s_z(i)
+	\right\} \\
+%
+%
+&=
+	\sum_i^N s_z(\mathscr{P}_n(i)) \\
+%
+%
+&=
+	\sum_i^N s_z(i) \\
+%
+%
+&=
+	\mathscr{S}_z
+\end{align}
+である。つまり、$\mathscr{S}_z$は$\mathscr{P}_n$に関して不変である。
+よって、
+\begin{align}
+	\mathscr{S}_z \ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\mathscr{S}_z\left\{
+		\frac{1}{\sqrt{N!}}
+		\sum_{n=1}^{N!}
+			(-1)^{p_n}
+			\mathscr{P}_n\{
+				\chi_i(1) \chi_j(2) \dots \chi_k(N)
+			\}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{S}_z
+		\mathscr{P}_n\{
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\{\mathscr{S}_z\}
+		\mathscr{P}_n\{
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\Bigl\{
+			\mathscr{S}_z\{
+				\chi_i(1) \chi_j(2) \dots \chi_k(N)
+			\}
+		\Bigr\}
+\end{align}
+となる。
+
+$\mathscr{S}_z\{\chi_i(1) \chi_j(2) \dots \chi_k(N)\}$については
+\begin{align}
+	\mathscr{S}_z\{
+		\chi_i(1) \chi_j(2) \dots \chi_k(N)
+	\}
+&=
+	\sum_n^N
+		s_z(n)\{
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\} \\
+%
+%
+&=
+	(s_z(1) \chi_i(1)) \chi_j(2) \dots \chi_k(N) \nonumber \\ &\quad
+	+
+	\chi_i(1) (s_z(2) \chi_j(2)) \dots \chi_k(N) \nonumber \\ &\quad
+	+
+	\chi_i(1) \chi_j(2) \dots (s_z(N) \chi_k(N))
+\end{align}
+であり、
+\begin{align}
+	\chi_i(\x_n)
+=
+	\psi_{i'}(\r_n) \alpha(\omega_n)
+\Rightarrow
+	s_z(\omega_n) \chi_i(\x_n)
+=
+	\psi_{i'}(\r_n) s_z(\omega_n) \alpha(\omega_n)
+=
+	\frac{1}{2} \psi_{i'}(\r_n) \alpha(\omega_n)
+=
+	\frac{1}{2} \chi_i(\x_n) \\
+%
+%
+	\chi_i(\x_n)
+=
+	\psi_{i'}(\r_n) \beta(\omega_n)
+\Rightarrow
+	s_z(\omega_n) \chi_i(\x_n)
+=
+	\psi_{i'}(\r_n) s_z(\omega_n) \beta(\omega_n)
+=
+	-
+	\frac{1}{2} \psi_{i'}(\r_n) \beta(\omega_n)
+=
+	-
+	\frac{1}{2} \chi_i(\x_n)
+\end{align}
+であることから、
+\begin{align}
+	\mathscr{S}_z\{
+		\chi_i(1) \chi_j(2) \dots \chi_k(N)
+	\}
+&=
+	\frac{1}{2} N^{\alpha}
+	\chi_i(1) \chi_j(2) \dots \chi_k(N)
+	-
+	\frac{1}{2} N^{\beta}
+	\chi_i(1) \chi_j(2) \dots \chi_k(N) \\
+%
+%
+&=
+	\frac{1}{2}
+	(N^{\alpha} -N^{\beta})
+	\chi_i(1) \chi_j(2) \dots \chi_k(N)
+\end{align}
+となる。
+
+従って、
+\begin{align}
+	\mathscr{S}_z\ket{\chi_i\chi_j\dots\chi_k}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\Bigl\{
+			\mathscr{S}_z\{
+				\chi_i(1) \chi_j(2) \dots \chi_k(N)
+			\}
+		\Bigr\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\frac{1}{2}
+			(N^{\alpha} -N^{\beta})
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+	(N^{\alpha} -N^{\beta}) \cdot
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\{
+			\chi_i(1) \chi_j(2) \dots \chi_k(N)
+		\} \\
+%
+%
+&=
+	\frac{1}{2}
+	(N^{\alpha} -N^{\beta})
+	\ket{\chi_i\chi_j\dots\chi_k}
+\end{align}
+となる。
+
+
