@@ -1,0 +1,185 @@
+%ファイルID
+%2020/06/18 15:14
+%->2006181514SahayanKY(ファイル作成者)
+\subsection{問}
+閉殻行列式$\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}$について、
+\begin{align}
+	\mathscr{S}^2 \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+=
+	0 (0+1) \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi_j}\dots}
+=
+	0
+\end{align}
+であることを示せ。
+
+\subsection{解}
+まず、スピン演算子$\mathscr{S}^2$は
+\begin{align}
+	\mathscr{S}^2
+&=
+	\mathscr{S}_- \mathscr{S}_+
+	+
+	\mathscr{S}_z
+	+
+	\mathscr{S}_z^2
+\end{align}
+に変形できる。
+
+閉殻行列式では$\alpha$スピン軌道の数$N^{\alpha}$と
+$\beta$スピン軌道の数$N^{\beta}$が等しいので
+\begin{align}
+	\mathscr{S}_z \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\frac{1}{2}
+	(N^{\alpha} -N^{\beta})
+	\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots} \\
+%
+%
+&=
+	0
+\end{align}
+となる。また、
+\begin{align}
+	\mathscr{S}_z^2 \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\mathscr{S}_z \mathscr{S}_z
+		\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots} \\
+%
+%
+&=
+	0
+\end{align}
+となる。従って、
+\begin{align}
+	\mathscr{S}^2 \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\mathscr{S}_- \mathscr{S}_+
+		\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+\end{align}
+である。
+
+$\mathscr{S}_+ \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}$について考える。
+前問と同様に考えると、$\mathscr{S}_+$は$\mathscr{P}_n$に関して不変であるので、
+\begin{align}
+	\mathscr{S}_+ \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\mathscr{S}_+\left\{
+		\frac{1}{\sqrt{N!}}
+		\sum_{n=1}^{N!}
+			(-1)^{p_n}
+			\mathscr{P}_n\{
+				\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots
+			\}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\Bigl\{
+				\mathscr{S}_+\{
+					\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots
+				\}
+		\Bigr\}
+\end{align}
+となる。更に、$s_+\ket{\alpha}=0, s_+\ket{\beta}=\ket{\alpha}$であるので、
+\begin{align}
+	\mathscr{S}_+\{
+		\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots
+	\}
+&=
+	(s_+(1) \aorb{\psi}_i(1)) \borb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) (s_+(2) \borb{\psi}_i(2)) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \borb{\psi}_i(2) (s_+(3) \aorb{\psi}_j(3)) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) (s_+(4) \borb{\psi}_j(4)) \dots \nonumber \\ &\quad
+	+
+	\dots \\
+%
+%
+&=
+	0 \cdot \borb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \aorb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \borb{\psi}_i(2) \cdot 0 \cdot \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \aorb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\dots \\
+%
+%
+&=
+	\aorb{\psi}_i(1) \aorb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \aorb{\psi}_j(4) \dots \nonumber \\ &\quad
+	+
+	\dots
+\end{align}
+従って、
+\begin{align}
+	\mathscr{S}_+ \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+		\begin{array}{l}
+			\aorb{\psi}_i(1) \aorb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots \\
+			+
+			\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \aorb{\psi}_j(4) \dots \\
+			+
+			\dots
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\aorb{\psi}_i(1) \aorb{\psi}_i(2) \aorb{\psi}_j(3) \borb{\psi}_j(4) \dots
+		\right\} \nonumber \\ &\quad
+	+
+	\frac{1}{\sqrt{N!}}
+	\sum_{n=1}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\aorb{\psi}_i(1) \borb{\psi}_i(2) \aorb{\psi}_j(3) \aorb{\psi}_j(4) \dots
+		\right\} \nonumber \\ &\quad
+	+
+	\dots \\
+%
+%
+&=
+	\ket{\aorb{\psi}_i\aorb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+	+
+	\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\aorb{\psi}_j\dots}
+	+
+	\dots \\
+%
+%
+&=
+	0
+\end{align}
+である。最後、$\ket{\aorb{\psi}_i\aorb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}=0$としたのは
+Slater行列式の反対称性による。
+
+従って、$\mathscr{S}^2\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}$は
+\begin{align}
+	\mathscr{S}^2 \ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots}
+&=
+	\mathscr{S}_- \mathscr{S}_+
+		\ket{\aorb{\psi}_i\borb{\psi}_i\aorb{\psi}_j\borb{\psi}_j\dots} \\
+%
+%
+&=
+	0
+\end{align}
+となる。
+
+
