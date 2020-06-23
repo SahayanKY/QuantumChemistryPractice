@@ -1,0 +1,267 @@
+%ファイルID
+%2020/06/23 17:11
+%->2006231711SahayanKY(ファイル作成者)
+\subsection{問}
+次式を示せ。
+\begin{align}
+	\braket{^1\Psi_1^2|\H|^1\Psi_1^2}
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12}
+	+
+	K_{12} \\
+%
+%
+	\braket{^3\Psi_1^2|\H|^3\Psi_1^2}
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12}
+	-
+	K_{12}
+\end{align}
+
+
+\subsection{解}
+まず、Slater行列式$\ket{ij}$に対応するブラベクトルを
+$\bra{ij}$と定義する。
+
+$\ket{^1\Psi_1^2},\ket{^3\Psi_1^2}$のエネルギーを計算する前に、
+$\ket{\aorb{1}\borb{2}},\ket{\aorb{2}\borb{1}}$のエネルギーを計算する。
+これは問題2.23を参考にすると、
+\begin{align}
+	\braket{\aorb{1}\borb{2}|\H|\aorb{1}\borb{2}}
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12} \\
+%
+%
+	\braket{\aorb{2}\borb{1}|\H|\aorb{2}\borb{1}}
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12}
+\end{align}
+となる。また、$\braket{\aorb{1}\borb{2}|\H|\aorb{2}\borb{1}}$も計算する。
+これは表2.3と表2.4を参考にすると
+\begin{align}
+	\braket{\aorb{1}\borb{2}|\H|\aorb{2}\borb{1}}
+&=
+	\braket{\aorb{1}\borb{2}|\Oone|\aorb{2}\borb{1}}
+	+
+	\braket{\aorb{1}\borb{2}|\Otwo|\aorb{2}\borb{1}} \\
+%
+%
+&=
+	0
+	+
+	\antitwo{\aorb{1}\borb{2}}{\aorb{2}\borb{1}} \\
+%
+%
+&=
+	\phystwo{\aorb{1}\borb{2}}{\aorb{2}\borb{1}}
+	-
+	\phystwo{\aorb{1}\borb{2}}{\borb{1}\aorb{2}} \\
+%
+%
+&=
+	\int \d\x_1\d\x_2
+		\conju{\aorb{\psi}_1}(\x_1) \conju{\borb{\psi}_2}(\x_2)
+		r_{12}^{-1}
+		\aorb{\psi}_2(\x_1) \borb{\psi}_1(\x_2) \nonumber \\ &\quad
+	-
+	\int \d\x_1\d\x_2
+		\conju{\aorb{\psi}_1}(\x_1) \conju{\borb{\psi}_2}(\x_2)
+		r_{12}^{-1}
+		\borb{\psi}_1(\x_1) \aorb{\psi}_2(\x_2) \\
+%
+%
+&=
+	\int \d\r_1\d\r_2
+		\conju{\psi_1}(\r_1) \psi_2(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2) \psi_1(\r_2)
+	\int \d\omega_1\d\omega_2
+		\conju{\alpha}(\omega_1) \conju{\beta}(\omega_2)
+		\alpha(\omega_1) \beta(\omega_2) \nonumber \\ &\quad
+	-
+	\int \d\r_1\d\r_2
+		\conju{\psi_1}(\r_1) \psi_1(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2) \psi_2(\r_2)
+	\int \d\omega_1\d\omega_2
+		\conju{\alpha}(\omega_1) \conju{\beta}(\omega_2)
+		\beta(\omega_1) \alpha(\omega_2) \\
+%
+%
+&=
+	\int \d\r_1\d\r_2
+		\conju{\psi_1}(\r_1) \psi_2(\r_1)
+		r_{12}^{-1}
+		\conju{\psi_2}(\r_2) \psi_1(\r_2)
+	-
+	0 \\
+%
+%
+&=
+	\spacetwo{12}{21} \\
+%
+%
+&=
+	K_{12}
+\end{align}
+となる。加えて、$\braket{\aorb{2}\borb{1}|\H|\aorb{1}\borb{2}}$は
+\begin{align}
+	\braket{\aorb{2}\borb{1}|\H|\aorb{1}\borb{2}}
+&=
+	\conju{
+		\braket{\aorb{1}\borb{2}|\adj{\H}|\aorb{2}\borb{1}}
+	} \\
+%
+%
+&=
+	\conju{
+		\braket{\aorb{1}\borb{2}|\H|\aorb{2}\borb{1}}
+	} \\
+%
+%
+&=
+	\conju{K_{12}} \\
+%
+%
+&=
+	K_{12}
+	%
+	\qquad
+	(\because \text{問題2.19})
+\end{align}
+
+従って、$\ket{^1\Psi_1^2}$のエネルギーは
+\begin{align}
+	\braket{^1\Psi_1^2|\H|^1\Psi_1^2}
+&=
+	\left(
+		\frac{1}{\sqrt{2}}
+		(
+			\bra{\aorb{1}\borb{2}}
+			+
+			\bra{\aorb{2}\borb{1}}
+		)
+	\right)
+	\H
+	\left(
+		\frac{1}{\sqrt{2}}
+		(
+			\ket{\aorb{1}\borb{2}}
+			+
+			\ket{\aorb{2}\borb{1}}
+		)
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{\aorb{1}\borb{2}|\H|\aorb{1}\borb{2}}
+		+
+		\braket{\aorb{1}\borb{2}|\H|\aorb{2}\borb{1}}
+		+
+		\braket{\aorb{2}\borb{1}|\H|\aorb{1}\borb{2}}
+		+
+		\braket{\aorb{2}\borb{1}|\H|\aorb{2}\borb{1}}
+	\biggr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		(h_{11} +h_{22} +J_{12})
+		+
+		(K_{12})
+		+
+		(K_{12})
+		+
+		(h_{11} +h_{22} +J_{12})
+	\biggr) \\
+%
+%
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12}
+	+
+	K_{12}
+\end{align}
+である。また、$\ket{^3\Psi_1^2}$のエネルギーは
+\begin{align}
+	\braket{^3\Psi_1^2|\H|^3\Psi_1^2}
+&=
+	\left(
+		\frac{1}{\sqrt{2}}
+		(
+			\bra{\aorb{1}\borb{2}}
+			-
+			\bra{\aorb{2}\borb{1}}
+		)
+	\right)
+	\H
+	\left(
+		\frac{1}{\sqrt{2}}
+		(
+			\ket{\aorb{1}\borb{2}}
+			-
+			\ket{\aorb{2}\borb{1}}
+		)
+	\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		\braket{\aorb{1}\borb{2}|\H|\aorb{1}\borb{2}}
+		-
+		\braket{\aorb{1}\borb{2}|\H|\aorb{2}\borb{1}}
+		-
+		\braket{\aorb{2}\borb{1}|\H|\aorb{1}\borb{2}}
+		+
+		\braket{\aorb{2}\borb{1}|\H|\aorb{2}\borb{1}}
+	\biggr) \\
+%
+%
+&=
+	\frac{1}{2}
+	\biggl(
+		(h_{11} +h_{22} +J_{12})
+		-
+		(K_{12})
+		-
+		(K_{12})
+		+
+		(h_{11} +h_{22} +J_{12})
+	\biggr) \\
+%
+%
+&=
+	h_{11}
+	+
+	h_{22}
+	+
+	J_{12}
+	-
+	K_{12}
+\end{align}
+である。
+
+
