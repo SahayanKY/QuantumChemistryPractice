@@ -1,0 +1,6 @@
+#コミット時はLFに統一。チェックアウト時はユーザー側の設定(core.autocrlf)に任せる
+*.tex	text
+*.md	text
+
+#決して改行コードを変更しない
+*.pdf	-text
