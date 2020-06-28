@@ -1,0 +1,182 @@
+%ファイルID
+%2020/06/23 17:11
+%->2006231711SahayanKY(ファイル作成者)
+非直交の空間軌道$\psi_1^{\alpha}, \psi_1^{\beta}$から成る
+行列式$\ket{K}=\ket{\aorb{\psi_1^{\alpha}}\borb{\psi_1^{\beta}}}$を考える。
+なお、$\braket{\psi_1^{\alpha}|\psi_1^{\beta}}=S_{11}^{\alpha\beta}$とする。
+\subsection{(a)問}
+$\psi_1^{\alpha}=\psi_1^{\beta}$のときだけ
+$\ket{K}$は$\mathscr{S}^2$の固有関数であることを示せ。
+
+
+\subsection{(a)解}
+まず、問題2.37にて示した等式は
+制限付き行列式であっても非制限行列式であっても適用できるため、
+\begin{align}
+	\mathscr{S}_z \ket{K}
+&=
+	\frac{1}{2}(1-1) \ket{K} \\
+%
+%
+&=
+	0
+\end{align}
+である。
+従って、
+\begin{align}
+	\mathscr{S}^2 \ket{K}
+&=
+	(
+		\mathscr{S}_- \mathscr{S}_+
+		+
+		\mathscr{S}_z
+		+
+		\mathscr{S}_z^2
+	) \ket{K} \\
+%
+%
+&=
+	\mathscr{S}_- \mathscr{S}_+ \ket{K} \\
+%
+%
+&=
+	\mathscr{S}_-
+	(s_+(1) +s_+(2))
+	\left(
+		\frac{1}{\sqrt{2}}
+		\left(
+			\psi_1^{\alpha}(\r_1) \alpha(\omega_1)
+			\psi_1^{\beta}(\r_2) \beta(\omega_2)
+			-
+			\psi_1^{\alpha}(\r_2) \alpha(\omega_2)
+			\psi_1^{\beta}(\r_1) \beta(\omega_1)
+		\right)
+	\right) \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\mathscr{S}_-
+	\left\{
+	\begin{array}{l}
+		\psi_1^{\alpha}(\r_1) s_+(1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \beta(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) s_+(1) \beta(\omega_1) \\[2mm]
+		+
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) s_+(2) \beta(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) s_+(2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \beta(\omega_1)
+	\end{array}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\mathscr{S}_-
+	\left\{
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+		+
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2)
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\left\{
+	\begin{array}{l}
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) s_-(1) \alpha(\omega_1)
+		+
+		\psi_1^{\alpha}(\r_1) s_-(1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2) \\[2mm]
+		-
+		\psi_1^{\alpha}(\r_2) s_-(2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+		+
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) s_-(2) \alpha(\omega_2)
+	\end{array}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\left\{
+	\begin{array}{l}
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \beta(\omega_1)
+		+
+		\psi_1^{\alpha}(\r_1) \beta(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2) \\[2mm]
+		-
+		\psi_1^{\alpha}(\r_2) \beta(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+		+
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \beta(\omega_2)
+	\end{array}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\left(
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \beta(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \beta(\omega_1)
+	\right) \nonumber \\ &\quad
+	+
+	\frac{1}{\sqrt{2}}
+	\left(
+		\psi_1^{\alpha}(\r_1) \beta(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) \beta(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+	\right) \\
+%
+%
+&=
+	\ket{\aorb{\psi_1^{\alpha}}\borb{\psi_1^{\beta}}}
+	+
+	\ket{\borb{\psi_1^{\alpha}}\aorb{\psi_1^{\beta}}} \\
+%
+%
+&=
+	\ket{K}
+	+
+	\ket{L}
+	%
+	\qquad
+	(
+		\ket{L}=\ket{\borb{\psi_1^{\alpha}}\aorb{\psi_1^{\beta}}}
+	)
+\end{align}
+となる。
+
+$\ket{K}$が$\mathscr{S}^2$の固有関数であるためには
+$\ket{K}$と$\ket{L}$が線形従属、
+つまりは定数倍の関係になければならない。
+一方で、$\ket{K},\ket{L}$は規格化されている。
+従って、
+\begin{align}
+	\ket{K}
+&=
+	c \ket{L} \\
+%
+%
+	\braket{K|K}
+&=
+	\bra{L} \conju{c} c \ket{L} \\
+%
+%
+	1
+&=
+	\conju{c} c \\
+%
+%
+	|c|
+&=
+	1
+\end{align}
+
+
+\subsection{(b)問}
+
+
+
+\subsection{(b)解}
+
