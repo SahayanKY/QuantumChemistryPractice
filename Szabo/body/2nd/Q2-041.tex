@@ -160,18 +160,213 @@ $\ket{K}$と$\ket{L}$が線形従属、
 %
 	\braket{K|K}
 &=
+	c
+	\braket{K|L}
+=
 	\bra{L} \conju{c} c \ket{L} \\
 %
 %
 	1
 &=
-	\conju{c} c \\
+	c
+	\braket{K|L}
+=
+	|c|^2 \\
 %
 %
+	\therefore
 	|c|
 &=
 	1
 \end{align}
+である。また、$\braket{K|L}$については
+\begin{align}
+	\braket{K|L}
+&=
+	\frac{1}{2}
+	\int \d\r_1\d\omega_1 \d\r_2\d\omega_2
+		\left\{
+		\begin{array}{l}
+			\left(
+				\conju{\psi_1^{\alpha}}(\r_1) \conju{\alpha}(\omega_1) \conju{\psi_1^{\beta}}(\r_2) \conju{\beta}(\omega_2)
+				-
+				\conju{\psi_1^{\alpha}}(\r_2) \conju{\alpha}(\omega_2) \conju{\psi_1^{\beta}}(\r_1) \conju{\beta}(\omega_1)
+			\right) \\ \qquad\times
+			\left(
+				\psi_1^{\alpha}(\r_1) \beta(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2)
+				-
+				\psi_1^{\alpha}(\r_2) \beta(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+			\right)
+		\end{array}
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+	\int \d\r_1 \d\r_2
+		\left\{
+			-
+			\conju{\psi_1^{\alpha}}(\r_1) \conju{\psi_1^{\beta}}(\r_2)
+			\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
+			-
+			\conju{\psi_1^{\alpha}}(\r_2) \conju{\psi_1^{\beta}}(\r_1)
+			\psi_1^{\alpha}(\r_1) \psi_1^{\beta}(\r_2)
+		\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+	\left\{
+		-
+		\braket{\psi_1^{\alpha}|\psi_1^{\beta}}
+		\braket{\psi_1^{\beta}|\psi_1^{\alpha}}
+		-
+		\braket{\psi_1^{\beta}|\psi_1^{\alpha}}
+		\braket{\psi_1^{\alpha}|\psi_1^{\beta}}
+	\right\} \\
+%
+%
+&=
+	\frac{1}{2}
+	\left\{
+		-2S_{11}^{\alpha\beta}\conju{S_{11}^{\alpha\beta}}
+	\right\} \\
+%
+%
+&=
+	-|S_{11}^{\alpha\beta}|^2
+\end{align}
+であるので、
+\begin{align}
+	1
+&=
+	c \braket{K|L} \\
+%
+%
+	c
+&=
+	-
+	\frac{1}{|S_{11}^{\alpha\beta}|^2}
+	%
+	\qquad
+	(
+		\because S_{11}^{\alpha\beta}\neq 0
+	) \\
+%
+%
+	\therefore
+	c
+&\in
+	\left\{
+		x \mid x \in \mathbb{R},\ x < 0
+	\right\} \\
+%
+%
+	\therefore
+	c
+&=
+	-1
+	%
+	\qquad
+	(\because |c|=1)
+\end{align}
+つまり、$\ket{K}$が$\mathscr{S}^2$の固有関数であるためには
+$\ket{K}=-\ket{L}$、もしくは同値であるが
+$\ket{K}+\ket{L}=0$であることが必要である。
+
+$\ket{K}+\ket{L}=0$である必要条件について考える。
+\begin{align}
+	\frac{1}{\sqrt{2}}
+	\left(
+		\psi_1^{\alpha}(\r_1) \alpha(\omega_1) \psi_1^{\beta}(\r_2) \beta(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) \alpha(\omega_2) \psi_1^{\beta}(\r_1) \beta(\omega_1)
+	\right) \quad& \nonumber \\
+	+
+	\frac{1}{\sqrt{2}}
+	\left(
+		\psi_1^{\alpha}(\r_1) \beta(\omega_1) \psi_1^{\beta}(\r_2) \alpha(\omega_2)
+		-
+		\psi_1^{\alpha}(\r_2) \beta(\omega_2) \psi_1^{\beta}(\r_1) \alpha(\omega_1)
+	\right)
+&=
+	0 \\
+%
+%
+	\left(
+		\psi_1^{\alpha}(\r_1) \psi_1^{\beta}(\r_2)
+		-
+		\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
+	\right)
+	\alpha(\omega_1) \beta(\omega_2) \quad&\nonumber \\
+	+
+	\left(
+		\psi_1^{\alpha}(\r_1) \psi_1^{\beta}(\r_2)
+		-
+		\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
+	\right)
+	\beta(\omega_1) \alpha(\omega_2)
+&=
+	0 \\
+%
+%
+	\left(
+		\psi_1^{\alpha}(\r_1) \psi_1^{\beta}(\r_2)
+		-
+		\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
+	\right)
+	\Bigl(
+		\alpha(\omega_1) \beta(\omega_2)
+		+
+		\beta(\omega_1) \alpha(\omega_2)
+	\Bigr)
+&=
+	0
+\end{align}
+従って、空間軌道部分がゼロになるか、
+スピン関数部分がゼロになることが必要である。
+後者について考える。
+\begin{align}
+	\alpha(\omega_1) \beta(\omega_2)
+	+
+	\beta(\omega_1) \alpha(\omega_2)
+&=
+	0 \\
+%
+%
+	\int \d\omega_1\d\omega_2
+		\conju{\alpha}(\omega_1)
+		\conju{\beta}(\omega_2)
+		\left\{
+			\alpha(\omega_1) \beta(\omega_2)
+			+
+			\beta(\omega_1) \alpha(\omega_2)
+		\right\}
+&=
+	0 \\
+%
+%
+	\braket{\alpha|\alpha} \braket{\beta|\beta}
+	+
+	0
+&=
+	0 \\
+%
+%
+	1
+&\neq
+	0
+\end{align}
+となるため、常に等式は成立しない。
+従って、$\ket{K}+\ket{L}=0$の必要条件は
+\begin{align}
+	\psi_1^{\alpha}(\r_1) \psi_1^{\beta}(\r_2)
+	-
+	\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
+&=
+	0
+\end{align}
+
 
 
 \subsection{(b)問}
