@@ -364,9 +364,89 @@ $\ket{K}+\ket{L}=0$である必要条件について考える。
 	-
 	\psi_1^{\alpha}(\r_2) \psi_1^{\beta}(\r_1)
 &=
-	0
+	0 \\
+%
+%
+	\int \d\r_1 \d\r_2
+		\conju{\psi_1^{\alpha}}(\r_1)
+		\conju{\psi_1^{\beta}}(\r_2)
+		\left\{
+			\psi_1^{\alpha}(\r_1)
+			\psi_1^{\beta}(\r_2)
+			-
+			\psi_1^{\alpha}(\r_2)
+			\psi_1^{\beta}(\r_1)
+		\right\}
+&=
+	0 \\
+%
+%
+	1
+	-
+	\int \d\r_1
+		\conju{\psi_1^{\alpha}}(\r_1) \psi_1^{\beta}(\r_1)
+	\int \d\r_2
+		\conju{\psi_1^{\beta}}(\r_2) \psi_1^{\alpha}(\r_2)
+&=
+	0 \\
+%
+%
+	1
+	-
+	S_{11}^{\alpha\beta} \conju{S_{11}^{\alpha\beta}}
+&=
+	0 \\
+%
+%
+	|S_{11}^{\alpha\beta}|
+&=
+	1
+\end{align}
+である。
+ここでコーシー=シュワルツの不等式より、
+\begin{align}
+	|S_{11}^{\alpha\beta}|^2
+&\leq
+	S_{11}^{\alpha\alpha}
+	S_{11}^{\beta\beta}
+=
+	1
+\end{align}
+である。$S_{11}^{\alpha\beta}=1$となるのは
+$\psi_1^{\alpha}$と$\psi_1^{\beta}$が線形従属であるときのみである。
+
+$\psi_1^{\alpha}$と$\psi_1^{\beta}$は規格化されているため、
+両者の間の係数を$c$と置くと、
+\begin{align}
+	\psi_1^{\alpha}
+&=
+	c\psi_1^{\beta} \\
+%
+%
+	\braket{\psi_1^{\alpha}|\psi_1^{\alpha}}
+&=
+	|c|^2 \braket{\psi_1^{\beta}|\psi_1^{\beta}} \\
+%
+%
+	|c|
+&=
+	1
+\end{align}
+となる。つまり、
+\begin{align}
+	\psi_1^{\alpha}
+&=
+	e^{i\phi} \psi_1^{\beta}
+	%
+	\qquad
+	(\phi\in\mathbb{R})
 \end{align}
 
+従って、$\ket{K}$が$\mathscr{S}^2$の固有関数となる必要条件は
+$\psi_1^{\alpha}=e^{i\phi} \psi_1^{\beta}$である。
+逆にこのとき常に$\ket{K}+\ket{L}=0$となるので、$\ket{K}$は$\mathscr{S}^2$の固有関数となる。
+つまり、$\ket{K}$が$\mathscr{S}^2$の固有関数となることと、
+$\psi_1^{\alpha}=e^{i\phi} \psi_1^{\beta}$は同値である。
 
 
 \subsection{(b)問}
@@ -374,4 +454,11 @@ $\ket{K}+\ket{L}=0$である必要条件について考える。
 
 
 \subsection{(b)解}
+
+
+
+
+
+
+
 
