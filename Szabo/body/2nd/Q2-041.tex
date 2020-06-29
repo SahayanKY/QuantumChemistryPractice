@@ -450,15 +450,62 @@ $\psi_1^{\alpha}=e^{i\phi} \psi_1^{\beta}$は同値である。
 
 
 \subsection{(b)問}
+非制限行列式に対する$\mathscr{S}^2$の期待値は、
+$N^{\alpha}\geq N^{\beta}$のときは
+\begin{align}
+	\braket{\mathscr{S}^2}_{\rm UHF}
+=
+	\braket{\mathscr{S}^2}_{\rm Exact}
+	+
+	N^{\beta}
+	-
+	\sum_i \sum_j |S_{ij}^{\alpha\beta}|^2 \\
+%
+	\left(
+		\braket{\mathscr{S}^2}_{\rm Exact}
+		=
+		\left(
+			\frac{N^{\alpha}-N^{\beta}}{2}
+		\right)
+		\left(
+			\frac{N^{\alpha}-N^{\beta}}{2}
+			+
+			1
+		\right)
+	\right)
+\end{align}
+である。
 
-
+$\braket{K|\mathscr{S}^2|K}=1-|S_{11}^{\alpha\beta}|^2$が
+この式に一致することを示せ。
 
 \subsection{(b)解}
-
-
-
-
-
+$\ket{K}$では$N^{\alpha}=N^{\beta}=1$である。
+従って、
+\begin{align}
+	\braket{\mathscr{S}^2}_{\rm UHF}
+&=
+	\left(
+		\frac{1-1}{2}
+	\right)
+	\left(
+		\frac{1-1}{2}
+		+
+		1
+	\right)
+	+
+	1
+	-
+	|S_{11}^{\alpha\beta}|^2 \\
+%
+%
+	\braket{K|\mathscr{S}^2|K}
+&=
+	1
+	-
+	|S_{11}^{\alpha\beta}|^2
+\end{align}
+である。
 
 
 
