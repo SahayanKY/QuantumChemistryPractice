@@ -1,0 +1,158 @@
+%ファイルID
+%2020/07/06 15:45
+%->2007061545SahayanKY(ファイル作成者)
+\subsection{問}
+Hartree-Fock方程式は次の通りである。
+\begin{align}
+	f\ket{\chi_a}
+&=
+	\epsilon_a \ket{\chi_a}
+\end{align}
+このうち、$f$はFock演算子と呼ばれるものであり、
+\begin{align}
+	f(1)
+&=
+	h(1)
+	+
+	v^{\rm HF}(1) \\
+%
+%
+&=
+	h(1)
+	+
+	\sum_{b}^{N}\left(
+		\mathscr{J}_b(1)
+		-
+		\mathscr{K}_b(1)
+	\right) \\
+%
+%
+&=
+	h(1)
+	+
+	\sum_{b}^{N}
+		\int\d\x_2
+			\conju{\chi_b}(2)
+			r_{12}^{-1}
+			(1-\mathscr{P}_{12})
+			\chi_{b}(2)
+\end{align}
+である。
+
+Fock演算子の行列要素が一般に
+\begin{align}
+	\braket{\chi_i|f|\chi_j}
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+		\chemtwo{ij}{bb}
+		-
+		\chemtwo{ib}{bj}
+	\right) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}
+		\antitwo{ib}{jb}
+\end{align}
+となることを示せ。
+
+
+\subsection{解}
+\begin{align}
+	\braket{\chi_i|f|\chi_j}
+&=
+	\int\d\x_1
+		\conju{\chi_i}(1)
+		f(1)
+		\chi_j(1) \\
+%
+%
+&=
+	\int\d\x_1
+		\conju{\chi_i}(1)
+		h(1)
+		\chi_j(1)
+	+
+	\int\d\x_1
+		\conju{\chi_i}(1)
+		\left(
+			\sum_{b}^{N}
+				\int\d\x_2
+					\conju{\chi_b}(2)
+					r_{12}^{-1}
+					(1-\mathscr{P}_{12})
+					\chi_b(2)
+		\right)
+		\chi_j(1) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+		\int\d\x_1
+			\conju{\chi_i}(1)
+			\left(
+				\int\d\x_2
+					\conju{\chi_b}(2)
+					r_{12}^{-1}
+					(1-\mathscr{P}_{12})
+					\chi_b(2)
+			\right)
+			\chi_j(1)
+	\right) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+	\begin{array}{>{\displaystyle}l}
+		\int\d\x_1 \d\x_2
+			\conju{\chi_i}(1) \conju{\chi_b}(2)
+			r_{12}^{-1}
+			\chi_b(2) \chi_j(1) \\
+		-
+		\int\d\x_1 \d\x_2
+			\conju{\chi_i}(1) \conju{\chi_b}(2)
+			r_{12}^{-1}
+			\chi_b(1) \chi_j(2)
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+		\phystwo{ib}{jb}
+		-
+		\phystwo{ib}{bj}
+	\right) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+		\antitwo{ib}{jb}
+	\right) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b}^{N}\left(
+		\chemtwo{ij}{bb}
+		-
+		\chemtwo{ib}{bj}
+	\right)
+\end{align}
+となる。
+
+
+
