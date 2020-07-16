@@ -2,8 +2,107 @@
 %2020/07/09 16:00
 %->2007091600SahayanKY(ファイル作成者)
 \subsection{問}
+Hartree-Fock方程式を導くにあたって、以下の汎関数を極小化する。
+\begin{align}
+	\mathscr{L}[\{\chi_a\}]
+&=
+	E_0[\{\chi_a\}]
+	-
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		\epsilon_{ba}
+		(\braket{a|b}-\delta_{ab})
+\end{align}
+ここで$E_0[\{\chi_a\}]=\braket{\Psi_0|\H|\Psi_0}$であり、
+$\{\chi_a\}$は$\ket{\Psi_0}$のスピン軌道の組である。
+
+Lagrangeの乗数$\epsilon_{ba}$がエルミート行列の要素であること、
+すなわち
+\begin{align}
+	\epsilon_{ba}
+&=
+	\conju{\epsilon_{ab}}
+\end{align}
+であることを示せ。
 
 
 \subsection{解}
-
-
+$\mathscr{L}$を極小化するためには、
+$\mathscr{L}$の値域は実数でなければならない。
+また、$\H$がエルミート演算子であることから、
+$E_0=\braket{\Psi_0|\H|\Psi_0}$は実数である。
+従って、
+\begin{align}
+	\conju{\mathscr{L}}
+&=
+	\conju{E_0}
+	-
+	\conju[1]{
+		\sum_{a=1}^{N}
+		\sum_{b=1}^{N}
+			\epsilon_{ba}
+			(\braket{a|b}-\delta_{ab})
+	} \\
+%
+%
+	\mathscr{L}
+&=
+	E_0
+	-
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		\conju{\epsilon_{ba}}
+		(\conju{\braket{a|b}}-\conju{\delta_{ab}}) \\
+%
+%
+&=
+	E_0
+	-
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		\conju{\epsilon_{ba}}
+		(\braket{b|a}-\delta_{ab}) \\
+%
+%
+&=
+	E_0
+	-
+	\sum_{b=1}^{N}
+	\sum_{a=1}^{N}
+		\conju{\epsilon_{ab}}
+		(\braket{a|b}-\delta_{ba}) \\
+%
+%
+&=
+	E_0
+	-
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		\conju{\epsilon_{ab}}
+		(\braket{a|b}-\delta_{ab})
+\end{align}
+である。したがって、元の式と辺々引くと
+\begin{align}
+	0
+&=
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		(
+			\epsilon_{ba}-\conju{\epsilon_{ab}}
+		)
+		(
+			\braket{a|b}-\delta_{ab}
+		)
+\end{align}
+($\mathscr{L}$を極小化する範囲として)$\ket{a}$や$\ket{b}$は独立に選ぶことができるので、
+各項の$\braket{a|b}-\delta_{ab}$は独立である。従って、
+各項の係数がゼロでなくてはならず、
+\begin{align}
+	\forall a,b
+	\quad
+	%
+	\epsilon_{ba}
+&=
+	\conju{\epsilon_{ab}}
+\end{align}
+であることが、$\mathscr{L}$を極小化するために必要である。
