@@ -1,0 +1,75 @@
+%ファイルID
+%2020/07/17 22:13
+%->2007172213SahayanKY(ファイル作成者)
+\subsection{問}
+$\mathscr{L}$を極小化する必要条件は、
+第1変分$\delta\mathscr{L}$がゼロになることであり、
+\begin{align}
+	\delta\mathscr{L}
+=
+	\delta E_0
+	-
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}
+		\epsilon_{ba} \delta \braket{a|b}
+=
+	0
+\end{align}
+である。
+
+ここで$\delta E_0$は
+\begin{align}
+	\delta E_0
+&=
+	\sum_{a=1}^{N}\biggl(
+		\chemone{\delta\chi_a}{h}{\chi_a}
+		+
+		\chemone{\chi_a}{h}{\delta\chi_a}
+	\biggr) \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\delta\chi_a}{\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\chi_a}{\delta\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\chi_a}{\chi_b\delta\chi_b}
+	\biggr) \nonumber \\ &\quad
+	-
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\delta\chi_b}{\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\chi_b}{\delta\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\chi_b}{\chi_b\delta\chi_a}
+	\biggr)
+\end{align}
+である。これを変形して
+\begin{align}
+	\delta E_0
+&=
+	\sum_{a=1}^{N}
+		\chemone{\delta\chi_a}{h}{\chi_a}
+	+
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		-
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+	\biggr) \nonumber \\ &\quad
+	+
+	\text{complex conjugate}
+\end{align}
+となることを示せ。
+
+\subsection{解}
+
+
+
