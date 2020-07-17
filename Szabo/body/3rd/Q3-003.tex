@@ -70,6 +70,146 @@ $\mathscr{L}$を極小化する必要条件は、
 となることを示せ。
 
 \subsection{解}
+1電子積分と2電子積分はそれぞれ、
+\begin{align}
+	\chemone{i}{h}{j}
+&=
+	\int\d\x_1
+		\conju{\chi_i}(\x_1)
+		h(\r_1)
+		\chi_j(\x_1) \\
+%
+%
+	\chemtwo{ij}{kl}
+&=
+	\int\d\x_1\d\x_2
+		\conju{\chi_i}(\x_1)
+		\chi_j(\x_1)
+		r_{12}^{-1}
+		\conju{\chi_k}(\x_2)
+		\chi_l(\x_2)
+\end{align}
+である。
+従って、
+\begin{align}
+	\chemone{i}{h}{j}
+&=
+	\conju{\chemone{j}{h}{i}} &
+%
+	\chemtwo{ij}{kl}
+&=
+	\conju{\chemtwo{ji}{lk}}
+\end{align}
+である。更に2電子積分については
+\begin{align}
+	\chemtwo{ij}{kl}
+&=
+	\chemtwo{kl}{ij}
+\end{align}
+である。
 
-
+従って、$\delta E_0$は
+\begin{align}
+	\delta E_0
+&=
+	\sum_{a=1}^{N}\biggl(
+		\chemone{\delta\chi_a}{h}{\chi_a}
+		+
+		\chemone{\chi_a}{h}{\delta\chi_a}
+	\biggr) \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\delta\chi_a}{\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\chi_a}{\delta\chi_b\chi_b}
+		+
+		\chemtwo{\chi_a\chi_a}{\chi_b\delta\chi_b}
+	\biggr) \nonumber \\ &\quad
+	-
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\delta\chi_b}{\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\chi_b}{\delta\chi_b\chi_a}
+		+
+		\chemtwo{\chi_a\chi_b}{\chi_b\delta\chi_a}
+	\biggr) \\
+%
+%
+&=
+	\sum_{a=1}^{N}\biggl(
+		\chemone{\delta\chi_a}{h}{\chi_a}
+		+
+		\conju{\chemone{\delta\chi_a}{h}{\chi_a}}
+	\biggr) \nonumber \\&\quad
+	+
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		+
+		\conju{\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}}
+		+
+		\chemtwo{\delta\chi_b\chi_b}{\chi_a\chi_a}
+		+
+		\conju{\chemtwo{\delta\chi_b\chi_b}{\chi_a\chi_a}}
+	\biggr) \nonumber \\&\quad
+	-
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+		+
+		\conju{\chemtwo{\delta\chi_b\chi_a}{\chi_a\chi_b}}
+		+
+		\chemtwo{\delta\chi_b\chi_a}{\chi_a\chi_b}
+		+
+		\conju{\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}}
+	\biggr) \\
+%
+%
+&=
+	\sum_{a=1}^{N}
+		\chemone{\delta\chi_a}{h}{\chi_a} \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		+
+		\chemtwo{\delta\chi_b\chi_b}{\chi_a\chi_a}
+	\biggr) \nonumber \\ &\quad
+	-
+	\frac{1}{2}
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+		+
+		\chemtwo{\delta\chi_b\chi_a}{\chi_a\chi_b}
+	\biggr) \nonumber \\ &\quad
+	+
+	\text{complex conjugate} \\
+%
+%
+&=
+	\sum_{a=1}^{N}
+		\chemone{\delta\chi_a}{h}{\chi_a}
+	+
+	\sum_{a=1}^{N}
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{\delta\chi_a\chi_a}{\chi_b\chi_b}
+		-
+		\chemtwo{\delta\chi_a\chi_b}{\chi_b\chi_a}
+	\biggr) \nonumber \\ &\quad
+	+
+	\text{complex conjugate}
+\end{align}
+である。
 
