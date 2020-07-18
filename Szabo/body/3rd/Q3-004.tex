@@ -1,0 +1,99 @@
+%ファイルID
+%2020/07/18 21:41
+%->2007182141SahayanKY(ファイル作成者)
+\subsection{問}
+問題3.1の結果を使い、
+$f_{ij}=\braket{\chi_i|f|\chi_j}$がエルミート行列の要素となることを示すことで、
+Fock演算子$f$がエルミート演算子であることを示せ。
+
+\subsection{解}
+問題3.1より
+\begin{align}
+	f_{ij}
+=
+	\braket{\chi_i|f|\chi_j}
+=
+	\braket{i|h|j}
+	+
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{ij}{bb}
+		-
+		\chemtwo{ib}{bj}
+	\biggr)
+\end{align}
+である。従って、$\conju{f_{ji}}$の値は
+\begin{align}
+	\conju{f_{ji}}
+&=
+	\conju[1]{
+		\braket{j|h|i}
+		+
+		\sum_{b=1}^{N}\biggl(
+			\chemtwo{ji}{bb}
+			-
+			\chemtwo{jb}{bi}
+		\biggr)
+	} \\
+%
+%
+&=
+	\conju{\braket{j|h|i}}
+	+
+	\sum_{b=1}^{N}\biggl(
+		\conju{\chemtwo{ji}{bb}}
+		-
+		\conju{\chemtwo{jb}{bi}}
+	\biggr) \\
+%
+%
+&=
+	\braket{i|\adj{h}|j}
+	+
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{ij}{bb}
+		-
+		\chemtwo{bj}{ib}
+	\biggr) \\
+%
+%
+&=
+	\braket{i|h|j}
+	+
+	\sum_{b=1}^{N}\biggl(
+		\chemtwo{ij}{bb}
+		-
+		\chemtwo{ib}{bj}
+	\biggr)
+	%
+	\qquad
+	(
+		\because
+		\adj{h}=h,
+		\chemtwo{ij}{kl}=\chemtwo{kl}{ij}
+	) \\
+%
+%
+&=
+	f_{ij}
+\end{align}
+である。よって、$f_{ij}$を要素としてもつ行列はエルミート行列であり、
+また、このことから、
+\begin{align}
+	\conju{f_{ji}}
+&=
+	f_{ij} \\
+%
+%
+	\conju{\braket{\chi_j|f|\chi_i}}
+&=
+	\braket{\chi_i|f|\chi_j} \\
+%
+%
+	\braket{\chi_i|\adj{f}|\chi_j}
+&=
+	\braket{\chi_i|f|\chi_j}
+\end{align}
+となるので、$\adj{f}=f$となる。(エルミート演算子である。)
+
+
+
