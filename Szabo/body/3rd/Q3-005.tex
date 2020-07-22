@@ -1,0 +1,233 @@
+%ファイルID
+%2020/07/22 18:41
+%->2007221841SahayanKY(ファイル作成者)
+\subsection{問}
+$\chi_c$から1個の電子を、さらに$\chi_d$から1個を取り除いて
+$N-2$電子系の1個の行列式$\ket{^{N-2}\Psi_{cd}}$をつくるのに必要なエネルギーが
+\begin{align}
+	-
+	\epsilon_c
+	-
+	\epsilon_d
+	+
+	\phystwo{cd}{cd}
+	-
+	\phystwo{cd}{dc}
+\end{align}
+であることを示せ。
+
+
+\subsection{解}
+$\ket{^{N-2}\Psi_{cd}}$のエネルギーの期待値$^{N-2}E_{cd}$は
+\begin{align}
+	^{N-2}E_{cd}
+&=
+	\braket{^{N-2}\Psi_{cd}|\H|^{N-2}\Psi_{cd}} \\
+%
+%
+&=
+	\sum_{i}^{\rm occ}
+		\braket{i|h|i}
+	+
+	\frac{1}{2}
+	\sum_{i}^{\rm occ}
+	\sum_{j}^{\rm occ}
+		\antitwo{ij}{ij} \\
+%
+%
+&=
+	\sum_{a\neq c,d}
+		\braket{a|h|a}
+	+
+	\frac{1}{2}
+	\sum_{a\neq c,d}
+	\sum_{b\neq c,d}
+		\antitwo{ab}{ab}
+\end{align}
+である。従って、元の状態$\ket{^N\Psi_0}$のエネルギーの期待値$^{N}E_0$との差は
+\begin{align}
+	^{N-2}E_{cd}
+	-
+	^{N}E_0
+&=
+	\sum_{a\neq c,d}
+		\braket{a|h|a}
+	+
+	\frac{1}{2}
+	\sum_{a\neq c,d}
+	\sum_{b\neq c,d}
+		\antitwo{ab}{ab} \nonumber \\&\qquad
+	-
+	\sum_{a}
+		\braket{a|h|a}
+	-
+	\frac{1}{2}
+	\sum_{a}
+	\sum_{b}
+		\antitwo{ab}{ab} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	+
+	\frac{1}{2}
+	\sum_{a\neq c,d}
+	\sum_{b\neq c,d}
+		\antitwo{ab}{ab}
+	-
+	\frac{1}{2}
+	\sum_{a}\left(
+		\sum_{b\neq c,d} \antitwo{ab}{ab}
+		+
+		\sum_{b=c,d} \antitwo{ab}{ab}
+	\right) \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\frac{1}{2}
+	\sum_{b\neq c,d}\left(
+		\sum_{a} \antitwo{ab}{ab}
+		-
+		\sum_{a\neq c,d} \antitwo{ab}{ab}
+	\right)
+	-
+	\frac{1}{2}
+	\sum_{a}
+	\sum_{b=c,d}
+		\antitwo{ab}{ab} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\frac{1}{2}
+	\sum_{b\neq c,d}
+	\sum_{a=c,d}
+		\antitwo{ab}{ab}
+	-
+	\frac{1}{2}
+	\sum_{a}
+	\sum_{b=c,d}
+		\antitwo{ab}{ab} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\frac{1}{2}
+	\sum_{a\neq c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba}
+	-
+	\frac{1}{2}
+	\sum_{a}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba}
+	%
+	\qquad
+	(\because \phystwo{ij}{kl}=\phystwo{ji}{lk}) \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\sum_{a\neq c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba}
+	-
+	\frac{1}{2}
+	\sum_{a=c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\sum_{a\neq c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba}
+	-
+	\left(
+		1
+		-
+		\frac{1}{2}
+	\right)
+	\sum_{a=c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\braket{a|h|a}
+	-
+	\sum_{a}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba}
+	+
+	\frac{1}{2}
+	\sum_{a=c,d}
+	\sum_{b=c,d}
+		\antitwo{ba}{ba} \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+	\left\{
+		\braket{a|h|a}
+		+
+		\sum_{b}
+			\antitwo{ab}{ab}
+	\right\}
+	+
+	\frac{1}{2}
+	\biggl(
+		\antitwo{cd}{cd}
+		+
+		\antitwo{dc}{dc}
+	\biggr) \\
+%
+%
+&=
+	-
+	\sum_{a=c,d}
+		\epsilon_a
+	+
+	\frac{1}{2}
+	\biggl(
+		\antitwo{cd}{cd}
+		+
+		\antitwo{cd}{cd}
+	\biggr) \\
+%
+%
+&=
+	-
+	\epsilon_c
+	-
+	\epsilon_d
+	+
+	\phystwo{cd}{cd}
+	-
+	\phystwo{cd}{dc}
+\end{align}
+である。
+
+
