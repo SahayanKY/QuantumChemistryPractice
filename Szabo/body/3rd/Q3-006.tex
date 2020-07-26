@@ -1,0 +1,146 @@
+%ファイルID
+%2020/07/26 18:56
+%->2007261856SahayanKY(ファイル作成者)
+\subsection{問}
+次の式
+\begin{align}
+	E
+&=
+	\sum_i^{\rm occ}
+		\braket{i|h|i}
+	+
+	\frac{1}{2}
+	\sum_i^{\rm occ}
+	\sum_j^{\rm occ}
+		\antitwo{ij}{ij}
+\end{align}
+を用いて、
+\begin{align}
+	^{N}E_{0}
+	-
+	^{N+1}E^r
+&=
+	-
+	\braket{r|h|r}
+	-
+	\sum_b
+		\antitwo{rb}{rb}
+\end{align}
+を示せ。ここで$^{N}E_0$は
+$N$電子系のHartree-Fock方程式のスピン軌道で得られる
+$N$電子系基底状態のSlater行列式$\ket{^{N}\Psi_0}$のエネルギーの期待値、
+$^{N+1}E^r$は
+そのスピン軌道の内の$\chi_r$を$\ket{^{N}\Psi_0}$に追加して得られる
+$\ket{^{N+1}\Psi^r}$のエネルギーの期待値である。
+\begin{align}
+	^{N}E_0
+&=
+	\braket{^{N}\Psi_0|\H|^{N}\Psi_0} &
+%
+	^{N+1}E^r
+&=
+	\braket{^{N+1}\Psi^r|\H|^{N+1}\Psi^r}
+\end{align}
+
+
+
+\subsection{解}
+$^{N+1}E^r$は
+\begin{align}
+	^{N+1}E^r
+&=
+	\sum_{i=1,\dots,N,r}
+		\braket{i|h|i}
+	+
+	\frac{1}{2}
+	\sum_{i=1,\dots,N,r}
+	\sum_{j=1,\dots,N,r}
+		\antitwo{ij}{ij} \\
+%
+%
+&=
+	\sum_{i=1,\dots,N}
+		\braket{i|h|i}
+	+
+	\braket{r|h|r} \nonumber \\&\qquad
+	+
+	\frac{1}{2}
+	\sum_{i=1,\dots,N,r}\left(
+		\sum_{j=1,\dots,N}
+			\antitwo{ij}{ij}
+		+
+		\antitwo{ir}{ir}
+	\right) \\
+%
+%
+&=
+	\sum_{i=1,\dots,N}
+		\braket{i|h|i}
+	+
+	\braket{r|h|r} \nonumber \\&\qquad
+	+
+	\frac{1}{2}
+	\left\{
+		\sum_{i=1,\dots,N}\left(
+			\sum_{j=1,\dots,N}
+				\antitwo{ij}{ij}
+			+
+			\antitwo{ir}{ir}
+		\right)
+		+
+		\left(
+			\sum_{j=1,\dots,N}
+				\antitwo{rj}{rj}
+			+
+			\antitwo{rr}{rr}
+		\right)
+	\right\} \\
+%
+%
+&=
+	\sum_{i=1,\dots,N}
+		\braket{i|h|i}
+	+
+	\frac{1}{2}
+	\sum_{i=1,\dots,N}
+	\sum_{j=1,\dots,N}
+		\antitwo{ij}{ij} \nonumber \\&\qquad
+	+
+	\braket{r|h|r}
+	+
+	\frac{1}{2}\left\{
+		\sum_{i=1,\dots,N}
+			\antitwo{ir}{ir}
+		+
+		\sum_{j=1,\dots,N}
+			\antitwo{rj}{rj}
+	\right\} \nonumber \\&\qquad
+	%
+	(\because \antitwo{ij}{kk}=0) \\
+%
+%
+&=
+	^{N}E_0
+	+
+	\braket{r|h|r}
+	+
+	\sum_{j=1,\dots,N}
+		\antitwo{rj}{rj}
+	%
+	\qquad
+	(\because \antitwo{ij}{kl}=\antitwo{ji}{lk})
+\end{align}
+となる。従って、
+\begin{align}
+	^{N}E_{0}
+	-
+	^{N+1}E^r
+&=
+	-
+	\braket{r|h|r}
+	-
+	\sum_b
+		\antitwo{rb}{rb}
+\end{align}
+となる。
+
