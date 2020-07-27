@@ -1,0 +1,198 @@
+%ファイルID
+%2020/07/27 15:52
+%->2007271552SahayanKY(ファイル作成者)
+\subsection{問}
+Hartree-Fockハミルトニアン$\H_0$を次の通りに定義する。
+\begin{align}
+	\H_0
+&=
+	\sum_{i=1}^{N}
+		f(i)
+\end{align}
+ここで$f(i)$は$i$番目の電子に関するFock演算子である。
+
+まず、$\H_0$と置換演算子が可換であることを示せ。
+つぎに、Hartree-Fock基底状態$\ket{\Psi_0}$が
+$\H_0$の固有関数であること、
+またその固有値が$\sum_a \epsilon_a$であることを示せ。
+
+
+\subsection{解}
+任意の$N$電子の波動関数$\psi(\x_1,\x_2,\dots,\x_N)$を考える。
+また、置換演算子として$\x_1$と$\x_2$を入れ替える$\mathscr{P}_{12}$を考える。
+このとき、
+\begin{align}
+	\H_0
+	\mathscr{P}_{12}
+		\psi
+&=
+	\H_0
+		\psi(\x_2,\x_1,\dots,\x_N) \\
+%
+%
+&=
+	f(\x_1)
+		\psi(\x_2,\x_1,\dots,\x_N)
+	+
+	f(\x_2)
+		\psi(\x_2,\x_1,\dots,\x_N)
+	+
+	\dots
+	+
+	f(\x_N)
+		\psi(\x_2,\x_1,\dots,\x_N) \\
+%
+%
+&=
+	f(\x_2)
+		\psi(\x_2,\x_1,\dots,\x_N)
+	+
+	f(\x_1)
+		\psi(\x_2,\x_1,\dots,\x_N)
+	+
+	\dots
+	+
+	f(\x_N)
+		\psi(\x_2,\x_1,\dots,\x_N) \\
+%
+%
+&=
+	\mathscr{P}_{12}\{
+		f(\x_1)
+			\psi(\x_1,\x_2,\dots,\x_N)
+		+
+		f(\x_2)
+			\psi(\x_1,\x_2,\dots,\x_N)
+		+
+		\dots
+		+
+		f(\x_N)
+			\psi(\x_1,\x_2,\dots,\x_N)
+	\} \\
+%
+%
+&=
+	\mathscr{P}_{12}
+	\left(
+		\sum_{i} f(\x_i)
+	\right)
+		\psi(\x_1,\x_2,\dots,\x_N) \\
+%
+%
+&=
+	\mathscr{P}_{12}
+	\H_0
+		\psi
+\end{align}
+である。従って、$\mathscr{P}_{12}$と$\H_0$は可換である。
+同様のことが任意の置換演算子についても成立するので、
+一般に置換演算子と$\H_0$は可換である。
+
+Hartree-Fock基底状態$\ket{\Psi_0}$をSlater行列式であらわに書くと
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\{
+			\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+		\}
+\end{align}
+である。これに$\H_0$を作用させると、$\H_0$と$\mathscr{P}_n$は可換であるので
+\begin{align}
+	\H_0 \ket{\Psi_0}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n}^{N!}
+		(-1)^{p_n}
+		\H_0
+		\mathscr{P}_n\{
+			\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+		\} \\
+%
+%
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n
+		\H_0\{
+			\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+		\}
+\end{align}
+となる。$\H_0$以降について見ると、
+\begin{align}
+	\H_0\{
+		\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+	\}
+&=
+	\left(
+		\sum_{i}^{N} f(\x_i)
+	\right)\{
+		\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+	\} \\
+%
+%
+&=
+	f(\x_1) \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \nonumber \\&\quad
+	+
+	f(\x_2) \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \nonumber \\&\quad
+	+
+	\dots
+	+
+	f(\x_N) \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \\
+%
+%
+&=
+	\epsilon_1 \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \nonumber \\&\quad
+	+
+	\epsilon_2 \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \nonumber \\&\quad
+	+
+	\dots
+	+
+	\epsilon_N \chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N) \\
+%
+%
+&=
+	\left(
+		\sum_{a}^{N} \epsilon_a
+	\right)
+	\chi_1(\x_1)\chi_2\dots\chi_N(\x_N)
+\end{align}
+となるので、
+\begin{align}
+	\H_0\ket{\Psi_0}
+&=
+	\frac{1}{\sqrt{N!}}
+	\sum_{n}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\left\{
+			\left(
+				\sum_{a}^{N} \epsilon_a
+			\right)
+			\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+		\right\} \\
+%
+%
+&=
+	\left(
+		\sum_{a}^{N} \epsilon_a
+	\right)
+	\frac{1}{\sqrt{N!}}
+	\sum_{n}^{N!}
+		(-1)^{p_n}
+		\mathscr{P}_n\{
+			\chi_1(\x_1)\chi_2(\x_2)\dots\chi_N(\x_N)
+		\} \\
+%
+%
+&=
+	\left(
+		\sum_{a}^{N} \epsilon_a
+	\right)
+	\ket{\Psi_0}
+\end{align}
+となる。従って、$\ket{\Psi_0}$は$\H_0$の固有関数であり、
+その固有値は$\sum_a \epsilon_a$である。
+
