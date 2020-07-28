@@ -86,9 +86,153 @@ Hartree-Fockハミルトニアン$\H_0$の摂動$\mathscr{V}$は
 	\sum_{b}
 		\antitwo{ab}{ab}
 \end{align}
-を示せ。
+を左辺から直接示せ。
 
 \subsection{解}
+摂動の第1項をまず考える。
+\begin{align}
+	\Braket{
+		\Psi_0
+		|
+		\sum_{i=1}^{N}
+		\sum_{j>i}^{N}
+			r_{ij}^{-1}
+		|
+		\Psi_0
+	}
+&=
+	\braket{\Psi_0|\Otwo|\Psi_0} \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_{a}^{N}
+	\sum_{b}^{N}
+		\antitwo{ab}{ab}
+\end{align}
+である。ここで表2.4(または表2.6)に示されている規則を利用した。
+
+摂動の第2項について考える。
+まず、$\ket{\Psi_0}$を生成演算子$\adj{a_i}$と消滅演算子$a_i$で表現することを考える。
+\begin{align}
+	\ket{\Psi_0}
+&=
+	\ket{\chi_1\chi_2\dots\chi_i\dots\chi_N} \\
+%
+%
+&=
+	\left\{
+	\begin{array}{ll}
+		-
+		\ket{\chi_1\chi_2\dots\chi_N\dots\chi_i}
+		&
+		(i\neq N) \\
+	%
+		\ket{\chi_1\chi_2\dots\chi_N}
+		&
+		(i=N)
+	\end{array}
+	\right. \\
+%
+%
+&=
+	\left\{
+	\begin{array}{ll}
+		-
+		\adj{a_1}\adj{a_2}\dots\adj{a_N}\dots\ket{\chi_i}
+		&
+		(i\neq N) \\
+	%
+		\adj{a_1}\adj{a_2}\dots\ket{\chi_N}
+		&
+		(i=N)
+	\end{array}
+	\right.
+\end{align}
+従って、
+\begin{align}
+	\Braket{
+		\Psi_0
+		|
+		\sum_{i=1}^{N}
+			v^{\rm HF}(i)
+		|
+		\Psi_0
+	}
+&=
+	\sum_{i=1}^{N}
+		\braket{\Psi_0|v^{\rm HF}(i)|\Psi_0} \\
+%
+%
+&=
+	\sum_{i=1}^{N-1}
+		\bra{\chi_i}\dots a_N \dots a_2 a_1
+		v^{\rm HF}(i)
+		\adj{a_1}\adj{a_2}\dots\adj{a_N}\dots\ket{\chi_i} \nonumber \\&\qquad
+	+
+	\bra{\chi_N}\dots a_2 a_1
+	v^{\rm HF}(N)
+	\adj{a_1}\adj{a_2}\dots\ket{\chi_N} \nonumber \\&\qquad
+	%
+	(\because a_i\adj{a_j}=-\adj{a_j}a_i+\delta_{ij}) \\
+%
+%
+&=
+	\sum_{i=1}^{N-1}
+		\braket{\chi_i|v^{\rm HF}(i)|\chi_i}
+	+
+	\braket{\chi_N|v^{\rm HF}(N)|\chi_N} \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+		\braket{\chi_i|v^{\rm HF}(i)|\chi_i} \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+	\sum_b^{N}
+		\braket{\chi_i|(\mathscr{J}_b-\mathscr{K}_b)|\chi_i} \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+	\sum_b^{N}
+		\antitwo{ib}{ib} \\
+%
+%
+&=
+	\sum_a^{N}
+	\sum_b^{N}
+		\antitwo{ab}{ab}
+\end{align}
+である。\footnote{本当に$v^{\rm HF}(i)\adj{a_j}(i\neq j)$は可換なのか？}
+従って、
+\begin{align}
+	\braket{\Psi_0|\mathscr{V}|\Psi_0}
+&=
+	\frac{1}{2}
+	\sum_a^{N}
+	\sum_b^{N}
+		\antitwo{ab}{ab}
+	-
+	\sum_a^{N}
+	\sum_b^{N}
+		\antitwo{ab}{ab} \\
+%
+%
+&=
+	-
+	\frac{1}{2}
+	\sum_a^{N}
+	\sum_b^{N}
+		\antitwo{ab}{ab}
+\end{align}
+となる。この値の負符号を撮った量は
+電子間相互作用の量に等しい。
+従って、この分を$E_0^{(0)}=\sum_a \epsilon_a$から引くことで、
+二倍に見積もっていた電子間相互作用を打ち消していることが分かる。
+
 
 
 
