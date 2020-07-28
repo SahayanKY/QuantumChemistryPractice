@@ -1,0 +1,94 @@
+%ファイルID
+%2020/07/28 18:00
+%->2007281800SahayanKY(ファイル作成者)
+\subsection{問}
+Hartree-Fockハミルトニアン$\H_0$の摂動$\mathscr{V}$は
+\begin{align}
+	\mathscr{V}
+&=
+	\H
+	-
+	\H_0 \\
+%
+%
+&=
+	\left(
+		\sum_{i=1}^{N}
+			h(i)
+		+
+		\sum_{i=1}^{N}
+		\sum_{j>i}^{N}
+			r_{ij}^{-1}
+	\right)
+	-
+	\sum_{i=1}^{N}
+		f(i) \\
+%
+%
+&=
+	\left(
+		\sum_{i=1}^{N}
+			h(i)
+		+
+		\sum_{i=1}^{N}
+		\sum_{j>i}^{N}
+			r_{ij}^{-1}
+	\right)
+	-
+	\left(
+		\sum_{i=1}^{N}
+			h(i)
+		+
+		\sum_{i=1}^{N}
+			v^{\rm HF}(i)
+	\right) \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+	\sum_{j>i}^{N}
+		r_{ij}^{-1}
+	-
+	\sum_{i=1}^{N}
+		v^{\rm HF}(i)
+\end{align}
+である。ここで$v^{\rm HF}$はHartree-Fockポテンシャルであり、
+\begin{align}
+	v^{\rm HF}(i)
+&=
+	\sum_b\left(
+		\mathscr{J}_b(i)
+		-
+		\mathscr{K}_b(i)
+	\right) \\
+%
+%
+&=
+	\sum_b
+		\int\d\x_j
+			\conju{\chi_b}(j)
+			r_{ij}^{-1}
+			(1-\mathscr{P}_{ij})
+			\chi_b(j)
+	%
+	\qquad
+	(j\neq i)
+\end{align}
+である。
+
+次式
+\begin{align}
+	\braket{\Psi_0|\mathscr{V}|\Psi_0}
+&=
+	-
+	\frac{1}{2}
+	\sum_{a}
+	\sum_{b}
+		\antitwo{ab}{ab}
+\end{align}
+を示せ。
+
+\subsection{解}
+
+
+
