@@ -1,0 +1,249 @@
+%ファイルID
+%2020/07/29 14:04
+%->2007291404SahayanKY(ファイル作成者)
+\subsection{問}
+スピン軌道$\chi_i$の軌道エネルギー$\epsilon_i$は
+\begin{align}
+	\epsilon_i
+&=
+	\braket{\chi_i|h|\chi_i}
+	+
+	\sum_b^N
+		\antitwo{\chi_i\chi_b}{\chi_i\chi_b}
+\end{align}
+である。これを用いて、
+閉殻系における空間軌道を使った表式
+\begin{align}
+	\epsilon_i
+&=
+	\spaceone{\psi_i}{h}{\psi_i}
+	+
+	\sum_b^{N/2}\left(
+		2\spacetwo{ii}{bb}
+		-
+		\spacetwo{ib}{bi}
+	\right)
+=
+	h_{ii}
+	+
+	\sum_b^{N/2}\left(
+		2J_{ib}
+		-
+		K_{ib}
+	\right)
+\end{align}
+に書き換えよ。
+
+\subsection{解}
+スピン軌道に制限付きの条件を加え、
+\begin{align}
+	\left\{
+	\begin{array}{l@{}l}
+			\chi_{2i-1}
+		&=
+			\psi_i(\r) \alpha(\omega) \\
+		%
+			\chi_{2i}
+		&=
+			\psi_i(\r) \beta(\omega)
+	\end{array}
+	\right.
+\end{align}
+とする。
+
+このとき、
+\begin{align}
+	\braket{\chi_{2i-1}|h|\chi_{2i-1}}
+&=
+	\int\d\r\d\omega
+		\conju{\psi_i}(\r) \conju{\alpha}(\omega)
+		h(\r)
+		\psi_i(\r) \alpha(\omega) \\
+%
+%
+&=
+	\int\d\r
+		\conju{\psi_i}(\r)
+		h(\r)
+		\psi_i(\r) \\
+%
+%
+&=
+	\spaceone{\psi_i}{h}{\psi_i} \\[2mm]
+%
+%
+	\braket{\chi_{2i}|h|\chi_{2i}}
+&=
+	\spaceone{\psi_i}{h}{\psi_i}
+\end{align}
+である。
+また、クーロン積分については$\chi_{2i-1}$では
+\begin{align}
+	\sum_b^N
+		\phystwo{\chi_{2i-1}\chi_b}{\chi_{2i-1}\chi_b}
+&=
+	\sum_b^N
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_b}(\x_2)
+			r_{12}^{-1}
+			\chi_{2i-1}(\x_1)
+			\chi_b(\x_2) \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_{2j-1}}(\x_2)
+			r_{12}^{-1}
+			\chi_{2i-1}(\x_1)
+			\chi_{2j-1}(\x_2) \nonumber \\&\qquad
+	+
+	\sum_j^{N/2}
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_{2j}}(\x_2)
+			r_{12}^{-1}
+			\chi_{2i-1}(\x_1)
+			\chi_{2j}(\x_2) \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\int\d\r_1\d\r_2
+			\conju{\psi_i}(\r_1)
+			\conju{\psi_j}(\r_2)
+			r_{12}^{-1}
+			\psi_i(\r_1)
+			\psi_j(\r_2) \nonumber \\&\qquad
+	+
+	\sum_j^{N/2}
+		\int\d\r_1\d\r_2
+			\conju{\psi_i}(\r_1)
+			\conju{\psi_j}(\r_2)
+			r_{12}^{-1}
+			\psi_i(\r_1)
+			\psi_j(\r_2) \\
+%
+%
+&=
+	2
+	\sum_j^{N/2}
+		\int\d\r_1\d\r_2
+			\conju{\psi_i}(\r_1)
+			\psi_i(\r_1)
+			r_{12}^{-1}
+			\conju{\psi_j}(\r_2)
+			\psi_j(\r_2) \\
+%
+%
+&=
+	2
+	\sum_j^{N/2}
+		\spacetwo{\psi_i\psi_i}{\psi_j\psi_j} \\
+%
+%
+&=
+	2
+	\sum_j^{N/2}
+		\spacetwo{ii}{jj}
+\end{align}
+であり、$\chi_{2i}$では、同様にして
+\begin{align}
+	\sum_b^N
+		\phystwo{\chi_{2i}\chi_b}{\chi_{2i}\chi_b}
+&=
+	2
+	\sum_j^{N/2}
+		\spacetwo{ii}{jj}
+\end{align}
+る。また、同様に交換積分については、$\chi_{2i-1}$では
+\begin{align}
+	\sum_b^N
+		\phystwo{\chi_{2i-1}\chi_b}{\chi_b\chi_{2i-1}}
+&=
+	\sum_b^N
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_b}(\x_2)
+			r_{12}^{-1}
+			\chi_b(\x_1)
+			\chi_{2i-1}(\x_2) \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_{2j-1}}(\x_2)
+			r_{12}^{-1}
+			\chi_{2j-1}(\x_1)
+			\chi_{2i-1}(\x_2) \nonumber \\&\qquad
+	+
+	\sum_j^{N/2}
+		\int\d\x_1\d\x_2
+			\conju{\chi_{2i-1}}(\x_1)
+			\conju{\chi_{2j}}(\x_2)
+			r_{12}^{-1}
+			\chi_{2j}(\x_1)
+			\chi_{2i-1}(\x_2) \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\int\d\r_1\d\r_2
+			\conju{\psi_i}(\r_1)
+			\conju{\psi_j}(\r_2)
+			r_{12}^{-1}
+			\psi_j(\r_1)
+			\psi_i(\r_2) \nonumber \\&\qquad
+	+
+	\sum_j^{N/2}
+		0 \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\int\d\r_1\d\r_2
+			\conju{\psi_i}(\r_1)
+			\psi_j(\r_1)
+			r_{12}^{-1}
+			\conju{\psi_j}(\r_2)
+			\psi_i(\r_2) \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\spacetwo{\psi_i\psi_j}{\psi_j\psi_i} \\
+%
+%
+&=
+	\sum_j^{N/2}
+		\spacetwo{ij}{ji}
+\end{align}
+であり、同様にして$\chi_{2i}$では
+\begin{align}
+	\sum_b^N
+		\phystwo{\chi_{2i}\chi_b}{\chi_b\chi_{2i}}
+&=
+	\sum_j^{N/2}
+		\spacetwo{ij}{ji}
+\end{align}
+である。
+
+従って、軌道エネルギーは
+\begin{align}
+	\epsilon_{2i-1}
+=
+	\epsilon_{2i}
+=
+	\spaceone{\psi_i}{h}{\psi_i}
+	+
+	\sum_j^{N/2}\left(
+		2\spacetwo{ii}{jj}
+		-
+		\spacetwo{ij}{ji}
+	\right)
+\end{align}
+となる。
