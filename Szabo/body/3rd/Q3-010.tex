@@ -1,0 +1,106 @@
+%ファイルID
+%2020/07/29 15:31
+%->2007291531SahayanKY(ファイル作成者)
+\subsection{問}
+Roothaanの方程式は、
+空間軌道に対するHartree-Fock方程式中の
+空間軌道$\psi_i$を以下の通りに既知の基底関数で展開して得られる代数方程式である。
+\begin{align}
+	\psi_i
+&=
+	\sum_{\mu=1}^K
+		C_{\mu i} \phi_{\mu} \quad (i=1,2,\dots,K) \\[3mm]
+%
+%
+	\bm{F}\bm{C}
+&=
+	\bm{S}\bm{C}\bm{\epsilon}
+\end{align}
+ここで$\bm{F}$はFock行列、
+$\bm{S}$は重なり行列である。
+特に後者は
+\begin{align}
+	S_{\mu\nu}
+&=
+	\int\d\r_1
+		\conju{\phi_{\mu}}(1)
+		\phi_{\nu}(1)
+\end{align}
+を要素に持つ。
+
+このとき、以下の式を示せ。
+\begin{align}
+	\adj{\bm{C}}
+	\bm{S}
+	\bm{C}
+&=
+	\identity
+\end{align}
+
+
+\subsection{解}
+空間軌道は規格直交であるので、
+近似した空間軌道に対しても同様の条件が課される。
+即ち、
+\begin{align}
+	\int\d\r_1
+		\conju{\psi_i}(1)
+		\psi_j(1)
+&=
+	\delta_{ij} \\
+%
+%
+	\int\d\r_1
+		\conju[1]{
+			\sum_{\mu=1}^K
+				C_{\mu i} \phi_{\mu}(1)
+		}
+		\left(
+			\sum_{\nu=1}^K
+				C_{\nu j} \phi_{\nu}(1)
+		\right)
+&=
+	\delta_{ij} \\
+%
+%
+	\sum_{\mu=1}^K
+	\sum_{\nu=1}^K
+		\int\d\r_1
+			\conju{C_{\mu i}}
+			\conju{\phi_{\mu}}(1)
+			C_{\nu j}
+			\phi_{\nu}(1)
+&=
+	\delta_{ij} \\
+%
+%
+	\sum_{\mu=1}^K
+	\sum_{\nu=1}^K
+		\conju{C_{\mu i}}
+		S_{\mu\nu}
+		C_{\nu j}
+&=
+	\delta_{ij} \\
+%
+%
+	\sum_{\mu=1}^K
+	\sum_{\nu=1}^K
+		(\adj{C})_{i\mu}
+		S_{\mu\nu}
+		C_{\nu j}
+&=
+	\delta_{ij} \\
+%
+%
+	\adj{\bm{C}}
+	\bm{S}
+	\bm{C}
+&=
+	\identity
+\end{align}
+である。
+
+
+
+
+
