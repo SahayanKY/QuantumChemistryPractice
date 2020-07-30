@@ -1,0 +1,122 @@
+%ファイルID
+%2020/07/30 1607
+%->2007301607SahayanKY(ファイル作成者)
+\subsection{問}
+制限付きの閉殻Fock演算子は次の通りである。
+\begin{align}
+	f(\r_1)
+&=
+	h(\r_1)
+	+
+	\sum_{a}^{N/2}
+		\int\d\r_2
+			\conju{\psi_a}(\r_2)
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			\psi_a(\r_2)
+\end{align}
+
+基底関数$\phi_\mu$により空間軌道$\psi_a$を展開すると、
+次の通りに書き表せることを示せ。
+\begin{align}
+	f(\r_1)
+&=
+	h(\r_1)
+	+
+	\frac{1}{2}
+	\sum_{\lambda,\sigma}
+		P_{\lambda\sigma}
+		\left[
+			\int\d\r_2
+				\conju{\phi_\sigma}(\r_2)
+				(2-\mathscr{P}_{12})
+				r_{12}^{-1}
+				\phi_{\lambda}(\r_2)
+		\right]
+\end{align}
+
+
+\subsection{解}
+基底関数により展開すると
+\begin{align}
+	\psi_a
+&=
+	\sum_{\mu}
+		C_{\mu i} \phi_{\mu}
+\end{align}
+となるので、
+\begin{align}
+	f(\r_1)
+&=
+	h(\r_1)
+	+
+	\sum_a^{N/2}
+		\int\d\r_2
+			\conju[1]{
+				\sum_\sigma C_{\sigma a} \phi_{\sigma}(\r_2)
+			}
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			\left(
+				\sum_\lambda C_{\lambda a} \phi_{\lambda}(\r_2)
+			\right) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N/2}
+	\sum_\sigma
+	\sum_\lambda
+		\int\d\r_2
+			\conju{C_{\sigma a}}
+			\conju{\phi_{\sigma}}(\r_2)
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			C_{\lambda a}
+			\phi_{\lambda}(\r_2) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_\sigma
+	\sum_\lambda
+		\sum_a^{N/2}
+			\conju{C_{\sigma a}}
+			C_{\lambda a}
+		\int\d\r_2
+			\conju{\phi_\sigma}(\r_2)
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			\phi_\lambda(\r_2) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_\sigma
+	\sum_\lambda
+		\left(
+			\frac{1}{2} P_{\lambda \sigma}
+		\right)
+		\int\d\r_2
+			\conju{\phi_\sigma}(\r_2)
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			\phi_\lambda(\r_2) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\frac{1}{2}
+	\sum_{\lambda,\sigma}
+		P_{\lambda\sigma}
+		\int\d\r_2
+			\conju{\phi_\sigma}(\r_2)
+			(2-\mathscr{P}_{12})
+			r_{12}^{-1}
+			\phi_\lambda(\r_2)
+\end{align}
+である。
