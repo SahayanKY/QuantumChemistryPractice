@@ -1,0 +1,139 @@
+%ファイルID
+%2020/07/30 1240
+%->2007301240SahayanKY(ファイル作成者)
+\subsection{問}
+問題3.10の結果を用いて以下の式を示せ。
+\begin{align}
+	\bm{P}
+	\bm{S}
+	\bm{P}
+&=
+	2\bm{P}
+\end{align}
+ここで$\bm{P}$は密度行列であり、
+\begin{align}
+	P_{\mu\nu}
+&=
+	2
+	\sum_a^{N/2}
+		C_{\mu a} \conju{C_{\nu a}}
+	%
+	\qquad
+	(\mu,\nu=1,\dots,K)
+\end{align}
+である。
+
+また、基底関数が規格直交であるとき$\frac{1}{2}\bm{P}$が
+べき等元($\bm{A}^2=\bm{A}$)であることを示せ。
+
+\subsection{解}
+問題3.10より
+\begin{align}
+	\adj{\bm{C}}\bm{S}\bm{C}
+&=
+	\identity \\
+%
+%
+	\sum_k^K
+	\sum_l^K
+		\conju{C_{ki}}S_{kl}C_{lj}
+&=
+	\delta_{ij} \\
+%
+%
+	C_{hi}
+	\left(
+		\sum_k^K
+		\sum_l^K
+			\conju{C_{ki}}S_{kl}C_{lj}
+	\right)
+	\conju{C_{mj}}
+&=
+	C_{hi}
+	\delta_{ij}
+	\conju{C_{mj}} \\
+%
+%
+	\sum_a^{N/2}
+	\sum_b^{N/2}
+		C_{ha}
+		\left(
+			\sum_k^K
+			\sum_l^K
+				\conju{C_{ka}}S_{kl}C_{lb}
+		\right)
+		\conju{C_{mb}}
+&=
+	\sum_a^{N/2}
+	\sum_b^{N/2}
+		C_{ha}
+		\delta_{ab}
+		\conju{C_{mb}} \\
+%
+%
+	\sum_k^K
+	\sum_l^K
+		\left(
+			\sum_a^{N/2}
+				C_{ha} \conju{C_{ka}}
+		\right)
+		S_{kl}
+		\left(
+			\sum_b^{N/2}
+				C_{lb} \conju{C_{mb}}
+		\right)
+&=
+	\sum_a^{N/2}
+		C_{ha} \conju{C_{ma}} \\
+%
+%
+	\sum_k^K
+	\sum_l^K
+		\left(
+			\frac{1}{2} P_{hk}
+		\right)
+		S_{kl}
+		\left(
+			\frac{1}{2} P_{lm}
+		\right)
+&=
+	\frac{1}{2} P_{hm} \\
+%
+%
+	\sum_k^K
+	\sum_l^K
+		P_{hk}
+		S_{kl}
+		P_{lm}
+&=
+	2 P_{hm} \\
+%
+%
+	\bm{P}\bm{S}\bm{P}
+&=
+	2\bm{P}
+\end{align}
+となる。
+
+また、基底関数が規格直交であるとき、$\bm{S}=\identity$であるので、
+\begin{align}
+	\bm{P}
+	\identity
+	\bm{P}
+&=
+	2\bm{P} \\
+%
+%
+	\bm{P}^2
+&=
+	2\bm{P} \\
+%
+%
+	\left(
+		\frac{1}{2} \bm{P}
+	\right)^2
+&=
+	\frac{1}{2} \bm{P}
+\end{align}
+となるため、$\frac{1}{2}\bm{P}$がべき等元になる。
+
