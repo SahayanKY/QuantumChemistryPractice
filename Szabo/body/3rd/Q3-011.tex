@@ -1,0 +1,193 @@
+%ファイルID
+%2020/07/30 11:16
+%->2007301116SahayanKY(ファイル作成者)
+\subsection{問}
+密度演算子$\hat{\rho}(\r)$は次の通りである。
+\begin{align}
+	\hat{\rho}(\r)
+&=
+	\sum_{i=1}^{N}
+		\delta(\r_i-\r)
+\end{align}
+このとき、制限付きの閉殻系において
+\begin{align}
+	\rho(\r)
+=
+	\braket{\Psi_0|\hat{\rho}(\r)|\Psi_0}
+%
+%
+=
+	2
+	\sum_a^{N/2}
+		|\psi_a(\r)|^2
+\end{align}
+を導出せよ。
+
+
+\subsection{解}
+まず、
+\begin{align}
+	\rho(\r)
+&=
+	\braket{\Psi_0|\hat{\rho}(\r)|\Psi_0} \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+		\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0}
+\end{align}
+である。したがって、$\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0}$について考える。
+\begin{align}
+&\quad
+	\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0} \\
+&=
+	\frac{1}{N!}
+	\int\d\x_1\dots\d\x_N
+		\sum_j^{N!}
+		\sum_k^{N!}
+			(-1)^{p_j+p_k}
+			\mathscr{P}_j\{
+				\conju{\chi_1}(1) \conju{\chi_2}(2)\dots
+			\}
+			\delta(\r_i-\r)
+			\mathscr{P}_k\{
+				\chi_1(1) \chi_2(2)\dots
+			\}
+\end{align}
+ここで$\x_i$以外の積分において、
+スピン軌道の直交性により同じスピン軌道でなければゼロになる。
+即ち、$\mathscr{P}_j$と$\mathscr{P}_k$で$\x_{l\neq i}$が占めるスピン軌道が
+同じときだけ非ゼロになる。
+これは$j=k$を意味するので、
+\begin{align}
+&\quad
+	\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0} \\
+%
+%
+&=
+	\frac{1}{N!}
+	\int\d\x_1\dots\d\x_N
+		\sum_j^{N!}
+			(-1)^{2p_j}
+			\mathscr{P}_j\{
+				\conju{\chi_1}(1) \conju{\chi_2}(2)\dots
+			\}
+			\delta(\r_i-\r)
+			\mathscr{P}_j\{
+				\chi_1(1) \chi_2(2)\dots
+			\} \\
+%
+%
+&=
+	\frac{1}{N!}
+	\sum_j^{N!}
+	\int\d\x_1\dots\d\x_N
+		\delta(\r_i-\r)
+		\mathscr{P}_j\{
+			\conju{\chi_1}(1) \chi_1(1)
+			\conju{\chi_2}(2) \chi_2(2) \dots
+		\}
+\end{align}
+ここで$N!$個の和の中で$\x_i$が$\chi_1$を占める回数は$(N-1)!$回である。
+他のスピン軌道についても同様である。
+また、$\x_i$が$\chi_1$を占めるとき、
+$\x_i$以外の積分はスピン軌道の規格性により1になる。
+以上のことから、
+\begin{align}
+&\quad
+	\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0} \\
+&=
+	\frac{1}{N!}
+	\left(
+	\begin{array}{>{\displaystyle}l}
+		(N-1)!
+		\int\d\x_i
+			\delta(\r_i-\r)
+			\conju{\chi_1}(\x_i)
+			\chi_1(\x_i) \\
+		+
+		(N-1)!
+		\int\d\x_i
+			\delta(\r_i-\r)
+			\conju{\chi_2}(\x_i)
+			\chi_2(\x_i) \\
+		+
+		\dots
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\frac{1}{N}
+	\left(
+	\begin{array}{>{\displaystyle}l}
+		\int\d\r_i\d\omega_i
+			\delta(\r_i-\r)
+			\conju{\psi_1}(\r_i)\conju{\alpha}(\omega_i)
+			\psi_1(\r_i)\alpha(\omega_i) \\
+		+
+		\int\d\r_i\d\omega_i
+			\delta(\r_i-\r)
+			\conju{\psi_1}(\r_i)\conju{\beta}(\omega_i)
+			\psi_1(\r_i)\beta(\omega_i) \\
+		+
+		\dots
+	\end{array}
+	\right) \\
+%
+%
+&=
+	\frac{1}{N}
+	\left(
+		\conju{\psi_1}(\r) \psi_1(\r)
+		+
+		\conju{\psi_1}(\r) \psi_1(\r)
+		+
+		\conju{\psi_2}(\r) \psi_2(\r)
+		+
+		\conju{\psi_2}(\r) \psi_2(\r)
+		+
+		\dots
+	\right) \\
+%
+%
+&=
+	\frac{2}{N}
+	\sum_a^{N/2}
+		|\psi_a(\r)|^2
+\end{align}
+以上の議論は任意の$i$について成立するため、
+\begin{align}
+	\rho(\r)
+&=
+	\sum_{i=1}^{N}
+		\braket{\Psi_0|\delta(\r_i-\r)|\Psi_0} \\
+%
+%
+&=
+	\sum_{i=1}^{N}
+		\frac{2}{N}
+		\sum_a^{N/2}
+			|\psi_a(\r)|^2 \\
+%
+%
+&=
+	N\cdot
+	\frac{2}{N}
+	\sum_a^{N/2}
+		|\psi_a(\r)|^2 \\
+%
+%
+&=
+	2
+	\sum_a^{N/2}
+		|\psi_a(\r)|^2
+\end{align}
+である。
+
+
+
+
+
+
+
