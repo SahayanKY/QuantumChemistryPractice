@@ -1,0 +1,60 @@
+%ファイルID
+%2020/07/31 2053
+%->2007312053SahayanKY(ファイル作成者)
+\subsection{問}
+基底関数が実関数であるとして
+2電子積分の対称性を考慮すると、
+基底関数の大きさが$K=100$のときに
+$\num{12753775}=O(K^4/8)$個の相異なる2電子積分が存在することを示せ。
+
+
+\subsection{解}
+2電子積分は次の通りである。
+\begin{align}
+	\spacetwo{\mu\nu}{\lambda\sigma}
+&=
+	\int\d\r_1\d\r_2
+		\conju{\phi_\mu}(1)
+		\phi_\nu(1)
+		r_{12}^{-1}
+		\conju{\phi_\lambda}(2)
+		\phi_\sigma(2)
+\end{align}
+
+基底関数$\phi$が実関数であるとき、
+\begin{align}
+	\spacetwo{\mu\nu}{\lambda\sigma}
+=
+	\spacetwo{\nu\mu}{\lambda\sigma}
+=
+	\spacetwo{\mu\nu}{\sigma\lambda}
+=
+	\spacetwo{\nu\mu}{\sigma\lambda}
+\end{align}
+が成立する。また、積分変数の書き換えにより
+\begin{align}
+	\spacetwo{\mu\nu}{\lambda\sigma}
+=
+	\spacetwo{\lambda\sigma}{\mu\nu}
+\end{align}
+が成立する。
+従って、
+\begin{align}
+	\spacetwo{\mu\nu}{\lambda\sigma}
+&=
+	\spacetwo{\nu\mu}{\lambda\sigma}
+=
+	\spacetwo{\mu\nu}{\sigma\lambda}
+=
+	\spacetwo{\nu\mu}{\sigma\lambda} \\
+&=
+	\spacetwo{\lambda\sigma}{\mu\nu}
+=
+	\spacetwo{\lambda\sigma}{\nu\mu}
+=
+	\spacetwo{\sigma\lambda}{\mu\nu}
+=
+	\spacetwo{\sigma\lambda}{\nu\mu}
+\end{align}
+
+
