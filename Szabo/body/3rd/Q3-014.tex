@@ -99,9 +99,132 @@ $\bicoeff{K}{4}=\frac{1}{24}K(K-1)(K-2)(K-3)$通りある。
 \end{align}
 によって求まるからである。
 
+1つ目のパターンでは順列の数は1つしかないので、
+グループの数は1である。
+2つ目のパターンでは順列(二電子積分)は次の4通りある。
+\begin{align}
+	\spacetwo{ii}{ij},\
+	\spacetwo{ii}{ji},\
+	\spacetwo{ij}{ii},\
+	\spacetwo{ji}{ii}
+\end{align}
+これらはすべて等しいため、グループの数は1である。
+3つ目のパターンでは順列は次の通りである。
+\begin{align}
+	\spacetwo{ii}{jj},\
+	\spacetwo{ij}{ij},\
+	\spacetwo{ij}{ji},\
+	\spacetwo{ji}{ij},\
+	\spacetwo{ji}{ji},\
+	\spacetwo{jj}{ii}
+\end{align}
+グループは$\spacetwo{ii}{jj}, \spacetwo{ij}{ij}$の2つがある。
+4つ目のパターンでは順列は次の通りである。
+\begin{align}
+	\spacetwo{ii}{jk},\
+	\spacetwo{ii}{kj},\
+	\spacetwo{ij}{ik},\
+	\spacetwo{ij}{ki},\
+	\spacetwo{ik}{ij},\
+	\spacetwo{ik}{ji},\
+	\spacetwo{ji}{ik},\
+	\spacetwo{ji}{ki},\
+	\spacetwo{jk}{ii},\
+	\spacetwo{ki}{ij},\
+	\spacetwo{ki}{ji},\
+	\spacetwo{kj}{ii}
+\end{align}
+グループは$\spacetwo{ii}{jk}, \spacetwo{ij}{ik}$の2つがある。
+5つ目のパターンでは重複のない順列を考えるので、
+グループの数は順列の総数を8(二電子積分が等しい順列の数)で割った値に等しく、
+$4!/8$である。
 
+従って、相異なる二電子積分の数は
+\begin{align}
+&\quad
+	\bicoeff{K}{1} \cdot
+	1
+	+
+	\bicoeff{K}{2} \cdot
+	\bicoeff{2}{1} \cdot
+	1
+	+
+	\bicoeff{K}{2} \cdot
+	2
+	+
+	\bicoeff{K}{3} \cdot
+	\bicoeff{3}{1} \cdot
+	2
+	+
+	\bicoeff{K}{4} \cdot
+	\frac{4!}{8} \\
+%
+%
+&=
+	K
+	+
+	K(K-1)
+	+
+	K(K-1)
+	+
+	K(K-1)(K-2)
+	+
+	\frac{1}{8}
+	K(K-1)(K-2)(K-3) \\
+%
+%
+&=
+	K
+	-
+	K^2
+	+
+	K^3
+	+
+	\frac{1}{8}
+	(K^2-K)
+	(K^2-5K+6) \\
+%
+%
+&=
+	K
+	-
+	K^2
+	+
+	K^3
+	+
+	\frac{1}{8}
+	K^4
+	-
+	\frac{3}{4}
+	K^3
+	+
+	\frac{11}{8}
+	K^2
+	-
+	\frac{3}{4}
+	K \\
+%
+%
+&=
+	\frac{1}{8}
+	K^4
+	+
+	\frac{1}{4}
+	K^3
+	+
+	\frac{3}{8}
+	K^2
+	+
+	\frac{1}{4}
+	K \\
+%
+%
+&=
+	O\left(\frac{K^4}{8}\right)
+\end{align}
+である。
 
-
+また、$K=100$の時は\num{12753775}となる。
 
 
 
