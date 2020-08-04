@@ -14,6 +14,98 @@ Roothaan方程式における重なり行列$\bm{S}$は次の通りである。
 
 
 \subsection{解}
+$c_\mu^i$を$\bm{S}$の$i$番目の固有ベクトルの$\mu$行目の要素とする。
+このとき、以下の式が成立する。
+\begin{align}
+	\sum_\nu
+		S_{\mu\nu} c_\nu^i
+&=
+	s_i
+	c_\mu^i
+\end{align}
+両辺に$\conju{c_\mu^i}$をかけ、$\mu$で和をとると
+\begin{align}
+	\sum_\mu
+	\sum_\nu
+		\conju{c_\mu^i}
+		S_{\mu\nu}
+		c_\nu^i
+&=
+	\sum_\mu
+		\conju{c_\mu^i}
+		s_i
+		c_\mu^i \\
+%
+%
+&=
+	s_i
+	\sum_\mu
+		|c_\mu^i|^2 \\
+%
+%
+	s_i
+&=
+	\frac{
+		\sum_\mu
+		\sum_\nu
+			\conju{c_\mu^i}
+			S_{\mu\nu}
+			c_\nu^i
+	}{
+		\sum_\mu
+			|c_\mu^i|^2
+	}
+\end{align}
+ここで分母は正数$|c_\mu^i|^2$の総和であるので常に正数である。
+従って、固有値$s_i$が正数かどうかは
+分子によって決まる。
+分子については、$S_{\mu\nu}$の定義を利用すると
+\begin{align}
+	\sum_\mu
+	\sum_\nu
+		\conju{c_\mu^i}
+		S_{\mu\nu}
+		c_\nu^i
+&=
+	\sum_\mu
+	\sum_\nu
+		\int\d\r
+			\conju{c_\mu^i}
+			\conju{\phi_\mu}
+			\phi_\nu
+			c_\nu^i \\
+%
+%
+&=
+	\int\d\r
+		\conju[1]{
+			\sum_\mu
+				c_\mu^i
+				\phi_\mu
+		}
+		\left(
+			\sum_\nu
+				c_\nu^i
+				\phi_\nu
+		\right) \\
+%
+%
+&=
+	\int\d\r
+		\conju{\varphi^i}
+		\varphi^i \\
+%
+%
+&=
+	\int\d\r
+		|\varphi^i|^2
+\end{align}
+となる。(ここで$c_\mu^i$は重なり行列$\bm{S}$を対角化する行列中のベクトルなので
+$\varphi^i$は空間軌道$\psi_i$とは関係がないことに注意)従って、分子も常に正数になることが言える。
+
+よって、全ての$i$について常に$s_i$は正数になることから、
+重なり行列$\bm{S}$の固有値は常に正数である。
+
 
 
 
