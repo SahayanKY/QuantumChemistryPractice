@@ -39,14 +39,146 @@ Roothaanの方程式の計算を簡単にするために、
 %
 %
 	\bm{F}'
-	\bm{C}'
 &=
-	\bm{C}'
-	\bm{\epsilon}
+	\adj{\bm{X}}
+	\bm{F}
+	\bm{X}
 \end{align}
 
 
 \subsection{解}
+前者の式についてまず見ていく。
+空間軌道の展開の式から、
+\begin{align}
+	\sum_\mu
+		C'_{\mu i}
+		\phi'_\mu
+&=
+	\sum_\nu
+		C_{\nu i}
+		\phi_\nu \\
+%
+%
+	\sum_\mu
+		C'_{\mu i}
+		\left(
+			\sum_\nu
+				X_{\nu\mu}
+				\phi_\nu
+		\right)
+&=
+	\sum_\nu
+		C_{\nu i}
+		\phi_\nu \\
+%
+%
+	\sum_\nu
+		\left(
+			\sum_\mu
+				C'_{\mu i}
+				X_{\nu\mu}
+		\right)
+		\phi_\nu
+&=
+	\sum_\nu
+		C_{\nu i}
+		\phi_\nu \\
+%
+%
+	\sum_\nu
+		\left(
+			C_{\nu i}
+			-
+			\sum_{\mu}
+				C'_{\mu i}
+				X_{\nu\mu}
+		\right)
+		\phi_\nu
+&=
+	0
+\end{align}
+$\phi_\nu$は互いに線形独立であることから、係数はゼロになる必要がある。
+従って、
+\begin{align}
+	C_{\nu i}
+&=
+	\sum_\mu
+		C'_{\mu i}
+		X_{\nu\mu} \\
+%
+%
+	\bm{C}
+&=
+	\bm{X}
+	\bm{C}' \\
+%
+%
+	\bm{C}'
+&=
+	\bm{X}^{-1}
+	\bm{C}
+\end{align}
+である。
+
+
+次に後者の式について見ていく。
+\begin{align}
+	F'_{\mu\nu}
+&=
+	\int\d\r_1
+		\conju{\phi'_\mu}(1)
+		f(1)
+		\phi'_\nu(1) \\
+%
+%
+&=
+	\int\d\r_1
+		\conju[1]{
+			\sum_\sigma
+				X_{\sigma\mu}
+				\phi_\sigma(1)
+		}
+		f(1)
+		\left(
+			\sum_\lambda
+				X_{\lambda\nu}
+				\phi_\lambda(1)
+		\right) \\
+%
+%
+&=
+	\sum_\sigma
+	\sum_\lambda
+		\conju{X_{\sigma\mu}}
+		X_{\lambda\nu}
+		\int\d\r_1
+			\conju{\phi_\sigma}(1)
+			f(1)
+			\phi_\lambda(1) \\
+%
+%
+&=
+	\sum_\sigma
+	\sum_\lambda
+		\conju{X_{\sigma\mu}}
+		X_{\lambda\nu}
+		F_{\sigma\lambda} \\
+%
+%
+&=
+	\sum_\sigma
+	\sum_\lambda
+		\adj{X}_{\mu\sigma}
+		F_{\sigma\lambda}
+		X_{\lambda\nu} \\
+%
+%
+&=
+	\adj{\bm{X}}
+	\bm{F}
+	\bm{X}
+\end{align}
+
 
 
 
