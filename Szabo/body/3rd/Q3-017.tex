@@ -1,0 +1,244 @@
+%ファイルID
+%2020/08/06 1337
+%->2008061337SahayanKY(ファイル作成者)
+\subsection{問}
+Hartree-Fock基底状態におけるエネルギー$E_0$は次のとおりに書き表すことができる。
+\begin{align}
+	E_0
+&=
+	\braket{\Psi_0|\mathscr{H}|\Psi_0} \\
+&=
+	2
+	\sum_a^{N/2}
+		h_{aa}
+	+
+	\sum_a^{N/2}
+	\sum_b^{N/2}\left(
+		2J_{ab}
+		-
+		K_{ab}
+	\right) \\
+&=
+	\sum_a^{N/2}\left(
+		h_{aa}
+		+
+		\epsilon_a
+	\right)
+\end{align}
+これを変形すると
+\begin{align}
+	E_0
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+		P_{\nu\mu}
+		\left(
+			H^{\rm core}_{\mu\nu}
+			+
+			F_{\mu\nu}
+		\right)
+\end{align}
+となることを示せ。
+ここで$H^{\rm core}_{\mu\nu}$と$F_{\mu\nu}$は
+核-1電子ハミルトニアン行列とFock行列であり、
+\begin{align}
+	H^{\rm core}_{\mu\nu}
+&=
+	\int\d\r_1
+		\conju{\phi_\mu}(1)
+		h(1)
+		\phi_\nu(1) \\
+%
+%
+	F_{\mu\nu}
+&=
+	\int\d\r_1
+		\conju{\phi_\mu}(1)
+		f(1)
+		\phi_\nu(1)
+\end{align}
+である。
+
+\subsection{解}
+まず、1電子積分$h_{aa}$は
+\begin{align}
+	h_{aa}
+&=
+	\spaceone{\psi_a}{h}{\psi_a} \\
+%
+%
+&=
+	\int\d\r_1
+		\conju{\psi_a}(1)
+		h(1)
+		\psi_a(1) \\
+%
+%
+&=
+	\int\d\r_1
+		\conju[1]{
+			\sum_\mu C_{\mu a}\phi_\mu(1)
+		}
+		h(1)
+		\left(
+			\sum_\nu C_{\nu a}\phi_\nu(1)
+		\right) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C_{\mu a}}
+		C_{\nu a}
+		\int\d\r_1
+			\conju{\phi_\mu}(1)
+			h(1)
+			\phi_\nu(1) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C_{\mu a}}
+		C_{\nu a}
+		H^{\rm core}_{\mu\nu}
+\end{align}
+と書き換えることができる。
+次に、軌道エネルギー$\epsilon_a$は
+閉殻系の制限付きHartree-Fock方程式より
+\begin{align}
+	f(1)
+	\psi_a(1)
+&=
+	\epsilon_a
+	\psi_a(1) \\
+%
+%
+	\int\d\r_1
+		\conju{\psi_a}(1)
+		f(1)
+		\psi_a(1)
+&=
+	\epsilon_a
+	\int\d\r_1
+		\conju{\psi_a}(1)
+		\psi_a(1) \\
+%
+%
+	\int\d\r_1
+		\conju{\psi_a}(1)
+		f(1)
+		\psi_a(1)
+&=
+	\epsilon_a
+\end{align}
+\begin{align}
+	\epsilon_a
+&=
+	\int\d\r_1
+		\conju[1]{
+			\sum_\mu C_{\mu a} \phi_\mu(1)
+		}
+		f(1)
+		\left(
+			\sum_\nu C_{\nu a} \phi_\nu(1)
+		\right) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C_{\mu a}}
+		C_{\nu a}
+		\int\d\r_1
+			\conju{\phi_\mu}(1)
+			f(1)
+			\phi_\nu(1) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C_{\mu a}}
+		C_{\nu a}
+		F_{\mu\nu}
+\end{align}
+と書き換えることができる。
+
+従って、
+\begin{align}
+	E_0
+&=
+	\sum_a^{N/2}\left(
+		h_{aa}
+		+
+		\epsilon_a
+	\right) \\
+%
+%
+&=
+	\sum_a^{N/2}\left(
+		\left(
+			\sum_\mu
+			\sum_\nu
+				\conju{C_{\mu a}}
+				C_{\nu a}
+				H^{\rm core}_{\mu\nu}
+		\right)
+		+
+		\left(
+			\sum_\mu
+			\sum_\nu
+				\conju{C_{\mu a}}
+				C_{\nu a}
+				F_{\mu\nu}
+		\right)
+	\right) \\
+%
+%
+&=
+	\sum_a^{N/2}
+	\sum_\mu
+	\sum_\nu
+		\conju{C_{\mu a}}
+		C_{\nu a}
+		\left(
+			H^{\rm core}_{\mu\nu}
+			+
+			F_{\mu\nu}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+		\left(
+			2
+			\sum_a^{N/2}
+				C_{\nu a}
+				\conju{C_{\mu a}}
+		\right)
+		\left(
+			H^{\rm core}_{\mu\nu}
+			+
+			F_{\mu\nu}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+		P_{\nu\mu}
+		\left(
+			H^{\rm core}_{\mu\nu}
+			+
+			F_{\mu\nu}
+		\right)
+\end{align}
+となる。
+
+
+
