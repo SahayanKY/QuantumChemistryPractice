@@ -1,0 +1,184 @@
+%ファイルID
+%2020/08/08 1842
+%->2008081842SahayanKY(ファイル作成者)
+\subsection{問}
+電子数$N$は密度行列$\bm{P}$と重なり行列$\bm{S}$を用いて
+\begin{align}
+	N
+=
+	\sum_\mu
+		(\bm{P}\bm{S})_{\mu\mu}
+=
+	\sum_\mu
+		(\bm{S}^{\alpha}\bm{P}\bm{S}^{1-\alpha})_{\mu\mu}
+\end{align}
+と表すことが出来る。ここで$\tr{\bm{A}\bm{B}}=\tr{\bm{B}\bm{A}}$を用いている。
+
+$\alpha=\frac{1}{2}$とすると
+\begin{align}
+	\sum_\mu
+		(\bm{S}^{\frac{1}{2}}\bm{P}\bm{S}^{\frac{1}{2}})_{\mu\mu}
+=
+	\sum_\mu
+		(\bm{P}')_{\mu\mu}
+\end{align}
+となることを示せ。ここで$\bm{P}'$は対称直交化された基底における密度行列
+\begin{align}
+	\rho(\r)
+&=
+	\sum_\mu
+	\sum_\nu
+		P'_{\mu\nu}
+		\phi'_{\mu}(\r)
+		\conju{\phi'_{\nu}}(\r) \\
+%
+%
+	\phi'_{\mu}(\r)
+&=
+	\sum_\nu
+		(\bm{S}^{-\frac{1}{2}})_{\nu\mu}
+		\phi_\nu(\r)
+\end{align}
+である。
+
+\subsection{解}
+$\bm{P}$と$\bm{P}'$の関係を考える。
+\begin{align}
+	\rho(\r)
+&=
+	\sum_\mu
+	\sum_\nu
+		P'_{\mu\nu}
+		\phi'_{\mu}(\r)
+		\conju{\phi'_{\nu}}(\r) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P'_{\mu\nu}
+		\left(
+			\sum_\sigma
+				(\bm{S}^{-\frac{1}{2}})_{\sigma\mu}
+				\phi_{\sigma}(\r)
+		\right)
+		\conju[1]{
+			\sum_\lambda
+				(\bm{S}^{-\frac{1}{2}})_{\lambda\nu}
+				\phi_{\lambda}(\r)
+		} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		P'_{\mu\nu}
+		(\bm{S}^{-\frac{1}{2}})_{\sigma\mu}
+		\conju{(\bm{S}^{-\frac{1}{2}})_{\lambda\nu}}
+		\phi_\sigma(\r)
+		\conju{\phi_\lambda}(\r) \\
+%
+%
+&=
+	\sum_\sigma
+	\sum_\lambda
+		P_{\sigma\lambda}
+		\phi_\sigma(\r)
+		\conju{\phi_\lambda}(\r)
+\end{align}
+従って、
+\begin{align}
+	P_{\sigma\lambda}
+&=
+	\sum_\mu
+	\sum_\nu
+		P'_{\mu\nu}
+		(\bm{S}^{-\frac{1}{2}})_{\sigma\mu}
+		\conju{(\bm{S}^{-\frac{1}{2}})_{\lambda\nu}} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		(\bm{S}^{-\frac{1}{2}})_{\sigma\mu}
+		P'_{\mu\nu}
+		(\adj{\bm{S}^{-\frac{1}{2}}})_{\nu\lambda} \\
+%
+%
+	\bm{P}
+&=
+	\bm{S}^{-\frac{1}{2}}
+	\bm{P}'
+	\adj{\bm{S}^{-\frac{1}{2}}}
+\end{align}
+$\adj{\bm{S}^{-\frac{1}{2}}}$は
+\begin{align}
+	\bm{S}^{-\frac{1}{2}}
+&=
+	\bm{U}
+	\bm{s}^{-\frac{1}{2}}
+	\adj{\bm{U}} \\
+%
+%
+	\adj{\bm{S}^{-\frac{1}{2}}}
+&=
+	\bm{\bm{U}}
+	\adj{\bm{s}^{-\frac{1}{2}}}
+	\adj{\bm{U}}
+\end{align}
+である。$\bm{s}$は$\bm{S}$の固有値を並べた対角行列である。
+$\bm{S}$の固有値は前問より正数であるので、
+$\bm{s}^{-\frac{1}{2}}$は正数の対角行列である。
+よって、エルミート行列($\adj{\bm{s}^{-\frac{1}{2}}}=\bm{s}^{-\frac{1}{2}}$)
+であるので、
+\begin{align}
+	\adj{\bm{S}^{-\frac{1}{2}}}
+&=
+	\bm{S}^{-\frac{1}{2}}
+\end{align}
+である。よって、
+\begin{align}
+	\bm{P}
+&=
+	\bm{S}^{-\frac{1}{2}}
+	\bm{P}'
+	\bm{S}^{-\frac{1}{2}}
+\end{align}
+である。
+
+以上から、
+\begin{align}
+	\sum_\mu
+		\left(
+			\bm{S}^{\frac{1}{2}}
+			\bm{P}
+			\bm{S}^{\frac{1}{2}}
+		\right)_{\mu\mu}
+&=
+	\sum_\mu
+		\left(
+			\bm{S}^{\frac{1}{2}}
+			\bm{S}^{-\frac{1}{2}}
+			\bm{P}'
+			\bm{S}^{-\frac{1}{2}}
+			\bm{S}^{\frac{1}{2}}
+		\right)_{\mu\mu} \\
+%
+%
+&=
+	\sum_\mu
+		\left(
+			\identity
+			\bm{P}'
+			\identity
+		\right)_{\mu\mu} \\
+%
+%
+&=
+	\sum_\mu
+		(\bm{P}')_{\mu\mu}
+\end{align}
+である。
+
