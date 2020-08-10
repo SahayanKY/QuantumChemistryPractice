@@ -1,0 +1,205 @@
+%ファイルID
+%2020/08/10 2124
+%->2008102124SahayanKY(ファイル作成者)
+\subsection{問}
+$\bm{R}_A$を中心とする規格化1s Gauss型関数は
+\begin{align}
+	\phi^{\rm GF}_{\rm 1s}(\alpha,\r-\bm{R}_{A})
+&=
+	\left(
+		\frac{2\alpha}{\pi}
+	\right)^{\frac{3}{4}}
+	\exp\left(
+		-\alpha|\r-\bm{R}_{A}|^2
+	\right)
+\end{align}
+である。
+
+2個の1s Gauss型関数の積が
+1個の1s Gauss型関数にまとめることが出来ることを示せ。
+つまり、
+\begin{align}
+	\phi^{\rm GF}_{\rm 1s}(\alpha,\r-\bm{R}_A)
+	\phi^{\rm GF}_{\rm 1s}(\beta,\r-\bm{R}_B)
+&=
+	K_{AB}
+	\phi^{\rm GF}_{\rm 1s}(p,\r-\bm{R}_p) \\
+%
+%
+	K_{AB}
+&=
+	\left(
+		\frac{2\alpha\beta}{(\alpha+\beta)\pi}
+	\right)^{\frac{3}{4}}
+	\exp\left(
+		-\frac{\alpha\beta}{\alpha+\beta}
+		|\bm{R}_A-\bm{R}_B|^2
+	\right) \\
+%
+%
+	p
+&=
+	\alpha
+	+
+	\beta \\
+%
+%
+	\bm{R}_p
+&=
+	\frac{
+		\alpha\bm{R}_A
+		+
+		\beta\bm{R}_B
+	}{
+		\alpha
+		+
+		\beta
+	}
+\end{align}
+が成立することを示せ。
+
+
+\subsection{解}
+\begin{align}
+	\phi^{\rm GF}_{\rm 1s}(\alpha,\r-\bm{R}_A)
+	\phi^{\rm GF}_{\rm 1s}(\beta,\r-\bm{R}_B)
+&=
+	\left(
+		\frac{
+			4\alpha\beta
+		}{
+			\pi^2
+		}
+	\right)^{\frac{3}{4}}
+	\exp\left(
+		-\alpha|\r-\bm{R}_A|^2
+		-\beta|\r-\bm{R}_B|^2
+	\right)
+\end{align}
+ここで$\exp$内については
+\begin{align}
+	-
+	\alpha|\r-\bm{R}_A|^2
+	-
+	\beta|\r-\bm{R}_B|^2
+&=
+	-
+	(\alpha+\beta)|\r|^2
+	+
+	2(\alpha\bm{R}_A+\beta\bm{R}_B)\cdot\r
+	-
+	\alpha|\bm{R}_A|^2
+	-
+	\beta|\bm{R}_B|^2 \\
+%
+%
+&=
+	-
+	(\alpha+\beta)
+	\left(
+		|\r|^2
+		-
+		2
+		\frac{\alpha\bm{R}_A+\beta\bm{R}_B}{\alpha+\beta}\cdot\r
+		+
+		\left|
+			\frac{\alpha\bm{R}_A+\beta\bm{R}_B}{\alpha+\beta}
+		\right|^2
+	\right) \nonumber \\&\qquad
+	+
+	(\alpha+\beta)
+	\left|
+		\frac{\alpha\bm{R}_A+\beta\bm{R}_B}{\alpha+\beta}
+	\right|^2
+	-
+	\alpha|\bm{R}_A|^2
+	-
+	\beta|\bm{R}_B|^2 \\
+%
+%
+&=
+	-
+	p|\r-\bm{R}_p|^2 \nonumber \\&\qquad
+	+
+	\frac{
+		\alpha^2|\bm{R}_A|^2
+		+
+		2\alpha\beta\bm{R}_A\cdot\bm{R}_B
+		+
+		\beta^2|\bm{R}_B|^2
+		-
+		\alpha(\alpha+\beta)|\bm{R}_A|^2
+		-
+		\beta(\alpha+\beta)|\bm{R}_B|^2
+	}{
+		\alpha+\beta
+	} \\
+%
+%
+&=
+	-
+	p|\r-\bm{R}_p|^2
+	+
+	\frac{
+		-
+		\alpha\beta|\bm{R}_A|^2
+		+
+		2\alpha\beta\bm{R}_A\cdot\bm{R}_B
+		-
+		\alpha\beta|\bm{R}_B|^2
+	}{
+		\alpha+\beta
+	} \\
+%
+%
+&=
+	-
+	p|\r-\bm{R}_p|^2
+	-
+	\frac{\alpha\beta}{\alpha+\beta}
+	|\bm{R}_A-\bm{R}_B|^2
+\end{align}
+と書き換えられる。また、$\exp$の前の係数の部分については
+\begin{align}
+	\left(
+		\frac{4\alpha\beta}{\pi^2}
+	\right)^{\frac{3}{4}}
+&=
+	\left(
+		\frac{2\alpha\beta}{(\alpha+\beta)\pi}\cdot
+		\frac{2(\alpha+\beta)}{\pi}
+	\right)^{\frac{3}{4}} \\
+%
+%
+&=
+	\left(
+		\frac{2\alpha\beta}{(\alpha+\beta)\pi}
+	\right)^{\frac{3}{4}}
+	\left(
+		\frac{2p}{\pi}
+	\right)^{\frac{3}{4}}
+\end{align}
+と書き換えられる。従って、
+\begin{align}
+	\phi^{\rm GF}_{\rm 1s}(\alpha,\r-\bm{R}_A)
+	\phi^{\rm GF}_{\rm 1s}(\beta,\r-\bm{R}_B)
+&=
+	\left(
+		\frac{2\alpha\beta}{(\alpha+\beta)\pi}
+	\right)^{\frac{3}{4}}
+	\left(
+		\frac{2p}{\pi}
+	\right)^{\frac{3}{4}}
+	\exp\left(
+		-p|\r-\bm{R}_p|^2
+	\right)
+	\exp\left(
+		-\frac{\alpha\beta}{\alpha+\beta}|\bm{R}_A-\bm{R}_B|^2
+	\right) \\
+%
+%
+&=
+	K_{AB}
+	\phi^{\rm GF}_{\rm 1s}(p,\r-\bm{R}_p)
+\end{align}
+となる。
