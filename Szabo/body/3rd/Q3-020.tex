@@ -44,4 +44,98 @@ p.172より、STO-1G、STO-2G、STO-3Gは次のとおりである。
 	\right)^{\frac{3}{4}}
 	\exp(-\alpha|\r|^2)
 \end{align}
+である。特に、原点($\r=\bm{0}$)においては
+\begin{align}
+	\phi^{\rm GF}_{\rm 1s}(\alpha)
+&=
+	\left(
+		\frac{2\alpha}{\pi}
+	\right)^{\frac{3}{4}}
+	\exp(-\alpha\cdot 0^2) \\
+%
+%
+&=
+	\left(
+		\frac{2\alpha}{\pi}
+	\right)^{\frac{3}{4}}
+\end{align}
 である。
+
+従って、各短縮関数の原点における値は
+\begin{align}
+	\phi^{\rm CGF}_{1s}(\zeta=1.0,\text{STO-1G})
+&=
+	\phi^{\rm GF}_{1s}(0.270950) \\
+%
+%
+&=
+	\left(
+		\frac{2\cdot 0.270950}{\pi}
+	\right)^{\frac{3}{4}} \\
+%
+%
+&=
+	0.267656
+\end{align}
+\begin{align}
+	\phi^{\rm CGF}_{1s}(\zeta=1.0,\text{STO-2G})
+&=
+	0.678914
+	\phi^{\rm GF}_{\rm 1s}(0.151623)
+	+
+	0.430129
+	\phi^{\rm GF}_{\rm 1s}(0.851819) \\
+%
+%
+&=
+	0.678914\cdot
+	\left(
+		\frac{2\cdot 0.151623}{\pi}
+	\right)^{\frac{3}{4}}
+	+
+	0.430129\cdot
+	\left(
+		\frac{2\cdot 0.851819}{\pi}
+	\right)^{\frac{3}{4}} \\
+%
+%
+&=
+	0.389383
+\end{align}
+\begin{align}
+	\phi^{\rm CGF}_{\rm 1s}(\zeta=1.0,\text{STO-3G})
+&=
+	0.444635
+	\phi^{\rm GF}_{\rm 1s}(0.109818)
+	+
+	0.535328
+	\phi^{\rm GF}_{\rm 1s}(0.405771) \\ &\qquad
+	+
+	0.154329
+	\phi^{\rm GF}_{\rm 1s}(2.22766) \\
+%
+%
+&=
+	0.444635\cdot
+	\left(
+		\frac{2\cdot 0.109818}{\pi}
+	\right)^{\frac{3}{4}}
+	+
+	0.535328\cdot
+	\left(
+		\frac{2\cdot 0.405771}{\pi}
+	\right)^{\frac{3}{4}} \\ &\qquad
+	+
+	0.154329\cdot
+	\left(
+		\frac{2\cdot 2.22766}{\pi}
+	\right)^{\frac{3}{4}} \\
+%
+%
+&=
+	0.454986
+\end{align}
+である。
+
+一方でSlater型関数($\zeta=1.0$)の原点における値は$\pi^{-\frac{1}{2}}=0.564190$である。
+原始Gauss型関数の数を増やせば増やすほど近似が良くなっていることが分かる。
