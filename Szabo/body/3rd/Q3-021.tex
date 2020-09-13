@@ -1,0 +1,80 @@
+%ファイルID
+%2020/09/13 1840
+%->2009131840SahayanKY(ファイル作成者)
+\subsection{問}
+STO-1G($\zeta=1.24$)をもった2つの軌道を考える。
+その軌道の中心間の距離が$R=\SI{1.4}{\atomic}$であるとき
+重なりが$S_{12}=0.6648$であることを示せ。
+
+
+\subsection{解}
+STO-1G($\zeta=1.24$)の各原始Gauss型関数の軌道指数$\alpha$は
+\begin{align}
+	\alpha
+&=
+	\alpha(\zeta=1.0) \times \zeta^2
+\end{align}
+より求められるので、STO-1G($\zeta=1.24$)は
+\begin{align}
+	\phi^{\rm CGF}_{\rm 1s}(\zeta=1.24,\text{STO-1G})
+&=
+	\phi^{\rm GF}_{\rm 1s}(0.270950\times 1.24^2) \\
+%
+%
+&=
+	\phi^{\rm GF}_{\rm 1s}(0.416613) \\
+%
+%
+&=
+	\left(
+		\frac{2\cdot 0.416613}{\pi}
+	\right)^{\frac{3}{4}}
+	\exp(-0.416613|\r|^2) \\
+%
+%
+&=
+	0.369581
+	\exp(-0.416613|\r|^2)
+\end{align}
+である。
+
+重なり積分を計算するにあたって
+一方の中心を$\bm{R}_A=\bm{0}$、
+もう一方の中心を$\bm{R}_B=\SI{1.4}{\atomic}\e{x}$と置く。
+重なり積分$S_{12}$は
+\begin{align}
+	S_{12}
+&=
+	\int\d\r
+		\phi^{\rm CGF}_{\rm 1s}(\zeta=1.24,\text{STO-1G},\r-\bm{R}_A)
+		\phi^{\rm CGF}_{\rm 1s}(\zeta=1.24,\text{STO-1G},\r-\bm{R}_B) \\
+%
+%
+&=
+	0.369581^2
+	\int\d\r
+		\exp(-0.416613|\r-\bm{R}_A|^2)
+		\exp(-0.416613|\r-\bm{R}_B|^2)
+\end{align}
+積分部分は付録の積分公式を用いることで
+\begin{align}
+	S_{12}
+&=
+	0.369581^2\cdot
+	\left(
+		\frac{\pi}{2\cdot 0.416613}
+	\right)^{\frac{3}{2}}
+	\exp\left(
+		-\frac{0.416613^2}{2\cdot 0.416613} \cdot
+		|1.4\e{x}|^2
+	\right) \\
+%
+%
+&=
+	0.664792 \\
+%
+%
+&=
+	0.6648
+\end{align}
+である。
