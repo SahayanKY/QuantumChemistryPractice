@@ -1,0 +1,340 @@
+%ファイルID
+%2020/09/14 1637
+%->2009141637SahayanKY(ファイル作成者)
+\subsection{問}
+\ce{H2+}のRoothaan方程式は次の通りである。
+\begin{align}
+	\bm{H}^{\rm core}
+	\bm{C}
+&=
+	\bm{S}
+	\bm{C}
+	\bm{\epsilon}
+\end{align}
+ここで$\bm{H}^{\rm core}$は核-1電子ハミルトニアンである。
+最小基底関数ではこれを解くと、
+\begin{align}
+	\epsilon_1
+&=
+	\frac{
+		H_{11}^{\rm core}
+		+
+		H_{12}^{\rm core}
+	}{
+		1
+		+
+		S_{12}
+	} \\
+%
+%
+	\epsilon_2
+&=
+	\frac{
+		H_{11}^{\rm core}
+		-
+		H_{12}^{\rm core}
+	}{
+		1
+		-
+		S_{12}
+	}
+\end{align}
+であること、$R=\SI{1.4}{\atomic}$では
+\begin{align}
+	\epsilon_1
+&=
+	\SI{-1.2528}{\atomic} \\
+%
+%
+	\epsilon_2
+&=
+	\SI{-0.4756}{\atomic}
+\end{align}
+であること示せ。
+
+
+\subsection{解}
+水素Aの中心を$\bm{R}_A=-\frac{1}{2}R\e{x}$、
+水素Bの中心を$\bm{R}_B=\frac{1}{2}R\e{x}$とする。
+
+核-1電子ハミルトニアン行列は
+\begin{align}
+	H^{\rm core}_{\mu\nu}
+&=
+	\int\d\r
+		\conju{\phi_\mu}(\r)
+		h(\r)
+		\phi_\nu(\r)
+\end{align}
+である。ここで$H^{\rm core}_{21}$と$H^{\rm core}_{22}$について考える。
+また、変数変換$\r'=-\r$を考える。
+このとき、
+\begin{align}
+	\phi_1(\r)
+&=
+	\phi_2(\r')
+\end{align}
+が成立する。また、
+\begin{align}
+	\pard{x}{}{}
+&=
+	-
+	\pard{x'}{}{} &
+%
+	\pard{y}{}{}
+&=
+	-
+	\pard{y'}{}{} &
+%
+	\pard{z}{}{}
+&=
+	-
+	\pard{z'}{}{}
+\end{align}
+より
+\begin{align}
+	\laplacian{}_{\r}
+&=
+	\laplacian{}_{\r'}
+\end{align}
+である。また、
+\begin{align}
+&\quad
+	-
+	\frac{Z_A}{|\r-\bm{R}_A|}
+	-
+	\frac{Z_B}{|\r-\bm{R}_B|} \\
+%
+%
+&=
+	-
+	\frac{Z_A}{|-\r'+\bm{R}_B|}
+	-
+	\frac{Z_B}{|-\r'+\bm{R}_A|}
+	%
+	\qquad
+	(\bm{R}_A=-\bm{R}_B) \\
+%
+%
+&=
+	-
+	\frac{Z_A}{|\r'-\bm{R}_B|}
+	-
+	\frac{Z_B}{|\r'-\bm{R}_A|} \\
+%
+%
+&=
+	-
+	\frac{Z_B}{|\r'-\bm{R}_B|}
+	-
+	\frac{Z_A}{|\r'-\bm{R}_A|}
+	%
+	\qquad
+	(Z_A=Z_B)
+\end{align}
+であるので$h(\r)=h(\r')$が成立する。
+よって、核-1電子ハミルトニアン行列の要素$H^{\rm core}_{21}$は
+\begin{align}
+	H^{\rm core}_{21}
+&=
+	\int\d\r
+		\conju{\phi_2}(\r)
+		h(\r)
+		\phi_1(\r) \\
+%
+%
+&=
+	\int\d\r
+		\conju{\phi_1}(\r')
+		h(\r')
+		\phi_2(\r') \\
+%
+%
+&=
+	\int_{-\infty}^{\infty} \d x
+	\int_{-\infty}^{\infty} \d y
+	\int_{-\infty}^{\infty} \d z
+		\conju{\phi_1}(\r')
+		h(\r')
+		\phi_2(\r') \\
+%
+%
+&=
+	\int_{-\infty}^{\infty} \d x'
+	\int_{-\infty}^{\infty} \d y'
+	\int_{-\infty}^{\infty} \d z'
+		\conju{\phi_1}(\r')
+		h(\r')
+		\phi_2(\r') \\
+%
+%
+&=
+	\int\d\r'
+		\conju{\phi_1}(\r')
+		h(\r')
+		\phi_2(\r') \\
+%
+%
+&=
+	H^{\rm core}_{12}
+\end{align}
+同様に
+\begin{align}
+	H^{\rm core}_{11}
+&=
+	H^{\rm core}_{22}
+\end{align}
+が成立する。
+
+よって、Roothaan方程式より
+\begin{align}
+&
+	\left[
+	\begin{array}{cc}
+		H^{\rm core}_{11} & H^{\rm core}_{12} \\
+		%
+		H^{\rm core}_{12} & H^{\rm core}_{11}
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2} & \left[2(1-S_{12})\right]^{-1/2} \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2} & -\left[2(1-S_{12})\right]^{-1/2}
+	\end{array}
+	\right] \nonumber\\
+&\qquad\qquad
+=
+	\left[
+	\begin{array}{cc}
+		1 & S_{12} \\
+		%
+		S_{12} & 1
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2} & \left[2(1-S_{12})\right]^{-1/2} \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2} & -\left[2(1-S_{12})\right]^{-1/2}
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\epsilon_1 & 0 \\
+		%
+		0 & \epsilon_2
+	\end{array}
+	\right] \\[3mm]
+%
+%
+&
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2}
+		(H^{\rm core}_{11} +H^{\rm core}_{12})
+		&
+		\left[2(1-S_{12})\right]^{-1/2}
+		(H^{\rm core}_{11} -H^{\rm core}_{12}) \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2}
+		(H^{\rm core}_{11} +H^{\rm core}_{12})
+		&
+		\left[2(1-S_{12})\right]^{-1/2}
+		(H^{\rm core}_{12} -H^{\rm core}_{11})
+	\end{array}
+	\right] \nonumber\\
+&\qquad\qquad
+=
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2}
+		(1+S_{12})
+		&
+		\left[2(1-S_{12})\right]^{-1/2}
+		(1-S_{12}) \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2}
+		(1+S_{12})
+		&
+		\left[2(1-S_{12})\right]^{-1/2}
+		(S_{12}-1)
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\epsilon_1 & 0 \\
+		0 & \epsilon_2
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+&
+	\therefore
+	\left\{
+	\begin{array}{r@{\,}l}
+			\left[2(1+S_{12})\right]^{-1/2}
+			(H^{\rm core}_{11} +H^{\rm core}_{12})
+		&=
+			\epsilon_1
+			\left[2(1+S_{12})\right]^{-1/2}
+			(1+S_{12}) \\[2mm]
+		%
+			\left[2(1-S_{12})\right]^{-1/2}
+			(H^{\rm core}_{11} -H^{\rm core}_{12})
+		&=
+			\epsilon_2
+			\left[2(1-S_{12})\right]^{-1/2}
+			(1-S_{12})
+	\end{array}
+	\right. \\
+%
+%
+&\quad
+	\left\{
+	\begin{array}{r@{\,}l}
+			\epsilon_1
+		&=
+			\dfrac{
+				H^{\rm core}_{11} +H^{\rm core}_{12}
+			}{
+				1 +S_{12}
+			} \\[3mm]
+		%
+			\epsilon_2
+		&=
+			\dfrac{
+				H^{\rm core}_{11} -H^{\rm core}_{12}
+			}{
+				1 -S_{12}
+			}
+	\end{array}
+	\right.
+\end{align}
+となる。
+
+本書より最小基底関数(STO-3G)で$R=\SI{1.4}{\atomic}$のとき
+\begin{align}
+	H^{\rm core}_{11}
+&=
+	-1.1204 &
+%
+	H^{\rm core}_{12}
+&=
+	-0.9584 &
+%
+	S_{12}
+&=
+	0.6593
+\end{align}
+であるので、
+\begin{align}
+	\epsilon_1
+&=
+	-1.2528 &
+%
+	\epsilon_2
+&=
+	-0.4755
+\end{align}
+である。従って、軌道エネルギーはそれぞれ\SI{-1.2528}{\atomic}、\SI{-0.4755}{\atomic}である。
