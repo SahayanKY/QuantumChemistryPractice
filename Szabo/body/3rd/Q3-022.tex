@@ -1,0 +1,171 @@
+%ファイルID
+%2020/09/14 1332
+%->2009141332SahayanKY(ファイル作成者)
+\subsection{問}
+\ce{H2}の最小基底関数モデルにおいては
+2つの分子軌道$\psi$の係数が次の2つになることを、
+規格化条件から示せ。
+\begin{align}
+	\psi_1
+&=
+	\frac{1}{
+		\sqrt{
+			2(1+S_{12})
+		}
+	}
+	(\phi_1 +\phi_2) \\
+%
+%
+	\psi_2
+&=
+	\frac{1}{
+		\sqrt{
+			2(1-S_{12})
+		}
+	}
+	(\phi_1 -\phi_2)
+\end{align}
+ここで$\phi_1,\phi_2$は基底関数であり、
+それぞれ水素1と水素2を中心とする1s軌道である。
+
+\subsection{解}
+結合性軌道の係数を$c_1$とする。
+\begin{align}
+	\psi_1
+&=
+	c_1(\phi_1 +\phi_2)
+\end{align}
+規格化条件より、(分子軌道、基底関数は実関数であるので内積の複素共役は考慮しない)
+\begin{align}
+	\int \d\r
+		\psi_1 \psi_1
+&=
+	c_1^2
+	\int \d\r
+		(\phi_1 +\phi_2)^2 \\
+%
+%
+	1
+&=
+	c_1^2
+	\left(
+		\int\d\r \phi_1^2
+		+
+		2
+		\int\d\r \phi_1\phi_2
+		+
+		\int\d\r \phi_2^2
+	\right) \\
+%
+%
+&=
+	c_1^2
+	\left(
+		1
+		+
+		2S_{12}
+		+
+		1
+	\right) \\
+%
+%
+	c_1^2
+&=
+	\frac{1}{
+		2
+		+
+		2S_{12}
+	} \\
+%
+%
+	|c_1|
+&=
+	\frac{1}{
+		\sqrt{
+			2(1+S_{12})
+		}
+	}
+\end{align}
+波動関数は正負の区別がない。従って、結合性軌道は
+\begin{align}
+	\psi_1
+&=
+	\frac{1}{
+		\sqrt{
+			2(1+S_{12})
+		}
+	}
+	(\phi_1 +\phi_2)
+\end{align}
+である。
+
+続いて反結合性軌道について考える。係数を$c_2$とする。
+\begin{align}
+	\psi_2
+&=
+	c_2
+	(\phi_1 -\phi_2)
+\end{align}
+同様に、規格化条件より
+\begin{align}
+	\int\d\r
+		\psi_2\psi_2
+&=
+	c_2^2
+	\int\d\r
+		(\phi_1 -\phi_2)^2 \\
+%
+%
+	1
+&=
+	c_2^2
+	\left(
+		\int\d\r \phi_1^2
+		-
+		2\int\d\r \phi_1\phi_2
+		+
+		\int\d\r \phi_2^2
+	\right) \\
+%
+%
+&=
+	c_2^2
+	\left(
+		1
+		-
+		2S_{12}
+		+
+		1
+	\right) \\
+%
+%
+	c_2^2
+&=
+	\frac{1}{
+		2
+		-
+		2S_{12}
+	} \\
+%
+%
+	|c_2|
+&=
+	\frac{1}{
+		\sqrt{
+			2(1-S_{12})
+		}
+	}
+\end{align}
+従って、反結合性軌道は
+\begin{align}
+	\psi_2
+&=
+	\frac{1}{
+		\sqrt{
+			2(1-S_{12})
+		}
+	}
+	(\phi_1 -\phi_2)
+\end{align}
+である。
+
