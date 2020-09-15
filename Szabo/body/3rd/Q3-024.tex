@@ -1,0 +1,196 @@
+%ファイルID
+%2020/09/15 1356
+%->2009151356SahayanKY(ファイル作成者)
+\subsection{問}
+最小基底関数における\ce{H2}の密度行列が
+\begin{align}
+	\bm{P}
+&=
+	\left[
+	\begin{array}{cc}
+		(1+S_{12})^{-1} & (1+S_{12})^{-1} \\
+		%
+		(1+S_{12})^{-1} & (1+S_{12})^{-1}
+	\end{array}
+	\right]
+\end{align}
+となることを導け。
+
+また、\ce{H2+}での密度行列を求めよ。
+
+\subsection{解}
+閉殻系における密度行列は、本書より次の通りである。
+\begin{align}
+	P_{\mu\nu}
+&=
+	2
+	\sum_{a}^{N/2}
+		C_{\mu a} \conju{C_{\nu a}}
+\end{align}
+また、\ce{H2}の係数行列は既に出ている通り
+\begin{align}
+	\bm{C}
+&=
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2}
+		&
+		\left[2(1-S_{12})\right]^{-1/2} \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2}
+		&
+		-
+		\left[2(1-S_{12})\right]^{-1/2}
+	\end{array}
+	\right]
+\end{align}
+である。
+従って、\ce{H2}(閉殻系)の密度行列は
+\begin{align}
+	\bm{P}
+&=
+	\left[
+	\begin{array}{>{\displaystyle}c>{\displaystyle}c}
+		2\sum_a^1 C_{1a} \conju{C_{1a}}
+		&
+		2\sum_a^1 C_{1a} \conju{C_{2a}} \\[2mm]
+		%
+		2\sum_a^1 C_{2a} \conju{C_{1a}}
+		&
+		2\sum_a^1 C_{2a} \conju{C_{2a}}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	2
+	\left[
+	\begin{array}{cc}
+		C_{11} \conju{C_{11}}
+		&
+		C_{11} \conju{C_{21}} \\
+		%
+		C_{21} \conju{C_{11}}
+		&
+		C_{21} \conju{C_{21}}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	2
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1}
+		&
+		\left[2(1+S_{12})\right]^{-1} \\
+		%
+		\left[2(1+S_{12})\right]^{-1}
+		&
+		\left[2(1+S_{12})\right]^{-1}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\left[
+	\begin{array}{cc}
+		(1+S_{12})^{-1}
+		&
+		(1+S_{12})^{-1} \\
+		%
+		(1+S_{12})^{-1}
+		&
+		(1+S_{12})^{-1}
+	\end{array}
+	\right]
+\end{align}
+となる。
+
+次に\ce{H2+}の密度行列を考える。
+今回は開殻系であるので上記の式は適用できない。
+そこで、電荷密度を分子軌道を使って表現するところから考える。
+問題3.11より
+\begin{align}
+	\rho(\r)
+&=
+	\braket{\Psi_0|\hat{\rho}(\r)|\Psi_0} \\
+%
+%
+&=
+	\int\d\r_1\d\omega_1
+		\conju{\psi_1}(\r_1)
+		\conju{\alpha}(\omega_1)
+		\delta(\r_1-\r)
+		\psi_1(\r_1)
+		\alpha(\omega_1) \\
+%
+%
+&=
+	\int\d\r_1
+		\conju{\psi_1}(\r_1)
+		\delta(\r_1-\r)
+		\psi_1(\r_1) \\
+%
+%
+&=
+	\conju{\psi_1}(\r)
+	\psi_1(\r)
+\end{align}
+これを最小基底関数で展開すると
+\begin{align}
+	\rho(\r)
+&=
+	\conju[1]{
+		C_{11} \phi_1(\r)
+		+
+		C_{21} \phi_2(\r)
+	}
+	\left(
+		C_{11} \phi_1(\r)
+		+
+		C_{21} \phi_2(\r)
+	\right) \\
+%
+%
+&=
+	C_{11} \conju{C_{11}} \phi_1 \conju{\phi_1}
+	+
+	C_{11} \conju{C_{21}} \phi_1 \conju{\phi_2}
+	+
+	C_{21} \conju{C_{11}} \phi_2 \conju{\phi_1}
+	+
+	C_{21} \conju{C_{21}} \phi_2 \conju{\phi_2}
+\end{align}
+となる。従って、密度行列は
+\begin{align}
+	\bm{P}
+&=
+	\left[
+	\begin{array}{cc}
+		C_{11} \conju{C_{11}}
+		&
+		C_{11} \conju{C_{21}} \\
+		%
+		C_{21} \conju{C_{11}}
+		&
+		C_{21} \conju{C_{21}}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\left[
+	\begin{array}{cc}
+		(1+S_{12})^{-1}
+		&
+		(1+S_{12})^{-1} \\
+		%
+		(1+S_{12})^{-1}
+		&
+		(1+S_{12})^{-1}
+	\end{array}
+	\right]
+\end{align}
+である。
