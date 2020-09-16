@@ -51,6 +51,436 @@
 となることを示せ。
 
 \subsection{解}
+Fock行列は次の通りである。
+\begin{align}
+	F_{\mu\nu}
+&=
+	H^{\rm core}_{\mu\nu}
+	+
+	\sum_{\lambda,\sigma}
+		P_{\lambda\sigma}
+		\left[
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			\frac{1}{2}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right]
+\end{align}
+問題3.24で見た通り、
+最小基底関数における\ce{H2}の密度行列の全要素は等しく、
+\begin{align}
+	P_{\mu\nu}
+&=
+	(1+S_{12})^{-1}
+	%
+	\qquad
+	(\mu = 1,2,\ \nu = 1,2)
+\end{align}
+である。
 
+従って、\ce{H2}のFock行列は
+\begin{align}
+	F_{11}
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\sum_{\lambda,\sigma}
+		\left[
+			\spacetwo{11}{\sigma\lambda}
+			-
+			\frac{1}{2}
+			\spacetwo{1\lambda}{\sigma 1}
+		\right] \\
+%
+%
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{11}{11}
+		+
+		\spacetwo{11}{12}
+		+
+		\spacetwo{11}{21}
+		+
+		\spacetwo{11}{22} \\
+		-
+		\frac{1}{2}
+		\spacetwo{11}{11}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{21}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{11}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{21}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{11}{11}
+		+
+		\spacetwo{11}{12}
+		+
+		\spacetwo{11}{12}
+		+
+		\spacetwo{11}{22} \\
+		-
+		\frac{1}{2}
+		\spacetwo{11}{11}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\frac{1}{2}
+		\spacetwo{11}{11}
+		+
+		\spacetwo{11}{12}
+		+
+		\spacetwo{11}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+	\right]
+\end{align}
+\begin{align}
+	F_{12}
+&=
+	H^{\rm core}_{12}
+	+
+	(1+S_{12})^{-1}
+	\sum_{\lambda,\sigma}
+		\left[
+			\spacetwo{12}{\sigma\lambda}
+			-
+			\frac{1}{2}
+			\spacetwo{1\lambda}{\sigma 2}
+		\right] \\
+%
+%
+&=
+	H^{\rm core}_{12}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{12}{11}
+		+
+		\spacetwo{12}{12}
+		+
+		\spacetwo{12}{21}
+		+
+		\spacetwo{12}{22} \\
+		-
+		\frac{1}{2}
+		\spacetwo{11}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{22}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{12}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{11}{12}
+		+
+		\spacetwo{12}{12}
+		+
+		\spacetwo{12}{12}
+		+
+		\spacetwo{11}{12} \\
+		-
+		\frac{1}{2}
+		\spacetwo{11}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{12}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{12}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\spacetwo{11}{12}
+		+
+		\frac{3}{2}
+		\spacetwo{12}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{22}
+	\right]
+\end{align}
+\begin{align}
+	F_{21}
+&=
+	F_{12}
+	%
+	\qquad
+	\left(
+	\begin{array}{l}
+		\because \bm{F}はエルミート行列であり、 \\
+		基底関数として実関数を用いているので \\
+		\bm{F}が対称行列になるため
+	\end{array}
+	\right)
+\end{align}
+\begin{align}
+	F_{22}
+&=
+	H^{\rm core}_{22}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{22}{11}
+		+
+		\spacetwo{22}{12}
+		+
+		\spacetwo{22}{21}
+		+
+		\spacetwo{22}{22} \\
+		-
+		\frac{1}{2}
+		\spacetwo{21}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{21}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{22}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{22}{22}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{22}
+	+
+	(1+S_{12})^{-1}
+	\left[
+	\begin{array}{l}
+		\spacetwo{22}{11}
+		+
+		\spacetwo{22}{12}
+		+
+		\spacetwo{22}{12}
+		+
+		\spacetwo{22}{22} \\
+		-
+		\frac{1}{2}
+		\spacetwo{21}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{22}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{22}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{22}{22}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{22}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\spacetwo{22}{11}
+		+
+		\spacetwo{22}{12}
+		+
+		\frac{1}{2}
+		\spacetwo{22}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{21}{12}
+	\right] \\
+%
+%
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\spacetwo{11}{22}
+		+
+		\spacetwo{11}{12}
+		+
+		\frac{1}{2}
+		\spacetwo{11}{11}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+	\right] \\
+&=
+	F_{11}
+\end{align}
+である。ここで$H^{\rm core}_{11}=H^{\rm core}_{22}$としたが、
+これは問題3.23での結果を用いている。
+問題3.23では\ce{H2+}の核-1電子ハミルトニアン行列$H^{\rm core}_{\mu\nu}$について考えたが、
+\ce{H2}の$H^{\rm core}_{\mu\nu}$についても同様の議論が成立するためである。
+これは最小基底関数系を用いていることと等核二原子分子であることに起因する。
+
+Fock行列の各要素の値について考える。
+核間距離が$R=\SI{1.4}{\atomic}$であるとき
+核-1電子ハミルトニアン行列は
+\begin{align}
+	H^{\rm core}_{11}
+&=
+	-1.1204 &
+%
+	H^{\rm core}_{12}
+&=
+	-0.9584
+\end{align}
+であり、2電子積分は
+\begin{align}
+	\spacetwo{11}{11}
+&=
+	0.7746 &
+%
+	\spacetwo{11}{22}
+&=
+	0.5697 &
+%
+	\spacetwo{11}{12}
+&=
+	0.4441 &
+%
+	\spacetwo{12}{12}
+&=
+	0.2970
+\end{align}
+である。従って、Fock行列の要素は
+\begin{align}
+	F_{11}
+=
+	F_{22}
+&=
+	H^{\rm core}_{11}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\frac{1}{2}
+		\spacetwo{11}{11}
+		+
+		\spacetwo{11}{12}
+		+
+		\spacetwo{11}{22}
+		-
+		\frac{1}{2}
+		\spacetwo{12}{12}
+	\right] \\
+%
+%
+&=
+	-
+	1.1204
+	+
+	(1+0.6593)^{-1}
+	\left[
+		\frac{1}{2} \cdot
+		0.7746
+		+
+		0.4441
+		+
+		0.5697
+		-
+		\frac{1}{2} \cdot
+		0.2970
+	\right] \\
+%
+%
+&=
+	-0.3655
+\end{align}
+\begin{align}
+	F_{12}
+=
+	F_{21}
+&=
+	H^{\rm core}_{12}
+	+
+	(1+S_{12})^{-1}
+	\left[
+		\spacetwo{11}{12}
+		+
+		\frac{3}{2}
+		\spacetwo{12}{12}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{22}
+	\right] \\
+%
+%
+&=
+	-
+	0.9584
+	+
+	(1+0.6593)^{-1}
+	\left[
+		0.4441
+		+
+		\frac{3}{2} \cdot
+		0.2970
+		-
+		\frac{1}{2} \cdot
+		0.5697
+	\right] \\
+%
+%
+&=
+	-0.5939
+\end{align}
+である。
 
 
