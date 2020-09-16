@@ -1,0 +1,97 @@
+%ファイルID
+%2020/09/16 1908
+%->2009161908SahayanKY(ファイル作成者)
+\subsection{問}
+最小基底関数における\ce{H2}の軌道エネルギーが、
+Roothaan方程式より
+\begin{align}
+	\epsilon_1
+&=
+	\frac{F_{11}+F_{12}}{1+S_{12}}
+=
+	\SI{-0.5782}{\atomic} \\
+%
+%
+	\epsilon_2
+&=
+	\frac{F_{11}-F_{12}}{1-S_{12}}
+=
+	\SI{+0.6703}{\atomic}
+\end{align}
+となることを示せ。
+
+
+\subsection{解}
+前問3.25より$F_{11}=F_{22}, F_{12}=F_{21}$である。
+従って、Roothaan方程式は
+\begin{align}
+&
+	\left[
+	\begin{array}{cc}
+		F_{11} & F_{12} \\
+		F_{12} & F_{11}
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2} & \left[2(1-S_{12})\right]^{-1/2} \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2} & \left[2(1-S_{12})\right]^{-1/2}
+	\end{array}
+	\right] \nonumber\\
+&\qquad\qquad
+=
+	\left[
+	\begin{array}{cc}
+		1 & S_{12} \\
+		S_{12} & 1
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\left[2(1+S_{12})\right]^{-1/2} & \left[2(1-S_{12})\right]^{-1/2} \\
+		%
+		\left[2(1+S_{12})\right]^{-1/2} & -\left[2(1-S_{12})\right]^{-1/2}
+	\end{array}
+	\right]
+	\left[
+	\begin{array}{cc}
+		\epsilon_1 & 0 \\
+		0 & \epsilon_2
+	\end{array}
+	\right]
+\end{align}
+\begin{align}
+	\left\{
+	\begin{array}{>{\displaystyle}l}
+			\epsilon_1
+		=
+			\frac{F_{11}+F_{12}}{1+S_{12}} \\[3mm]
+		%
+			\epsilon_2
+		=
+			\frac{F_{11}-F_{12}}{1-S_{12}}
+	\end{array}
+	\right.
+\end{align}
+となる。解く過程は問題3.23と同一であるので省略する。
+
+前問より$F_{11}=-0.3655, F_{12}=-0.5939$、また、$S_{12}=0.6593$であるので
+\begin{align}
+	\left\{
+	\begin{array}{>{\displaystyle}l}
+			\epsilon_1
+		=
+			\frac{-0.3655-0.5939}{1+0.6593}
+		=
+			-0.5782 \\[3mm]
+		%
+			\epsilon_2
+		=
+			\frac{-0.3655+0.5939}{1-0.6593}
+		=
+			0.6704
+	\end{array}
+	\right.
+\end{align}
+である。
