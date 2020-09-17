@@ -1,0 +1,182 @@
+%ファイルID
+%2020/09/17 1843
+%->2009171843SahayanKY(ファイル作成者)
+\subsection{問}
+最小基底関数における\ce{H2}の全電子エネルギー$E_0$が
+\begin{align}
+	E_0
+=
+	\frac{
+		F_{11}
+		+
+		H^{\rm core}_{11}
+		+
+		F_{12}
+		+
+		H^{\rm core}_{12}
+	}{
+		1
+		+
+		S_{12}
+	}
+=
+	\SI{-1.8310}{\atomic}
+\end{align}
+であることを示せ。
+更に核の反発も含めた全エネルギー$E_{\rm tot}$が
+\begin{align}
+	E_{\rm tot}
+=
+	\SI{-1.1167}{\atomic}
+\end{align}
+であることを示せ。
+
+
+\subsection{解}
+全電子エネルギー$E_0$は次式より求められる。
+\begin{align}
+	E_0
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+		P_{\nu\mu}
+		(H^{\rm core}_{\mu\nu} +F_{\mu\nu})
+\end{align}
+既に見ている通り
+\begin{align}
+	P_{\mu\nu}
+&=
+	(1+S_{12})^{-1}
+	%
+	\qquad
+	(\mu=1,2,\ \nu=1,2)
+\end{align}
+である。従って、
+\begin{align}
+	E_0
+&=
+	\frac{1}{2(1+S_{12})}
+	\sum_\mu
+	\sum_\nu
+		(H^{\rm core}_{\mu\nu} +F_{\mu\nu}) \\
+%
+%
+&=
+	\frac{1}{2(1+S_{12})}
+	\left(
+		H^{\rm core}_{11}
+		+
+		H^{\rm core}_{12}
+		+
+		H^{\rm core}_{21}
+		+
+		H^{\rm core}_{22}
+		+
+		F_{11}
+		+
+		F_{12}
+		+
+		F_{21}
+		+
+		F_{22}
+	\right) \\
+%
+%
+&=
+	\frac{1}{2(1+S_{12})}
+	\left(
+		2H^{\rm core}_{11}
+		+
+		2H^{\rm core}_{12}
+		+
+		2F_{11}
+		+
+		2F_{12}
+	\right) \\
+%
+%
+&=
+	\frac{
+		H^{\rm core}_{11}
+		+
+		H^{\rm core}_{12}
+		+
+		F_{11}
+		+
+		F_{12}
+	}{
+		1
+		+
+		S_{12}
+	}
+\end{align}
+となる。最小基底関数で核間距離が$R=\SI{1.4}{\atomic}$の\ce{H2}では
+\begin{align}
+	H^{\rm core}_{11}
+&=
+	-1.1204 &
+%
+	H^{\rm core}_{12}
+&=
+	-0.9584 &
+%
+	F_{11}
+&=
+	-0.3655 &
+%
+	F_{12}
+&=
+	-0.5939 &
+%
+	S_{12}
+&=
+	0.6593
+\end{align}
+であるので
+\begin{align}
+	E_0
+&=
+	\frac{
+		-1.1204
+		-0.9584
+		-0.3655
+		-0.5939
+	}{
+		1+0.6593
+	} \\
+%
+%
+&=
+	-1.8310
+\end{align}
+となる。
+
+全エネルギー$E_{\rm tot}$については
+\begin{align}
+	E_{\rm tot}
+&=
+	E_0
+	+
+	\sum_{A}
+	\sum_{B>A}
+		\frac{Z_A Z_B}{R_{AB}} \\
+%
+%
+&=
+	E_0
+	+
+	\frac{1}{R} \\
+%
+%
+&=
+	-
+	1.8310
+	+
+	\frac{1}{1.4} \\
+%
+%
+&=
+	-1.1167
+\end{align}
+である。
