@@ -1,0 +1,157 @@
+%ファイルID
+%2020/09/18 1430
+%->2009181430SahayanKY(ファイル作成者)
+\subsection{問}
+基底関数$\phi_1,\phi_2$をSchmidtの方法で規格直交化すると
+変換行列$X$は
+\begin{align}
+	X_{\rm Schmidt}
+&=
+	\left[
+	\begin{array}{cc}
+		1 & -\dfrac{S_{12}}{\sqrt{1-S_{12}^2}} \\[3mm]
+		0 & \dfrac{1}{\sqrt{1-S_{12}^2}}
+	\end{array}
+	\right]
+\end{align}
+となる。このとき、新たに得られる基底$\phi'_\mu=\sum_\nu X_{\nu\mu} \phi_\nu$が
+確かに規格直交化されていることを示せ。
+
+
+\subsection{解}
+新しい基底関数は
+\begin{align}
+	\phi'_1
+&=
+	X_{11} \phi_1
+	+
+	X_{21} \phi_2 &
+%
+	\phi'_2
+&=
+	X_{12} \phi_1
+	+
+	X_{22} \phi_2 \\
+%
+%
+&=
+	\phi_1 &
+%
+&=
+	-
+	\frac{S_{12}}{\sqrt{1-S_{12}^2}}
+	\phi_1
+	+
+	\frac{1}{\sqrt{1-S_{12}^2}}
+	\phi_2
+\end{align}
+である。
+
+まず、規格化されているかを調べる。
+\begin{align}
+	\braket{\phi'_1|\phi'_1}
+&=
+	\braket{\phi_1|\phi_1} \\
+%
+%
+&=
+	1
+\end{align}
+\begin{align}
+	\braket{\phi'_2|\phi'_2}
+&=
+	\braket{
+		(X_{12}\phi_1 +X_{22}\phi_2)|
+		(X_{12}\phi_1 +X_{22}\phi_2)
+	} \\
+%
+%
+&=
+	\conju{X_{12}}X_{12}
+	\braket{\phi_1|\phi_1}
+	+
+	\conju{X_{12}}X_{22}
+	\braket{\phi_1|\phi_2}
+	+
+	\conju{X_{22}}X_{12}
+	\braket{\phi_2|\phi_1}
+	+
+	\conju{X_{22}}X_{22}
+	\braket{\phi_2|\phi_2} \\
+%
+%
+&=
+	\frac{
+		S_{12}^2
+	}{
+		1-S_{12}^2
+	} \cdot
+	1
+	-
+	\frac{
+		S_{12}
+	}{
+		1-S_{12}^2
+	} \cdot
+	S_{12}
+	-
+	\frac{
+		S_{12}
+	}{
+		1-S_{12}^2
+	} \cdot
+	S_{12}
+	+
+	\frac{
+		1
+	}{
+		1-S_{12}^2
+	} \cdot
+	1 \\
+%
+%
+&=
+	\frac{
+		S_{12}^2
+		-
+		S_{12}^2
+		-
+		S_{12}^2
+		+
+		1
+	}{
+		1-S_{12}^2
+	} \\
+%
+%
+&=
+	1
+\end{align}
+である。従って、確かに規格化されている。
+
+次に直交化されているかを調べる。
+\begin{align}
+	\braket{\phi'_1|\phi'_2}
+&=
+	X_{12}
+	\braket{\phi_1|\phi_1}
+	+
+	X_{22}
+	\braket{\phi_1|\phi_2} \\
+%
+%
+&=
+	-
+	\frac{S_{12}}{\sqrt{1-S_{12}^2}} \cdot
+	1
+	+
+	\frac{1}{\sqrt{1-S_{12}^2}} \cdot
+	S_{12} \\
+%
+%
+&=
+	0
+\end{align}
+である。従って、確かに直交化されている。
+
+
