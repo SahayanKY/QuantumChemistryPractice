@@ -1,0 +1,160 @@
+%ファイルID
+%2020/09/18 2045
+%->2009182045SahayanKY(ファイル作成者)
+\subsection{問}
+STO-3Gにおける\ce{HeH+}の全電子エネルギー$E_0$は
+結合距離$R\rightarrow\infty$のとき
+\begin{align}
+	E_0(R\rightarrow\infty)
+&=
+	2T_{11}
+	+
+	2V^1_{11}
+	+
+	\spacetwo{\phi_1\phi_1}{\phi_2\phi_2}
+\end{align}
+となることを示せ。
+ここで\ce{He}を原子1とし、
+\ce{H}を原子2としている。
+
+
+\subsection{解}
+極限における密度行列は
+\begin{align}
+	\bm{P}_{R\rightarrow\infty}
+&=
+	\left[
+	\begin{array}{cc}
+		2 & 0 \\
+		0 & 0
+	\end{array}
+	\right]
+\end{align}
+である。従って、全電子エネルギー$E_0$は
+\begin{align}
+	E_0(R\rightarrow\infty)
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+		P_{\nu\mu}
+		\left(
+			H^{\rm core}_{\mu\nu}
+			+
+			F_{\mu\nu}
+		\right) \\
+%
+%
+&=
+	\frac{1}{2}
+	P_{11}
+	\left(
+		H^{\rm core}_{11}
+		+
+		F_{11}
+	\right) \\
+%
+%
+&=
+	H^{\rm core}_{11}
+	+
+	F_{11} \\
+%
+%
+&=
+	2H^{\rm core}_{11}
+	+
+	\sum_{\lambda\sigma}
+		P_{\lambda\sigma}
+		\left[
+			\spacetwo{11}{\sigma\lambda}
+			-
+			\frac{1}{2}
+			\spacetwo{1\lambda}{\sigma 1}
+		\right] \\
+%
+%
+&=
+	2H^{\rm core}_{11}
+	+
+	2
+	\left[
+		\spacetwo{11}{11}
+		-
+		\frac{1}{2}
+		\spacetwo{11}{11}
+	\right] \\
+%
+%
+&=
+	2T_{11}
+	+
+	2V^{\rm nucl}_{11}
+	+
+	\spacetwo{11}{11}
+\end{align}
+となる。$V^{\rm nucl}$は全ての原子核と1つの電子の間の引力のエネルギーを表しており、
+\begin{align}
+	V^{\rm nucl}_{11}
+&=
+	\int\d\r_1
+		\conju{\phi_1}(1)
+		\left[
+			-
+			\sum_A \frac{Z_A}{|\r_1-\bm{R}_A|}
+		\right]
+		\phi_1(1) \\
+%
+%
+&=
+	\sum_A
+		\int\d\r_1
+			\conju{\phi_1}(1)
+			\left[
+				- \frac{Z_A}{|\r_1-\bm{R}_A|}
+			\right]
+			\phi_1(1) \\
+%
+%
+&=
+	\sum_A V^{A}_{11} \\
+%
+%
+&=
+	V^1_{11}
+	+
+	V^2_{11}
+\end{align}
+となっている。このうち$V^2_{11}$については
+原子2(水素)の原子核と電子の間のクーロン引力を表す。
+結合距離を極限まで大きくとると電子は原子1(ヘリウム)の周りに局在化するため、
+電子と水素原子核の間の相互作用はゼロに漸近する。
+従って、
+\begin{align}
+	V^{2}_{11}(R\rightarrow\infty)
+&=
+	0
+\end{align}
+となる。
+
+よって、全電子エネルギー$E_0$は
+\begin{align}
+	E_0(R\rightarrow\infty)
+&=
+	2T_{11}
+	+
+	2V^{1}_{11}
+	+
+	\spacetwo{11}{11}
+\end{align}
+になる。
+
+
+
+
+
+
+
+
+
+
