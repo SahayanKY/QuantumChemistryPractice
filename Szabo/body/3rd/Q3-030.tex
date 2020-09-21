@@ -1,0 +1,240 @@
+%ファイルID
+%2020/09/21 13:50
+%->2009211350SahayanKY(ファイル作成者)
+\subsection{問}
+4個の短縮していない1s Gauss型関数を用いた\ce{He}原子のSCF計算において、
+最適化された1s軌道が
+\begin{align}
+	\psi_{\rm 1s}
+&=
+	0.51380 g_{\rm 1s}(0.298073)
+	+
+	0.46954 g_{\rm 1s}(1.242567)
+	+
+	0.15457 g_{\rm 1s}(5.782948)
+	+
+	0.02373 g_{\rm 1s}(38.47497)
+	%
+	\label{eq2009211350SahayanKY_optimized1sOrbitalBy4PrimitiveGaussFunctions}
+\end{align}
+であることが知られている。これを用いて\ce{He}の4-31G基底関数に類するものを求めよ。
+
+\subsection{解}
+\ce{He}の4-31G基底関数は次の通りである。
+\begin{align}
+	\phi'_{\rm 1s}(\r)
+&=
+	\sum_{i=1}^{3}
+		d'_{i,\rm 1s}
+		g_{\rm 1s}(\alpha'_{i,\rm 1s},\r) \\
+%
+%
+	\phi''_{\rm 1s}(\r)
+&=
+	g_{\rm 1s}(\alpha''_{\rm 1s},\r)
+\end{align}
+このうち2つ目の$\phi''_{\rm 1s}$は外側の原子価殻関数と呼ばれるものであり、
+より広がった基底関数である。
+従って、これの軌道指数として
+式\ref{eq2009211350SahayanKY_optimized1sOrbitalBy4PrimitiveGaussFunctions}中で
+最も小さい0.298073を採用することが自然である。
+よって、求める基底関数は
+\begin{align}
+	\phi'_{\rm 1s}(\r)
+&=
+	N
+	\left(
+		0.46954 g_{\rm 1s}(1.242567)
+		+
+		0.15457 g_{\rm 1s}(5.782948)
+		+
+		0.02373 g_{\rm 1s}(38.47497)
+	\right) \\
+%
+%
+	\phi''_{\rm 1s}(\r)
+&=
+	g_{\rm 1s}(0.298073)
+\end{align}
+となる。ここで$N$は規格化定数であり、以降の議論で求める。
+
+本書の付録中にある、規格化されていない1s原始Gauss関数の積の積分公式を用いると
+\begin{align}
+	\int\d\r
+		g_{\rm 1s}(\alpha,\r)
+		g_{\rm 1s}(\beta,\r)
+&=
+	\int\d\r
+		\left(
+			\frac{2\alpha}{\pi}
+		\right)^{\frac{3}{4}}
+		\tilde{g}_{\rm 1s}(\alpha,\r)
+		\left(
+			\frac{2\beta}{\pi}
+		\right)^{\frac{3}{4}}
+		\tilde{g}_{\rm 1s}(\beta,\r) \\
+%
+%
+&=
+	\left(
+		\frac{4\alpha\beta}{\pi^2}
+	\right)^{\frac{3}{4}}
+	\int\d\r
+		\tilde{g}_{\rm 1s}(\alpha,\r)
+		\tilde{g}_{\rm 1s}(\beta,\r) \\
+%
+%
+&=
+	\left(
+		\frac{4\alpha\beta}{\pi^2}
+	\right)^{\frac{3}{4}} \cdot
+	\left(
+		\frac{\pi}{\alpha+\beta}
+	\right)^{\frac{3}{2}}
+	\exp\left(
+		-\frac{\alpha\beta}{\alpha+\beta}|\bm{0}|^2
+	\right) \\
+%
+%
+&=
+	2^{\frac{3}{2}}
+	\alpha^{\frac{3}{4}}
+	\beta^{\frac{3}{4}}
+	(\alpha+\beta)^{-\frac{3}{2}} \\
+%
+%
+&=
+	2^{\frac{3}{2}}
+	\left(
+		\frac{
+			\alpha\beta
+		}{
+			(\alpha+\beta)^2
+		}
+	\right)^{\frac{3}{4}}
+\end{align}
+となる。従って、
+\begin{align}
+	\braket{\phi'_{\rm 1s}|\phi'_{\rm 1s}}
+&=
+	1 \\
+%
+%
+	N^2
+	2^{\frac{3}{2}}
+	\left(
+	\begin{array}{c}
+		0.46954^2
+		\left(
+			\frac{
+				1.242567^2
+			}{
+				(
+					1.242567
+					+
+					1.242567
+				)^2
+			}
+		\right)^{\frac{3}{4}}
+		+
+		2 \cdot 0.46954 \cdot 0.15457
+		\left(
+			\frac{
+				1.242567 \cdot 5.782948
+			}{
+				(
+					1.242567
+					+
+					5.782948
+				)^2
+			}
+		\right)^{\frac{3}{4}} \\
+		+
+		0.15457^2
+		\left(
+			\frac{
+				5.782948^2
+			}{
+				(
+					5.782948
+					+
+					5.782948
+				)^2
+			}
+		\right)^{\frac{3}{4}}
+		+
+		2 \cdot 0.15457 \cdot 0.02373
+		\left(
+			\frac{
+				5.782948 \cdot 38.47497
+			}{
+				(
+					5.782948
+					+
+					38.47497
+				)^2
+			}
+		\right)^{\frac{3}{4}} \\
+		+
+		0.02373^2
+		\left(
+			\frac{
+				38.47497^2
+			}{
+				(
+					38.47497
+					+
+					38.47497
+				)^2
+			}
+		\right)^{\frac{3}{4}}
+		+
+		2 \cdot 0.02373 \cdot 0.46954
+		\left(
+			\frac{
+				38.47497 \cdot 1.242567
+			}{
+				(
+					38.47497
+					+
+					1.242567
+				)^2
+			}
+		\right)^{\frac{3}{4}}
+	\end{array}
+	\right)
+&=
+	1 \\
+%
+%
+	N^2 \cdot
+	2^{\frac{3}{2}} \cdot
+	0.12386
+&=
+	1 \\
+%
+%
+	N
+&=
+	1.68953
+\end{align}
+となるので、求める基底関数は
+\begin{align}
+	\phi'_{\rm 1s}(\r)
+&=
+	0.79330 g_{\rm 1s}(1.242567)
+	+
+	0.26115 g_{\rm 1s}(5.782948)
+	+
+	0.04009 g_{\rm 1s}(38.47497) \\
+%
+%
+	\phi''_{\rm 1s}(\r)
+&=
+	g_{\rm 1s}(0.298073)
+\end{align}
+である。
+
+
+
+
