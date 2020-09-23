@@ -1,0 +1,35 @@
+%ファイルID
+%2020/09/23 11:45
+%->2009231145SahayanKY(ファイル作成者)
+\subsection{問}
+ベンゼンについて、STO-3G、4-31G、6-31G$^{\ast}$、6-31G$^{\ast\ast}$の
+基底関数の総数を求めよ。
+
+\subsection{解}
+ベンゼンの分子式は\ce{C6H6}である。従って、元素\ce{C}、\ce{H}それぞれについて
+基底関数を求めればよい。
+
+元素\ce{C}について考える。
+STO-3Gでは\orbital{1}{s}{}, \orbital{2}{s}{}, \orbital{2}{p}{x}, \orbital{2}{p}{y}, \orbital{2}{p}{z}の5個の基底関数を用いる。
+4-31Gでは\orbital{1}{s}{}, \orbital{2}{s'}{}, \orbital{2}{p'}{x}, \orbital{2}{p'}{y}, \orbital{2}{p'}{z},
+\orbital{2}{s''}{}, \orbital{2}{p''}{x}, \orbital{2}{p''}{y}, \orbital{2}{p''}{z}
+の9個である。
+6-31G$^{\ast}$と6-31G$^{\ast\ast}$では
+\orbital{1}{s}{}, \orbital{2}{s'}{}, \orbital{2}{p'}{x}, \orbital{2}{p'}{y}, \orbital{2}{p'}{z},
+\orbital{2}{s''}{}, \orbital{2}{p''}{x}, \orbital{2}{p''}{y}, \orbital{2}{p''}{z},
+\orbital{3}{d}{xx}, \orbital{3}{d}{yy}, \orbital{3}{d}{zz}, \orbital{3}{d}{xy}, \orbital{3}{d}{yz}, \orbital{3}{d}{zx}
+の15個である。
+
+次に元素\ce{H}について考える。
+STO-3Gでは\orbital{1}{s}{}の1個である。
+4-31Gと6-31G$^{\ast}$では\orbital{1}{s'}{}, \orbital{1}{s''}{}の2個である。
+6-31G$^{\ast\ast}$では
+\orbital{1}{s'}{}, \orbital{1}{s''}{}, \orbital{2}{p}{x}, \orbital{2}{p}{y}, \orbital{2}{p}{z}の5個である。
+
+従って、
+STO-3Gでは$6\times 5 + 6\times 1 =36$、
+4-31Gでは$6\times 9 + 6\times 2 =66$、
+6-31G$^{\ast}$では$6\times 15 + 6\times 2 =102$、
+6-31G$^{\ast\ast}$では$6\times 15 + 6\times 5 =120$
+個の基底関数を用いることになる。
+
