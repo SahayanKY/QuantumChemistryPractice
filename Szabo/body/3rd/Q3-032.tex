@@ -1,0 +1,108 @@
+%ファイルID
+%2020/09/23 16:22
+%->2009231622SahayanKY(ファイル作成者)
+\subsection{問}
+各基底関数系(STO-3G, 4-31G, 6-31G$^{\ast}$, 6-31G$^{\ast\ast}$)と
+Hartree-Fock極限における分子のSCF全エネルギーを用いて、
+以下の反応
+\begin{align}
+	\ce{
+		N2 + 3H2 ->
+	}&
+	\ce{
+		2NH3
+	} \\
+%
+%
+	\ce{
+		CO + 3H2 ->
+	}&
+	\ce{
+		CH4 + H2O
+	}
+\end{align}
+の反応前後のエネルギー差$\Delta E$を計算せよ。
+
+また、ゼロ点振動エネルギーの差についても計算し、
+それの$\Delta E$への寄与を考えよ。
+
+\subsection{解}
+表\ref{tab2009231622SahayanKY_SCFtotalenergy}に本書に示されている各分子の全エネルギーを示した。
+この表を元に、2つの反応の$\Delta E$を計算した結果を表に示す。
+%
+%表を挿入
+\begin{table}[htpt]
+\caption{各基底関数系による\ce{H2}, \ce{N2}, \ce{NH3}, \ce{CO}, \ce{CH4}, \ce{H2O}のSCF全エネルギー(\si{\atomic})}
+\label{tab2009231622SahayanKY_SCFtotalenergy}
+\centering
+\begin{tabular}{
+		l
+		S[table-format=+1.3]
+		S[table-format=+3.3]
+		S[table-format=+2.3]
+		S[table-format=+3.3]
+		S[table-format=+2.3]
+		S[table-format=+2.3]
+	}
+	\hline
+	基底関数系 & {\ce{H2}} & {\ce{N2}} & {\ce{NH3}} & {\ce{CO}} & {\ce{CH4}} & {\ce{H2O}} \\
+	\hline
+	STO-3G & 			-1.117 & -107.496 & -55.454 & -111.225 & -39.727 & -74.963 \\
+	4-31G & 			-1.127 & -108.754 & -56.102 & -112.552 & -40.140 & -75.907 \\
+	6-31G$^{\ast}$ & 	-1.127 & -108.942 & -56.184 & -112.737 & -40.195 & -76.011 \\
+	6-31G$^{\ast\ast}$ &-1.131 & -108.942 & -56.195 & -112.737 & -40.202 & -76.023 \\
+	HF極限 & 			-1.134 & -108.997 & -56.225 & -112.791 & -40.225 & -76.065 \\
+	\hline
+\end{tabular}
+\end{table}
+
+%
+%表を挿入
+\begin{table}[htpt]
+\caption{各基底関数系での\ce{N2 + 3H2 -> 2NH3}の$\Delta E$}
+\label{tab2009231622SahayanKY_DeltaEofReductionofNitrogen}
+\centering
+\begin{tabular}{
+		l
+		>{$}r<{$}@{\ }
+		S[table-format=+1.3]
+	}
+	\hline
+	基底関数系 & & {$\Delta E/\si{\atomic}$} \\
+	\hline
+	STO-3G & 			2\times (-55.454) -\{3\times (-1.117)  -107.496\}= & -0.061 \\
+	4-31G & 			2\times (-56.102) -\{3\times (-1.127)  -108.754\}= & -0.069 \\
+	6-31G$^{\ast}$ & 	2\times (-56.184) -\{3\times (-1.127)  -108.942\}= & -0.045 \\
+	6-31G$^{\ast\ast}$ &2\times (-56.195) -\{3\times (-1.131)  -108.942\}= & -0.055 \\
+	HF極限 & 			2\times (-56.225) -\{3\times (-1.134)  -108.997\}= & -0.051 \\
+	\hline
+\end{tabular}
+\end{table}
+
+%
+%表を挿入
+\begin{table}[htpt]
+\caption{各基底関数系での\ce{CO + 3H2 -> CH4 + H2O}の$\Delta E$}
+\label{tab2009231622SahayanKY_DeltaEofReductionofCarbonMonoxide}
+\centering
+\begin{tabular}{
+		l
+		>{$}r<{$}@{\ }
+		S[table-format=+1.3]
+	}
+	\hline
+	基底関数系 & & {$\Delta E/\si{\atomic}$} \\
+	\hline
+	STO-3G & 			 -39.727 -74.963 -\{3\times (-1.117)  -111.225\}= & -0.114 \\
+	4-31G & 			 -40.140 -75.907 -\{3\times (-1.127)  -112.552\}= & -0.114 \\
+	6-31G$^{\ast}$ & 	 -40.195 -76.011 -\{3\times (-1.127)  -112.737\}= & -0.088 \\
+	6-31G$^{\ast\ast}$ & -40.202 -76.023 -\{3\times (-1.131)  -112.737\}= & -0.095 \\
+	HF極限 & 			 -40.225 -76.065 -\{3\times (-1.134)  -112.791\}= & -0.097 \\
+	\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
