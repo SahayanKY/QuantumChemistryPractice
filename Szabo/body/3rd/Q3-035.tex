@@ -1,0 +1,114 @@
+%ファイルID
+%2020/09/24 17:16
+%->2009241716SahayanKY(ファイル作成者)
+\subsection{問}
+非制限軌道における軌道エネルギーは
+\begin{align}
+	\epsilon^\alpha_i
+&=
+	\spaceone{\psi^\alpha_i}{f^\alpha}{\psi^\alpha_i} \\
+%
+%
+	\epsilon^\beta_i
+&=
+	\spaceone{\psi^\beta_i}{f^\beta}{\psi^\beta_i}
+\end{align}
+である。これを式変形して
+\begin{align}
+	\epsilon^\alpha_i
+&=
+	h^\alpha_{ii}
+	+
+	\sum_a^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ia}
+		-
+		K^{\alpha\alpha}_{ia}
+	\right)
+	+
+	\sum_a^{N^\beta}
+		J^{\alpha\beta}_{ia} \\
+%
+%
+	\epsilon^\beta_i
+&=
+	h^\beta_{ii}
+	+
+	\sum_a^{N^\beta}\left(
+		J^{\beta\beta}_{ia}
+		-
+		K^{\beta\beta}_{ia}
+	\right)
+	+
+	\sum_a^{N^\beta}
+		J^{\beta\alpha}_{ia}
+\end{align}
+となることを示せ。
+
+また、全電子エネルギー$E_0$を軌道エネルギーとクーロンエネルギー、交換エネルギーによって表せ。
+
+\subsection{解}
+まず、Fock演算子は
+\begin{align}
+	f^\alpha(\r_1)
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}\left(
+		J^\alpha_a(\r_1)
+		-
+		K^\alpha_a(\r_1)
+	\right)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1) \\
+%
+%
+	f^\beta(\r_1)
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\beta}\left(
+		J^\beta_a(\r_1)
+		-
+		K^\beta_a(\r_1)
+	\right)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+\end{align}
+である。
+
+従って、軌道エネルギー$\epsilon^\alpha_i$は
+\begin{align}
+	\epsilon^\alpha_i
+&=
+	\spaceone{\psi^\alpha_i}{f^\alpha}{\psi^\alpha_i} \\
+%
+%
+&=
+	\spaceone{\psi^\alpha_i}{h}{\psi^\alpha_i}
+	+
+	\sum_a^{N^\alpha}\left\{
+		\spaceone{\psi^\alpha_i}{J^\alpha_a}{\psi^\alpha_i}
+		-
+		\spaceone{\psi^\alpha_i}{K^\alpha_a}{\psi^\alpha_i}
+	\right\}
+	+
+	\sum_a^{N^\beta}
+		\spaceone{\psi^\alpha_i}{J^\beta_a}{\psi^\alpha_i} \\
+%
+%
+&=
+	h^\alpha_{ii}
+	+
+	\sum_a^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ia}
+		-
+		K^{\alpha\alpha}_{ia}
+	\right)
+	+
+	\sum_a^{N^\beta}
+		J^{\alpha\beta}_{ia}
+\end{align}
+
+
