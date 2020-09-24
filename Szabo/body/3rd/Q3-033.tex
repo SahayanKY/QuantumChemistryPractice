@@ -1,0 +1,343 @@
+%ファイルID
+%2020/09/24 14:53
+%->2009241453SahayanKY(ファイル作成者)
+\subsection{問}
+非制限スピン軌道のもとでの
+空間軌道$\psi^\alpha_j$に対するFock演算子は
+\begin{align}
+	f^\alpha(\r_1)
+&=
+	\int\d\omega_1
+		\conju{\alpha}(\omega_1)
+		f(\x_1)
+		\alpha(\omega_1)
+\end{align}
+である。これを式変形して
+\begin{align}
+	f^\alpha(1)
+&=
+	h(1)
+	+
+	\sum_a^{N^\alpha}\left(
+		J^\alpha_a(1)
+		-
+		K^\alpha_a(1)
+	\right)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(1)
+\end{align}
+となることを示せ。
+ここで
+\begin{align}
+	J^\alpha_a(1)
+&=
+	\int\d\r_2
+		\conju{\psi^\alpha_a}(2)
+		r_{12}^{-1}
+		\psi^\alpha_a(2) \\
+%
+%
+	J^\beta_a(1)
+&=
+	\int\d\r_2
+		\conju{\psi^\beta_a}(2)
+		r_{12}^{-1}
+		\psi^\beta_a(2) \\
+%
+%
+	K^\alpha_a(1)
+&=
+	\int\d\r_2
+		\conju{\psi^\alpha_a}(2)
+		r_{12}^{-1}
+		\mathscr{P}_{12}
+		\psi^\alpha_a(2)
+\end{align}
+である。
+
+
+\subsection{解}
+スピン軌道に対するFock演算子は
+\begin{align}
+	f(\x_1)
+&=
+	h(\r_1)
+	+
+	\sum_a^N
+		\int\d\x_2
+			\conju{\chi_a}(\x_2)
+			r_{12}^{-1}
+			(1-\mathscr{P}_{12})
+			\chi_a(\x_2)
+\end{align}
+である。
+第2項の全占有スピン軌道についての和を、
+全占有$\alpha$スピン軌道についての和と
+全占有$\beta$スピン軌道についての和に分解すると、
+\begin{align}
+	f(\x_1)
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		\int\d\x_2
+			\conju{\psi^\alpha_a}(\r_2)
+			\conju{\alpha}(\omega_2)
+			r_{12}^{-1}
+			(1-\mathscr{P}_{12})
+			\psi^\alpha_a(\r_2)
+			\alpha(\omega_2) \nonumber \\ &\qquad
+	+
+	\sum_a^{N^\beta}
+		\int\d\x_2
+			\conju{\psi^\beta_a}(\r_2)
+			\conju{\beta}(\omega_2)
+			r_{12}^{-1}
+			(1-\mathscr{P}_{12})
+			\psi^\beta_a(\r_2)
+			\beta(\omega_2) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		\int\d\r_2
+			\conju{\psi^\alpha_a}(\r_2)
+			r_{12}^{-1}
+			\psi^\alpha_a(\r_2)
+	-
+	\sum_a^{N^\alpha}
+		\int\d\x_2
+			\conju{\psi^\alpha_a}(\r_2)
+			\conju{\alpha}(\omega_2)
+			r_{12}^{-1}
+			\psi^\alpha_a(\r_1)
+			\alpha(\omega_1)
+			\mathscr{P}_{1\rightarrow 2} \nonumber \\ &\qquad
+	+
+	\sum_a^{N^\beta}
+		\int\d\r_2
+			\conju{\psi^\beta_a}(\r_2)
+			r_{12}^{-1}
+			\psi^\beta_a(\r_2)
+	-
+	\sum_a^{N^\beta}
+		\int\d\x_2
+			\conju{\psi^\beta_a}(\r_2)
+			\conju{\beta}(\omega_2)
+			r_{12}^{-1}
+			\psi^\beta_a(\r_1)
+			\beta(\omega_1)
+			\mathscr{P}_{1\rightarrow 2} \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	-
+	\sum_a^{N^\alpha}
+		\int\d\x_2
+			\conju{\psi^\alpha_a}(\r_2)
+			\conju{\alpha}(\omega_2)
+			r_{12}^{-1}
+			\psi^\alpha_a(\r_1)
+			\alpha(\omega_1)
+			\mathscr{P}_{1\rightarrow 2} \nonumber \\ &\qquad
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1)
+	-
+	\sum_a^{N^\beta}
+		\int\d\x_2
+			\conju{\psi^\beta_a}(\r_2)
+			\conju{\beta}(\omega_2)
+			r_{12}^{-1}
+			\psi^\beta_a(\r_1)
+			\beta(\omega_1)
+			\mathscr{P}_{1\rightarrow 2}
+\end{align}
+となる。従って、$f^\alpha(1)$は
+\begin{align}
+	f^\alpha(\r_1)
+&=
+	\int\d\omega_1
+		\conju{\alpha}(\omega_1)
+		f(\x_1)
+		\alpha(\omega_1) \\
+%
+%
+&=
+	\left(
+		h(\r_1)
+		+
+		\sum_a^{N^\alpha}
+			J^\alpha_a(\r_1)
+		+
+		\sum_a^{N^\beta}
+			J^\beta_a(\r_1)
+	\right)
+	\int\d\omega_1
+		\conju{\alpha}(\omega_1)
+		\alpha(\omega_1) \nonumber \\ &\qquad
+	-
+	\int\d\omega_1
+		\conju{\alpha}(\omega_1)
+		\sum_a^{N^\alpha}
+			\int\d\x_2
+				\conju{\psi^\alpha_a}(\r_2)
+				\conju{\alpha}(\omega_2)
+				r_{12}^{-1}
+				\psi^\alpha_a(\r_1)
+				\alpha(\omega_1)
+				\mathscr{P}_{1\rightarrow 2}
+				\alpha(\omega_1) \nonumber \\ &\qquad
+	-
+	\int\d\omega_1
+		\conju{\alpha}(\omega_1)
+		\sum_a^{N^\beta}
+			\int\d\x_2
+				\conju{\psi^\beta_a}(\r_2)
+				\conju{\beta}(\omega_2)
+				r_{12}^{-1}
+				\psi^\beta_a(\r_1)
+				\beta(\omega_1)
+				\mathscr{P}_{1\rightarrow 2}
+				\alpha(\omega_1) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1) \nonumber \\ &\qquad
+	-
+	\sum_a^{N^\alpha}
+		\int\d\omega_1
+			\conju{\alpha}(\omega_1)
+			\int\d\x_2
+				\conju{\psi^\alpha_a}(\r_2)
+				\conju{\alpha}(\omega_2)
+				r_{12}^{-1}
+				\psi^\alpha_a(\r_1)
+				\alpha(\omega_1)
+				\alpha(\omega_2)
+				\mathscr{P}_{\r_1\rightarrow\r_2} \nonumber \\ &\qquad
+	-
+	\sum_a^{N^\beta}
+		\int\d\omega_1
+			\conju{\alpha}(\omega_1)
+			\int\d\x_2
+				\conju{\psi^\beta_a}(\r_2)
+				\conju{\beta}(\omega_2)
+				r_{12}^{-1}
+				\psi^\beta_a(\r_1)
+				\beta(\omega_1)
+				\alpha(\omega_2)
+				\mathscr{P}_{\r_1\rightarrow\r_2} \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1) \nonumber \\ &\qquad
+	-
+	\sum_a^{N^\alpha}
+		\int\d\omega_1
+			\conju{\alpha}(\omega_1)
+			\alpha(\omega_1)
+			\int\d\x_2
+				\conju{\psi^\alpha_a}(\r_2)
+				\conju{\alpha}(\omega_2)
+				r_{12}^{-1}
+				\psi^\alpha_a(\r_1)
+				\alpha(\omega_2)
+				\mathscr{P}_{\r_1\rightarrow\r_2} \nonumber \\ &\qquad
+	-
+	\sum_a^{N^\beta}
+		\int\d\omega_1
+			\conju{\alpha}(\omega_1)
+			\beta(\omega_1)
+			\int\d\x_2
+				\conju{\psi^\beta_a}(\r_2)
+				\conju{\beta}(\omega_2)
+				r_{12}^{-1}
+				\psi^\beta_a(\r_1)
+				\alpha(\omega_2)
+				\mathscr{P}_{\r_1\rightarrow\r_2} \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1) \nonumber \\ &\qquad
+	-
+	\sum_a^{N^\alpha}
+		\int\d\r_2
+			\conju{\psi^\alpha_a}(\r_2)
+			r_{12}^{-1}
+			\psi^\alpha_a(\r_1)
+			\mathscr{P}_{\r_1\rightarrow\r_2} \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1)
+	-
+	\sum_a^{N^\alpha}
+		\int\d\r_2
+			\conju{\psi^\alpha_a}(\r_2)
+			r_{12}^{-1}
+			\mathscr{P}_{\r_1\r_2}
+			\psi^\alpha_a(\r_2) \\
+%
+%
+&=
+	h(\r_1)
+	+
+	\sum_a^{N^\alpha}
+		J^\alpha_a(\r_1)
+	+
+	\sum_a^{N^\beta}
+		J^\beta_a(\r_1)
+	-
+	\sum_a^{N^\alpha}
+		K^\alpha_a(\r_1)
+\end{align}
+となる。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
