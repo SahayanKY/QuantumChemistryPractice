@@ -1,0 +1,205 @@
+%ファイルID
+%2020/09/24 16:24
+%->2009241624SahayanKY(ファイル作成者)
+\subsection{問}
+\ce{Li}原子の2重項基底状態の非制限波動関数は
+$\ket{\Psi_0}=\Ket{\aorb{\psi^\alpha_1}\borb{\psi^\beta_1}\aorb{\psi^\alpha_2}}$である。
+この状態の全電子エネルギーが
+\begin{align}
+	E_0
+&=
+	h^\alpha_{11}
+	+
+	h^\beta_{11}
+	+
+	h^\alpha_{22}
+	+
+	J^{\alpha\alpha}_{12}
+	-
+	K^{\alpha\alpha}_{12}
+	+
+	J^{\alpha\beta}_{11}
+	+
+	J^{\alpha\beta}_{21}
+\end{align}
+であることを示せ。
+
+\subsection{解}
+本書より、一般に全電子エネルギーは
+\begin{align}
+	E_0
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+\end{align}
+で与えられる。
+
+従って、\ce{Li}の全電子エネルギーは
+\begin{align}
+	E_0
+&=
+	\sum_a^{2}
+		h^\alpha_{aa}
+	+
+	\sum_a^{1}
+		h^\beta_{aa}
+	+
+	\frac{1}{2}
+	\sum_a^{2}
+	\sum_b^{2}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\frac{1}{2}
+	\sum_a^{1}
+	\sum_b^{1}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{2}
+	\sum_b^{1}
+		J^{\alpha\beta}_{ab} \\
+%
+%
+&=
+	\left(
+		h^\alpha_{11}
+		+
+		h^\alpha_{22}
+	\right)
+	+
+	\left(
+		h^\beta_{11}
+	\right)
+	+
+	\frac{1}{2}
+	\left(
+		J^{\alpha\alpha}_{11}
+		+
+		J^{\alpha\alpha}_{12}
+		+
+		J^{\alpha\alpha}_{21}
+		+
+		J^{\alpha\alpha}_{22}
+		-
+		K^{\alpha\alpha}_{11}
+		-
+		K^{\alpha\alpha}_{12}
+		-
+		K^{\alpha\alpha}_{21}
+		-
+		K^{\alpha\alpha}_{22}
+	\right) \nonumber \\ &\qquad
+	+
+	\frac{1}{2}
+	\left(
+		J^{\beta\beta}_{11}
+		-
+		K^{\beta\beta}_{11}
+	\right)
+	+
+	\left(
+		J^{\alpha\beta}_{11}
+		+
+		J^{\alpha\beta}_{21}
+	\right) \\
+%
+%
+&=
+	h^\alpha_{11}
+	+
+	h^\alpha_{22}
+	+
+	h^\beta_{11}
+	+
+	\frac{1}{2}
+	\left(
+		J^{\alpha\alpha}_{12}
+		+
+		J^{\alpha\alpha}_{21}
+		-
+		K^{\alpha\alpha}_{12}
+		-
+		K^{\alpha\alpha}_{21}
+	\right)
+	+
+	J^{\alpha\beta}_{11}
+	+
+	J^{\alpha\beta}_{21} \nonumber \\ &\qquad
+	%
+	(\because
+		J^{\alpha\alpha}_{aa}-K^{\alpha\alpha}_{aa}
+		=
+		J^{\beta\beta}_{aa}-K^{\beta\beta}_{aa}
+		=0
+	) \\
+%
+%
+&=
+	h^\alpha_{11}
+	+
+	h^\alpha_{22}
+	+
+	h^\beta_{11}
+	+
+	\frac{1}{2}
+	\left(
+		J^{\alpha\alpha}_{12}
+		+
+		J^{\alpha\alpha}_{12}
+		-
+		K^{\alpha\alpha}_{12}
+		-
+		K^{\alpha\alpha}_{12}
+	\right)
+	+
+	J^{\alpha\beta}_{11}
+	+
+	J^{\alpha\beta}_{21} \\
+%
+%
+&=
+	h^\alpha_{11}
+	+
+	h^\alpha_{22}
+	+
+	h^\beta_{11}
+	+
+	J^{\alpha\alpha}_{12}
+	-
+	K^{\alpha\alpha}_{12}
+	+
+	J^{\alpha\beta}_{11}
+	+
+	J^{\alpha\beta}_{21}
+\end{align}
+である。
+
+
