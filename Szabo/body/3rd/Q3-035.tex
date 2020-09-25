@@ -39,7 +39,7 @@
 		K^{\beta\beta}_{ia}
 	\right)
 	+
-	\sum_a^{N^\beta}
+	\sum_a^{N^\alpha}
 		J^{\beta\alpha}_{ia}
 \end{align}
 となることを示せ。
@@ -110,5 +110,169 @@
 	\sum_a^{N^\beta}
 		J^{\alpha\beta}_{ia}
 \end{align}
+となる。同様に軌道エネルギー$\epsilon^\beta_i$は
+\begin{align}
+	\epsilon^\beta_i
+&=
+	\spaceone{\psi^\beta_i}{f^\beta}{\psi^\beta_i} \\
+%
+%
+&=
+	\spaceone{\psi^\beta_i}{h}{\psi^\beta_i}
+	+
+	\sum_a^{N^\beta}\{
+		\spaceone{\psi^\beta_i}{J^\beta_a}{\psi^\beta_i}
+		-
+		\spaceone{\psi^\beta_i}{K^\beta_a}{\psi^\beta_i}
+	\}
+	+
+	\sum_a^{N^\alpha}
+		\spaceone{\psi^\beta_i}{J^\alpha_a}{\psi^\beta_i} \\
+%
+%
+&=
+	h^\beta_{ii}
+	+
+	\sum_a^{N^\beta}\left(
+		J^{\beta\beta}_{ia}
+		-
+		K^{\beta\beta}_{ia}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+		J^{\beta\alpha}_{ia}
+\end{align}
+となる。
 
+次に全電子エネルギー$E_0$について考える。
+まず、軌道エネルギーの総和は
+\begin{align}
+&
+	\sum_a^{N^\alpha}
+		\epsilon^\alpha_a
+	+
+	\sum_a^{N^\beta}
+		\epsilon^\beta_a \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ba}
+		-
+		K^{\alpha\alpha}_{ba}
+	\right)
+	+
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ba}
+		-
+		K^{\beta\beta}_{ba}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\beta\alpha}_{ba} \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+\end{align}
+である。一方で、全電子エネルギー$E_0$は
+\begin{align}
+	E_0
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+\end{align}
+である。従って、
+\begin{align}
+	E_0
+&=
+	\sum_a^{N^\alpha}
+		\epsilon^\alpha_a
+	+
+	\sum_a^{N^\beta}
+		\epsilon^\beta_a
+	-
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	-
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	-
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+\end{align}
+となる。
 
