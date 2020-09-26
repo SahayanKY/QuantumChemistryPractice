@@ -1,0 +1,172 @@
+%ファイルID
+%2020/09/26 15:26
+%->2009261526SahayanKY(ファイル作成者)
+\subsection{問}
+$\alpha$および$\beta$電荷密度は
+\begin{align}
+	\rho^\alpha(\r)
+&=
+	\sum_a^{N^\alpha}
+		|\psi^\alpha_a(\r)|^2 &
+%
+%
+	\rho^\beta(\r)
+&=
+	\sum_a^{N^\beta}
+		|\psi^\beta_a(\r)|^2
+\end{align}
+である。ここから
+\begin{align}
+	\rho^\alpha(\r)
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\alpha_{\mu\nu}
+		\phi_\mu(\r)
+		\conju{\phi_\nu}(\r) &
+%
+%
+	\rho^\beta(\r)
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\beta_{\mu\nu}
+		\phi_\mu(\r)
+		\conju{\phi_\nu}(\r) \\
+%
+%
+	P^\alpha_{\mu\nu}
+&=
+	\sum_a^{N^\alpha}
+		C^\alpha_{\mu a}
+		\conju{C^\alpha_{\nu a}} &
+%
+%
+	P^\beta_{\mu\nu}
+&=
+	\sum_a^{N^\beta}
+		C^\beta_{\mu a}
+		\conju{C^\beta_{\nu a}}
+\end{align}
+を導出せよ。
+
+\subsection{解}
+非制限分子軌道$\psi^\alpha_i,\psi^\beta_i$は基底関数$\phi_\mu$を
+使って次の通りに展開される。
+\begin{align}
+	\psi^\alpha_i
+&=
+	\sum_{\mu}
+		C^\alpha_{\mu i}
+		\phi_\mu &
+%
+%
+	\psi^\beta_i
+&=
+	\sum_{\mu}
+		C^\beta_{\mu i}
+		\phi_\mu
+\end{align}
+これを各電荷密度に代入すると
+\begin{align}
+	\rho^\alpha(\r)
+&=
+	\sum_a^{N^\alpha}
+		|\psi^\alpha_a(\r)|^2 \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		\conju{\psi^\alpha_a}
+		\psi^\alpha_a \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		\conju[1]{
+			\sum_\mu C^\alpha_{\mu a} \phi_\mu
+		}
+		\left(
+			\sum_\nu C^\alpha_{\nu a} \phi_\nu
+		\right) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\left(
+			\sum_a^{N^\alpha}
+				\conju{C^\alpha_{\mu a}}
+				C^\alpha_{\nu a}
+		\right)
+		\conju{\phi_\mu}
+		\phi_\nu \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\alpha_{\nu\mu}
+		\conju{\phi_\mu}
+		\phi_\nu \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\alpha_{\mu\nu}
+		\conju{\phi_\nu}
+		\phi_\mu
+\end{align}
+\begin{align}
+	\rho^\beta(\r)
+&=
+	\sum_a^{N^\beta}
+		|\psi^\beta_a(\r)|^2 \\
+%
+%
+&=
+	\sum_a^{N^\beta}
+		\conju{\psi^\beta_a}
+		\psi^\beta_a \\
+%
+%
+&=
+	\sum_a^{N^\beta}
+		\conju[1]{
+			\sum_\mu C^\beta_{\mu a} \phi_\mu
+		}
+		\left(
+			\sum_\nu C^\beta_{\nu a} \phi_\nu
+		\right) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\left(
+			\sum_a^{N^\beta}
+				\conju{C^\beta_{\mu a}}
+				C^\beta_{\nu a}
+		\right)
+		\conju{\phi_\mu}
+		\phi_\nu \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\beta_{\nu\mu}
+		\conju{\phi_\mu}
+		\phi_\nu \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\beta_{\mu\nu}
+		\conju{\phi_\nu}
+		\phi_\mu
+\end{align}
+である。
+
