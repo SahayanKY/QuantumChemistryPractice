@@ -1,0 +1,115 @@
+%ファイルID
+%2020/09/26 16:43
+%->2009261643SahayanKY(ファイル作成者)
+\subsection{問}
+1電子演算子の和$\Oone=\sum_i^N h(i)$の
+任意の1個の非制限行列式による期待値が
+\begin{align}
+	\average{\Oone}
+&=
+	\sum_\mu
+	\sum_\nu
+		P^T_{\mu\nu}
+		\spaceone{\nu}{h}{\mu}
+\end{align}
+となることを示せ。ここで$P^T_{\mu\nu}=P^\alpha_{\mu\nu}+P^\beta_{\mu\nu}$である。
+
+\subsection{解}
+あるSlater行列式$\ket{\Psi}=\ket{\chi_a\chi_b\dots}$での
+期待値$\average{\Oone}$は、
+本書の表2.3にて示されている通り
+\begin{align}
+	\average{\Oone}
+&=
+	\braket{\Psi|\Oone|\Psi} \\
+%
+%
+&=
+	\sum_a^N
+		\braket{\chi_a|h|\chi_a}
+\end{align}
+である。この総和を、$\alpha$スピン軌道についての和と
+$\beta$スピン軌道についての和に分解すると
+\begin{align}
+	\average{\Oone}
+&=
+	\sum_a^{N^\alpha}
+		\braket{\chi_a|h|\chi_a}
+	+
+	\sum_a^{N^\beta}
+		\braket{\chi_a|h|\chi_a} \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		\braket{\psi^\alpha_a|h|\psi^\alpha_a}
+	+
+	\sum_a^{N^\beta}
+		\braket{\psi^\beta_a|h|\psi^\beta_a} \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		\Braket{
+			\sum_\nu C^\alpha_{\nu a} \phi_\nu |
+			h |
+			\sum_\mu C^\alpha_{\mu a} \phi_\mu
+		}
+	+
+	\sum_a^{N^\beta}
+		\Braket{
+			\sum_\nu C^\beta_{\nu a} \phi_\nu |
+			h |
+			\sum_\mu C^\beta_{\mu a} \phi_\mu
+		} \\
+%
+%
+&=
+	\sum_\nu
+	\sum_\mu
+	\sum_a^{N^\alpha}
+		\conju{C^\alpha_{\nu a}}
+		C^\alpha_{\mu a}
+		\braket{\nu|h|\mu}
+	+
+	\sum_\nu
+	\sum_\mu
+	\sum_a^{N^\beta}
+		\conju{C^\beta_{\nu a}}
+		C^\beta_{\mu a}
+		\braket{\nu|h|\mu} \\
+%
+%
+&=
+	\sum_\nu
+	\sum_\mu
+		P^\alpha_{\mu\nu}
+		\spaceone{\nu}{h}{\mu}
+	+
+	\sum_\nu
+	\sum_\mu
+		P^\beta_{\mu\nu}
+		\spaceone{\nu}{h}{\mu} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\left(
+			P^\alpha_{\mu\nu}
+			+
+			P^\beta_{\mu\nu}
+		\right)
+		\spaceone{\nu}{h}{\mu} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^T_{\mu\nu}
+		\spaceone{\nu}{h}{\mu}
+\end{align}
+となる。
+
+
+
