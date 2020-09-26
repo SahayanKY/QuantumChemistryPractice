@@ -1,0 +1,88 @@
+%ファイルID
+%2020/09/26 14:07
+%->2009261407SahayanKY(ファイル作成者)
+\subsection{問}
+スピン密度$\rho^S$は
+\begin{align}
+	\rho^S(\r)
+&=
+	\rho^\alpha(\r)
+	-
+	\rho^\beta(\r) \\
+%
+%
+	\rho^\alpha(\r)
+&=
+	\sum_a^{N^\alpha}
+		|\psi^\alpha_a(\r)|^2 \\
+%
+%
+	\rho^\beta(\r)
+&=
+	\sum_a^{N^\beta}
+		|\psi^\beta_a(\r)|^2
+\end{align}
+と定義されている。
+これを全空間で積分すると
+\begin{align}
+	\int\d\r
+		\rho^S(\r)
+&=
+	2\average{\mathscr{S}_z}
+\end{align}
+となることを示せ。
+
+
+\subsection{解}
+Hartree-Fock基底状態$\ket{\Psi_0}$における
+$\mathscr{S}_z$の期待値$\average{\mathscr{S}_z}$は
+\begin{align}
+	\average{\mathscr{S}_z}
+&=
+	\frac{1}{2}
+	\left(
+		N^\alpha
+		-
+		N^\beta
+	\right)
+\end{align}
+である。
+
+一方でスピン密度の積分については
+\begin{align}
+	\int\d\r
+		\rho^S(\r)
+&=
+	\int\d\r
+		\rho^\alpha(\r)
+	-
+	\int\d\r
+		\rho^\beta(\r) \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		\int\d\r |\psi^\alpha_a(\r)|^2
+	-
+	\sum_a^{N^\beta}
+		\int\d\r |\psi^\beta_a(\r)|^2 \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		1
+	-
+	\sum_a^{N^\beta}
+		1 \\
+%
+%
+&=
+	N^\alpha
+	-
+	N^\beta \\
+%
+%
+&=
+	2\average{\mathscr{S}_z}
+\end{align}
+である。
