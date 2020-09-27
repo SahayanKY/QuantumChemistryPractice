@@ -1,0 +1,160 @@
+%ファイルID
+%2020/09/27 23:14
+%->2009272314SahayanKY(ファイル作成者)
+\subsection{問}
+次のような1電子演算子の和であるスピン依存の演算子
+\begin{align}
+	\hat{\rho}^S
+&=
+	2
+	\sum_i^N
+		\delta(\r_i-\bm{R})
+		s_z(i)
+\end{align}
+を考える。任意の1個の非制限行列式による$\hat{\rho}^S$の期待値が
+\begin{align}
+	\average{\hat{\rho}^S}
+&=
+	\rho^S(\bm{R})
+=
+	\tr[1]{\bm{P}^S\bm{A}}
+\end{align}
+となることを示せ。
+
+ここで$\rho^S(\r)$はスピン密度$\rho^\alpha(\r)-\rho^\beta(\r)$であり、
+$A_{\mu\nu}=\conju{\phi_\mu}(\bm{R})\phi_\nu(\bm{R})$である。
+
+
+\subsection{解}
+前問で利用した1電子演算子の行列要素の計算規則
+\begin{align}
+	\average{\Oone}
+&=
+	\braket{\Psi|\Oone|\Psi} \\
+%
+%
+&=
+	\sum_a^N
+		\braket{\chi_a|h|\chi_a}
+\end{align}
+はスピン非依存性の1電子演算子を想定して導出されたものであるが、
+スピン依存性であっても同様の議論が成立する。つまり、
+\begin{align}
+	\average{\hat{\rho}^S}
+&=
+	\Braket{\Psi|2\sum_i^N \delta(\r_i-\bm{R})s_z(\omega_i)|\Psi} \\
+%
+%
+&=
+	\sum_a^N
+		\braket{\chi_a(\x_1)|2\delta(\r_1-\bm{R})s_z(\omega_1)|\chi_a(\x_1)}
+\end{align}
+となる。これを式変形すると
+\begin{align}
+	\average{\hat{\rho}^S}
+&=
+	2
+	\sum_a^{N^\alpha}
+		\braket{\chi_a(\x_1)|\delta(\r_1-\bm{R})s_z(\omega_1)|\chi_a(\x_1)}
+	+
+	2
+	\sum_a^{N^\beta}
+		\braket{\chi_a(\x_1)|\delta(\r_1-\bm{R})s_z(\omega_1)|\chi_a(\x_1)} \\
+%
+%
+&=
+	2
+	\sum_a^{N^\alpha}
+		\braket{\psi^\alpha_a(\r_1)|\delta(\r_1-\bm{R})|\psi^\alpha_a(\r_1)}
+		\braket{\alpha(\omega_1)|s_z(\omega_1)|\alpha(\omega_1)} \nonumber \\ &\qquad
+	+
+	2
+	\sum_a^{N^\beta}
+		\braket{\psi^\beta_a(\x_1)|\delta(\r_1-\bm{R})|\psi^\beta_a(\r_1)}
+		\braket{\beta(\omega_1)|s_z(\omega_1)|\beta(\omega_1)} \\
+%
+%
+&=
+	2
+	\sum_a^{N^\alpha}
+		\conju{\psi^\alpha_a}(\bm{R})
+		\psi^\alpha_a(\bm{R}) \cdot
+		\frac{1}{2}
+		\braket{\alpha|\alpha}
+	+
+	2
+	\sum_a^{N^\beta}
+		\conju{\psi^\beta_a}(\bm{R})
+		\psi^\beta_a(\bm{R}) \cdot
+		\left(
+			-\frac{1}{2}
+		\right)
+		\braket{\beta|\beta} \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+		|\psi^\alpha_a(\bm{R})|^2
+	-
+	\sum_a^{N^\beta}
+		|\psi^\beta_a(\bm{R})|^2 \\
+%
+%
+&=
+	\rho^\alpha(\bm{R})
+	-
+	\rho^\beta(\bm{R}) \\
+%
+%
+&=
+	\rho^S(\bm{R})
+\end{align}
+となる。
+
+さらに空間軌道を基底関数で展開すると
+\begin{align}
+	\average{\hat{\rho}^S}
+&=
+	\rho^\alpha(\bm{R})
+	-
+	\rho^\beta(\bm{R}) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\alpha_{\mu\nu}
+		\phi_\mu(\bm{R})
+		\conju{\phi_\nu}(\bm{R})
+	-
+	\sum_\mu
+	\sum_\nu
+		P^\beta_{\mu\nu}
+		\phi_\mu(\bm{R})
+		\conju{\phi_\nu}(\bm{R}) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^S_{\mu\nu}
+		\phi_\mu(\bm{R})
+		\conju{\phi_\nu}(\bm{R}) \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^S_{\mu\nu}
+		A_{\nu\mu} \\
+%
+%
+&=
+	\sum_\mu
+		(\bm{P}^S \bm{A})_{\mu\mu} \\
+%
+%
+&=
+	\tr[1]{\bm{P}^S \bm{A}}
+\end{align}
+となる。
