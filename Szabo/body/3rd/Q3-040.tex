@@ -1,0 +1,545 @@
+%ファイルID
+%2020/09/28 14:13
+%->2009281413SahayanKY(ファイル作成者)
+\subsection{問}
+非制限軌道における全電子エネルギー$E_0$の式
+\begin{align}
+	E_0
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab}
+\end{align}
+を基底関数で展開すると
+\begin{align}
+	E_0
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+		P^T_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\alpha_{\nu\mu}
+		F^\alpha_{\mu\nu}
+		+
+		P^\beta_{\nu\mu}
+		F^\beta_{\mu\nu}
+	\right]
+\end{align}
+となることを示せ。
+
+\subsection{解}
+各積分の基底関数展開をまず考える。
+\begin{align}
+	h^\alpha_{aa}
+&=
+	\spaceone{\psi^\alpha_a}{h}{\psi^\alpha_a} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\spaceone{\phi_\mu}{h}{\phi_\nu} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		H^{\rm core}_{\mu\nu}
+\end{align}
+\begin{align}
+	h^\beta_{aa}
+=
+	\spaceone{\psi^\beta_a}{h}{\psi^\beta_a}
+=
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\beta_{\mu a}}
+		C^\beta_{\nu a}
+		H^{\rm core}_{\mu\nu}
+\end{align}
+\begin{align}
+	J^{\alpha\alpha}_{ab}
+&=
+	\spacetwo{\psi^\alpha_a\psi^\alpha_a}{\psi^\alpha_b\psi^\alpha_b} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\spacetwo{\phi_\mu\phi_\nu}{\psi^\alpha_b\psi^\alpha_b} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\conju{C^\alpha_{\sigma b}}
+		C^\alpha_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda}
+\end{align}
+\begin{align}
+	J^{\beta\beta}_{ab}
+=
+	\spacetwo{\psi^\beta_a\psi^\beta_a}{\psi^\beta_b\psi^\beta_b}
+%
+%
+=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\beta_{\mu a}}
+		C^\beta_{\nu a}
+		\conju{C^\beta_{\sigma b}}
+		C^\beta_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda}
+\end{align}
+\begin{align}
+	J^{\alpha\beta}_{ab}
+=
+	\spacetwo{\psi^\alpha_a\psi^\alpha_a}{\psi^\beta_b\psi^\beta_b}
+%
+%
+=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\conju{C^\beta_{\sigma b}}
+		C^\beta_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda}
+\end{align}
+\begin{align}
+	K^{\alpha\alpha}_{ab}
+&=
+	\spacetwo{\psi^\alpha_a\psi^\alpha_b}{\psi^\alpha_b\psi^\alpha_a} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\spacetwo{\phi_\mu\psi^\alpha_b}{\psi^\alpha_b\phi_\nu} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\conju{C^\alpha_{\sigma b}}
+		C^\alpha_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\lambda}{\phi_\sigma\phi_\nu}
+\end{align}
+\begin{align}
+	K^{\beta\beta}_{ab}
+=
+	\spacetwo{\psi^\beta_a\psi^\beta_b}{\psi^\beta_b\psi^\beta_a}
+=
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\beta_{\mu a}}
+		C^\beta_{\nu a}
+		\conju{C^\beta_{\sigma b}}
+		C^\beta_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\lambda}{\phi_\sigma\phi_\nu}
+\end{align}
+
+これを全電子エネルギーの式に代入すると
+\begin{align}
+&
+	E_0 \nonumber \\
+&=
+	\sum_a^{N^\alpha}
+		h^\alpha_{aa}
+	+
+	\sum_a^{N^\beta}
+		h^\beta_{aa}
+	+
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+		J^{\alpha\alpha}_{ab}
+		-
+		K^{\alpha\alpha}_{ab}
+	\right)
+	+
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+		J^{\beta\beta}_{ab}
+		-
+		K^{\beta\beta}_{ab}
+	\right)
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+		J^{\alpha\beta}_{ab} \\
+%
+%
+&=
+	\sum_a^{N^\alpha}
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		H^{\rm core}_{\mu\nu}
+	+
+	\sum_a^{N^\beta}
+	\sum_\mu
+	\sum_\nu
+		\conju{C^\beta_{\mu a}}
+		C^\beta_{\nu a}
+		H^{\rm core}_{\mu\nu} \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\alpha}\left(
+	\begin{array}{>{\displaystyle}l}
+		\sum_\mu
+		\sum_\nu
+		\sum_\sigma
+		\sum_\lambda
+			\conju{C^\alpha_{\mu a}}
+			C^\alpha_{\nu a}
+			\conju{C^\alpha_{\sigma b}}
+			C^\alpha_{\lambda b}
+			\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda} \\
+		-
+		\sum_\mu
+		\sum_\nu
+		\sum_\sigma
+		\sum_\lambda
+			\conju{C^\alpha_{\mu a}}
+			C^\alpha_{\nu a}
+			\conju{C^\alpha_{\sigma b}}
+			C^\alpha_{\lambda b}
+			\spacetwo{\phi_\mu\phi_\lambda}{\phi_\sigma\phi_\nu}
+	\end{array}
+	\right) \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_a^{N^\beta}
+	\sum_b^{N^\beta}\left(
+	\begin{array}{>{\displaystyle}l}
+		\sum_\mu
+		\sum_\nu
+		\sum_\sigma
+		\sum_\lambda
+			\conju{C^\beta_{\mu a}}
+			C^\beta_{\nu a}
+			\conju{C^\beta_{\sigma b}}
+			C^\beta_{\lambda b}
+			\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda} \\
+		-
+		\sum_\mu
+		\sum_\nu
+		\sum_\sigma
+		\sum_\lambda
+			\conju{C^\beta_{\mu a}}
+			C^\beta_{\nu a}
+			\conju{C^\beta_{\sigma b}}
+			C^\beta_{\lambda b}
+			\spacetwo{\phi_\mu\phi_\lambda}{\phi_\sigma\phi_\nu}
+	\end{array}
+	\right) \nonumber \\ &\quad
+	+
+	\sum_a^{N^\alpha}
+	\sum_b^{N^\beta}
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		\conju{C^\alpha_{\mu a}}
+		C^\alpha_{\nu a}
+		\conju{C^\beta_{\sigma b}}
+		C^\beta_{\lambda b}
+		\spacetwo{\phi_\mu\phi_\nu}{\phi_\sigma\phi_\lambda} \\
+%
+%
+&=
+	\sum_\mu
+	\sum_\nu
+		P^\alpha_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+	+
+	\sum_\mu
+	\sum_\nu
+		P^\beta_{\nu\mu}
+		H^{\rm core}_{\mu\nu} \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda\left(
+		P^\alpha_{\nu\mu}
+		P^\alpha_{\lambda\sigma}
+		\spacetwo{\mu\nu}{\sigma\lambda}
+		-
+		P^\alpha_{\nu\mu}
+		P^\alpha_{\lambda\sigma}
+		\spacetwo{\mu\lambda}{\sigma\nu}
+	\right) \nonumber \\ &\quad
+	+
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda\left(
+		P^\beta_{\nu\mu}
+		P^\beta_{\lambda\sigma}
+		\spacetwo{\mu\nu}{\sigma\lambda}
+		-
+		P^\beta_{\nu\mu}
+		P^\beta_{\lambda\sigma}
+		\spacetwo{\mu\lambda}{\sigma\nu}
+	\right) \nonumber \\ &\quad
+	+
+	\sum_\mu
+	\sum_\nu
+	\sum_\sigma
+	\sum_\lambda
+		P^\alpha_{\nu\mu}
+		P^\beta_{\lambda\sigma}
+		\spacetwo{\mu\nu}{\sigma\lambda}
+\end{align}
+\begin{align}
+	E_0
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+	\begin{array}{>{\displaystyle}l}
+		2
+		P^\alpha_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		2
+		P^\beta_{\nu\mu}
+		H^{\rm core}_{\mu\nu} \\[2mm]
+		+
+		P^\alpha_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right)
+		+
+		P^\beta_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right) \\
+		+
+		2
+		\sum_\sigma
+		\sum_\lambda
+			P^\alpha_{\nu\mu}
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+	\begin{array}{>{\displaystyle}l}
+		(P^\alpha_{\nu\mu} +P^\beta_{\nu\mu})
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\alpha_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\beta_{\nu\mu}
+		H^{\rm core}_{\mu\nu} \\[2mm]
+		+
+		P^\alpha_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right)
+		+
+		P^\beta_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right) \\
+		+
+		\sum_\sigma
+		\sum_\lambda
+			P^\alpha_{\nu\mu}
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+		+
+		\sum_\sigma
+		\sum_\lambda
+			P^\alpha_{\lambda\sigma}
+			P^\beta_{\nu\mu}
+			\spacetwo{\sigma\lambda}{\mu\nu}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+	\begin{array}{>{\displaystyle}l}
+		P^T_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\alpha_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\beta_{\nu\mu}
+		H^{\rm core}_{\mu\nu} \\[2mm]
+		+
+		P^\alpha_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right)
+		+
+		P^\beta_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda\left(
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+			-
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\lambda}{\sigma\nu}
+		\right) \\
+		+
+		P^\alpha_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda
+			P^\beta_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+		+
+		P^\beta_{\nu\mu}
+		\sum_\sigma
+		\sum_\lambda
+			P^\alpha_{\lambda\sigma}
+			\spacetwo{\mu\nu}{\sigma\lambda}
+	\end{array}
+	\right] \nonumber \\ &\qquad
+	%
+	(\because \spacetwo{\mu\nu}{\sigma\lambda}=\spacetwo{\sigma\lambda}{\mu\nu}) \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+	\begin{array}{>{\displaystyle}l}
+		P^T_{\nu\mu}
+		H^{\rm core}_{\mu\nu} \\
+		+
+		P^\alpha_{\nu\mu}
+		\left\{
+			H^{\rm core}_{\mu\nu}
+			+
+			\sum_\sigma
+			\sum_\lambda\left(
+				P^T_{\lambda\sigma}
+				\spacetwo{\mu\nu}{\sigma\lambda}
+				-
+				P^\alpha_{\lambda\sigma}
+				\spacetwo{\mu\lambda}{\sigma\nu}
+			\right)
+		\right\} \\
+		+
+		P^\beta_{\nu\mu}
+		\left\{
+			H^{\rm core}_{\mu\nu}
+			+
+			\sum_\sigma
+			\sum_\lambda\left(
+				P^T_{\lambda\sigma}
+				\spacetwo{\mu\nu}{\sigma\lambda}
+				-
+				P^\beta_{\lambda\sigma}
+				\spacetwo{\mu\lambda}{\sigma\nu}
+			\right)
+		\right\}
+	\end{array}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\sum_\mu
+	\sum_\nu\left[
+		P^T_{\nu\mu}
+		H^{\rm core}_{\mu\nu}
+		+
+		P^\alpha_{\nu\mu}
+		F^\alpha_{\mu\nu}
+		+
+		P^\beta_{\nu\mu}
+		F^\beta_{\mu\nu}
+	\right]
+\end{align}
+となる。
