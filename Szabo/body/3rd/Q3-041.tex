@@ -1,0 +1,186 @@
+%ファイルID
+%2020/09/28 16:15
+%->2009281615SahayanKY(ファイル作成者)
+\subsection{問}
+メチルラジカル(\ce{CH3^.})の非制限Hartree-Fock計算で得られた、
+各基底関数系における$\mathscr{S}^2$の期待値を
+表\ref{tab2009281615SahayanKY_expectedValueOfS2OfMethylRadical}に示す。
+%
+%表を挿入
+\begin{table}[htpt]
+\caption{非制限HF計算でのメチルラジカルの$\average{\mathscr{S}^2}$}
+\label{tab2009281615SahayanKY_expectedValueOfS2OfMethylRadical}
+\centering
+\begin{tabular}{lS[table-format=1.4]S[table-format=1.4]}
+	\hline
+	基底関数系 & {$\average{\mathscr{S}^2}$} & {混入率(\si{\percent})} \\
+	\hline
+	STO-3G             & 0.7652 & 0.5067 \\
+	4-31G              & 0.7622 & 0.4067 \\
+	6-31G$^{\ast}$     & 0.7618 & 0.3933 \\
+	6-31G$^{\ast\ast}$ & 0.7614 & 0.3800 \\
+	\hline
+\end{tabular}
+\end{table}
+
+計算で得られたHartree-Fock基底状態に
+4重項のみが混入していると仮定する。
+即ち
+\begin{align}
+	\ket{\Psi_{\rm UHF}}
+&=
+	c_1
+	\ket{^2\Psi}
+	+
+	c_2
+	\ket{^4\Psi}
+\end{align}
+とする。このとき、混入率を
+\begin{align}
+	100 \cdot
+	\frac{c_2^2}{c_1^2 +c_2^2}\
+	\si{\percent}
+\end{align}
+と定義すると、
+各基底関数での計算結果における混入率がいくつになるかを求めよ。
+
+
+\subsection{解}
+まず、2重項状態は$S=\frac{1}{2}\ (2S+1=2)$であり、
+4重項状態は$S=\frac{3}{2}\ (2S+1=4)$である。
+従って、
+\begin{align}
+	\mathscr{S}^2 \ket{^2\Psi}
+&=
+	\frac{1}{2}\cdot \frac{3}{2} \ket{^2\Psi}
+=
+	\frac{3}{4} \ket{^2\Psi} \\
+%
+%
+	\mathscr{S}^2 \ket{^4\Psi}
+&=
+	\frac{3}{2}\cdot \frac{5}{2} \ket{^4\Psi}
+=
+	\frac{15}{4} \ket{^4\Psi}
+\end{align}
+である。
+
+Hartree-Fock基底状態の$\average{\mathscr{S}^2}$は
+\begin{align}
+	\average{\mathscr{S}^2}
+&=
+	\braket{\Psi_{\rm UHF}|\mathscr{S}^2|\Psi_{\rm UHF}} \\
+%
+%
+&=
+	\left(
+		\conju{c_1}
+		\bra{^2\Psi}
+		+
+		\conju{c_2}
+		\bra{^4\Psi}
+	\right)
+	\mathscr{S}^2
+	\left(
+		c_1
+		\ket{^2\Psi}
+		+
+		c_2
+		\ket{^4\Psi}
+	\right) \\
+%
+%
+&=
+	\left(
+		\conju{c_1}
+		\bra{^2\Psi}
+		+
+		\conju{c_2}
+		\bra{^4\Psi}
+	\right)
+	\left(
+		\frac{3}{4}
+		c_1
+		\ket{^2\Psi}
+		+
+		\frac{15}{4}
+		c_2
+		\ket{^4\Psi}
+	\right)	\\
+%
+%
+&=
+	\frac{3}{4}
+	|c_1|^2
+	+
+	\frac{15}{4}
+	|c_2|^2
+	%
+	\qquad
+	(\because\text{異なる固有値に属する固有関数は直交})
+\end{align}
+と書き表すことが出来る。
+
+また、波動関数の規格化条件から
+\begin{align}
+	|c_1|^2
+	+
+	|c_2|^2
+&=
+	1
+\end{align}
+を要請する。従って、$\ket{\Psi_{\rm UHF}}$での$\average{\mathscr{S}^2}$は
+\begin{align}
+	\average{\mathscr{S}^2}
+&=
+	\frac{3}{4}
+	|c_1|^2
+	+
+	\frac{15}{4}
+	|c_2|^2 \\
+%
+%
+&=
+	\frac{3}{4}
+	\left(
+		1
+		-
+		|c_2|^2
+	\right)
+	+
+	\frac{15}{4}
+	|c_2|^2 \\
+%
+%
+&=
+	3|c_2|^2
+	+
+	\frac{3}{4}
+\end{align}
+であり、
+\begin{align}
+	|c_2|^2
+&=
+	\frac{1}{3}
+	\average{\mathscr{S}^2}
+	-
+	\frac{1}{4}
+\end{align}
+と書ける。$c_1,c_2$を実数とすると、4重項の混入率は期待値$\average{\mathscr{S}^2}$を用いて
+\begin{align}
+	(\text{混入率})
+=
+	100 \cdot
+	\left(
+		\frac{1}{3}
+		\average{\mathscr{S}^2}
+		-
+		\frac{1}{4}
+	\right)\
+	\si{\percent}
+\end{align}
+と書ける。
+
+よって、各計算における4重項の混入率は
+表\ref{tab2009281615SahayanKY_expectedValueOfS2OfMethylRadical}に示す通りになる。
+
