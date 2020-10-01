@@ -1,0 +1,209 @@
+%ファイルID
+%2020/10/01 13:53
+%->2010011353SahayanKY(ファイル作成者)
+\subsection{問}
+水素分子\ce{H2}の最小基底関数系における制限分子軌道は次の二つである。
+\begin{align}
+	\psi_1
+&=
+	\left[
+		2(1+S_{12})
+	\right]^{-1/2}
+	(\phi_1 +\phi_2) \\
+%
+%
+	\psi_2
+&=
+	\left[
+		2(1-S_{12})
+	\right]^{-1/2}
+	(\phi_1 -\phi_2)
+\end{align}
+この2つから非制限分子軌道を書き表す。
+占有軌道については
+\begin{align}
+	\psi^\alpha_1
+&=
+	\cos\theta
+	\psi_1
+	+
+	\sin\theta
+	\psi_2 \\
+%
+%
+	\psi^\beta_1
+&=
+	\cos\theta
+	\psi_1
+	-
+	\sin\theta
+	\psi_2
+\end{align}
+であり、仮想軌道については
+\begin{align}
+	\psi^\alpha_2
+&=
+	-\sin\theta
+	\psi_1
+	+
+	\cos\theta
+	\psi_2 \\
+%
+%
+	\psi^\beta_2
+&=
+	\sin\theta
+	\psi_1
+	+
+	\cos\theta
+	\psi_2
+\end{align}
+とする。
+
+このとき、$\alpha$軌道の空間軌道$\psi^\alpha_1,\psi^\alpha_2$同士、
+$\beta$軌道の空間軌道$\psi^\beta_1,\psi^\beta_2$同士で規格直交系をなしていることを確かめよ。
+
+
+\subsection{解}
+$\alpha$軌道から見ていく。
+\begin{align}
+	\braket{\psi^\alpha_1|\psi^\alpha_1}
+&=
+	\braket{
+		(\cos\theta\psi_1 +\sin\theta\psi_2)|
+		(\cos\theta\psi_1 +\sin\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{\cos\theta}
+	\cos\theta
+	\braket{\psi_1|\psi_1}
+	+
+	\conju[1]{\cos\theta}
+	\sin\theta
+	\braket{\psi_1|\psi_2} \nonumber \\ &\qquad
+	+
+	\conju[1]{\sin\theta}
+	\cos\theta
+	\braket{\psi_2|\psi_1}
+	+
+	\conju[1]{\sin\theta}
+	\sin\theta
+	\braket{\psi_2|\psi_2} \\
+%
+%
+&=
+	\cos^2\theta
+	+
+	\sin^2\theta \\
+%
+%
+&=
+	1
+\end{align}
+\begin{align}
+	\braket{\psi^\alpha_2|\psi^\alpha_2}
+&=
+	\braket{
+		(-\sin\theta\psi_1 +\cos\theta\psi_2)|
+		(-\sin\theta\psi_1 +\cos\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{-\sin\theta}
+	(-\sin\theta)
+	+
+	\conju[1]{\cos\theta}
+	\cos\theta \\
+%
+%
+&=
+	1
+\end{align}
+\begin{align}
+	\braket{\psi^\alpha_1|\psi^\alpha_2}
+&=
+	\braket{
+		(\cos\theta\psi_1 +\sin\theta\psi_2)|
+		(-\sin\theta\psi_1 +\cos\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{\cos\theta}
+	(-\sin\theta)
+	+
+	\conju[1]{\sin\theta}
+	\cos\theta \\
+%
+%
+&=
+	0
+\end{align}
+従って、$\alpha$軌道$\psi^\alpha_1,\psi^\alpha_2$は規格直交系をなしている。
+
+次に$\beta$軌道について見ていく。
+\begin{align}
+	\braket{\psi^\beta_1|\psi^\beta_1}
+&=
+	\braket{
+		(\cos\theta\psi_1 -\sin\theta\psi_2)|
+		(\cos\theta\psi_1 -\sin\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{\cos\theta}
+	\cos\theta
+	+
+	\conju[1]{-\sin\theta}
+	(-\sin\theta) \\
+%
+%
+&=
+	1
+\end{align}
+\begin{align}
+	\braket{\psi^\beta_2|\psi^\beta_2}
+&=
+	\braket{
+		(\sin\theta\psi_1 +\cos\theta\psi_2)|
+		(\sin\theta\psi_1 +\cos\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{\sin\theta}
+	\sin\theta
+	+
+	\conju[1]{\cos\theta}
+	\cos\theta \\
+%
+%
+&=
+	1
+\end{align}
+\begin{align}
+	\braket{\psi^\beta_1|\psi^\beta_2}
+&=
+	\braket{
+		(\cos\theta\psi_1 -\sin\theta\psi_2)|
+		(\sin\theta\psi_1 +\cos\theta\psi_2)
+	} \\
+%
+%
+&=
+	\conju[1]{\cos\theta}
+	\sin\theta
+	+
+	\conju[1]{-\sin\theta}
+	\cos\theta \\
+%
+%
+&=
+	0
+\end{align}
+従って、$\beta$軌道$\psi^\beta_1,\psi^\beta_2$は規格直交系をなしている。
+
