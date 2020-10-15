@@ -1,0 +1,129 @@
+%ファイルID
+%2020/10/15 17:16
+%->2010151716SahayanKY(ファイル作成者)
+\subsection{問}
+次式
+\begin{align}
+	\lim_{R\rightarrow\infty}
+		\ket{\Psi_0}
+&=
+	\frac{1}{2}
+	\left[
+		\ket{\aorb{\psi_1}\borb{\psi_1}}
+		-
+		\ket{\aorb{\psi_2}\borb{\psi_2}}
+		-
+		\sqrt{2}
+		\ket{^3\Psi^2_1}
+	\right]
+\end{align}
+から、
+\begin{align}
+	\lim_{R\rightarrow\infty}
+		\ket{\Psi_0}
+&=
+	\ket{\aorb{\phi_1}\borb{\phi_2}}
+\end{align}
+を導出せよ。
+
+ここで$\phi_1,\phi_2,\psi_1,\psi_2$は問題3.42の通りであり、
+$\ket{^3\Psi_1^2}$は制限軌道における1電子励起3重項状態
+\begin{align}
+	\ket{^3\Psi_1^2}
+&=
+	\frac{1}{\sqrt{2}}
+	\left(
+		\ket{\Psi_{\borb{1}}^{\aorb{2}}}
+		-
+		\ket{\Psi_{\aorb{1}}^{\aorb{2}}}
+	\right) \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\left(
+		\ket{\aorb{\psi_1}\borb{\psi_2}}
+		-
+		\ket{\aorb{\psi_2}\borb{\psi_1}}
+	\right)
+\end{align}
+である。
+
+\subsection{解}
+まず、制限分子軌道$\psi_1,\psi_2$と原子軌道(基底関数)$\phi_1,\phi_2$の間には
+\begin{align}
+	\psi_1
+&=
+	\frac{1}{\sqrt{2(1+S_{12})}}
+	(\phi_1 +\phi_2) \\
+%
+%
+	\psi_2
+&=
+	\frac{1}{\sqrt{2(1-S_{12})}}
+	(\phi_1 -\phi_2)
+\end{align}
+の関係がある。$R\rightarrow\infty$では重なりがゼロに漸近し$S_{12}=0$となるため、
+\begin{align}
+	\psi_1
+&=
+	\frac{1}{\sqrt{2}}
+	(\phi_1 +\phi_2) \\
+%
+%
+	\psi_2
+&=
+	\frac{1}{\sqrt{2}}
+	(\phi_1 -\phi_2)
+\end{align}
+となる。
+
+行列式の性質を利用すると
+\begin{align}
+	\lim_{R\rightarrow\infty}
+		\ket{\Psi_0}
+&=
+	\frac{1}{2}
+	\left[
+		\ket{\aorb{\psi_1}\borb{\psi_1}}
+		-
+		\ket{\aorb{\psi_2}\borb{\psi_2}}
+		-
+		\ket{\aorb{\psi_1}\borb{\psi_2}}
+		+
+		\ket{\aorb{\psi_2}\borb{\psi_1}}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\left[
+		\ket{(\aorb{\psi_1}+\aorb{\psi_2})\borb{\psi_1}}
+		-
+		\ket{(\aorb{\psi_2}+\aorb{\psi_1})\borb{\psi_2}}
+	\right] \\
+%
+%
+&=
+	\frac{1}{2}
+	\left[
+		\sqrt{2} \ket{\aorb{\phi_1}\borb{\psi_1}}
+		-
+		\sqrt{2} \ket{\aorb{\phi_1}\borb{\psi_2}}
+	\right] \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}}
+	\ket{\aorb{\phi_1}(\borb{\psi_1}-\borb{\psi_2})} \\
+%
+%
+&=
+	\frac{1}{\sqrt{2}} \cdot
+	\sqrt{2} \ket{\aorb{\phi_1}\borb{\phi_2}} \\
+%
+%
+&=
+	\ket{\aorb{\phi_1}\borb{\phi_2}}
+\end{align}
+となる。
